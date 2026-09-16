@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Truth Frame Studio</title>
+  <meta name="description" content="Estrategia + producción para YouTube. Santo Domingo, República Dominicana.">
+  <link rel="icon" href="assets/logos/Logo_TFS_black_1.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="tokens.css">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; min-height: 100svh;
+      display: grid; place-items: center;
+      background: var(--tfs-fondo); color: var(--tfs-texto);
+      font-family: var(--tfs-fuente); font-size: var(--tfs-body); line-height: var(--tfs-body-lh);
+      padding: 32px 16px;
+    }
+    main { text-align: center; max-width: 36rem; }
+    .logo { width: min(240px, 70vw); height: auto; }
+    .claim {
+      margin: 24px 0 40px; font-size: var(--tfs-caption); font-weight: 500;
+      letter-spacing: var(--tfs-claim-tracking); text-transform: uppercase;
+    }
+    h1 { margin: 0 0 12px; font-size: var(--tfs-h2); line-height: var(--tfs-h2-lh); font-weight: 600; }
+    p { margin: 0 0 32px; }
+    .en { display: block; margin-top: 4px; font-size: .875em; opacity: .75; }
+    .cta {
+      display: inline-flex; align-items: center; gap: .6em;
+      padding: 14px 24px; border-radius: 6px;
+      background: var(--tfs-charcoal); color: var(--tfs-blanco);
+      font-weight: 600; text-decoration: none;
+    }
+    .cta span { color: var(--tfs-coral); }
+    .cta:hover { background: var(--tfs-negro); }
+    .cta:focus-visible { outline: 3px solid var(--tfs-foco); outline-offset: 3px; }
+  </style>
+</head>
+<body>
+  <main>
+    <img class="logo" src="assets/logos/Logo_TFS_black_1.svg" alt="Truth Frame Studio" width="240" height="237">
+    <div class="claim">Visión · Producción · Impacto</div>
+    <h1>Estamos preparando algo.</h1>
+    <p>Estrategia y producción para YouTube.
+      <span class="en" lang="en">Our new website is coming soon.</span></p>
+    <a class="cta" href="https://wa.me/18496523537" rel="noopener">Hablemos <span aria-hidden="true">→</span></a>
+  </main>
+</body>
+</html>
