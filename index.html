@@ -3,47 +3,591 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Truth Frame Studio</title>
-  <meta name="description" content="Estrategia + producción para YouTube. Santo Domingo, República Dominicana.">
-  <link rel="icon" href="assets/logos/Logo_TFS_black_1.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="tokens.css">
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0; min-height: 100vh; min-height: 100svh;
-      display: grid; place-items: center;
-      background: var(--tfs-fondo); color: var(--tfs-texto);
-      font-family: var(--tfs-fuente); font-size: var(--tfs-body); line-height: var(--tfs-body-lh);
-      padding: 32px 16px;
-    }
-    main { text-align: center; max-width: 36rem; }
-    .logo { width: min(240px, 70vw); height: auto; }
-    .claim {
-      margin: 24px 0 40px; font-size: var(--tfs-caption); font-weight: 500;
-      letter-spacing: var(--tfs-claim-tracking); text-transform: uppercase;
-    }
-    h1 { margin: 0 0 12px; font-size: var(--tfs-h2); line-height: var(--tfs-h2-lh); font-weight: 600; }
-    p { margin: 0 0 32px; }
-    .en { display: block; margin-top: 4px; font-size: .875em; opacity: .75; }
-    .cta {
-      display: inline-flex; align-items: center; gap: .6em;
-      padding: 14px 24px; border-radius: 6px;
-      background: var(--tfs-charcoal); color: var(--tfs-blanco);
-      font-weight: 600; text-decoration: none;
-    }
-    .cta span { color: var(--tfs-coral); }
-    .cta:hover { background: var(--tfs-negro); }
-    .cta:focus-visible { outline: 3px solid var(--tfs-foco); outline-offset: 3px; }
-  </style>
+  <title>Truth Frame Studio — Estrategia y producción para YouTube</title>
+  <meta name="description" content="Estudio de estrategia y producción para YouTube en Santo Domingo. Auditamos, creamos y producimos canales que atraen clientes y construyen autoridad.">
+  <link rel="canonical" href="https://truthframestudio.com/">
+  <link rel="alternate" hreflang="es" href="https://truthframestudio.com/">
+  <link rel="alternate" hreflang="en" href="https://truthframestudio.com/en/">
+  <link rel="alternate" hreflang="x-default" href="https://truthframestudio.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Truth Frame Studio">
+  <meta property="og:title" content="Truth Frame Studio — Estrategia y producción para YouTube">
+  <meta property="og:description" content="Convertimos tu canal de YouTube en un activo que atrae clientes y construye autoridad.">
+  <meta property="og:url" content="https://truthframestudio.com/">
+  <meta property="og:image" content="https://truthframestudio.com/assets/fotos/andres-diana-1600.jpg">
+  <meta property="og:locale" content="es_DO">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#FFFFFF">
+  <link rel="icon" href="/assets/logos/Logo_TFS_black_simbolo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/tokens.css">
+  <link rel="stylesheet" href="/css/site.css">
+  <link rel="preload" as="image" href="/assets/video/hero-poster.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Truth Frame Studio",
+    "url": "https://truthframestudio.com/",
+    "logo": "https://truthframestudio.com/assets/logos/Logo_TFS_black_1.svg",
+    "image": "https://truthframestudio.com/assets/fotos/andres-diana-1600.jpg",
+    "description": "Estrategia y producción para YouTube.",
+    "telephone": "+1-849-652-3537",
+    "address": { "@type": "PostalAddress", "addressLocality": "Santo Domingo", "addressCountry": "DO" },
+    "areaServed": "Worldwide",
+    "founder": [
+      { "@type": "Person", "name": "Diana Cardona" },
+      { "@type": "Person", "name": "Andrés Figueroa" }
+    ]
+  }
+  </script>
 </head>
 <body>
-  <main>
-    <img class="logo" src="assets/logos/Logo_TFS_black_1.svg" alt="Truth Frame Studio" width="240" height="237">
-    <div class="claim">Visión · Producción · Impacto</div>
-    <h1>Estamos preparando algo.</h1>
-    <p>Estrategia y producción para YouTube.
-      <span class="en" lang="en">Our new website is coming soon.</span></p>
-    <a class="cta" href="https://wa.me/18496523537" rel="noopener">Hablemos <span aria-hidden="true">→</span></a>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <header class="header">
+    <div class="contenedor">
+      <a class="marca" href="#inicio" aria-label="Truth Frame Studio, inicio">
+        <img src="/assets/logos/Logo_TFS_black_simbolo.svg" alt="" width="41" height="40">
+        <img src="/assets/logos/Logo_TFS_black_nombre.svg" alt="" width="99" height="22">
+      </a>
+      <nav class="nav" id="nav" aria-label="Principal">
+        <ul>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#portafolio">Portafolio</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <a class="idioma" href="/en/" hreflang="en" lang="en" aria-label="English version">EN</a>
+      <a class="btn btn-primario btn-hablemos" href="#contacto">Hablemos <span class="flecha" aria-hidden="true">→</span></a>
+      <button class="menu-btn" type="button" aria-controls="nav" aria-expanded="false" aria-label="Abrir menú">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <!-- Hero: una sola idea + CTA, dentro del visor del símbolo TF -->
+    <section class="hero" id="inicio" aria-labelledby="hero-titulo">
+      <div class="hero-video" aria-hidden="true">
+        <video autoplay muted loop playsinline preload="metadata" poster="/assets/video/hero-poster.jpg">
+          <source src="/assets/video/hero-loop.webm" type="video/webm">
+          <source src="/assets/video/hero-loop.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="visor" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+      <div class="hud">
+        <span class="rec" aria-hidden="true"></span>
+        <span aria-hidden="true">REC</span>
+        <span class="timecode" aria-hidden="true">00:00:00:00</span>
+        <button class="hud-pausa" type="button" aria-label="Pausar video de fondo" aria-pressed="false">
+          <svg class="i-pausa" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><rect x="2" y="1" width="3.5" height="12" rx="1"/><rect x="8.5" y="1" width="3.5" height="12" rx="1"/></svg>
+          <svg class="i-play" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M3 1.5v11a.5.5 0 0 0 .76.43l9-5.5a.5.5 0 0 0 0-.86l-9-5.5A.5.5 0 0 0 3 1.5z"/></svg>
+        </button>
+      </div>
+      <div class="hero-texto">
+        <div class="contenedor">
+          <p class="claim">Estrategia + producción</p>
+          <h1 class="h1" id="hero-titulo">Contenido que transforma audiencias.</h1>
+          <p class="lead">Diseñamos la estrategia de tu canal de YouTube y producimos el contenido con rigor de televisión, para que trabaje por tu negocio las 24 horas.</p>
+          <div class="acciones">
+            <a class="btn btn-acento" href="#contacto">Hablemos del proyecto <span class="flecha" aria-hidden="true">→</span></a>
+            <a class="btn btn-claro" href="#portafolio">Ver portafolio</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="credenciales" aria-label="Trayectoria">
+      <div class="contenedor">
+        <ul>
+          <li><strong>30 años</strong><span>en televisión, comerciales, videoclips y documentales</span></li>
+          <li><strong>1M</strong><span>de suscriptores sumados en los canales que hemos hecho crecer</span></li>
+          <li><strong>0 → 500K</strong><span>canales llevados desde cero hasta 100.000 y 500.000 suscriptores en Colombia, EE. UU. y República Dominicana</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="seccion" aria-labelledby="tesis-titulo">
+      <div class="contenedor tesis">
+        <h2 class="h2" id="tesis-titulo">YouTube no es para subir videos.</h2>
+        <div class="prosa lead">
+          <p>Las redes sociales te dan visibilidad por 24 horas. YouTube es el segundo buscador del mundo, y un buen video sigue trayendo clientes años después de publicado.</p>
+          <p>Por eso no hacemos contenido para llenar un calendario. Diseñamos un sistema a la medida de tu negocio: qué decir, cómo empaquetarlo para que lo vean y hacia dónde llevar a quien lo ve. Nada de plantillas ni de depender de AdSense.</p>
+          <p class="secundario">Trabajamos con corporaciones, marcas personales, organizaciones, ministerios y expertos.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Servicios -->
+    <section class="seccion" id="servicios" aria-labelledby="servicios-titulo" style="padding-top:0">
+      <div class="contenedor">
+        <div class="cabecera">
+          <h2 class="h2" id="servicios-titulo">Servicios</h2>
+          <p class="lead">Cada proyecto se diseña a la medida. Estos son los puntos de partida.</p>
+        </div>
+
+        <div class="servicios">
+          <details class="servicio">
+            <summary>
+              <span class="num">01</span>
+              <span class="nombre-col"><span class="nombre">Auditoría y reestructuración de canales</span>
+                <span class="para">Para canales que llevan tiempo publicando y no crecen, no monetizan o no venden.</span></span>
+              <span class="dato"><small>Tiempo</small>2 semanas</span>
+              <span class="dato"><small>Inversión</small><b>Desde USD 2.000</b></span>
+              <span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span>
+            </summary>
+            <div class="detalle">
+              <div>
+                <h4>El diagnóstico</h4>
+                <p>Revisamos las métricas que de verdad explican el rendimiento: la tasa de clics de las impresiones, la retención en los primeros 30 segundos y los videos que se salen del promedio. Así encontramos dónde se rompe el empaque y dónde se va la audiencia.</p>
+                <h4>El plan maestro</h4>
+                <p>Te entregamos un plan de reestructuración para reactivar el tráfico, mejorar títulos y miniaturas con pruebas A/B/C y alinear el contenido con un embudo comercial.</p>
+              </div>
+              <div class="col-b">
+                <table class="tabla">
+                  <thead><tr><th scope="col">Fase</th><th scope="col">Tiempo</th><th scope="col">Inversión</th></tr></thead>
+                  <tbody>
+                    <tr><td>Plan maestro</td><td>2 semanas</td><td>Desde USD 2.000, pago único</td></tr>
+                    <tr><td>Implementación</td><td>3 meses</td><td>Desde USD 4.000</td></tr>
+                  </tbody>
+                </table>
+                <p class="nota">Si después nos encargas la implementación, lo que invertiste en el plan maestro se abona al proyecto.</p>
+              </div>
+            </div>
+          </details>
+
+          <details class="servicio">
+            <summary>
+              <span class="num">02</span>
+              <span class="nombre-col"><span class="nombre">Incubadora de autoridad</span>
+                <span class="para">Canales desde cero, para líderes y marcas con dominio real de su sector.</span></span>
+              <span class="dato"><small>Tiempo</small>4 semanas</span>
+              <span class="dato"><small>Inversión</small><b>Desde USD 4.000</b></span>
+              <span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span>
+            </summary>
+            <div class="detalle">
+              <div>
+                <h4>El proceso</h4>
+                <p>Diseñamos la arquitectura completa del canal, definimos el subnicho exacto y el modelo de negocio, para que YouTube funcione como un embudo de ventas.</p>
+                <h4>Lo que recibes</h4>
+                <ul class="lista">
+                  <li>El canal creado y optimizado.</li>
+                  <li>El video de presentación, producido y editado por nosotros.</li>
+                  <li>10 guiones listos para grabar, con tu equipo o con el nuestro.</li>
+                </ul>
+              </div>
+              <div class="col-b">
+                <h4>Antes de empezar</h4>
+                <p>Todo proyecto inicia con una entrevista de viabilidad. Trabajamos con personas que tienen experiencia y autoridad real en su tema; si el conocimiento no es genuino o el modelo no es sostenible, preferimos no tomar el proyecto.</p>
+                <p class="nota">Paquete estratégico integral: 4 semanas, desde USD 4.000, pago único.</p>
+              </div>
+            </div>
+          </details>
+
+          <details class="servicio">
+            <summary>
+              <span class="num">03</span>
+              <span class="nombre-col"><span class="nombre">Incubadora de oferta high-ticket</span>
+                <span class="para">Para quien quiere lanzar un canal pero todavía no tiene un producto de alto valor que vender.</span></span>
+              <span class="dato"><small>Tiempo</small>2 a 3 semanas</span>
+              <span class="dato"><small>Inversión</small><b>Desde USD 2.000</b></span>
+              <span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span>
+            </summary>
+            <div class="detalle">
+              <div>
+                <h4>Una audiencia sin una oferta clara es solo entretenimiento</h4>
+                <p>En una consultoría intensiva identificamos lo que tu mercado necesita y diseñamos contigo un producto o servicio de alto valor que le dé peso comercial a tu marca.</p>
+              </div>
+              <div class="col-b">
+                <h4>Lo que recibes</h4>
+                <ul class="lista">
+                  <li>Una oferta high-ticket estructurada y validada.</li>
+                  <li>La arquitectura del embudo, para que cada visualización tenga un camino claro hacia la venta.</li>
+                </ul>
+              </div>
+            </div>
+          </details>
+
+          <details class="servicio">
+            <summary>
+              <span class="num">04</span>
+              <span class="nombre-col"><span class="nombre">Producción audiovisual estratégica</span>
+                <span class="para">Para marcas y ejecutivos que necesitan calidad de cine pensada para retener a la audiencia.</span></span>
+              <span class="dato"><small>Tiempo</small>Por sprint o proyecto</span>
+              <span class="dato"><small>Inversión</small><b>Desde USD 2.000</b></span>
+              <span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span>
+            </summary>
+            <div class="detalle">
+              <p class="ancho">Cotizamos por proyecto o por sprint (un bloque de grabación), para que todo el canal mantenga la misma línea visual.</p>
+              <div class="tipos">
+                <div class="tipo">
+                  <span class="letra">Tipo A</span>
+                  <h4>Estudio y agilidad</h4>
+                  <p>Formatos de volumen: series, podcasts y entrevistas. Grabación en bloque.</p>
+                  <p class="dato"><small>Inversión</small><b>Desde USD 2.500</b> por sprint de 4 a 5 contenidos</p>
+                </div>
+                <div class="tipo">
+                  <span class="letra">Tipo B</span>
+                  <h4>Formatos extensos y masterclases</h4>
+                  <p>Narrativa compleja para construir autoridad y respaldar ofertas high-ticket. Más preproducción y diseño de set.</p>
+                  <p class="dato"><small>Inversión</small><b>Desde USD 2.000</b> por proyecto</p>
+                </div>
+                <div class="tipo">
+                  <span class="letra">Tipo C</span>
+                  <h4>Documental y premium</h4>
+                  <p>Alta cinematografía, postproducción avanzada y diseño sonoro para diferenciarte por completo.</p>
+                  <p class="dato"><small>Inversión</small><b>Desde USD 8.000</b> por proyecto</p>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <details class="servicio">
+            <summary>
+              <span class="num">05</span>
+              <span class="nombre-col"><span class="nombre">Growth partner: agencia 360</span>
+                <span class="para">Para CEOs y directivos que quieren delegar su ecosistema de contenido completo.</span></span>
+              <span class="dato"><small>Tiempo</small>Desde 4 semanas</span>
+              <span class="dato"><small>Inversión</small><b>Desde USD 4.000</b></span>
+              <span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span>
+            </summary>
+            <div class="detalle">
+              <p class="ancho">Nos convertimos en tu brazo estratégico. La auditoría es la base, y a partir de ella hay dos formas de trabajar.</p>
+              <div>
+                <h4>Implementación estratégica</h4>
+                <p class="secundario">Diseñamos el sistema. Tu equipo lo ejecuta.</p>
+                <ul class="lista" style="margin-top:12px">
+                  <li>Objetivos, prioridades e indicadores.</li>
+                  <li>Plan de implementación a 90 días.</li>
+                  <li>Arquitectura de contenidos, formatos y calendario editorial.</li>
+                  <li>Flujos de trabajo, roles, plantillas y guías.</li>
+                  <li>Sesiones de trabajo y capacitación con tu equipo.</li>
+                </ul>
+                <p class="nota">4 a 6 semanas · desde USD 4.000, pago único.</p>
+              </div>
+              <div class="col-b">
+                <h4>Implementación integral</h4>
+                <p class="secundario">Diseñamos el sistema y lo ponemos en marcha contigo.</p>
+                <ul class="lista" style="margin-top:12px">
+                  <li>Dirección estratégica y creativa.</li>
+                  <li>Planificación mensual de contenidos y campañas.</li>
+                  <li>Preproducción, producción y postproducción.</li>
+                  <li>Acompañamiento en publicación y lanzamiento.</li>
+                  <li>Revisión mensual de resultados y ajustes.</li>
+                </ul>
+                <p class="nota">Compromiso inicial de 3 meses · desde USD 4.000 al mes.</p>
+              </div>
+            </div>
+          </details>
+        </div>
+        <p class="aviso-precios">Los valores son de referencia. La propuesta final depende del alcance, y viajes, locaciones, talento y otros costos externos se cotizan aparte.</p>
+      </div>
+    </section>
+
+    <!-- Método -->
+    <section class="seccion seccion-oscura" id="metodo" aria-labelledby="metodo-titulo">
+      <div class="contenedor">
+        <div class="cabecera">
+          <h2 class="h2" id="metodo-titulo">Primero la idea. Después la cámara.</h2>
+          <p class="lead">No adivinamos qué retiene a la audiencia: lo diseñamos desde el guion, lo esculpimos en el rodaje y lo perfeccionamos en la edición. Cuando revisamos un canal, trabajamos sobre cuatro frentes.</p>
+        </div>
+        <div class="pilares">
+          <div class="pilar">
+            <h3 class="h3">Un empaque que gana el clic</h3>
+            <p>Títulos que plantean una pregunta y miniaturas probadas en versiones A, B y C. Si nadie hace clic, el mejor video no existe.</p>
+          </div>
+          <div class="pilar">
+            <h3 class="h3">Un gancho en los primeros segundos</h3>
+            <p>Abrimos con la frase más fuerte del contenido para que nadie se vaya en el primer minuto, sin cambiar la esencia del formato.</p>
+          </div>
+          <div class="pilar">
+            <h3 class="h3">Videos cortos que llevan al completo</h3>
+            <p>Rescatamos los mejores momentos del archivo en Shorts y Reels pensados para traer gente nueva a los episodios largos.</p>
+          </div>
+          <div class="pilar">
+            <h3 class="h3">Una audiencia que es tuya</h3>
+            <p>Depender solo de YouTube es construir en terreno alquilado. Diseñamos formas de convertir espectadores en contactos propios.</p>
+          </div>
+        </div>
+
+        <div class="cita">
+          <figure>
+            <img src="/assets/fotos/diana-800.webp" srcset="/assets/fotos/diana-800.webp 800w, /assets/fotos/diana-1600.webp 1600w" sizes="(max-width: 860px) 100vw, 560px" alt="Diana Cardona trabaja la estrategia de un canal sobre su mesa, con notas y una cámara al lado." width="800" height="449" loading="lazy">
+          </figure>
+          <div>
+            <blockquote>“Un video exitoso no se salva en la sala de edición si no nace de una gran idea.”</blockquote>
+            <p class="firma"><b>Diana Cardona</b>, directora de estrategia y producción</p>
+          </div>
+        </div>
+
+        <div class="proceso">
+          <h3 class="h3">Así empezamos</h3>
+          <ol>
+            <li><h3 class="h3">Llamada de alineación</h3><p>Conversamos sobre tu negocio, tu canal y lo que quieres lograr.</p></li>
+            <li><h3 class="h3">Diagnóstico y propuesta</h3><p>Definimos qué nivel de intervención necesita tu marca y te enviamos una propuesta a la medida.</p></li>
+            <li><h3 class="h3">Kick-off</h3><p>Arrancamos la estrategia y la producción con un calendario claro.</p></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Logística -->
+    <section class="seccion" aria-labelledby="logistica-titulo">
+      <div class="contenedor logistica">
+        <figure>
+          <img src="/assets/fotos/diana-estudio-800.webp" srcset="/assets/fotos/diana-estudio-800.webp 800w, /assets/fotos/diana-estudio-1600.webp 1536w" sizes="(max-width: 860px) 100vw, 620px" alt="Set de grabación de Truth Frame Studio con luces de estudio y fondo negro." width="800" height="533" loading="lazy">
+        </figure>
+        <div>
+          <h2 class="h2" id="logistica-titulo">Grabamos donde tu agenda lo permita.</h2>
+          <p class="lead secundario" style="margin-top:16px">Nuestra operación está pensada para el ritmo de un ejecutivo.</p>
+          <div class="modos">
+            <div class="modo">
+              <h3 class="h3">Vienes a Santo Domingo</h3>
+              <p>Grabamos temporadas completas en bloque. Diseñamos retiros de producción y locaciones premium en República Dominicana.</p>
+            </div>
+            <div class="modo">
+              <h3 class="h3">Vamos a donde estés</h3>
+              <p>Enviamos un equipo de rodaje a tus oficinas o a cualquier locación del mundo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portafolio -->
+    <section class="seccion" id="portafolio" aria-labelledby="portafolio-titulo" style="padding-top:0">
+      <div class="contenedor">
+        <div class="cabecera">
+          <h2 class="h2" id="portafolio-titulo">Portafolio</h2>
+          <p class="lead">Series, podcasts, conciertos y conferencias que hemos producido.</p>
+        </div>
+        <div class="filtros" role="group" aria-label="Filtrar portafolio">
+          <button class="filtro" type="button" data-cat="todo" aria-pressed="true">Todo</button>
+          <button class="filtro" type="button" data-cat="series" aria-pressed="false">Series</button>
+          <button class="filtro" type="button" data-cat="podcast" aria-pressed="false">Podcasts</button>
+          <button class="filtro" type="button" data-cat="conciertos" aria-pressed="false">Conciertos</button>
+          <button class="filtro" type="button" data-cat="conferencias" aria-pressed="false">Conferencias</button>
+        </div>
+        <ul class="obras">
+          <li class="obra" data-cat="podcast">
+            <button class="pantalla" type="button" data-video="5GHGWAJaAxw" aria-label="Reproducir: Entendiendo Los Tiempos">
+              <img src="/assets/portafolio/elt.webp" alt="" width="640" height="360" loading="lazy"><span class="play"><svg viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M3 1.5v11a.5.5 0 0 0 .76.43l9-5.5a.5.5 0 0 0 0-.86l-9-5.5A.5.5 0 0 0 3 1.5z"/></svg></span>
+            </button>
+            <h3>Entendiendo Los Tiempos</h3><p>Podcast con Eduardo Saladín</p>
+          </li>
+          <li class="obra" data-cat="series">
+            <button class="pantalla" type="button" data-lista="PL6jcwFtxp4iZb8sfb21uWLwpYIPzXkkD6" aria-label="Reproducir: La Vid">
+              <img src="/assets/portafolio/la-vid.webp" alt="" width="640" height="360" loading="lazy"><span class="play"><svg viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M3 1.5v11a.5.5 0 0 0 .76.43l9-5.5a.5.5 0 0 0 0-.86l-9-5.5A.5.5 0 0 0 3 1.5z"/></svg></span>
+            </button>
+            <h3>La Vid</h3><p>Serie piloto para el lanzamiento de Eternidad+</p>
+          </li>
+          <li class="obra" data-cat="conciertos">
+            <button class="pantalla" type="button" data-lista="PLJ_IN2FEkxPme2n4PoaKsbYncWxFP_fv6" aria-label="Reproducir: Filarmónica Appassionato en el Konzerthaus de Berlín">
+              <img src="/assets/portafolio/appassionato.webp" alt="" width="640" height="360" loading="lazy"><span class="play"><svg viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M3 1.5v11a.5.5 0 0 0 .76.43l9-5.5a.5.5 0 0 0 0-.86l-9-5.5A.5.5 0 0 0 3 1.5z"/></svg></span>
+            </button>
+            <h3>Filarmónica Appassionato</h3><p>Concierto en el Konzerthaus de Berlín</p>
+          </li>
+          <li class="obra" data-cat="series">
+            <button class="pantalla" type="button" data-lista="PLWFthV4L0yElVWsdjOTa6VrF3GKQoaLEq" aria-label="Reproducir: El poder de la verdad">
+              <img src="/assets/portafolio/poder-verdad.webp" alt="" width="640" height="360" loading="lazy"><span class="play"><svg viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M3 1.5v11a.5.5 0 0 0 .76.43l9-5.5a.5.5 0 0 0 0-.86l-9-5.5A.5.5 0 0 0 3 1.5z"/></svg></span>
+            </button>
+            <h3>El poder de la verdad</h3><p>Serie para Aviva Nuestros Corazones</p>
+          </li>
+          <li class="obra" data-cat="podcast">
+            <button class="pantalla" type="button" data-lista="PL6jcwFtxp4iZkM1MROPpWzJIiAlQQVpwi" aria-label="Reproducir: Contracultura">
+              <img src="/assets/portafolio/contracultura.webp" alt="" width="640" height="360" loading="lazy"><span class="play"><svg viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M3 1.5v11a.5.5 0 0 0 .76.43l9-5.5a.5.5 0 0 0 0-.86l-9-5.5A.5.5 0 0 0 3 1.5z"/></svg></span>
+            </button>
+            <h3>Contracultura</h3><p>Podcast con Nicole Guerra para Eternidad+</p>
+          </li>
+          <li class="obra" data-cat="conferencias">
+            <button class="pantalla" type="button" data-lista="PLK_76DdpUMCTMwhBkUm3wDHXPuwErnaaa" aria-label="Reproducir: BITE Talks">
+              <img src="/assets/portafolio/bite.webp" alt="" width="640" height="360" loading="lazy"><span class="play"><svg viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M3 1.5v11a.5.5 0 0 0 .76.43l9-5.5a.5.5 0 0 0 0-.86l-9-5.5A.5.5 0 0 0 3 1.5z"/></svg></span>
+            </button>
+            <h3>BITE Talks</h3><p>Conferencias en Santo Domingo y Guatemala</p>
+          </li>
+          <li class="obra" data-cat="series">
+            <button class="pantalla" type="button" data-lista="PL6jcwFtxp4ibSFCaA_z8TjkZa3rJCnGaV" aria-label="Reproducir: Historia de la Iglesia">
+              <img src="/assets/portafolio/historia-iglesia.webp" alt="" width="640" height="360" loading="lazy"><span class="play"><svg viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M3 1.5v11a.5.5 0 0 0 .76.43l9-5.5a.5.5 0 0 0 0-.86l-9-5.5A.5.5 0 0 0 3 1.5z"/></svg></span>
+            </button>
+            <h3>Historia de la Iglesia</h3><p>Serie grabada en Villa de Leyva, Colombia</p>
+          </li>
+          <li class="obra" data-cat="conciertos">
+            <button class="pantalla" type="button" data-video="emUu9ugSvYo" aria-label="Reproducir: Grande es tu fidelidad">
+              <img src="/assets/portafolio/fidelidad.webp" alt="" width="640" height="360" loading="lazy"><span class="play"><svg viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M3 1.5v11a.5.5 0 0 0 .76.43l9-5.5a.5.5 0 0 0 0-.86l-9-5.5A.5.5 0 0 0 3 1.5z"/></svg></span>
+            </button>
+            <h3>Grande es tu fidelidad</h3><p>Jonathan y Sarah Jerez en concierto</p>
+          </li>
+          <li class="obra" data-cat="podcast">
+            <button class="pantalla" type="button" data-lista="PL6jcwFtxp4iYSr-5Dfqu4PuUXeVI1SVvc" aria-label="Reproducir: Hombres de verdad">
+              <img src="/assets/portafolio/hombres-verdad.webp" alt="" width="640" height="360" loading="lazy"><span class="play"><svg viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M3 1.5v11a.5.5 0 0 0 .76.43l9-5.5a.5.5 0 0 0 0-.86l-9-5.5A.5.5 0 0 0 3 1.5z"/></svg></span>
+            </button>
+            <h3>Hombres de verdad</h3><p>Con Marcos Peña y José Agüero</p>
+          </li>
+          <li class="obra" data-cat="series">
+            <button class="pantalla" type="button" data-lista="PLWFthV4L0yEljDClyU5EN_x7OuL4yEETa" aria-label="Reproducir: Testimonios Mujer Verdadera">
+              <img src="/assets/portafolio/testimonios-anc.webp" alt="" width="640" height="360" loading="lazy"><span class="play"><svg viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M3 1.5v11a.5.5 0 0 0 .76.43l9-5.5a.5.5 0 0 0 0-.86l-9-5.5A.5.5 0 0 0 3 1.5z"/></svg></span>
+            </button>
+            <h3>Testimonios Mujer Verdadera</h3><p>Serie para Aviva Nuestros Corazones</p>
+          </li>
+          <li class="obra" data-cat="conferencias">
+            <button class="pantalla" type="button" data-video="SAhzWi62XSk" aria-label="Reproducir: Convención ACSI 2025">
+              <img src="/assets/portafolio/acsi-2025.webp" alt="" width="640" height="360" loading="lazy"><span class="play"><svg viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M3 1.5v11a.5.5 0 0 0 .76.43l9-5.5a.5.5 0 0 0 0-.86l-9-5.5A.5.5 0 0 0 3 1.5z"/></svg></span>
+            </button>
+            <h3>Convención ACSI 2025</h3><p>Cobertura para ACSI Caribe</p>
+          </li>
+          <li class="obra" data-cat="conciertos">
+            <button class="pantalla" type="button" data-video="7gZhmV6Wtn4" aria-label="Reproducir: Concierto Redención">
+              <img src="/assets/portafolio/redencion.webp" alt="" width="640" height="360" loading="lazy"><span class="play"><svg viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M3 1.5v11a.5.5 0 0 0 .76.43l9-5.5a.5.5 0 0 0 0-.86l-9-5.5A.5.5 0 0 0 3 1.5z"/></svg></span>
+            </button>
+            <h3>Concierto Redención</h3><p>Especial de Navidad para recaudar fondos</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Clientes -->
+    <section class="seccion seccion-editorial" id="clientes" aria-labelledby="clientes-titulo">
+      <div class="contenedor">
+        <div class="cabecera">
+          <h2 class="h2" id="clientes-titulo">Han confiado en nosotros</h2>
+        </div>
+        <ul class="clientes">
+          <li>Eternidad+<small>Plataforma de contenido</small></li>
+          <li>Aviva Nuestros Corazones<small>Ministerio internacional</small></li>
+          <li>Entendiendo Los Tiempos<small>Podcast</small></li>
+          <li>B&amp;H Español<small>Editorial</small></li>
+          <li>Editorial Portavoz<small>Editorial</small></li>
+          <li>Filarmónica Appassionato<small>Orquesta</small></li>
+          <li>BITE<small>Conferencias</small></li>
+          <li>ACSI Caribe<small>Asociación educativa</small></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Nosotros -->
+    <section class="seccion" id="nosotros" aria-labelledby="nosotros-titulo">
+      <div class="contenedor">
+        <div class="cabecera">
+          <h2 class="h2" id="nosotros-titulo">La autoridad detrás del lente</h2>
+        </div>
+        <figure class="nosotros-foto">
+          <img src="/assets/fotos/andres-diana-800.webp" srcset="/assets/fotos/andres-diana-800.webp 800w, /assets/fotos/andres-diana-1600.webp 1600w" sizes="(max-width: 1240px) 100vw, 1160px" alt="Diana Cardona y Andrés Figueroa sentados en su estudio, rodeados de luces de grabación." width="800" height="450" loading="lazy">
+        </figure>
+        <div class="nosotros">
+          <div class="prosa lead">
+            <p>No somos una agencia de marketing que intenta hacer videos. Somos realizadores audiovisuales y estrategas digitales que entendieron cómo funciona la retención en YouTube.</p>
+            <p>Venimos del rigor de la televisión. En casi 30 años hemos concebido, dirigido y producido miles de piezas, desde comerciales y videoclips hasta documentales para ONG internacionales. Y hemos estado detrás del crecimiento de canales en Colombia, Estados Unidos y República Dominicana.</p>
+            <p class="secundario">Operamos desde Santo Domingo, con estructura corporativa y legal en República Dominicana.</p>
+          </div>
+          <div>
+            <div class="personas">
+              <div class="persona">
+                <img src="/assets/fotos/diana-estudio-800.webp" alt="" width="96" height="96" loading="lazy" style="object-position: 50% 22%">
+                <div>
+                  <h3 class="h3">Diana Cardona</h3>
+                  <p class="rol">Dirección de estrategia y producción</p>
+                  <p>Casi 30 años en el audiovisual, con especialidad en postproducción. Su fuerte es la ideación: encontrar el ángulo, estructurar el mensaje y diseñar el gancho antes de encender la cámara.</p>
+                </div>
+              </div>
+              <div class="persona">
+                <img src="/assets/fotos/andres-800.webp" alt="" width="96" height="96" loading="lazy" style="object-position: 54% 30%">
+                <div>
+                  <h3 class="h3">Andrés Figueroa</h3>
+                  <p class="rol">Dirección y realización</p>
+                  <p>Realizador con formación en televisión. Dirige los rodajes y cuida que cada pieza tenga el nivel técnico que exige la autoridad del cliente.</p>
+                </div>
+              </div>
+            </div>
+            <figure class="placas">
+              <img src="/assets/fotos/andres-placas-800.webp" alt="Andrés Figueroa con tres placas de YouTube por 100.000 suscriptores, entre ellas las de Entendiendo Los Tiempos y Eternidad Plus." width="800" height="800" loading="lazy">
+              <figcaption>Placas de YouTube de canales en los que hemos trabajado.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="seccion seccion-oscura" id="contacto" aria-labelledby="contacto-titulo">
+      <div class="contenedor contacto">
+        <div>
+          <h2 class="h2" id="contacto-titulo">¿Listo para construir autoridad real?</h2>
+          <p class="lead">Cuéntanos de tu proyecto y agendamos una llamada de alineación. Te respondemos por WhatsApp.</p>
+          <div class="directo">
+            <span>Escríbenos directo</span>
+            <a href="https://wa.me/18496523537" rel="noopener">WhatsApp +1 849 652 3537</a>
+            <span>Santo Domingo, República Dominicana</span>
+          </div>
+        </div>
+        <form class="form" id="form-contacto" novalidate>
+          <div class="dos">
+            <div class="campo">
+              <label for="f-nombre">Nombre</label>
+              <input id="f-nombre" name="nombre" autocomplete="name" required aria-describedby="e-nombre">
+              <p class="error" id="e-nombre">Escribe tu nombre.</p>
+            </div>
+            <div class="campo">
+              <label for="f-org">Empresa u organización <span>(opcional)</span></label>
+              <input id="f-org" name="organizacion" autocomplete="organization">
+            </div>
+          </div>
+          <div class="campo">
+            <label for="f-servicio">¿Qué necesitas?</label>
+            <select id="f-servicio" name="servicio" required aria-describedby="e-servicio">
+              <option value="">Elige una opción</option>
+              <option>Auditoría de mi canal</option>
+              <option>Crear un canal desde cero</option>
+              <option>Diseñar una oferta high-ticket</option>
+              <option>Producción audiovisual</option>
+              <option>Growth partner (agencia 360)</option>
+              <option>Todavía no lo sé</option>
+            </select>
+            <p class="error" id="e-servicio">Elige una opción.</p>
+          </div>
+          <div class="campo">
+            <label for="f-canal">Enlace a tu canal <span>(si ya tienes)</span></label>
+            <input id="f-canal" name="canal" type="url" inputmode="url" placeholder="https://youtube.com/@tucanal">
+          </div>
+          <div class="campo">
+            <label for="f-mensaje">Cuéntanos más <span>(opcional)</span></label>
+            <textarea id="f-mensaje" name="mensaje"></textarea>
+          </div>
+          <button class="btn btn-primario" type="submit">Enviar por WhatsApp <span class="flecha" aria-hidden="true">→</span></button>
+          <p class="pie">Se abrirá WhatsApp con tu mensaje listo para enviar.</p>
+        </form>
+      </div>
+    </section>
   </main>
+
+  <footer class="footer">
+    <div class="contenedor">
+      <div class="footer-top">
+        <img src="/assets/logos/Logo_TFS_white_1.svg" alt="Truth Frame Studio" width="240" height="238" loading="lazy">
+        <nav aria-label="Pie de página">
+          <ul>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#portafolio">Portafolio</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="/en/" hreflang="en" lang="en">English</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p class="claim">Visión · Producción · Impacto</p>
+        <p>© <span id="anio">2026</span> Truth Frame Studio · Santo Domingo, República Dominicana</p>
+      </div>
+    </div>
+  </footer>
+
+  <a class="flotante oculto" href="https://wa.me/18496523537" rel="noopener" aria-label="Escríbenos por WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.02c-.24.68-1.42 1.3-1.95 1.35-.5.05-1.13.07-1.83-.12-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3s.75-2.13 1.02-2.42c.26-.29.58-.36.77-.36h.55c.18 0 .42-.07.65.5.24.57.8 1.97.87 2.11.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.17-.3.37-.43.5-.14.14-.29.3-.13.59.17.29.74 1.21 1.58 1.96 1.09.97 2 1.27 2.29 1.41.29.14.46.12.63-.07.17-.19.72-.84.92-1.13.19-.29.38-.24.65-.14.26.1 1.67.79 1.96.93.29.14.48.21.55.33.07.12.07.68-.17 1.36z"/></svg>
+    <span>WhatsApp</span>
+  </a>
+
+  <script src="/js/site.js" defer></script>
 </body>
 </html>
