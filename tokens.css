@@ -1,0 +1,29 @@
+/* Truth Frame Studio — tokens del Brand Kit Definitivo (ago-2026).
+   Coral = acción. Nunca decoración. Regla 80 / 15 / 5. */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap");
+
+:root {
+  /* Color */
+  --tfs-blanco: #FFFFFF;     /* fondo principal */
+  --tfs-charcoal: #494949;   /* oscuro de marca, texto, autoridad */
+  --tfs-coral: #F24E55;      /* play, CTA, activo, progreso, foco */
+  --tfs-editorial: #EAE8E4;  /* casos, notas, testimonios */
+  --tfs-negro: #000000;      /* técnico; texto sobre coral */
+
+  --tfs-texto: var(--tfs-charcoal);
+  --tfs-fondo: var(--tfs-blanco);
+  --tfs-foco: var(--tfs-coral);
+
+  /* Tipografía — Inter para todo lo que se lee */
+  --tfs-fuente: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --tfs-h1: clamp(2.75rem, 5vw, 4rem);      /* 44-64 px, ExtraBold */
+  --tfs-h1-lh: 1.04;
+  --tfs-h2: clamp(1.75rem, 3vw, 2.25rem);   /* 28-36 px, SemiBold */
+  --tfs-h2-lh: 1.15;
+  --tfs-body: clamp(1rem, 1.2vw, 1.25rem);  /* 16-20 px, Regular */
+  --tfs-body-lh: 1.55;
+  --tfs-caption: 0.8125rem;                 /* 12-14 px, Medium */
+  --tfs-claim-tracking: 0.3em;              /* VISIÓN · PRODUCCIÓN · IMPACTO */
+}
