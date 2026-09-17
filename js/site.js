@@ -3,65 +3,140 @@
   "use strict";
 
   var WHATSAPP = "18496523537";
-  var en = document.documentElement.lang === "en";
+  var raiz = document.documentElement;
+  var en = raiz.lang === "en";
   var t = en ? {
-    menuAbrir: "Open menu", menuCerrar: "Close menu",
     pausar: "Pause background video", reanudar: "Play background video",
-    obligatorio: "This field is required.",
     saludo: "Hi Truth Frame Studio! I'm ",
-    de: " from ", interes: "I'm interested in: ", fin: ""
+    de: " from ", interes: "I'm interested in: ", canal: "Channel: "
   } : {
-    menuAbrir: "Abrir menú", menuCerrar: "Cerrar menú",
     pausar: "Pausar video de fondo", reanudar: "Reproducir video de fondo",
-    obligatorio: "Este campo es obligatorio.",
     saludo: "¡Hola, Truth Frame Studio! Soy ",
-    de: ", de ", interes: "Me interesa: ", fin: ""
+    de: ", de ", interes: "Me interesa: ", canal: "Canal: "
   };
   var reducir = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var $ = function (sel, ctx) { return (ctx || document).querySelector(sel); };
+  var $$ = function (sel, ctx) { return Array.prototype.slice.call((ctx || document).querySelectorAll(sel)); };
 
-  /* Header: borde al hacer scroll y menú móvil */
-  var header = document.querySelector(".header");
-  var nav = document.getElementById("nav");
-  var menuBtn = document.querySelector(".menu-btn");
+  /* ================= Pestañas =================
+     Cada panel es una "página" con su propia URL (#servicios). Los enlaces internos
+     cambian de panel sin recargar; atrás/adelante del navegador funcionan y
+     recuerdan dónde ibas. Sin JS, el sitio se ve como una sola página larga. */
+  var header = $(".header");
+  var paneles = $$(".panel");
+  var ids = paneles.map(function (p) { return p.id; });
+  var enlacesNav = $$('.nav a, .pestanas a');
+  var indicador = $(".nav .indicador");
+  var scrolls = {};
+  var actual = raiz.getAttribute("data-panel") || "inicio";
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+
+  function panelDe(hash) {
+    var id = (hash || "").replace(/^#/, "");
+    if (!id) return { panel: "inicio" };
+    if (ids.indexOf(id) > -1) return { panel: id };
+    var el = document.getElementById(id);
+    var p = el && el.closest(".panel");
+    return p ? { panel: p.id, destino: el } : null;
+  }
+
+  function moverIndicador() {
+    if (!indicador) return;
+    var a = $('.nav a[aria-current="page"]');
+    if (!a || !a.offsetWidth) { indicador.style.opacity = "0"; return; }
+    indicador.style.width = a.offsetWidth + "px";
+    indicador.style.transform = "translateX(" + a.offsetLeft + "px)";
+    indicador.style.opacity = "1";
+  }
+
+  function marcarNav(id) {
+    enlacesNav.forEach(function (a) {
+      if (a.getAttribute("href") === "#" + id) a.setAttribute("aria-current", "page");
+      else a.removeAttribute("aria-current");
+    });
+    moverIndicador();
+  }
+
+  function aplicar(id, destino, modo) {
+    raiz.setAttribute("data-panel", id);
+    var p = document.getElementById(id);
+    document.title = p.getAttribute("data-titulo") || document.title;
+    marcarNav(id);
+    if (destino) {
+      destino.scrollIntoView({ block: "start" });
+    } else if (modo === "restaurar") {
+      window.scrollTo(0, scrolls[id] || 0);
+    } else {
+      window.scrollTo(0, 0);
+    }
+    actualizarFlotante();
+  }
+
+  // Transición animada entre estados; si el navegador la aborta, el cambio igual se aplica
+  function transicion(hacer) {
+    if (!document.startViewTransition || reducir) return hacer();
+    var vt = document.startViewTransition(hacer);
+    vt.finished.catch(function () {});
+    vt.ready.catch(function () {});
+  }
+
+  function ir(id, destino, modo, enfocar, despues) {
+    var cambia = id !== actual;
+    if (cambia) scrolls[actual] = window.scrollY;
+    actual = id;
+    var hacer = function () {
+      aplicar(id, destino, modo);
+      // Lector de pantalla: el foco pasa al contenido nuevo
+      if (cambia && enfocar) {
+        var h = destino || $("#" + id + " h1, #" + id + " h2");
+        if (h) {
+          if (!h.hasAttribute("tabindex")) h.setAttribute("tabindex", "-1");
+          h.focus({ preventScroll: true });
+        }
+      }
+      if (despues) despues();
+    };
+    if (cambia) transicion(hacer);
+    else hacer();
+  }
+
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest('a[href^="#"]');
+    if (!a || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || e.button > 0) return;
+    var hash = a.getAttribute("href");
+    if (hash === "#contenido") return;
+    var r = panelDe(hash);
+    if (!r) return;
+    e.preventDefault();
+    var url = r.panel === "inicio" && !r.destino ? location.pathname : hash;
+    if (location.hash !== hash) history.pushState({ panel: r.panel }, "", url);
+    // Acciones que viajan con el enlace
+    ir(r.panel, r.destino, "arriba", true, function () {
+      if (a.dataset.abrir) abrirServicio(a.dataset.abrir);
+      if (a.dataset.servicio) elegirServicio(a.dataset.servicio);
+    });
+  });
+
+  function alCambiarUrl() {
+    var r = panelDe(location.hash) || { panel: "inicio" };
+    if (r.panel !== actual || r.destino) ir(r.panel, r.destino, "restaurar", false);
+  }
+  window.addEventListener("popstate", alCambiarUrl);
+  window.addEventListener("hashchange", alCambiarUrl);  // # escrito a mano
+
+  window.addEventListener("resize", moverIndicador);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(moverIndicador);
+
+  /* Header: borde al hacer scroll */
   function alScroll() { header.classList.toggle("con-borde", window.scrollY > 8); }
   window.addEventListener("scroll", alScroll, { passive: true });
   alScroll();
 
-  function cerrarMenu() {
-    nav.classList.remove("abierto");
-    menuBtn.setAttribute("aria-expanded", "false");
-    menuBtn.setAttribute("aria-label", t.menuAbrir);
-  }
-  menuBtn.addEventListener("click", function () {
-    var abierto = nav.classList.toggle("abierto");
-    menuBtn.setAttribute("aria-expanded", String(abierto));
-    menuBtn.setAttribute("aria-label", abierto ? t.menuCerrar : t.menuAbrir);
-  });
-  nav.addEventListener("click", function (e) { if (e.target.closest("a")) cerrarMenu(); });
-  document.addEventListener("keydown", function (e) { if (e.key === "Escape") cerrarMenu(); });
-
-  /* Navegación: subrayado coral en la sección visible */
-  var enlaces = Array.prototype.slice.call(nav.querySelectorAll('a[href^="#"]'));
-  if ("IntersectionObserver" in window) {
-    var io = new IntersectionObserver(function (entradas) {
-      entradas.forEach(function (en_) {
-        if (!en_.isIntersecting) return;
-        enlaces.forEach(function (a) {
-          a.setAttribute("aria-current", a.getAttribute("href") === "#" + en_.target.id ? "true" : "false");
-        });
-      });
-    }, { rootMargin: "-45% 0px -50% 0px" });
-    enlaces.forEach(function (a) {
-      var s = document.querySelector(a.getAttribute("href"));
-      if (s) io.observe(s);
-    });
-  }
-
-  /* Hero: video, pausa y timecode */
-  var hero = document.querySelector(".hero");
-  var video = hero && hero.querySelector("video");
-  var pausa = hero && hero.querySelector(".hud-pausa");
-  var tc = hero && hero.querySelector(".timecode");
+  /* ================= Hero: video, pausa y timecode ================= */
+  var hero = $(".hero");
+  var video = hero && $("video", hero);
+  var pausa = hero && $(".hud-pausa", hero);
+  var tc = hero && $(".timecode", hero);
   function pausar(estado) {
     hero.classList.toggle("pausado", estado);
     pausa.setAttribute("aria-label", estado ? t.reanudar : t.pausar);
@@ -77,6 +152,10 @@
     pausa.addEventListener("click", function () { pausar(!hero.classList.contains("pausado")); });
     var inicio = performance.now();
     var dos = function (n) { return (n < 10 ? "0" : "") + n; };
+    var parseTc = function (txt) {
+      var p = txt.split(":").map(Number);
+      return ((p[0] * 3600 + p[1] * 60 + p[2]) * 1000) + (p[3] / 30 * 1000);
+    };
     var tick = function () {
       if (!hero.classList.contains("pausado")) {
         var ms = performance.now() - inicio;
@@ -87,51 +166,155 @@
       }
       requestAnimationFrame(tick);
     };
-    var parseTc = function (txt) {
-      var p = txt.split(":").map(Number);
-      return ((p[0] * 3600 + p[1] * 60 + p[2]) * 1000) + (p[3] / 30 * 1000);
-    };
     if (!reducir) requestAnimationFrame(tick);
   }
 
-  /* Portafolio: filtros */
-  var filtros = document.querySelectorAll(".filtro");
-  var obras = document.querySelectorAll(".obra");
-  filtros.forEach(function (f) {
-    f.addEventListener("click", function () {
-      var cat = f.dataset.cat;
-      filtros.forEach(function (x) { x.setAttribute("aria-pressed", String(x === f)); });
-      obras.forEach(function (o) { o.hidden = cat !== "todo" && o.dataset.cat !== cat; });
+  /* ================= Servicios ================= */
+  var chips = $$(".chip[data-abrir]");
+  function abrirServicio(id) {
+    var d = document.getElementById(id);
+    if (!d) return;
+    // Acordeón exclusivo también en navegadores sin <details name>
+    $$(".servicio").forEach(function (x) { if (x !== d) x.open = false; });
+    d.open = true;
+    chips.forEach(function (c) { c.setAttribute("aria-pressed", String(c.dataset.abrir === id)); });
+    requestAnimationFrame(function () {
+      d.scrollIntoView({ block: "start", behavior: reducir ? "auto" : "smooth" });
+    });
+  }
+  chips.forEach(function (c) {
+    c.setAttribute("aria-pressed", "false");
+    c.addEventListener("click", function () {
+      abrirServicio(c.dataset.abrir);
+      $("summary", document.getElementById(c.dataset.abrir)).focus({ preventScroll: true });
+    });
+  });
+  // Abrir un servicio a mano desmarca la guía
+  $$(".servicio summary").forEach(function (sm) {
+    sm.addEventListener("click", function () {
+      chips.forEach(function (c) { c.setAttribute("aria-pressed", "false"); });
     });
   });
 
-  /* Portafolio: el iframe de YouTube se carga solo al hacer clic */
-  document.querySelectorAll(".pantalla").forEach(function (b) {
-    b.addEventListener("click", function () {
-      var src = "https://www.youtube-nocookie.com/embed/" +
-        (b.dataset.lista ? "videoseries?list=" + b.dataset.lista + "&" : b.dataset.video + "?") +
-        "autoplay=1&rel=0&hl=" + (en ? "en" : "es");
-      var f = document.createElement("iframe");
-      f.src = src;
-      f.title = b.getAttribute("aria-label");
-      f.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-      f.referrerPolicy = "strict-origin-when-cross-origin";
-      f.allowFullscreen = true;
-      var cont = document.createElement("div");
-      cont.className = "pantalla";
-      cont.appendChild(f);
-      b.replaceWith(cont);
-      f.focus();
-    }, { once: true });
+  /* ================= Portafolio: filtros ================= */
+  var filtros = $$(".filtro");
+  var obrasPortafolio = $$("#portafolio .obra");
+  filtros.forEach(function (f) {
+    f.addEventListener("click", function () {
+      var cat = f.dataset.cat;
+      var hacer = function () {
+        filtros.forEach(function (x) { x.setAttribute("aria-pressed", String(x === f)); });
+        obrasPortafolio.forEach(function (o) { o.hidden = cat !== "todo" && o.dataset.cat !== cat; });
+      };
+      transicion(hacer);
+    });
   });
 
-  /* Contacto: el formulario arma el mensaje y abre WhatsApp */
-  var form = document.getElementById("form-contacto");
+  /* ================= Reproductor =================
+     El iframe de YouTube se crea solo al abrir el reproductor.
+     Anterior/siguiente recorren las piezas visibles de la misma lista. */
+  var rep = $(".reproductor");
+  var repPantalla = rep && $(".rep-pantalla", rep);
+  var lista = [];
+  var pos = 0;
+  var origen = null;
+
+  function datosDe(boton) {
+    var li = boton.closest(".obra");
+    return {
+      video: boton.dataset.video, lista: boton.dataset.lista,
+      titulo: $("h3", li).textContent, desc: $("p", li).textContent
+    };
+  }
+  function cargar() {
+    var d = datosDe(lista[pos]);
+    $(".rep-titulo", rep).textContent = d.titulo;
+    $(".rep-desc", rep).textContent = d.desc;
+    $(".rep-cuenta", rep).textContent = (pos + 1) + " / " + lista.length;
+    $(".rep-ant", rep).disabled = pos === 0;
+    $(".rep-sig", rep).disabled = pos === lista.length - 1;
+    var f = document.createElement("iframe");
+    f.src = "https://www.youtube-nocookie.com/embed/" +
+      (d.lista ? "videoseries?list=" + d.lista + "&" : d.video + "?") +
+      "autoplay=1&rel=0&hl=" + (en ? "en" : "es");
+    f.title = d.titulo;
+    f.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    f.referrerPolicy = "strict-origin-when-cross-origin";
+    f.allowFullscreen = true;
+    repPantalla.replaceChildren(f);
+  }
+  function mover(delta) {
+    var n = pos + delta;
+    if (n < 0 || n >= lista.length) return;
+    pos = n;
+    cargar();
+  }
+  if (rep && rep.showModal) {
+    document.addEventListener("click", function (e) {
+      var b = e.target.closest(".pantalla[data-video], .pantalla[data-lista]");
+      if (!b) return;
+      var ul = b.closest(".obras");
+      lista = $$(".obra:not([hidden]) .pantalla", ul);
+      pos = lista.indexOf(b);
+      origen = b;
+      cargar();
+      rep.showModal();
+      $(".rep-cerrar", rep).focus();
+    });
+    $(".rep-cerrar", rep).addEventListener("click", function () { rep.close(); });
+    $(".rep-ant", rep).addEventListener("click", function () { mover(-1); });
+    $(".rep-sig", rep).addEventListener("click", function () { mover(1); });
+    rep.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowLeft") mover(-1);
+      if (e.key === "ArrowRight") mover(1);
+    });
+    // Clic en el fondo oscuro cierra
+    rep.addEventListener("click", function (e) { if (e.target === rep) rep.close(); });
+    // Gesto: deslizar para cambiar de video en celular
+    var x0 = null;
+    rep.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+    rep.addEventListener("touchend", function (e) {
+      if (x0 === null) return;
+      var dx = e.changedTouches[0].clientX - x0;
+      if (Math.abs(dx) > 60) mover(dx < 0 ? 1 : -1);
+      x0 = null;
+    });
+    rep.addEventListener("close", function () {
+      repPantalla.replaceChildren();
+      if (origen) origen.focus({ preventScroll: true });
+    });
+  } else {
+    // Navegadores sin <dialog>: el video se reproduce en la misma tarjeta
+    $$(".pantalla").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var d = datosDe(b);
+        var f = document.createElement("iframe");
+        f.src = "https://www.youtube-nocookie.com/embed/" + (d.lista ? "videoseries?list=" + d.lista + "&" : d.video + "?") + "autoplay=1&rel=0";
+        f.title = d.titulo;
+        f.allowFullscreen = true;
+        var cont = document.createElement("div");
+        cont.className = "pantalla";
+        cont.appendChild(f);
+        b.replaceWith(cont);
+      }, { once: true });
+    });
+  }
+
+  /* ================= Contacto ================= */
+  var form = $("#form-contacto");
+  var selServicio = form && form.elements.servicio;
+  function elegirServicio(n) {
+    if (!selServicio) return;
+    selServicio.selectedIndex = Number(n);
+    var campo = selServicio.closest(".campo");
+    campo.classList.remove("invalido");
+    selServicio.setAttribute("aria-invalid", "false");
+  }
   if (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var ok = true;
-      form.querySelectorAll("[required]").forEach(function (el) {
+      $$("[required]", form).forEach(function (el) {
         var campo = el.closest(".campo");
         var vacio = !el.value.trim();
         campo.classList.toggle("invalido", vacio);
@@ -143,7 +326,7 @@
       var txt = t.saludo + d.get("nombre").trim();
       if (d.get("organizacion").trim()) txt += t.de + d.get("organizacion").trim();
       txt += ".\n\n" + t.interes + d.get("servicio") + ".";
-      if (d.get("canal").trim()) txt += "\n" + (en ? "Channel: " : "Canal: ") + d.get("canal").trim();
+      if (d.get("canal").trim()) txt += "\n" + t.canal + d.get("canal").trim();
       if (d.get("mensaje").trim()) txt += "\n\n" + d.get("mensaje").trim();
       window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(txt), "_blank", "noopener");
     });
@@ -156,19 +339,32 @@
     });
   }
 
-  /* WhatsApp flotante: se esconde en el hero y en contacto */
-  var flotante = document.querySelector(".flotante");
-  var contacto = document.getElementById("contacto");
-  if (flotante && "IntersectionObserver" in window) {
-    var visibles = new Set();
-    var io2 = new IntersectionObserver(function (es) {
-      es.forEach(function (x) { if (x.isIntersecting) visibles.add(x.target); else visibles.delete(x.target); });
-      flotante.classList.toggle("oculto", visibles.size > 0);
-    }, { threshold: 0.15 });
-    if (hero) io2.observe(hero);
-    if (contacto) io2.observe(contacto);
+  /* WhatsApp flotante: oculto sobre el hero y en la pestaña Contacto */
+  var flotante = $(".flotante");
+  var heroVisible = true;
+  function actualizarFlotante() {
+    if (flotante) flotante.classList.toggle("oculto", actual === "contacto" || (actual === "inicio" && heroVisible));
   }
+  if (flotante && hero && "IntersectionObserver" in window) {
+    new IntersectionObserver(function (es) {
+      heroVisible = es[0].isIntersecting;
+      actualizarFlotante();
+    }, { threshold: 0.15 }).observe(hero);
+  } else if (flotante) {
+    heroVisible = false;
+  }
+  actualizarFlotante();
 
-  var anio = document.getElementById("anio");
+  // Estado inicial (enlace directo a #algo)
+  (function () {
+    var r = panelDe(location.hash) || { panel: "inicio" };
+    actual = r.panel;
+    aplicar(r.panel, r.destino, "arriba");
+    // Las fuentes cambian las alturas: se repite el salto cuando todo cargó
+    if (r.destino) window.addEventListener("load", function () { r.destino.scrollIntoView({ block: "start" }); });
+    if (/^#s\d$/.test(location.hash)) abrirServicio(location.hash.slice(1));
+  })();
+
+  var anio = $("#anio");
   if (anio) anio.textContent = new Date().getFullYear();
 })();

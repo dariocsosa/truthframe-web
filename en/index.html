@@ -21,6 +21,14 @@
   <link rel="icon" href="/assets/logos/Logo_TFS_black_simbolo.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script>
+    /* Initial tab before first paint (avoids flicker). The rest is in js/site.js */
+    (function (d) {
+      var p = ["inicio", "servicios", "portafolio", "nosotros", "contacto"], h = location.hash.slice(1);
+      d.className += " js";
+      d.setAttribute("data-panel", p.indexOf(h) > -1 ? h : (h === "metodo" ? "servicios" : "inicio"));
+    })(document.documentElement);
+  </script>
   <link rel="stylesheet" href="/tokens.css">
   <link rel="stylesheet" href="/css/site.css">
   <link rel="preload" as="image" href="/assets/video/hero-poster.jpg">
@@ -59,18 +67,17 @@
           <li><a href="#nosotros">About</a></li>
           <li><a href="#contacto">Contact</a></li>
         </ul>
+        <span class="indicador" aria-hidden="true"></span>
       </nav>
       <a class="idioma" href="/" hreflang="es" lang="es" aria-label="Versión en español">ES</a>
       <a class="btn btn-primario btn-hablemos" href="#contacto">Let’s talk <span class="flecha" aria-hidden="true">→</span></a>
-      <button class="menu-btn" type="button" aria-controls="nav" aria-expanded="false" aria-label="Open menu">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
-      </button>
     </div>
   </header>
 
-  <main id="contenido">
-    <!-- Hero: one idea + CTA, inside the TF viewfinder -->
-    <section class="hero" id="inicio" aria-labelledby="hero-titulo">
+  <main id="contenido" tabindex="-1">
+    <!-- ============ INICIO ============ -->
+    <div class="panel" id="inicio" data-titulo="Truth Frame Studio — YouTube strategy and production">
+    <section class="hero" aria-labelledby="hero-titulo">
       <div class="hero-video" aria-hidden="true">
         <video autoplay muted loop playsinline preload="metadata" poster="/assets/video/hero-poster.jpg">
           <source src="/assets/video/hero-loop.webm" type="video/webm">
@@ -121,16 +128,97 @@
       </div>
     </section>
 
-    <!-- Services -->
-    <section class="seccion" id="servicios" aria-labelledby="servicios-titulo" style="padding-top:0">
+    <!-- Paths: visitors self-select -->
+    <section class="seccion caminos-seccion" aria-labelledby="caminos-titulo">
+      <div class="contenedor">
+        <div class="cabecera">
+          <h2 class="h2" id="caminos-titulo">Where is your channel today?</h2>
+        </div>
+        <ul class="caminos">
+          <li><a href="#servicios" data-abrir="s1"><small>I already have a channel</small><b>But it isn’t growing or selling</b><span>Audit and restructuring</span><i aria-hidden="true">→</i></a></li>
+          <li><a href="#servicios" data-abrir="s2"><small>I don’t have a channel yet</small><b>I want to build it right from day one</b><span>Authority incubator</span><i aria-hidden="true">→</i></a></li>
+          <li><a href="#servicios" data-abrir="s4"><small>I have the strategy</small><b>I need film-quality production</b><span>Video production</span><i aria-hidden="true">→</i></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Featured -->
+    <section class="seccion" aria-labelledby="destacados-titulo" style="padding-top:0">
+      <div class="contenedor">
+        <div class="cabecera cabecera-fila">
+          <h2 class="h2" id="destacados-titulo">Recent work</h2>
+          <a class="enlace" href="#portafolio">See the full portfolio</a>
+        </div>
+        <ul class="obras">
+          <li class="obra" data-cat="series">
+            <button class="pantalla" type="button" data-video="V4FZVsunWzs" aria-label="Play: La Mesa">
+              <img src="/assets/portafolio/la-mesa.webp" alt="" width="640" height="360" loading="lazy"><span class="play"><svg viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M3 1.5v11a.5.5 0 0 0 .76.43l9-5.5a.5.5 0 0 0 0-.86l-9-5.5A.5.5 0 0 0 3 1.5z"/></svg></span>
+            </button>
+            <h3>La Mesa</h3><p>Series with Alba Rodríguez for Eternidad+</p>
+          </li>
+          <li class="obra" data-cat="documentales">
+            <button class="pantalla" type="button" data-video="Z4koZQvQOzM" aria-label="Play: ¿Prohibido predicar en París?">
+              <img src="/assets/portafolio/predicar-paris.webp" alt="" width="640" height="360" loading="lazy"><span class="play"><svg viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M3 1.5v11a.5.5 0 0 0 .76.43l9-5.5a.5.5 0 0 0 0-.86l-9-5.5A.5.5 0 0 0 3 1.5z"/></svg></span>
+            </button>
+            <h3>¿Prohibido predicar en París?</h3><p>Documentary on the Latinos evangelizing Europe</p>
+          </li>
+          <li class="obra" data-cat="eventos">
+            <button class="pantalla" type="button" data-video="nYQP3e2VED0" aria-label="Play: Filarmónica Appassionato">
+              <img src="/assets/portafolio/appassionato.webp" alt="" width="640" height="360" loading="lazy"><span class="play"><svg viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M3 1.5v11a.5.5 0 0 0 .76.43l9-5.5a.5.5 0 0 0 0-.86l-9-5.5A.5.5 0 0 0 3 1.5z"/></svg></span>
+            </button>
+            <h3>Filarmónica Appassionato</h3><p>Young Euro Classic 2024, Konzerthaus Berlin</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Clients -->
+    <section class="seccion seccion-editorial" id="clientes" aria-labelledby="clientes-titulo">
+      <div class="contenedor">
+        <div class="cabecera">
+          <h2 class="h2" id="clientes-titulo">Clients who trust us</h2>
+        </div>
+        <ul class="clientes">
+          <li>Eternidad+<small>Content platform</small></li>
+          <li>Aviva Nuestros Corazones<small>International ministry</small></li>
+          <li>Entendiendo Los Tiempos<small>Podcast</small></li>
+          <li>B&amp;H Español<small>Publisher</small></li>
+          <li>Editorial Portavoz<small>Publisher</small></li>
+          <li>Filarmónica Appassionato<small>Orchestra</small></li>
+          <li>BITE<small>Conferences</small></li>
+          <li>ACSI Caribe<small>Education association</small></li>
+        </ul>
+      </div>
+    </section>
+      <aside class="cierre" aria-label="Next step">
+        <div class="contenedor">
+          <p class="cierre-texto">Ready to talk about your channel?</p>
+          <a class="btn btn-acento" href="#contacto">Book a call <span class="flecha" aria-hidden="true">→</span></a>
+          <a class="siguiente" href="#servicios"><small>Next</small>Services <span aria-hidden="true">→</span></a>
+        </div>
+      </aside>
+    </div>
+
+    <!-- ============ SERVICIOS ============ -->
+    <div class="panel" id="servicios" data-titulo="Services — Truth Frame Studio">
+    <section class="seccion portada" aria-labelledby="servicios-titulo">
       <div class="contenedor">
         <div class="cabecera">
           <h2 class="h2" id="servicios-titulo">Services</h2>
           <p class="lead">Every project is tailored. These are the starting points.</p>
         </div>
 
+        <div class="guia" role="group" aria-labelledby="guia-titulo">
+          <p class="guia-titulo" id="guia-titulo">Where do I start?</p>
+          <button class="chip" type="button" data-abrir="s1">My channel isn’t growing</button>
+          <button class="chip" type="button" data-abrir="s2">I want to start a channel</button>
+          <button class="chip" type="button" data-abrir="s3">I don’t have an offer yet</button>
+          <button class="chip" type="button" data-abrir="s4">I need content produced</button>
+          <button class="chip" type="button" data-abrir="s5">I want to hand it all off</button>
+        </div>
+
         <div class="servicios">
-          <details class="servicio">
+          <details class="servicio" name="servicio" id="s1" open>
             <summary>
               <span class="num">01</span>
               <span class="nombre-col"><span class="nombre">Channel audit and restructuring</span>
@@ -156,10 +244,11 @@
                 </table>
                 <p class="nota">If you then hire us for the implementation, what you invested in the master plan is credited to the project.</p>
               </div>
+              <p class="ancho accion-servicio"><a class="btn btn-primario" href="#contacto" data-servicio="1">Let’s talk about this service <span class="flecha" aria-hidden="true">→</span></a></p>
             </div>
           </details>
 
-          <details class="servicio">
+          <details class="servicio" name="servicio" id="s2">
             <summary>
               <span class="num">02</span>
               <span class="nombre-col"><span class="nombre">Authority incubator</span>
@@ -184,10 +273,11 @@
                 <p>Every project starts with a feasibility interview. We work with people who have real experience and authority in their subject; if the expertise isn’t genuine or the model isn’t sustainable, we’d rather not take the project.</p>
                 <p class="nota">Full strategy package: 4 weeks, from USD 4,000, one-time.</p>
               </div>
+              <p class="ancho accion-servicio"><a class="btn btn-primario" href="#contacto" data-servicio="2">Let’s talk about this service <span class="flecha" aria-hidden="true">→</span></a></p>
             </div>
           </details>
 
-          <details class="servicio">
+          <details class="servicio" name="servicio" id="s3">
             <summary>
               <span class="num">03</span>
               <span class="nombre-col"><span class="nombre">High-ticket offer incubator</span>
@@ -208,10 +298,11 @@
                   <li>The funnel architecture, so every view has a clear path to a sale.</li>
                 </ul>
               </div>
+              <p class="ancho accion-servicio"><a class="btn btn-primario" href="#contacto" data-servicio="3">Let’s talk about this service <span class="flecha" aria-hidden="true">→</span></a></p>
             </div>
           </details>
 
-          <details class="servicio">
+          <details class="servicio" name="servicio" id="s4">
             <summary>
               <span class="num">04</span>
               <span class="nombre-col"><span class="nombre">Strategic video production</span>
@@ -242,10 +333,11 @@
                   <p class="dato"><small>Investment</small><b>From USD 8,000</b> per project</p>
                 </div>
               </div>
+              <p class="ancho accion-servicio"><a class="btn btn-primario" href="#contacto" data-servicio="4">Let’s talk about this service <span class="flecha" aria-hidden="true">→</span></a></p>
             </div>
           </details>
 
-          <details class="servicio">
+          <details class="servicio" name="servicio" id="s5">
             <summary>
               <span class="num">05</span>
               <span class="nombre-col"><span class="nombre">Growth partner: full-service agency</span>
@@ -280,6 +372,7 @@
                 </ul>
                 <p class="nota">3-month initial commitment · from USD 4,000 per month.</p>
               </div>
+              <p class="ancho accion-servicio"><a class="btn btn-primario" href="#contacto" data-servicio="5">Let’s talk about this service <span class="flecha" aria-hidden="true">→</span></a></p>
             </div>
           </details>
         </div>
@@ -312,25 +405,6 @@
             <p>Relying only on YouTube is building on rented land. We design ways to turn viewers into contacts you own.</p>
           </div>
         </div>
-
-        <div class="cita">
-          <figure>
-            <img src="/assets/fotos/diana-800.webp" srcset="/assets/fotos/diana-800.webp 800w, /assets/fotos/diana-1600.webp 1600w" sizes="(max-width: 860px) 100vw, 560px" alt="Diana Cardona working on a channel strategy at her desk, with notes and a camera beside her." width="800" height="449" loading="lazy">
-          </figure>
-          <div>
-            <blockquote>“No edit can save a video that wasn’t born from a great idea.”</blockquote>
-            <p class="firma"><b>Diana Cardona</b>, director of strategy and production</p>
-          </div>
-        </div>
-
-        <div class="proceso">
-          <h3 class="h3">How we start</h3>
-          <ol>
-            <li><h3 class="h3">Alignment call</h3><p>We talk about your business, your channel and what you want to achieve.</p></li>
-            <li><h3 class="h3">Diagnosis and proposal</h3><p>We define the level of support your brand needs and send you a tailored proposal.</p></li>
-            <li><h3 class="h3">Kick-off</h3><p>We launch strategy and production with a clear schedule.</p></li>
-          </ol>
-        </div>
       </div>
     </section>
 
@@ -356,9 +430,18 @@
         </div>
       </div>
     </section>
+      <aside class="cierre" aria-label="Next step">
+        <div class="contenedor">
+          <p class="cierre-texto">Ready to talk about your channel?</p>
+          <a class="btn btn-acento" href="#contacto">Book a call <span class="flecha" aria-hidden="true">→</span></a>
+          <a class="siguiente" href="#portafolio"><small>Next</small>Portfolio <span aria-hidden="true">→</span></a>
+        </div>
+      </aside>
+    </div>
 
-    <!-- Portfolio -->
-    <section class="seccion" id="portafolio" aria-labelledby="portafolio-titulo" style="padding-top:0">
+    <!-- ============ PORTAFOLIO ============ -->
+    <div class="panel" id="portafolio" data-titulo="Portfolio — Truth Frame Studio">
+    <section class="seccion portada" aria-labelledby="portafolio-titulo">
       <div class="contenedor">
         <div class="cabecera">
           <h2 class="h2" id="portafolio-titulo">Portfolio</h2>
@@ -447,28 +530,18 @@
         </ul>
       </div>
     </section>
-
-    <!-- Clients -->
-    <section class="seccion seccion-editorial" id="clientes" aria-labelledby="clientes-titulo">
-      <div class="contenedor">
-        <div class="cabecera">
-          <h2 class="h2" id="clientes-titulo">Clients who trust us</h2>
+      <aside class="cierre" aria-label="Next step">
+        <div class="contenedor">
+          <p class="cierre-texto">Ready to talk about your channel?</p>
+          <a class="btn btn-acento" href="#contacto">Book a call <span class="flecha" aria-hidden="true">→</span></a>
+          <a class="siguiente" href="#nosotros"><small>Next</small>About <span aria-hidden="true">→</span></a>
         </div>
-        <ul class="clientes">
-          <li>Eternidad+<small>Content platform</small></li>
-          <li>Aviva Nuestros Corazones<small>International ministry</small></li>
-          <li>Entendiendo Los Tiempos<small>Podcast</small></li>
-          <li>B&amp;H Español<small>Publisher</small></li>
-          <li>Editorial Portavoz<small>Publisher</small></li>
-          <li>Filarmónica Appassionato<small>Orchestra</small></li>
-          <li>BITE<small>Conferences</small></li>
-          <li>ACSI Caribe<small>Education association</small></li>
-        </ul>
-      </div>
-    </section>
+      </aside>
+    </div>
 
-    <!-- About -->
-    <section class="seccion" id="nosotros" aria-labelledby="nosotros-titulo">
+    <!-- ============ NOSOTROS ============ -->
+    <div class="panel" id="nosotros" data-titulo="About — Truth Frame Studio">
+    <section class="seccion portada" aria-labelledby="nosotros-titulo">
       <div class="contenedor">
         <div class="cabecera">
           <h2 class="h2" id="nosotros-titulo">The authority behind the lens</h2>
@@ -526,8 +599,31 @@
       </div>
     </section>
 
-    <!-- Contact -->
-    <section class="seccion seccion-oscura" id="contacto" aria-labelledby="contacto-titulo">
+    <section class="seccion seccion-editorial" aria-label="Diana Cardona">
+      <div class="contenedor">
+        <div class="cita">
+          <figure>
+            <img src="/assets/fotos/diana-800.webp" srcset="/assets/fotos/diana-800.webp 800w, /assets/fotos/diana-1600.webp 1600w" sizes="(max-width: 860px) 100vw, 560px" alt="Diana Cardona working on a channel strategy at her desk, with notes and a camera beside her." width="800" height="449" loading="lazy">
+          </figure>
+          <div>
+            <blockquote>“No edit can save a video that wasn’t born from a great idea.”</blockquote>
+            <p class="firma"><b>Diana Cardona</b>, director of strategy and production</p>
+          </div>
+        </div>
+      </div>
+    </section>
+      <aside class="cierre" aria-label="Next step">
+        <div class="contenedor">
+          <p class="cierre-texto">Ready to talk about your channel?</p>
+          <a class="btn btn-acento" href="#contacto">Book a call <span class="flecha" aria-hidden="true">→</span></a>
+          <a class="siguiente" href="#contacto"><small>Next</small>Contact <span aria-hidden="true">→</span></a>
+        </div>
+      </aside>
+    </div>
+
+    <!-- ============ CONTACTO ============ -->
+    <div class="panel" id="contacto" data-titulo="Contact — Truth Frame Studio">
+    <section class="seccion seccion-oscura portada" aria-labelledby="contacto-titulo">
       <div class="contenedor contacto">
         <div>
           <h2 class="h2" id="contacto-titulo">Ready to build real authority?</h2>
@@ -575,7 +671,18 @@
           <p class="pie">WhatsApp will open with your message ready to send.</p>
         </form>
       </div>
+      <div class="contenedor">
+        <div class="proceso">
+          <h3 class="h3">How we start</h3>
+          <ol>
+            <li><h3 class="h3">Alignment call</h3><p>We talk about your business, your channel and what you want to achieve.</p></li>
+            <li><h3 class="h3">Diagnosis and proposal</h3><p>We define the level of support your brand needs and send you a tailored proposal.</p></li>
+            <li><h3 class="h3">Kick-off</h3><p>We launch strategy and production with a clear schedule.</p></li>
+          </ol>
+        </div>
+      </div>
     </section>
+    </div>
   </main>
 
   <footer class="footer">
@@ -584,6 +691,7 @@
         <img src="/assets/logos/Logo_TFS_white_1.svg" alt="Truth Frame Studio" width="240" height="238" loading="lazy">
         <nav aria-label="Footer">
           <ul>
+            <li><a href="#inicio">Home</a></li>
             <li><a href="#servicios">Services</a></li>
             <li><a href="#portafolio">Portfolio</a></li>
             <li><a href="#nosotros">About</a></li>
@@ -598,6 +706,34 @@
       </div>
     </div>
   </footer>
+
+  <!-- Mobile tab bar -->
+  <nav class="pestanas" aria-label="Sections">
+    <ul>
+      <li><a href="#inicio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg><span>Home</span></a></li>
+      <li><a href="#servicios"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg><span>Services</span></a></li>
+      <li><a href="#portafolio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M10 9.2v5.6l4.8-2.8z" fill="currentColor"/></svg><span>Portfolio</span></a></li>
+      <li><a href="#nosotros"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.3-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.8a3.5 3.5 0 0 1 0 6.4M18 14.8c1.8.7 3 2.4 3.5 5.2"/></svg><span>About</span></a></li>
+      <li><a href="#contacto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.9A8 8 0 1 1 21 12z"/></svg><span>Contact</span></a></li>
+    </ul>
+  </nav>
+
+  <!-- Portfolio player -->
+  <dialog class="reproductor" aria-labelledby="rep-titulo">
+    <div class="rep-barra">
+      <div>
+        <p class="rep-titulo" id="rep-titulo"></p>
+        <p class="rep-desc"></p>
+      </div>
+      <button class="rep-btn rep-cerrar" type="button" aria-label="Close video"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"/></svg></button>
+    </div>
+    <div class="rep-pantalla"></div>
+    <div class="rep-nav">
+      <button class="rep-btn rep-ant" type="button" aria-label="Previous video"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 3L5 8l5 5"/></svg></button>
+      <span class="rep-cuenta" aria-live="polite"></span>
+      <button class="rep-btn rep-sig" type="button" aria-label="Next video"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg></button>
+    </div>
+  </dialog>
 
   <a class="flotante oculto" href="https://wa.me/18496523537" rel="noopener" aria-label="Message us on WhatsApp">
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.02c-.24.68-1.42 1.3-1.95 1.35-.5.05-1.13.07-1.83-.12-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3s.75-2.13 1.02-2.42c.26-.29.58-.36.77-.36h.55c.18 0 .42-.07.65.5.24.57.8 1.97.87 2.11.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.17-.3.37-.43.5-.14.14-.29.3-.13.59.17.29.74 1.21 1.58 1.96 1.09.97 2 1.27 2.29 1.41.29.14.46.12.63-.07.17-.19.72-.84.92-1.13.19-.29.38-.24.65-.14.26.1 1.67.79 1.96.93.29.14.48.21.55.33.07.12.07.68-.17 1.36z"/></svg>
