@@ -121,7 +121,7 @@
         "name": "¿Cuál es el primer paso?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Nos escribes por WhatsApp o con el formulario de esta página, y agendamos una llamada de alineación para entender tu negocio y tu canal. Después te enviamos un diagnóstico y una propuesta a la medida."
+          "text": "Nos envías tu consulta con el formulario de esta página. Diana te responde personalmente en un plazo máximo de 24 horas y, según lo que necesites, definimos juntos el siguiente paso. Consultar y pedir una propuesta no tiene costo."
         }
       }
     ]
@@ -189,9 +189,10 @@
     <section class="credenciales" aria-label="Trayectoria">
       <div class="contenedor">
         <ul>
-          <li><strong>30 años</strong><span>en televisión, comerciales, videoclips y documentales</span></li>
-          <li><strong>1M</strong><span>de suscriptores sumados en los canales que hemos hecho crecer</span></li>
-          <li><strong>0 → 500K</strong><span>canales llevados desde cero hasta 100.000 y 500.000 suscriptores en Colombia, EE. UU. y República Dominicana</span></li>
+          <li><strong>+25 años</strong><span>de experiencia audiovisual. Andrés y Diana trabajan juntos desde 1999.</span></li>
+          <li><strong>0 → 500K+</strong><span>suscriptores en IBSJ: no tenía canal cuando Andrés llegó; lo creó y lo dirige hoy.</span></li>
+          <li><strong>200K+</strong><span>suscriptores en Entendiendo Los Tiempos, un proyecto que Andrés empezó desde cero y dirigió en lo audiovisual desde el inicio.</span></li>
+          <li><strong>110K+</strong><span>suscriptores en Eternidad Plus. Andrés y Diana lideraron su transición desde Radio Eternidad, y Andrés dirige hoy el canal.</span></li>
         </ul>
       </div>
     </section>
@@ -214,9 +215,9 @@
           <h2 class="h2" id="caminos-titulo">¿En qué punto está tu canal?</h2>
         </div>
         <ul class="caminos">
-          <li><a href="#servicios" data-abrir="s1"><small>Ya tengo canal</small><b>Pero no crece ni vende</b><span>Auditoría y reestructuración</span><i aria-hidden="true">→</i></a></li>
+          <li><a href="#servicios" data-abrir="s1"><small>Ya tengo canal</small><b>Publico, pero no crece como esperaba</b><span>Auditoría y reestructuración</span><i aria-hidden="true">→</i></a></li>
           <li><a href="#servicios" data-abrir="s2"><small>Todavía no tengo canal</small><b>Quiero construirlo bien desde el principio</b><span>Incubadora de autoridad</span><i aria-hidden="true">→</i></a></li>
-          <li><a href="#servicios" data-abrir="s4"><small>Tengo la estrategia</small><b>Necesito producir con calidad de cine</b><span>Producción audiovisual</span><i aria-hidden="true">→</i></a></li>
+          <li><a href="#servicios" data-abrir="s4"><small>Tenemos un canal activo</small><b>Queremos delegar la producción</b><span>Producción audiovisual</span><i aria-hidden="true">→</i></a></li>
         </ul>
       </div>
     </section>
@@ -251,6 +252,18 @@
       </div>
     </section>
 
+    <!-- Testimonios: la sección se muestra sola cuando la lista tiene al menos un <li>.
+         Solo testimonios reales, con visto bueno de la persona. Plantilla:
+         <li class="testimonio"><blockquote>“…”</blockquote><p><b>Nombre</b>Cargo, Organización</p></li> -->
+    <section class="seccion testimonios-seccion" id="testimonios" aria-labelledby="testimonios-titulo" hidden>
+      <div class="contenedor">
+        <div class="cabecera">
+          <h2 class="h2" id="testimonios-titulo">Lo que dicen quienes han trabajado con nosotros</h2>
+        </div>
+        <ul class="testimonios"></ul>
+      </div>
+    </section>
+
     <!-- Clientes -->
     <section class="seccion seccion-editorial" id="clientes" aria-labelledby="clientes-titulo">
       <div class="contenedor">
@@ -272,7 +285,7 @@
       <aside class="cierre" aria-label="Siguiente paso">
         <div class="contenedor">
           <p class="cierre-texto">¿Hablamos de tu canal?</p>
-          <a class="btn btn-acento" href="#contacto">Agenda una llamada <span class="flecha" aria-hidden="true">→</span></a>
+          <a class="btn btn-acento" href="#contacto">Envíanos tu consulta <span class="flecha" aria-hidden="true">→</span></a>
           <a class="siguiente" href="#servicios"><small>Siguiente</small>Servicios <span aria-hidden="true">→</span></a>
         </div>
       </aside>
@@ -512,7 +525,7 @@
       <aside class="cierre" aria-label="Siguiente paso">
         <div class="contenedor">
           <p class="cierre-texto">¿Hablamos de tu canal?</p>
-          <a class="btn btn-acento" href="#contacto">Agenda una llamada <span class="flecha" aria-hidden="true">→</span></a>
+          <a class="btn btn-acento" href="#contacto">Envíanos tu consulta <span class="flecha" aria-hidden="true">→</span></a>
           <a class="siguiente" href="#portafolio"><small>Siguiente</small>Portafolio <span aria-hidden="true">→</span></a>
         </div>
       </aside>
@@ -526,6 +539,43 @@
           <h2 class="h2" id="portafolio-titulo">Portafolio</h2>
           <p class="lead">Series, podcasts, documentales y eventos que hemos dirigido y producido.</p>
         </div>
+        <h3 class="h3 bloque-titulo">Casos destacados</h3>
+        <ul class="casos">
+          <li class="caso">
+            <button class="pantalla" type="button" data-video="XEq-M-Qegdg" aria-label="Reproducir: Entendiendo Los Tiempos">
+              <img src="/assets/portafolio/elt.webp" alt="" width="640" height="360" loading="lazy"><span class="play"><svg viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M3 1.5v11a.5.5 0 0 0 .76.43l9-5.5a.5.5 0 0 0 0-.86l-9-5.5A.5.5 0 0 0 3 1.5z"/></svg></span>
+            </button>
+            <div class="caso-texto">
+              <p class="caso-meta">Podcast · Más de 200.000 suscriptores</p>
+              <h3>Entendiendo Los Tiempos</h3>
+              <p>Andrés empezó este proyecto desde cero y asumió su dirección y producción audiovisual desde el inicio. Hoy el canal supera los 200.000 suscriptores.</p>
+            </div>
+          </li>
+          <li class="caso">
+            <button class="pantalla" type="button" data-video="ePb5iHofnLE" aria-label="Reproducir: Eternidad Plus">
+              <img src="/assets/portafolio/la-vid.webp" alt="" width="640" height="360" loading="lazy"><span class="play"><svg viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M3 1.5v11a.5.5 0 0 0 .76.43l9-5.5a.5.5 0 0 0 0-.86l-9-5.5A.5.5 0 0 0 3 1.5z"/></svg></span>
+            </button>
+            <div class="caso-texto">
+              <p class="caso-meta">Canal y series · Más de 110.000 suscriptores</p>
+              <h3>Eternidad Plus</h3>
+              <p>Andrés y Diana propusieron el proyecto y lideraron la transición de Radio Eternidad a Eternidad Plus: desarrollaron la propuesta, produjeron el video piloto y, desde entonces, distintas series grabadas en lugares como Barcelona, Bogotá y Villa de Leyva.</p>
+              <p>Andrés dirige hoy el canal y dirigió un documental grabado en París. Diana se ha encargado de la postproducción de varias series.</p>
+            </div>
+          </li>
+          <li class="caso">
+            <button class="pantalla" type="button" data-video="QzHeCktoeLU" aria-label="Reproducir: Filarmónica Appassionato, concierto completo">
+              <img src="/assets/portafolio/appassionato-concierto.webp" alt="" width="640" height="360" loading="lazy"><span class="play"><svg viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M3 1.5v11a.5.5 0 0 0 .76.43l9-5.5a.5.5 0 0 0 0-.86l-9-5.5A.5.5 0 0 0 3 1.5z"/></svg></span>
+            </button>
+            <div class="caso-texto">
+              <p class="caso-meta">Concierto · Young Euro Classic 2024</p>
+              <h3>Filarmónica Appassionato</h3>
+              <p>Acompañamos a la orquesta en el Young Euro Classic 2024, en el Konzerthaus de Berlín. Capturamos el concierto completo y terminamos su edición.</p>
+              <p><a class="enlace" href="https://youtu.be/QzHeCktoeLU" rel="noopener" target="_blank">Ver el concierto completo en YouTube</a></p>
+            </div>
+          </li>
+        </ul>
+
+        <h3 class="h3 bloque-titulo">Más trabajos</h3>
         <div class="filtros" role="group" aria-label="Filtrar portafolio">
           <button class="filtro" type="button" data-cat="todo" aria-pressed="true">Todo</button>
           <button class="filtro" type="button" data-cat="series" aria-pressed="false">Series</button>
@@ -612,7 +662,7 @@
       <aside class="cierre" aria-label="Siguiente paso">
         <div class="contenedor">
           <p class="cierre-texto">¿Hablamos de tu canal?</p>
-          <a class="btn btn-acento" href="#contacto">Agenda una llamada <span class="flecha" aria-hidden="true">→</span></a>
+          <a class="btn btn-acento" href="#contacto">Envíanos tu consulta <span class="flecha" aria-hidden="true">→</span></a>
           <a class="siguiente" href="#nosotros"><small>Siguiente</small>Nosotros <span aria-hidden="true">→</span></a>
         </div>
       </aside>
@@ -631,7 +681,8 @@
         <div class="nosotros">
           <div class="prosa lead">
             <p>No somos una agencia de marketing que intenta hacer videos. Somos realizadores audiovisuales y estrategas digitales que entendieron cómo funciona la retención en YouTube.</p>
-            <p>Venimos del rigor de la televisión. En casi 30 años hemos concebido, dirigido y producido miles de piezas, desde comerciales y videoclips hasta documentales para ONG internacionales. Y hemos estado detrás del crecimiento de canales en Colombia, Estados Unidos y República Dominicana.</p>
+            <p>Detrás del estudio están Andrés Figueroa y Diana Cardona, esposos que trabajan juntos en producción audiovisual desde 1999. Suman más de 25 años de experiencia audiovisual y han trabajado en canales de Colombia, Estados Unidos y República Dominicana.</p>
+            <p class="secundario">Todo empezó en la universidad, con un documental sobre un misionero y un video institucional para una clínica. Siguieron varios años de producción de bodas, antes de los proyectos que hoy respaldan su experiencia.</p>
             <p class="secundario">Operamos desde Santo Domingo, con estructura corporativa y legal en República Dominicana.</p>
           </div>
           <figure class="placas">
@@ -639,6 +690,15 @@
             <figcaption>Placas de YouTube de canales en los que hemos trabajado.</figcaption>
           </figure>
         </div>
+
+        <h3 class="h3 equipo-titulo" id="hitos-titulo">Canales en los que hemos trabajado</h3>
+        <ul class="hitos" aria-labelledby="hitos-titulo">
+          <li><strong>IBSJ</strong><b>Más de 500.000 suscriptores</b><p>No existía el canal cuando Andrés llegó. Ha dirigido todo el proceso desde su creación y lo dirige hoy.</p></li>
+          <li><strong>Entendiendo Los Tiempos</strong><b>Más de 200.000 suscriptores</b><p>Andrés empezó el proyecto desde cero y asumió la dirección y producción audiovisual desde el inicio.</p></li>
+          <li><strong>Eternidad Plus</strong><b>Más de 110.000 suscriptores</b><p>Andrés y Diana propusieron y lideraron la transición de Radio Eternidad a Eternidad Plus. Andrés dirige hoy el canal.</p></li>
+          <li><strong>Aviva Nuestros Corazones</strong><b>Más de 150.000 suscriptores hasta 2023</b><p>Diana fue productora audiovisual hasta 2023. La cifra corresponde a esa etapa, no al canal hoy.</p></li>
+        </ul>
+        <p class="nota-hitos">Son canales a cuyo crecimiento hemos contribuido junto a sus equipos. Cifras aportadas por el estudio.</p>
 
         <h3 class="h3 equipo-titulo" id="equipo-titulo">El equipo</h3>
         <ul class="equipo" aria-labelledby="equipo-titulo">
@@ -648,6 +708,7 @@
               <h4>Diana Cardona</h4>
               <p class="rol">Dirección de estrategia y producción</p>
               <p>Es el motor creativo y analítico del estudio. Une la calidad cinematográfica con el crecimiento basado en datos: diseña la narrativa, los flujos de trabajo y las tácticas de retención para que cada pieza, además de verse impecable, cumpla un objetivo concreto.</p>
+              <p>Tiene una larga experiencia en postproducción. Participó en la propuesta y la transición a Eternidad Plus, donde ha postproducido varias series, y fue productora audiovisual de Aviva Nuestros Corazones hasta 2023.</p>
             </div>
           </li>
           <li class="miembro">
@@ -656,6 +717,7 @@
               <h4>Andrés Figueroa</h4>
               <p class="rol">Dirección y realización audiovisual</p>
               <p>Convierte la estrategia en imágenes de calidad cinematográfica. En el set dirige la cámara, la luz y la narrativa visual, y une el rigor técnico con la sensibilidad humana para que cada proyecto comunique su mensaje con fuerza.</p>
+              <p>Hoy dirige los canales de IBSJ y Eternidad Plus, y asumió la dirección y producción audiovisual de Entendiendo Los Tiempos desde su inicio.</p>
             </div>
           </li>
           <li class="miembro">
@@ -694,7 +756,7 @@
       <aside class="cierre" aria-label="Siguiente paso">
         <div class="contenedor">
           <p class="cierre-texto">¿Hablamos de tu canal?</p>
-          <a class="btn btn-acento" href="#contacto">Agenda una llamada <span class="flecha" aria-hidden="true">→</span></a>
+          <a class="btn btn-acento" href="#contacto">Envíanos tu consulta <span class="flecha" aria-hidden="true">→</span></a>
           <a class="siguiente" href="#contacto"><small>Siguiente</small>Contacto <span aria-hidden="true">→</span></a>
         </div>
       </aside>
@@ -706,57 +768,141 @@
       <div class="contenedor contacto">
         <div>
           <h2 class="h2" id="contacto-titulo">¿Listo para construir autoridad real?</h2>
-          <p class="lead">Cuéntanos de tu proyecto y agendamos una llamada de alineación. Te respondemos por WhatsApp.</p>
+          <p class="lead">Cuéntanos qué necesitas con unas preguntas rápidas. Diana te responde personalmente en un plazo máximo de 24 horas.</p>
+          <p class="gratis">Consultar y pedir una propuesta no tiene costo.</p>
           <div class="directo">
-            <span>Escríbenos directo</span>
+            <span>¿Prefieres escribir directo?</span>
             <a href="https://wa.me/18496523537" rel="noopener" data-origen="contacto">WhatsApp +1 849 652 3537</a>
             <span>Santo Domingo, República Dominicana</span>
           </div>
         </div>
+        <div class="form-caja">
         <form class="form" id="form-contacto" novalidate>
-          <div class="dos">
-            <div class="campo">
-              <label for="f-nombre">Nombre</label>
-              <input id="f-nombre" name="nombre" autocomplete="name" required aria-describedby="e-nombre">
-              <p class="error" id="e-nombre">Escribe tu nombre.</p>
+          <fieldset class="grupo" data-grupo="ayuda">
+            <legend>¿Cómo podemos ayudarte?</legend>
+            <div class="opciones dos-col">
+              <label class="opcion"><input type="radio" name="ayuda" value="mejorar"><span>Mejorar mi canal</span></label>
+              <label class="opcion"><input type="radio" name="ayuda" value="crear"><span>Crear un canal desde cero</span></label>
+              <label class="opcion"><input type="radio" name="ayuda" value="delegar"><span>Delegar la producción de contenido</span></label>
+              <label class="opcion"><input type="radio" name="ayuda" value="orientacion"><span>Necesito orientación</span></label>
             </div>
-            <div class="campo">
-              <label for="f-org">Empresa u organización <span>(opcional)</span></label>
-              <input id="f-org" name="organizacion" autocomplete="organization">
+            <p class="error">Elige una opción.</p>
+          </fieldset>
+
+          <fieldset class="grupo condicional" data-grupo="redes" data-si="ayuda=delegar" hidden>
+            <legend>¿En qué redes o canales necesitas nuestra ayuda? <span>Puedes seleccionar varias opciones.</span></legend>
+            <div class="opciones tres-col">
+              <label class="opcion"><input type="checkbox" name="redes" value="youtube"><span>YouTube</span></label>
+              <label class="opcion"><input type="checkbox" name="redes" value="instagram"><span>Instagram</span></label>
+              <label class="opcion"><input type="checkbox" name="redes" value="facebook"><span>Facebook</span></label>
+              <label class="opcion"><input type="checkbox" name="redes" value="tiktok"><span>TikTok</span></label>
+              <label class="opcion"><input type="checkbox" name="redes" value="otros"><span>Otros</span></label>
             </div>
+            <p class="error">Elige al menos una opción.</p>
+          </fieldset>
+          <div class="campo condicional" data-si="redes=otros" hidden>
+            <label for="f-otras">¿Cuáles otras?</label>
+            <input id="f-otras" name="otras_redes" data-requerido>
+            <p class="error">Cuéntanos qué otras redes.</p>
           </div>
-          <div class="campo">
-            <label for="f-servicio">¿Qué necesitas?</label>
-            <select id="f-servicio" name="servicio" required aria-describedby="e-servicio">
-              <option value="">Elige una opción</option>
-              <option>Auditoría de mi canal</option>
-              <option>Crear un canal desde cero</option>
-              <option>Diseñar una oferta high-ticket</option>
-              <option>Producción audiovisual</option>
-              <option>Growth partner (agencia 360)</option>
-              <option>Todavía no lo sé</option>
-            </select>
-            <p class="error" id="e-servicio">Elige una opción.</p>
-          </div>
-          <div class="campo">
-            <label for="f-canal">Enlace a tu canal <span>(si ya tienes)</span></label>
+
+          <fieldset class="grupo" data-grupo="objetivo">
+            <legend>¿Qué te gustaría lograr primero?</legend>
+            <div class="opciones">
+              <label class="opcion"><input type="radio" name="objetivo" value="alcance"><span>Llegar a más personas y construir comunidad</span></label>
+              <label class="opcion"><input type="radio" name="objetivo" value="ingresos"><span>Generar ingresos con mi contenido</span></label>
+              <label class="opcion"><input type="radio" name="objetivo" value="clientes"><span>Atraer clientes y vender mis productos o servicios</span></label>
+            </div>
+            <p class="error">Elige una opción.</p>
+          </fieldset>
+
+          <fieldset class="grupo" data-grupo="tiene_canal">
+            <legend>¿Ya tienes un canal de YouTube?</legend>
+            <div class="opciones dos-col">
+              <label class="opcion"><input type="radio" name="tiene_canal" value="si"><span>Sí</span></label>
+              <label class="opcion"><input type="radio" name="tiene_canal" value="no"><span>No, todavía no</span></label>
+            </div>
+            <p class="error">Elige una opción.</p>
+          </fieldset>
+          <div class="campo condicional" data-si="tiene_canal=si" hidden>
+            <label for="f-canal">Enlace a tu canal de YouTube <span>(opcional)</span></label>
             <input id="f-canal" name="canal" type="url" inputmode="url" placeholder="https://youtube.com/@tucanal">
           </div>
+
           <div class="campo">
-            <label for="f-mensaje">Cuéntanos más <span>(opcional)</span></label>
-            <textarea id="f-mensaje" name="mensaje"></textarea>
+            <label for="f-nombre">Nombre</label>
+            <input id="f-nombre" name="nombre" autocomplete="name" data-requerido>
+            <p class="error">Escribe tu nombre.</p>
           </div>
-          <button class="btn btn-primario" type="submit">Enviar por WhatsApp <span class="flecha" aria-hidden="true">→</span></button>
-          <p class="pie">Se abrirá WhatsApp con tu mensaje listo para enviar.</p>
+
+          <fieldset class="grupo" data-grupo="medio">
+            <legend>¿Por dónde prefieres que te respondamos?</legend>
+            <div class="opciones dos-col">
+              <label class="opcion"><input type="radio" name="medio" value="whatsapp"><span>WhatsApp</span></label>
+              <label class="opcion"><input type="radio" name="medio" value="correo"><span>Correo electrónico</span></label>
+            </div>
+            <p class="error">Elige una opción.</p>
+          </fieldset>
+          <div class="campo condicional" data-si="medio=whatsapp" hidden>
+            <label for="f-telefono">Tu número de WhatsApp</label>
+            <div class="telefono">
+              <select id="f-pais" name="pais" aria-label="País o código" autocomplete="off">
+                <option value="DO +1">República Dominicana (+1)</option>
+                <option value="US +1">Estados Unidos y Canadá (+1)</option>
+                <option value="PR +1">Puerto Rico (+1)</option>
+                <option value="CO +57">Colombia (+57)</option>
+                <option value="MX +52">México (+52)</option>
+                <option value="GT +502">Guatemala (+502)</option>
+                <option value="SV +503">El Salvador (+503)</option>
+                <option value="HN +504">Honduras (+504)</option>
+                <option value="NI +505">Nicaragua (+505)</option>
+                <option value="CR +506">Costa Rica (+506)</option>
+                <option value="PA +507">Panamá (+507)</option>
+                <option value="CU +53">Cuba (+53)</option>
+                <option value="VE +58">Venezuela (+58)</option>
+                <option value="EC +593">Ecuador (+593)</option>
+                <option value="PE +51">Perú (+51)</option>
+                <option value="BO +591">Bolivia (+591)</option>
+                <option value="CL +56">Chile (+56)</option>
+                <option value="AR +54">Argentina (+54)</option>
+                <option value="PY +595">Paraguay (+595)</option>
+                <option value="UY +598">Uruguay (+598)</option>
+                <option value="BR +55">Brasil (+55)</option>
+                <option value="ES +34">España (+34)</option>
+                <option value="otro">Otro país</option>
+              </select>
+              <input id="f-telefono" name="telefono" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="809 555 0123" data-requerido>
+            </div>
+            <p class="error">Escribe un número válido, con código de país si elegiste «Otro país».</p>
+          </div>
+          <div class="campo condicional" data-si="medio=correo" hidden>
+            <label for="f-correo">Tu correo electrónico</label>
+            <input id="f-correo" name="correo" type="email" autocomplete="email" placeholder="nombre@empresa.com" data-requerido>
+            <p class="error">Escribe un correo válido.</p>
+          </div>
+
+          <div class="trampa" aria-hidden="true"><label>No llenar este campo <input name="sitio_web" tabindex="-1" autocomplete="off"></label></div>
+
+          <div class="form-error" role="alert" hidden>
+            <p>No pudimos enviar tu consulta. Tus respuestas siguen aquí: inténtalo de nuevo en un momento. Si el problema sigue, <a href="https://wa.me/18496523537" rel="noopener" data-origen="error-formulario">escríbenos por WhatsApp</a>.</p>
+          </div>
+          <button class="btn btn-primario enviar" type="submit"><span class="enviar-texto">Enviar consulta</span> <span class="flecha" aria-hidden="true">→</span></button>
+          <p class="pie">Diana te responderá en un plazo máximo de 24 horas.</p>
         </form>
+        <div class="form-exito" tabindex="-1" hidden>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6"/></svg>
+          <h3>¡Gracias por contarnos sobre tu proyecto!</h3>
+          <p>Recibimos tu consulta. Diana te responderá por <b class="exito-medio"></b> en un plazo máximo de 24 horas.</p>
+        </div>
+        </div>
       </div>
       <div class="contenedor">
         <div class="proceso">
           <h3 class="h3">Así empezamos</h3>
           <ol>
-            <li><h3 class="h3">Llamada de alineación</h3><p>Conversamos sobre tu negocio, tu canal y lo que quieres lograr.</p></li>
-            <li><h3 class="h3">Diagnóstico y propuesta</h3><p>Definimos qué nivel de intervención necesita tu marca y te enviamos una propuesta a la medida.</p></li>
-            <li><h3 class="h3">Kick-off</h3><p>Arrancamos la estrategia y la producción con un calendario claro.</p></li>
+            <li><h3 class="h3">Nos envías tu consulta</h3><p>Respondes unas preguntas rápidas sobre tu canal y lo que quieres lograr.</p></li>
+            <li><h3 class="h3">Te respondemos en 24 horas</h3><p>Diana te escribe personalmente por el medio que elegiste, con lo que ya nos contaste.</p></li>
+            <li><h3 class="h3">Definimos el siguiente paso</h3><p>Según lo que necesites: una propuesta de auditoría, el lanzamiento de tu canal o la producción de tu contenido.</p></li>
           </ol>
         </div>
       </div>
@@ -800,7 +946,7 @@
           </details>
           <details class="pregunta">
             <summary>¿Cuál es el primer paso?<span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span></summary>
-            <p>Nos escribes por WhatsApp o con el formulario de esta página, y agendamos una llamada de alineación para entender tu negocio y tu canal. Después te enviamos un diagnóstico y una propuesta a la medida.</p>
+            <p>Nos envías tu consulta con el formulario de esta página. Diana te responde personalmente en un plazo máximo de 24 horas y, según lo que necesites, definimos juntos el siguiente paso. Consultar y pedir una propuesta no tiene costo.</p>
           </details>
         </div>
       </div>

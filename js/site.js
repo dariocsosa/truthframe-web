@@ -3,6 +3,9 @@
   "use strict";
 
   var WHATSAPP = "18496523537";
+  // Registro de consultas (Google Apps Script, ver tools/formulario/). Vacío = el formulario
+  // abre WhatsApp con las respuestas, como antes. window.TFS_FORMULARIO solo se usa en pruebas.
+  var FORMULARIO = window.TFS_FORMULARIO || "";
   // Analítica sin cookies (Umami Cloud). Pegar aquí el "Website ID"; vacío = sin analítica.
   var ANALITICA = "";
   var raiz = document.documentElement;
@@ -10,11 +13,15 @@
   var t = en ? {
     pausar: "Pause background video", reanudar: "Play background video",
     saludo: "Hi Truth Frame Studio! I'm ",
-    de: " from ", interes: "I'm interested in: ", canal: "Channel: "
+    enviando: "Sending…", enviar: "Send inquiry", seguirWa: "Continue on WhatsApp",
+    pieWa: "WhatsApp will open with your answers ready to send.",
+    medio: { whatsapp: "WhatsApp", correo: "email" }
   } : {
     pausar: "Pausar video de fondo", reanudar: "Reproducir video de fondo",
     saludo: "¡Hola, Truth Frame Studio! Soy ",
-    de: ", de ", interes: "Me interesa: ", canal: "Canal: "
+    enviando: "Enviando…", enviar: "Enviar consulta", seguirWa: "Continuar en WhatsApp",
+    pieWa: "Se abrirá WhatsApp con tus respuestas listas para enviar.",
+    medio: { whatsapp: "WhatsApp", correo: "correo electrónico" }
   };
   var reducir = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (ANALITICA) {
@@ -235,10 +242,10 @@
   var origen = null;
 
   function datosDe(boton) {
-    var li = boton.closest(".obra");
+    var li = boton.closest("li");
     return {
       video: boton.dataset.video, lista: boton.dataset.lista,
-      titulo: $("h3", li).textContent, desc: $("p", li).textContent
+      titulo: $("h3", li).textContent, desc: ($(".caso-meta", li) || $("p", li)).textContent
     };
   }
   function cargar() {
@@ -268,8 +275,8 @@
     document.addEventListener("click", function (e) {
       var b = e.target.closest(".pantalla[data-video], .pantalla[data-lista]");
       if (!b) return;
-      var ul = b.closest(".obras");
-      lista = $$(".obra:not([hidden]) .pantalla", ul);
+      var ul = b.closest("ul");
+      lista = $$("li:not([hidden]) > .pantalla", ul);
       pos = lista.indexOf(b);
       origen = b;
       cargar();
@@ -316,45 +323,163 @@
     });
   }
 
-  /* ================= Contacto ================= */
+  /* ================= Contacto =================
+     Preguntas de selección con campos condicionales. Lo que queda oculto se deshabilita:
+     no se valida ni se envía. Con FORMULARIO configurado, la consulta se guarda y solo
+     se confirma cuando el registro responde {ok: true}. */
   var form = $("#form-contacto");
-  var selServicio = form && form.elements.servicio;
-  function elegirServicio(n) {
-    if (!selServicio) return;
-    selServicio.selectedIndex = Number(n);
-    var campo = selServicio.closest(".campo");
-    campo.classList.remove("invalido");
-    selServicio.setAttribute("aria-invalid", "false");
+  var exito = $(".form-exito");
+  var abierto = Date.now();
+  var PARA_SERVICIO = { 1: "mejorar", 2: "crear", 3: "orientacion", 4: "delegar", 5: "delegar" };
+
+  function valor(nombre) {
+    var marcados = $$('[name="' + nombre + '"]:checked:not(:disabled)', form);
+    return marcados.map(function (x) { return x.value; });
   }
-  if (form) {
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var ok = true;
-      $$("[required]", form).forEach(function (el) {
-        var campo = el.closest(".campo");
-        var vacio = !el.value.trim();
-        campo.classList.toggle("invalido", vacio);
-        el.setAttribute("aria-invalid", String(vacio));
-        if (vacio && ok) { el.focus(); ok = false; }
-      });
-      if (!ok) return;
-      var d = new FormData(form);
-      var txt = t.saludo + d.get("nombre").trim();
-      if (d.get("organizacion").trim()) txt += t.de + d.get("organizacion").trim();
-      txt += ".\n\n" + t.interes + d.get("servicio") + ".";
-      if (d.get("canal").trim()) txt += "\n" + t.canal + d.get("canal").trim();
-      if (d.get("mensaje").trim()) txt += "\n\n" + d.get("mensaje").trim();
-      medir("whatsapp", { origen: "formulario", servicio: d.get("servicio") });
-      window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(txt), "_blank", "noopener");
+  function texto(input) { return $("span", input.closest(".opcion")).textContent; }
+
+  function condiciones() {
+    $$(".condicional", form).forEach(function (bloque) {
+      var par = bloque.dataset.si.split("=");
+      var ver = valor(par[0]).indexOf(par[1]) > -1;
+      bloque.hidden = !ver;
+      $$("input, select", bloque).forEach(function (el) { el.disabled = !ver; });
+      if (!ver) bloque.classList.remove("invalido");
     });
-    form.addEventListener("input", function (e) {
-      var campo = e.target.closest(".campo");
-      if (campo && campo.classList.contains("invalido") && e.target.value.trim()) {
-        campo.classList.remove("invalido");
-        e.target.setAttribute("aria-invalid", "false");
+    // Con país "Otro", el número va completo con su código
+    var pais = $("#f-pais");
+    if (pais) $("#f-telefono").placeholder = pais.value === "otro" ? "+44 20 7946 0000" : "809 555 0123";
+  }
+
+  function marcar(el, malo) {
+    el.classList.toggle("invalido", malo);
+    $$("input, select", el).forEach(function (x) {
+      if (x.type !== "radio" && x.type !== "checkbox") x.setAttribute("aria-invalid", String(malo));
+    });
+  }
+
+  function validar() {
+    var primero = null;
+    $$(".grupo", form).forEach(function (g) {
+      if (g.hidden) return;
+      var malo = valor(g.dataset.grupo).length === 0;
+      marcar(g, malo);
+      if (malo && !primero) primero = $("input", g);
+    });
+    $$(".campo", form).forEach(function (c) {
+      if (c.hidden) return;
+      var el = $("[data-requerido]", c);
+      if (!el) return;
+      var v = el.value.trim();
+      var malo = !v;
+      if (el.type === "email") malo = !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+      if (el.name === "telefono") {
+        var digitos = v.replace(/\D/g, "");
+        malo = digitos.length < 7 || digitos.length > 15 || ($("#f-pais").value === "otro" && v.charAt(0) !== "+");
+      }
+      marcar(c, malo);
+      if (malo && !primero) primero = el;
+    });
+    if (primero) primero.focus();
+    return !primero;
+  }
+
+  function datos() {
+    var d = { idioma: en ? "en" : "es", nombre: form.elements.nombre.value.trim() };
+    ["ayuda", "objetivo", "tiene_canal", "medio"].forEach(function (k) { d[k] = valor(k)[0] || ""; });
+    d.redes = valor("redes").join(", ");
+    $$("input:not([type=radio]):not([type=checkbox]):not(:disabled), select:not(:disabled)", form).forEach(function (el) {
+      if (el.name && !(el.name in d)) d[el.name] = el.value.trim();
+    });
+    d.segundos = Math.round((Date.now() - abierto) / 1000);
+    return d;
+  }
+
+  function mensajeWhatsApp() {
+    // En el orden del formulario: preguntas con sus respuestas y los campos abiertos visibles
+    var lineas = [t.saludo + form.elements.nombre.value.trim() + "."];
+    $$(".grupo, .campo.condicional", form).forEach(function (el) {
+      if (el.hidden) return;
+      if (el.classList.contains("grupo")) {
+        var r = $$("input:checked", el).map(texto).join(", ");
+        if (r) lineas.push("• " + $("legend", el).firstChild.textContent.trim() + " " + r);
+      } else {
+        var campo = $("input:not([type=tel])", el);
+        if (campo && campo.value.trim() && campo.type !== "email") lineas.push("   " + campo.value.trim());
       }
     });
+    return lineas.join("\n");
   }
+
+  function elegirServicio(n) {
+    if (!form) return;
+    var v = PARA_SERVICIO[n];
+    var r = v && $('[name="ayuda"][value="' + v + '"]', form);
+    if (!r) return;
+    r.checked = true;
+    r.dispatchEvent(new Event("change", { bubbles: true }));
+  }
+
+  function modoWhatsApp() {
+    $(".enviar-texto", form).textContent = t.seguirWa;
+    $(".pie", form).textContent = t.pieWa;
+  }
+
+  if (form) {
+    if (!FORMULARIO) modoWhatsApp();
+    condiciones();
+    form.addEventListener("change", function (e) {
+      // Crear un canal desde cero sugiere "No, todavía no" (se puede cambiar)
+      if (e.target.name === "ayuda" && e.target.value === "crear" && !valor("tiene_canal").length) {
+        $('[name="tiene_canal"][value="no"]', form).checked = true;
+      }
+      condiciones();
+      var g = e.target.closest(".grupo, .campo");
+      if (g && g.classList.contains("invalido")) marcar(g, false);
+    });
+    form.addEventListener("input", function (e) {
+      var c = e.target.closest(".campo");
+      if (c && c.classList.contains("invalido") && e.target.value.trim()) marcar(c, false);
+    });
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      $(".form-error", form).hidden = true;
+      if (!validar()) return;
+      var d = datos();
+      if (!FORMULARIO) {
+        medir("whatsapp", { origen: "formulario", ayuda: d.ayuda });
+        window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(mensajeWhatsApp()), "_blank", "noopener");
+        return;
+      }
+      if (form.elements.sitio_web.value) return;  // trampa para robots
+      var boton = $(".enviar", form);
+      var etiqueta = $(".enviar-texto", boton);
+      boton.disabled = true;
+      etiqueta.textContent = t.enviando;
+      // Petición "simple" (sin preflight): Apps Script no responde a OPTIONS
+      fetch(FORMULARIO, {
+        method: "POST",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(d)
+      }).then(function (r) { return r.json(); }).then(function (r) {
+        if (!r || r.ok !== true) throw new Error("sin confirmación");
+        medir("formulario", { ayuda: d.ayuda, medio: d.medio });
+        $(".exito-medio", exito).textContent = t.medio[d.medio];
+        form.hidden = true;
+        exito.hidden = false;
+        exito.focus();
+      }).catch(function () {
+        $(".form-error", form).hidden = false;
+        boton.disabled = false;
+        etiqueta.textContent = t.enviar;
+      });
+    });
+  }
+
+  /* Testimonios: la sección solo aparece si tiene testimonios cargados */
+  var testimonios = $("#testimonios");
+  if (testimonios && $(".testimonios li", testimonios)) testimonios.hidden = false;
 
   document.addEventListener("click", function (e) {
     var a = e.target.closest('a[href^="https://wa.me/"]');
