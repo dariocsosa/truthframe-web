@@ -3,6 +3,8 @@
   "use strict";
 
   var WHATSAPP = "18496523537";
+  // Analítica sin cookies (Umami Cloud). Pegar aquí el "Website ID"; vacío = sin analítica.
+  var ANALITICA = "";
   var raiz = document.documentElement;
   var en = raiz.lang === "en";
   var t = en ? {
@@ -15,6 +17,17 @@
     de: ", de ", interes: "Me interesa: ", canal: "Canal: "
   };
   var reducir = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (ANALITICA) {
+    var sc = document.createElement("script");
+    sc.defer = true;
+    sc.src = "https://cloud.umami.is/script.js";
+    sc.setAttribute("data-website-id", ANALITICA);
+    document.head.appendChild(sc);
+  }
+  // Eventos: pestana, servicio, guia, video, formulario, whatsapp
+  function medir(evento, datos) {
+    try { if (window.umami) window.umami.track(evento, datos); } catch (e) {}
+  }
   var $ = function (sel, ctx) { return (ctx || document).querySelector(sel); };
   var $$ = function (sel, ctx) { return Array.prototype.slice.call((ctx || document).querySelectorAll(sel)); };
 
@@ -82,7 +95,7 @@
 
   function ir(id, destino, modo, enfocar, despues) {
     var cambia = id !== actual;
-    if (cambia) scrolls[actual] = window.scrollY;
+    if (cambia) { scrolls[actual] = window.scrollY; medir("pestana", { panel: id }); }
     actual = id;
     var hacer = function () {
       aplicar(id, destino, modo);
@@ -185,6 +198,7 @@
   chips.forEach(function (c) {
     c.setAttribute("aria-pressed", "false");
     c.addEventListener("click", function () {
+      medir("guia", { servicio: c.dataset.abrir });
       abrirServicio(c.dataset.abrir);
       $("summary", document.getElementById(c.dataset.abrir)).focus({ preventScroll: true });
     });
@@ -192,6 +206,7 @@
   // Abrir un servicio a mano desmarca la guía
   $$(".servicio summary").forEach(function (sm) {
     sm.addEventListener("click", function () {
+      if (!sm.parentNode.open) medir("servicio", { servicio: sm.parentNode.id });
       chips.forEach(function (c) { c.setAttribute("aria-pressed", "false"); });
     });
   });
@@ -258,6 +273,7 @@
       pos = lista.indexOf(b);
       origen = b;
       cargar();
+      medir("video", { titulo: datosDe(b).titulo });
       rep.showModal();
       $(".rep-cerrar", rep).focus();
     });
@@ -328,6 +344,7 @@
       txt += ".\n\n" + t.interes + d.get("servicio") + ".";
       if (d.get("canal").trim()) txt += "\n" + t.canal + d.get("canal").trim();
       if (d.get("mensaje").trim()) txt += "\n\n" + d.get("mensaje").trim();
+      medir("whatsapp", { origen: "formulario", servicio: d.get("servicio") });
       window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(txt), "_blank", "noopener");
     });
     form.addEventListener("input", function (e) {
@@ -338,6 +355,11 @@
       }
     });
   }
+
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest('a[href^="https://wa.me/"]');
+    if (a) medir("whatsapp", { origen: a.dataset.origen || "otro" });
+  });
 
   /* WhatsApp flotante: oculto sobre el hero y en la pestaña Contacto */
   var flotante = $(".flotante");

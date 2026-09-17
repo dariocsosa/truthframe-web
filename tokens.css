@@ -1,7 +1,14 @@
 /* Truth Frame Studio — tokens del Brand Kit Definitivo (ago-2026).
    Coral = acción. Nunca decoración. Regla 80 / 15 / 5. */
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap");
+/* Inter alojada en el sitio (variable, subconjunto latino de Google Fonts, licencia OFL) */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url("/assets/fuentes/inter-latin.woff2") format("woff2");
+}
 
 :root {
   /* Color */

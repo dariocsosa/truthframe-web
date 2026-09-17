@@ -244,7 +244,7 @@ ul, ol { padding: 0; list-style: none; }
 .seccion { padding-block: clamp(72px, 10vw, 128px); }
 .seccion-oscura { background: var(--tfs-charcoal); color: var(--tfs-blanco); }
 .seccion-oscura .secundario { color: var(--gris-sobre-oscuro); }
-.seccion-editorial { background: var(--tfs-editorial); }
+.seccion-editorial { background: var(--tfs-editorial); --gris-600: #5C5C5C; } /* 5.4:1 sobre editorial */
 .cabecera { display: grid; gap: 16px; margin-bottom: clamp(40px, 6vw, 64px); }
 .cabecera .lead { color: var(--gris-600); }
 .cabecera-fila { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px 24px; }
@@ -545,6 +545,27 @@ ul, ol { padding: 0; list-style: none; }
 .form .pie { font-size: .8125rem; color: var(--gris-600); text-align: center; }
 @media (max-width: 860px) { .contacto { grid-template-columns: 1fr; } }
 @media (max-width: 520px) { .dos { grid-template-columns: 1fr; } }
+
+/* ---------- Preguntas frecuentes ---------- */
+.faq { display: grid; grid-template-columns: 4fr 7fr; gap: clamp(32px, 6vw, 96px); align-items: start; }
+.faq .cabecera { position: sticky; top: calc(var(--header) + 24px); margin-bottom: 0; }
+.preguntas { border-top: 1px solid var(--tfs-charcoal); }
+.pregunta { border-bottom: 1px solid var(--gris-300); }
+.pregunta summary {
+  list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 24px;
+  padding: 22px 0; font-size: clamp(1.0625rem, 1.5vw, 1.1875rem); font-weight: 600; line-height: 1.35;
+}
+.pregunta summary::-webkit-details-marker { display: none; }
+.pregunta summary .toggle { flex: none; width: 34px; height: 34px; }
+.pregunta summary:hover .toggle { border-color: var(--tfs-charcoal); }
+.pregunta[open] .toggle { transform: rotate(45deg); border-color: var(--tfs-coral); color: var(--tfs-coral); }
+.pregunta p { padding: 0 58px 24px 0; font-size: 1rem; color: var(--gris-600); max-width: 64ch; animation: despliega .3s cubic-bezier(.2,.8,.2,1); }
+@media (prefers-reduced-motion: reduce) { .pregunta p { animation: none; } }
+@media (max-width: 860px) {
+  .faq { grid-template-columns: 1fr; gap: 0; }
+  .faq .cabecera { position: static; margin-bottom: 32px; }
+  .pregunta p { padding-right: 0; }
+}
 
 /* ---------- Cierre de panel: CTA + siguiente pestaña ---------- */
 .cierre { border-top: 1px solid var(--gris-300); }
