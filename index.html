@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Truth Frame Studio — Estrategia y producción para YouTube</title>
-  <meta name="description" content="Estudio de estrategia y producción para YouTube en Santo Domingo. Auditamos, creamos y producimos canales que atraen clientes y construyen autoridad.">
+  <meta name="description" content="Estudio de estrategia y producción para YouTube en Santo Domingo. Auditamos canales, creamos proyectos desde cero y acompañamos a organizaciones que quieren delegar su proceso de contenido.">
   <link rel="canonical" href="https://truthframestudio.com/">
   <link rel="alternate" hreflang="es" href="https://truthframestudio.com/">
   <link rel="alternate" hreflang="en" href="https://truthframestudio.com/en/">
@@ -12,7 +12,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Truth Frame Studio">
   <meta property="og:title" content="Truth Frame Studio — Estrategia y producción para YouTube">
-  <meta property="og:description" content="Convertimos tu canal de YouTube en un activo que atrae clientes y construye autoridad.">
+  <meta property="og:description" content="Haz que tu canal de YouTube llegue más lejos.">
   <meta property="og:url" content="https://truthframestudio.com/">
   <meta property="og:image" content="https://truthframestudio.com/assets/og-es.jpg">
   <meta property="og:image:width" content="1200">
@@ -20,7 +20,7 @@
   <meta property="og:image:alt" content="Diana Cardona y Andrés Figueroa, de Truth Frame Studio, en su estudio de grabación.">
   <meta property="og:locale" content="es_DO">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="theme-color" content="#FFFFFF">
+  <meta name="theme-color" content="#000000">
   <link rel="icon" href="/assets/logos/Logo_TFS_black_simbolo.svg" type="image/svg+xml">
   <link rel="icon" href="/assets/iconos/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="/assets/iconos/apple-touch-icon.png">
@@ -30,8 +30,10 @@
     /* Pestaña inicial antes de pintar (evita parpadeo). El resto está en js/site.js */
     (function (d) {
       var p = ["inicio", "servicios", "portafolio", "nosotros", "contacto"], h = location.hash.slice(1);
+      var dentro = { metodo: "servicios", selector: "servicios", s1: "servicios", s2: "servicios", s3: "servicios", s4: "servicios", s5: "servicios",
+                     casos: "portafolio", clientes: "inicio", equipo: "nosotros", preguntas: "contacto" };
       d.className += " js";
-      d.setAttribute("data-panel", p.indexOf(h) > -1 ? h : (h === "metodo" ? "servicios" : "inicio"));
+      d.setAttribute("data-panel", p.indexOf(h) > -1 ? h : (dentro[h] || "inicio"));
     })(document.documentElement);
   </script>
   <link rel="stylesheet" href="/tokens.css">
@@ -45,85 +47,13 @@
     "url": "https://truthframestudio.com/",
     "logo": "https://truthframestudio.com/assets/logos/Logo_TFS_black_1.svg",
     "image": "https://truthframestudio.com/assets/fotos/andres-diana-1600.jpg",
-    "description": "Estrategia y producción para YouTube.",
+    "description": "Estrategia y producción para YouTube: auditoría de canales, lanzamiento de canales desde cero, dirección estratégica e integral y producciones audiovisuales especiales.",
     "telephone": "+1-849-652-3537",
     "address": { "@type": "PostalAddress", "addressLocality": "Santo Domingo", "addressCountry": "DO" },
     "areaServed": "Worldwide",
     "founder": [
       { "@type": "Person", "name": "Diana Cardona" },
       { "@type": "Person", "name": "Andrés Figueroa" }
-    ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "¿Trabajan con clientes fuera de República Dominicana?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sí. Puedes venir a Santo Domingo y grabar una temporada completa en bloque, o enviamos nuestro equipo de rodaje a tus oficinas o a la locación que elijas, en cualquier país. Los viajes se cotizan aparte."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Necesito tener un canal para trabajar con ustedes?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. Con la incubadora de autoridad creamos tu canal desde cero. Y si todavía no tienes un producto o servicio de alto valor que vender, empezamos por diseñarlo contigo en la incubadora de oferta."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Cuánto tiempo toma cada servicio?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "El plan maestro de una auditoría toma 2 semanas, y su implementación, 3 meses. La incubadora de autoridad toma 4 semanas, y la de oferta, de 2 a 3. La implementación estratégica toma de 4 a 6 semanas, y la integral arranca con un compromiso de 3 meses."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Qué incluyen los precios?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Los valores que publicamos son puntos de partida. La propuesta final depende del alcance del proyecto, y los viajes, locaciones, talento y otros costos externos se cotizan aparte."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Puede mi equipo grabar el contenido?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sí. Los 10 guiones de la incubadora de autoridad los puede grabar tu equipo o el nuestro. Y en la implementación estratégica diseñamos el sistema para que tu equipo lo ejecute con autonomía."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Por qué hacen una entrevista de viabilidad?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Porque un canal de autoridad solo funciona si detrás hay conocimiento y experiencia reales. Si vemos que el modelo no es sostenible a largo plazo, preferimos decírtelo antes de empezar."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Mi canal tiene que ganar dinero con AdSense?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. No diseñamos canales para depender de la publicidad de YouTube, sino para que atraigan clientes: cada video lleva a tu audiencia hacia tu oferta."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Cuál es el primer paso?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Nos envías tu consulta con el formulario de esta página. Diana te responde personalmente en un plazo máximo de 24 horas y, según lo que necesites, definimos juntos el siguiente paso. Consultar y pedir una propuesta no tiene costo."
-        }
-      }
     ]
   }
   </script>
@@ -134,8 +64,8 @@
   <header class="header">
     <div class="contenedor">
       <a class="marca" href="#inicio" aria-label="Truth Frame Studio, inicio">
-        <img src="/assets/logos/Logo_TFS_black_simbolo.svg" alt="" width="41" height="40">
-        <img src="/assets/logos/Logo_TFS_black_nombre.svg" alt="" width="99" height="22">
+        <img src="/assets/logos/Logo_TFS_white_simbolo.svg" alt="" width="41" height="40">
+        <img src="/assets/logos/Logo_TFS_white_nombre.svg" alt="" width="99" height="22">
       </a>
       <nav class="nav" id="nav" aria-label="Principal">
         <ul>
@@ -147,7 +77,7 @@
         <span class="indicador" aria-hidden="true"></span>
       </nav>
       <a class="idioma" href="/en/" hreflang="en" lang="en" aria-label="English version">EN</a>
-      <a class="btn btn-primario btn-hablemos" href="#contacto">Hablemos <span class="flecha" aria-hidden="true">→</span></a>
+      <a class="btn btn-acento btn-hablemos" href="#contacto"><span class="cta-largo">Cuéntanos sobre tu canal</span><span class="cta-corto">Tu canal</span> <span class="flecha" aria-hidden="true">→</span></a>
     </div>
   </header>
 
@@ -175,12 +105,12 @@
       </div>
       <div class="hero-texto">
         <div class="contenedor">
-          <p class="claim">Estrategia + producción</p>
-          <h1 class="h1" id="hero-titulo">Contenido que transforma audiencias.</h1>
-          <p class="lead">Diseñamos la estrategia de tu canal de YouTube y producimos el contenido con rigor de televisión, para que trabaje por tu negocio las 24 horas.</p>
+          <p class="claim">Estrategia + producción para YouTube</p>
+          <h1 class="h1" id="hero-titulo">Haz que tu canal de YouTube llegue más lejos.</h1>
+          <p class="lead">Auditamos canales que necesitan mejores resultados, creamos proyectos desde cero y acompañamos a organizaciones que quieren delegar todo su proceso de contenido.</p>
           <div class="acciones">
-            <a class="btn btn-acento" href="#contacto">Hablemos del proyecto <span class="flecha" aria-hidden="true">→</span></a>
-            <a class="btn btn-claro" href="#portafolio">Ver portafolio</a>
+            <a class="btn btn-acento" href="#contacto">Cuéntanos sobre tu canal <span class="flecha" aria-hidden="true">→</span></a>
+            <a class="btn btn-claro" href="#casos">Ver casos de estudio</a>
           </div>
         </div>
       </div>
@@ -189,7 +119,7 @@
     <section class="credenciales" aria-label="Trayectoria">
       <div class="contenedor">
         <ul>
-          <li><strong>+25 años</strong><span>de experiencia audiovisual. Andrés y Diana trabajan juntos desde 1999.</span></li>
+          <li><strong>+25 años</strong><span>de experiencia en estrategia, dirección y producción audiovisual.</span></li>
           <li><strong>0 → 500K+</strong><span>suscriptores en IBSJ: no tenía canal cuando Andrés llegó; lo creó y lo dirige hoy.</span></li>
           <li><strong>200K+</strong><span>suscriptores en Entendiendo Los Tiempos, un proyecto que Andrés empezó desde cero y dirigió en lo audiovisual desde el inicio.</span></li>
           <li><strong>110K+</strong><span>suscriptores en Eternidad Plus. Andrés y Diana lideraron su transición desde Radio Eternidad, y Andrés dirige hoy el canal.</span></li>
@@ -215,10 +145,11 @@
           <h2 class="h2" id="caminos-titulo">¿En qué punto está tu canal?</h2>
         </div>
         <ul class="caminos">
-          <li><a href="#servicios" data-abrir="s1"><small>Ya tengo canal</small><b>Publico, pero no crece como esperaba</b><span>Auditoría y reestructuración</span><i aria-hidden="true">→</i></a></li>
-          <li><a href="#servicios" data-abrir="s2"><small>Todavía no tengo canal</small><b>Quiero construirlo bien desde el principio</b><span>Incubadora de autoridad</span><i aria-hidden="true">→</i></a></li>
-          <li><a href="#servicios" data-abrir="s4"><small>Tenemos un canal activo</small><b>Queremos delegar la producción</b><span>Producción audiovisual</span><i aria-hidden="true">→</i></a></li>
+          <li><a href="#servicios" data-abrir="s2"><small>Ya tengo canal</small><b>Quiero saber qué está frenando su crecimiento</b><span>Auditoría estratégica de canal</span><i aria-hidden="true">→</i></a></li>
+          <li><a href="#servicios" data-abrir="s3"><small>Todavía no tengo canal</small><b>Quiero comenzar desde cero, con una dirección clara</b><span>Lanzamiento de canal de YouTube</span><i aria-hidden="true">→</i></a></li>
+          <li><a href="#servicios" data-abrir="s4"><small>Tenemos un canal activo</small><b>Queremos delegar el proceso de contenido</b><span>Dirección estratégica o integral de canal</span><i aria-hidden="true">→</i></a></li>
         </ul>
+        <p class="aviso-precios">¿Solo necesitas claridad para tomar una decisión? <a class="enlace" href="#servicios" data-abrir="s1">Conoce la sesión estratégica para YouTube</a>.</p>
       </div>
     </section>
 
@@ -264,211 +195,581 @@
       </div>
     </section>
 
-    <!-- Clientes -->
-    <section class="seccion seccion-editorial" id="clientes" aria-labelledby="clientes-titulo">
+    <!-- Clientes: logos entregados por Diana (insumos/logos-clientes), en blanco para el fondo oscuro.
+         Si llegan los SVG originales, se reemplaza el archivo en assets/clientes/ y listo. -->
+    <section class="seccion seccion-alt" id="clientes" aria-labelledby="clientes-titulo">
       <div class="contenedor">
         <div class="cabecera">
-          <h2 class="h2" id="clientes-titulo">Han confiado en nosotros</h2>
+          <h2 class="h2" id="clientes-titulo">Clientes que han sido parte de nuestra trayectoria</h2>
         </div>
         <ul class="clientes">
-          <li>Eternidad+<small>Plataforma de contenido</small></li>
-          <li>Aviva Nuestros Corazones<small>Ministerio internacional</small></li>
-          <li>Entendiendo Los Tiempos<small>Podcast</small></li>
-          <li>B&amp;H Español<small>Editorial</small></li>
-          <li>Editorial Portavoz<small>Editorial</small></li>
-          <li>Filarmónica Appassionato<small>Orquesta</small></li>
-          <li>BITE<small>Conferencias</small></li>
-          <li>ACSI Caribe<small>Asociación educativa</small></li>
+          <li><img class="ancho" src="/assets/clientes/eternidad-plus.webp" alt="Eternidad Plus" width="640" height="122" loading="lazy"></li>
+          <li><img class="ancho" src="/assets/clientes/aviva.webp" alt="Aviva Nuestros Corazones" width="244" height="52" loading="lazy"></li>
+          <li><img src="/assets/clientes/elt.webp" alt="Entendiendo Los Tiempos" width="474" height="180" loading="lazy"></li>
+          <li><img class="ancho" src="/assets/clientes/appassionato.webp" alt="Filarmónica Appassionato" width="640" height="148" loading="lazy"></li>
+          <li><img class="alto" src="/assets/clientes/bite.webp" alt="BITE" width="143" height="180" loading="lazy"></li>
+          <li><img src="/assets/clientes/acsi.webp" alt="ACSI Caribe" width="483" height="180" loading="lazy"></li>
+          <li><img class="alto" src="/assets/clientes/ibsj.webp" alt="IBSJ, Iglesia Bíblica del Señor Jesucristo" width="273" height="180" loading="lazy"></li>
+          <li><img src="/assets/clientes/lifeway-mujeres.webp" alt="Lifeway Mujeres" width="401" height="180" loading="lazy"></li>
+          <li><img class="alto" src="/assets/clientes/ligonier.webp" alt="Ligonier" width="241" height="145" loading="lazy"></li>
+          <li><img class="ancho" src="/assets/clientes/mejia-arcala.webp" alt="Mejía Arcalá" width="350" height="55" loading="lazy"></li>
+          <li><img class="alto" src="/assets/clientes/marco-sosa.webp" alt="Dr. Marco Sosa, medicina integrativa" width="178" height="180" loading="lazy"></li>
         </ul>
       </div>
     </section>
       <aside class="cierre" aria-label="Siguiente paso">
         <div class="contenedor">
           <p class="cierre-texto">¿Hablamos de tu canal?</p>
-          <a class="btn btn-acento" href="#contacto">Envíanos tu consulta <span class="flecha" aria-hidden="true">→</span></a>
+          <a class="btn btn-acento" href="#contacto">Cuéntanos sobre tu canal <span class="flecha" aria-hidden="true">→</span></a>
           <a class="siguiente" href="#servicios"><small>Siguiente</small>Servicios <span aria-hidden="true">→</span></a>
         </div>
       </aside>
     </div>
 
-    <!-- ============ SERVICIOS ============ -->
+    <!-- ============ SERVICIOS ============
+         Catálogo aprobado por Diana (18-sep): insumos/documentos/Truth_Frame_Studio_Catalogo_Servicios_Final.md -->
     <div class="panel" id="servicios" data-titulo="Servicios — Truth Frame Studio">
     <section class="seccion portada" aria-labelledby="servicios-titulo">
       <div class="contenedor">
         <div class="cabecera">
           <h2 class="h2" id="servicios-titulo">Servicios</h2>
-          <p class="lead">Cada proyecto se diseña a la medida. Estos son los puntos de partida.</p>
+          <p class="lead">Una oferta escalonada y enfocada en YouTube: desde una sesión para decidir tu siguiente paso hasta la dirección completa de tu canal.</p>
         </div>
 
-        <div class="guia" role="group" aria-labelledby="guia-titulo">
-          <p class="guia-titulo" id="guia-titulo">¿Por dónde empiezo?</p>
-          <button class="chip" type="button" data-abrir="s1">Tengo un canal que no crece</button>
-          <button class="chip" type="button" data-abrir="s2">Quiero crear mi canal</button>
-          <button class="chip" type="button" data-abrir="s3">Aún no tengo qué vender</button>
-          <button class="chip" type="button" data-abrir="s4">Necesito producir contenido</button>
-          <button class="chip" type="button" data-abrir="s5">Quiero delegarlo todo</button>
+        <!-- Selector: cada situación lleva al servicio recomendado -->
+        <div class="selector" id="selector">
+          <h3 class="h3 selector-titulo">Encuentra el acompañamiento que necesitas</h3>
+          <p class="lead">No todos los proyectos están en la misma etapa. Identifica cuál de estas situaciones se parece más a la tuya y conoce el servicio que puede ayudarte a avanzar.</p>
+          <div class="situaciones">
+            <details class="situacion" name="situacion">
+              <summary>Necesito claridad para tomar una decisión<span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span></summary>
+              <div class="situacion-cuerpo">
+                <p>Tienes una idea, una dificultad puntual o un canal que no sabes cómo impulsar. Recibe orientación especializada y define tu siguiente paso.</p>
+                <p class="recomendado">Servicio recomendado <b>Sesión estratégica para YouTube</b></p>
+                <a class="btn btn-primario" href="#s1" data-abrir="s1">Reservar mi sesión <span class="flecha" aria-hidden="true">→</span></a>
+              </div>
+            </details>
+            <details class="situacion" name="situacion">
+              <summary>Quiero saber qué está frenando mi canal<span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span></summary>
+              <div class="situacion-cuerpo">
+                <p>Necesitas comprender qué está funcionando, qué debe cambiar y cuáles son las oportunidades reales de crecimiento de tu canal.</p>
+                <p class="recomendado">Servicio recomendado <b>Auditoría estratégica de canal</b></p>
+                <a class="btn btn-primario" href="#s2" data-abrir="s2">Auditar mi canal <span class="flecha" aria-hidden="true">→</span></a>
+              </div>
+            </details>
+            <details class="situacion" name="situacion">
+              <summary>Quiero comenzar un canal desde cero<span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span></summary>
+              <div class="situacion-cuerpo">
+                <p>Tienes el conocimiento, el mensaje o la marca, pero necesitas una dirección clara para convertirlos en un canal profesional y listo para publicar.</p>
+                <p class="recomendado">Servicio recomendado <b>Lanzamiento de canal de YouTube</b></p>
+                <a class="btn btn-primario" href="#s3" data-abrir="s3">Lanzar mi canal <span class="flecha" aria-hidden="true">→</span></a>
+              </div>
+            </details>
+            <details class="situacion" name="situacion">
+              <summary>Necesito dirección continua o delegar la producción<span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span></summary>
+              <div class="situacion-cuerpo">
+                <p>Tu canal ya existe y necesita recuperar movimiento, mantener una estrategia consistente o contar con un equipo que asuma también la producción audiovisual.</p>
+                <p class="recomendado">Servicio recomendado <b>Dirección estratégica o integral de canal</b></p>
+                <a class="btn btn-primario" href="#s4" data-abrir="s4">Encontrar mi plan <span class="flecha" aria-hidden="true">→</span></a>
+              </div>
+            </details>
+            <details class="situacion" name="situacion">
+              <summary>Tengo una producción audiovisual especial<span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span></summary>
+              <div class="situacion-cuerpo">
+                <p>Necesitas desarrollar una serie, un pódcast, un curso, un evento, un concierto, un documental u otro proyecto audiovisual a la medida.</p>
+                <p class="recomendado">Servicio recomendado <b>Producciones audiovisuales especiales</b></p>
+                <a class="btn btn-primario" href="#s5" data-abrir="s5">Hablemos de mi proyecto <span class="flecha" aria-hidden="true">→</span></a>
+              </div>
+            </details>
+            <div class="ayuda-elegir">
+              <p><b>¿Todavía no sabes cuál elegir?</b>Cuéntanos en qué etapa estás. Revisaremos tu información y te orientaremos hacia la opción más adecuada.</p>
+              <a class="btn btn-claro" href="#contacto" data-servicio="orientacion">Ayúdenme a elegir <span class="flecha" aria-hidden="true">→</span></a>
+            </div>
+          </div>
         </div>
 
+        <h3 class="h3 bloque-titulo">Nuestros servicios</h3>
         <div class="servicios">
-          <details class="servicio" name="servicio" id="s1" open>
+          <!-- 01 · Sesión estratégica -->
+          <details class="servicio" name="servicio" id="s1">
             <summary>
               <span class="num">01</span>
-              <span class="nombre-col"><span class="nombre">Auditoría y reestructuración de canales</span>
-                <span class="para">Para canales que llevan tiempo publicando y no crecen, no monetizan o no venden.</span></span>
-              <span class="dato"><small>Tiempo</small>2 semanas</span>
-              <span class="dato"><small>Inversión</small><b>Desde USD 2.000</b></span>
+              <span class="nombre-col"><span class="nombre">Sesión estratégica para YouTube</span>
+                <span class="para">Dos horas con Diana para identificar qué está frenando tu canal y salir con un plan de acción claro para los próximos 30 días.</span></span>
+              <span class="dato"><small>Tiempo</small>Sesión de 2 horas</span>
+              <span class="dato precio"><small>Inversión</small><b>USD 250</b></span>
               <span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span>
             </summary>
             <div class="detalle">
-              <div>
-                <h4>El diagnóstico</h4>
-                <p>Revisamos las métricas que de verdad explican el rendimiento: la tasa de clics de las impresiones, la retención en los primeros 30 segundos y los videos que se salen del promedio. Así encontramos dónde se rompe el empaque y dónde se va la audiencia.</p>
-                <h4>El plan maestro</h4>
-                <p>Te entregamos un plan de reestructuración para reactivar el tráfico, mejorar títulos y miniaturas con pruebas A/B/C y alinear el contenido con un embudo comercial.</p>
+              <div class="intro">
+                <p>Una sesión individual de dos horas con Diana para identificar qué está frenando tu canal, ordenar tus prioridades y definir un plan de acción concreto para los próximos 30 días.</p>
+                <p>Recibirás orientación estratégica personalizada, un informe detallado con las conclusiones de la reunión y una hoja de ruta clara para avanzar durante los próximos 30 días.</p>
               </div>
-              <div class="col-b">
+              <div class="d-cols">
+                <div>
+                  <h4>¿Para quién es esta sesión?</h4>
+                  <ul class="lista compacta">
+                    <li>Quieres comenzar un canal de YouTube y necesitas claridad para tomar las primeras decisiones.</li>
+                    <li>Tienes un negocio o una marca personal y quieres convertir YouTube en una plataforma que genere confianza, oportunidades y clientes.</li>
+                    <li>Ya tienes un canal, pero no sabes qué está limitando su avance ni cuál debería ser tu siguiente paso.</li>
+                    <li>Estás considerando cerrar o abandonar tu canal porque no obtuviste los resultados que esperabas.</li>
+                    <li>Tienes varias ideas, pero necesitas ordenarlas y convertirlas en prioridades concretas.</li>
+                    <li>Debes tomar una decisión importante sobre el contenido, la audiencia, el formato o la dirección de tu canal.</li>
+                    <li>Quieres validar tu proyecto antes de invertir en una auditoría, producción o acompañamiento de mayor alcance.</li>
+                  </ul>
+                  <p class="secundario" style="margin-top:14px">No importa si tu canal todavía es una idea, si ya está activo o si has pensado en abandonarlo. La sesión se adapta al punto en el que te encuentras para ayudarte a recuperar la claridad y definir una dirección concreta.</p>
+                </div>
+                <div>
+                  <h4>Incluye</h4>
+                  <ul class="lista compacta">
+                    <li>Formulario previo para conocer el canal y el problema principal.</li>
+                    <li>Revisión preliminar de un canal de YouTube.</li>
+                    <li>Sesión estratégica de dos horas con Diana.</li>
+                    <li>Participación tuya y de una persona adicional de tu equipo, sin costo.</li>
+                    <li>Informe detallado de la sesión.</li>
+                    <li>Hoja de ruta de una página con prioridades para los próximos 30 días.</li>
+                    <li>Entrega del resumen y la hoja de ruta dentro de las 48 horas posteriores a la sesión.</li>
+                  </ul>
+                  <h4>Cómo funciona</h4>
+                  <ol class="pasos">
+                    <li>Reservas tu sesión con el pago de USD 250 y eliges una fecha disponible.</li>
+                    <li>Completas un formulario breve sobre tu situación y, si ya tienes canal, compartes el enlace.</li>
+                    <li>Diana revisa tu información antes de la reunión.</li>
+                    <li>Realizamos la sesión estratégica de dos horas, en línea.</li>
+                    <li>En un máximo de 48 horas recibes el informe detallado y la hoja de ruta para los próximos 30 días.</li>
+                  </ol>
+                </div>
+              </div>
+              <div class="cifras">
+                <p class="dato"><small>Inversión</small><b>USD 250</b></p>
+                <p class="dato"><small>Modalidad</small><b>En línea, desde cualquier país</b></p>
+                <p class="dato"><small>Entrega</small><b>Informe y hoja de ruta en 48 horas</b></p>
+              </div>
+              <p class="nota">Si contratas un servicio de mayor alcance dentro de los 15 días posteriores a la sesión, abonamos el 60 % de la inversión pagada por la sesión a tu nueva contratación.</p>
+              <div class="d-cols">
+                <div>
+                  <h4>Alcance de la sesión</h4>
+                  <p>Para que las dos horas se concentren en resolver tu necesidad más urgente, la sesión está diseñada para trabajar una dificultad o decisión prioritaria.</p>
+                  <p>Si tu canal requiere una revisión integral, implementación, producción audiovisual, creación de miniaturas o desarrollo de guiones, te recomendaremos el servicio que permita abordar esas necesidades con la profundidad adecuada.</p>
+                  <h4>En línea y confidencial</h4>
+                  <p>La sesión se realiza exclusivamente en línea, por lo que puedes reservarla desde cualquier país. Para proteger tu confidencialidad, es privada y no se graba en video por ninguna de las partes. El informe es para uso interno y puedes compartirlo con las personas de tu equipo que participen en la ejecución del proyecto.</p>
+                </div>
+                <div>
+                  <h4>Cambios, cancelaciones y ausencias</h4>
+                  <p>El pago confirma y reserva tu espacio en la agenda. Puedes cambiar la fecha de tu sesión una vez sin costo adicional, siempre que lo solicites al menos seis horas antes de la hora programada.</p>
+                  <p>Si surge una emergencia, escríbenos lo antes posible para evaluar el caso. Si no asistes y no nos informas previamente, la sesión se considerará realizada y será necesario reservar una nueva.</p>
+                  <p>Los pagos no son reembolsables. Si Truth Frame Studio necesita cancelar la sesión, podrás elegir entre reprogramarla o recibir el reembolso completo.</p>
+                </div>
+              </div>
+              <div class="tabla-caja">
                 <table class="tabla">
-                  <thead><tr><th scope="col">Fase</th><th scope="col">Tiempo</th><th scope="col">Inversión</th></tr></thead>
+                  <caption>¿Necesitas una sesión estratégica o una auditoría?</caption>
+                  <thead><tr><th scope="col"></th><th scope="col">Sesión estratégica</th><th scope="col">Auditoría de canal</th></tr></thead>
                   <tbody>
-                    <tr><td>Plan maestro</td><td>2 semanas</td><td>Desde USD 2.000, pago único</td></tr>
-                    <tr><td>Implementación</td><td>3 meses</td><td>Desde USD 4.000</td></tr>
+                    <tr><th scope="row">Te conviene si…</th><td>Necesitas resolver una dificultad puntual, validar una idea o definir tu siguiente paso.</td><td>Necesitas comprender integralmente qué está limitando el canal y establecer una nueva dirección.</td></tr>
+                    <tr><th scope="row">Enfoque</th><td>Un problema o una decisión prioritaria.</td><td>El canal, su contenido y su dirección estratégica en conjunto.</td></tr>
+                    <tr><th scope="row">Profundidad</th><td>Orientación concentrada en tu necesidad más urgente.</td><td>Diagnóstico profundo realizado por nuestro equipo.</td></tr>
+                    <tr><th scope="row">Resultado</th><td>Claridad, decisiones concretas y una hoja de ruta para 30 días.</td><td>Diagnóstico completo, prioridades y un plan estratégico para 90 días.</td></tr>
+                    <tr><th scope="row">Sesiones</th><td>Una sesión de dos horas con Diana.</td><td>Sesión de diagnóstico y sesión de entrega.</td></tr>
+                    <tr><th scope="row">Entregable</th><td>Informe de conclusiones y hoja de ruta de 30 días.</td><td>Informe completo, hoja de ruta e ideas estratégicas listas para ejecutar.</td></tr>
+                    <tr><th scope="row">Inversión</th><td>USD 250</td><td>Desde USD 900</td></tr>
                   </tbody>
                 </table>
-                <p class="nota">Si después nos encargas la implementación, lo que invertiste en el plan maestro se abona al proyecto.</p>
               </div>
-              <p class="ancho accion-servicio"><a class="btn btn-primario" href="#contacto" data-servicio="1">Hablemos de este servicio <span class="flecha" aria-hidden="true">→</span></a></p>
+              <p class="accion-servicio"><a class="btn btn-acento" href="#contacto" data-servicio="sesion">Reservar mi sesión <span class="flecha" aria-hidden="true">→</span></a><a class="btn btn-claro" href="#s2" data-abrir="s2">¿Tu canal necesita una revisión completa? Conoce la auditoría</a></p>
             </div>
           </details>
 
+          <!-- 02 · Auditoría (tiene página propia) -->
           <details class="servicio" name="servicio" id="s2">
             <summary>
               <span class="num">02</span>
-              <span class="nombre-col"><span class="nombre">Incubadora de autoridad</span>
-                <span class="para">Canales desde cero, para líderes y marcas con dominio real de su sector.</span></span>
-              <span class="dato"><small>Tiempo</small>4 semanas</span>
-              <span class="dato"><small>Inversión</small><b>Desde USD 4.000</b></span>
+              <span class="nombre-col"><span class="nombre">Auditoría estratégica de canal</span>
+                <span class="para">Descubre qué está funcionando, qué está frenando el crecimiento de tu canal y qué debes priorizar durante los próximos 90 días.</span></span>
+              <span class="dato"><small>Tiempo</small>10 días laborables</span>
+              <span class="dato precio"><small>Inversión</small><b>Desde USD 900</b></span>
               <span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span>
             </summary>
             <div class="detalle">
-              <div>
-                <h4>El proceso</h4>
-                <p>Diseñamos la arquitectura completa del canal, definimos el subnicho exacto y el modelo de negocio, para que YouTube funcione como un embudo de ventas.</p>
-                <h4>Lo que recibes</h4>
-                <ul class="lista">
-                  <li>El canal creado y optimizado.</li>
-                  <li>El video de presentación, producido y editado por nosotros.</li>
-                  <li>10 guiones listos para grabar, con tu equipo o con el nuestro.</li>
-                </ul>
+              <div class="intro">
+                <p>Un diagnóstico profundo para entender qué está funcionando, qué está limitando el crecimiento del canal y qué decisiones deben tomarse durante los próximos 90 días.</p>
+                <p><b>Ideal para</b> canales existentes que publican contenido, pero necesitan mejorar su alcance, retención, posicionamiento, presentación o conversión.</p>
+                <p>Recibirás una lectura integral del canal y un plan priorizado para dejar de publicar por intuición y empezar a tomar decisiones basadas en objetivos, audiencia y datos.</p>
               </div>
-              <div class="col-b">
-                <h4>Antes de empezar</h4>
-                <p>Todo proyecto inicia con una entrevista de viabilidad. Trabajamos con personas que tienen experiencia y autoridad real en su tema; si el conocimiento no es genuino o el modelo no es sostenible, preferimos no tomar el proyecto.</p>
-                <p class="nota">Paquete estratégico integral: 4 semanas, desde USD 4.000, pago único.</p>
+              <div class="d-cols">
+                <div>
+                  <h4>Lo que obtienes</h4>
+                  <ul class="lista compacta">
+                    <li>Claridad sobre lo que está limitando el crecimiento del canal.</li>
+                    <li>Una dirección estratégica para los próximos 90 días.</li>
+                    <li>Prioridades para enfocar mejor el tiempo, el presupuesto y el trabajo del equipo.</li>
+                    <li>Oportunidades para recuperar contenidos valiosos del catálogo.</li>
+                    <li>Criterios claros para tomar mejores decisiones sobre los próximos videos.</li>
+                    <li>Un equipo alineado alrededor de una misma dirección.</li>
+                    <li>Ideas estratégicas listas para comenzar a ejecutar.</li>
+                  </ul>
+                  <h4>Proceso</h4>
+                  <ol class="pasos">
+                    <li>Completas un formulario y recibes una guía con la información necesaria para comenzar.</li>
+                    <li>Realizamos la sesión de diagnóstico para comprender tus objetivos y el resultado esperado.</li>
+                    <li>Nuestro equipo aplica el Sistema TFS a tu proyecto.</li>
+                    <li>Recibes el diagnóstico, las prioridades, la hoja de ruta y las ideas estratégicas correspondientes a tu modalidad.</li>
+                    <li>Después de la entrega dispones de cinco días laborables para preguntas aclaratorias por correo electrónico.</li>
+                  </ol>
+                </div>
+                <div>
+                  <h4>Entregables</h4>
+                  <ul class="lista compacta">
+                    <li>Informe completo en PDF.</li>
+                    <li>Resumen ejecutivo.</li>
+                    <li>Evaluación de las áreas principales del canal.</li>
+                    <li>Lista de qué mantener, qué cambiar y qué dejar de hacer.</li>
+                    <li>Recomendaciones de formatos, temas, títulos y miniaturas.</li>
+                    <li>Plan de acción priorizado y hoja de ruta para 90 días.</li>
+                    <li>Ideación de 12 contenidos estratégicos, cada uno con enfoque, objetivo, formato y título inicial para que tu equipo pueda ejecutarlo.</li>
+                    <li>Informe con las conclusiones, decisiones, prioridades y próximos pasos acordados en la sesión de entrega.</li>
+                  </ul>
+                  <h4>Un sistema propio</h4>
+                  <p>Aplicamos el <b>Sistema TFS</b>, una metodología propia que conecta estrategia, análisis y producción audiovisual. Tú recibes el diagnóstico, las prioridades y la hoja de ruta; nosotros nos encargamos del proceso necesario para construirlos.</p>
+                  <p>No tendrás que compartir contraseñas ni concedernos acceso administrativo al canal. Puedes invitar a un miembro de tu equipo a las dos sesiones.</p>
+                </div>
               </div>
-              <p class="ancho accion-servicio"><a class="btn btn-primario" href="#contacto" data-servicio="2">Hablemos de este servicio <span class="flecha" aria-hidden="true">→</span></a></p>
+              <div class="modalidades">
+                <div class="modalidad">
+                  <p class="etiqueta">Auditoría estándar</p>
+                  <p>Para canales en desarrollo con una línea principal de contenido. Sesiones lideradas por Diana, directora de estrategia.</p>
+                  <div class="cifras">
+                    <p class="dato"><small>Inversión</small><b>USD 900</b></p>
+                    <p class="dato"><small>Entrega</small><b>10 días laborables</b></p>
+                    <p class="dato"><small>Pago</small><b>100 % al reservar</b></p>
+                  </div>
+                </div>
+                <div class="modalidad">
+                  <p class="etiqueta">Auditoría institucional</p>
+                  <p>Para canales consolidados, organizaciones o proyectos con varias series, formatos o públicos. Sesiones con Diana y Andrés, cofundadores de TFS.</p>
+                  <div class="cifras">
+                    <p class="dato"><small>Inversión</small><b>Desde USD 1,500</b></p>
+                    <p class="dato"><small>Entrega</small><b>Hasta 15 días laborables</b></p>
+                    <p class="dato"><small>Pago</small><b>50 % al iniciar y 50 % antes de la entrega</b></p>
+                  </div>
+                </div>
+              </div>
+              <p class="nota">El plazo se cuenta a partir de la recepción del pago, el formulario y todas las métricas solicitadas. Si tomaste primero la Sesión estratégica y contratas la auditoría dentro de los 15 días siguientes, abonamos el 60 % de la inversión pagada por la sesión.</p>
+              <p class="accion-servicio"><a class="btn btn-acento" href="#contacto" data-servicio="auditoria">Solicitar una auditoría <span class="flecha" aria-hidden="true">→</span></a><a class="btn btn-claro" href="/servicios/auditoria-canal-youtube/">Ver la auditoría en detalle</a></p>
             </div>
           </details>
 
+          <!-- 03 · Lanzamiento -->
           <details class="servicio" name="servicio" id="s3">
             <summary>
               <span class="num">03</span>
-              <span class="nombre-col"><span class="nombre">Incubadora de oferta high-ticket</span>
-                <span class="para">Para quien quiere lanzar un canal pero todavía no tiene un producto de alto valor que vender.</span></span>
-              <span class="dato"><small>Tiempo</small>2 a 3 semanas</span>
-              <span class="dato"><small>Inversión</small><b>Desde USD 2.000</b></span>
+              <span class="nombre-col"><span class="nombre">Lanzamiento de canal de YouTube</span>
+                <span class="para">Construimos tu canal desde cero con una estrategia clara, una identidad definida y un plan de contenidos diseñado para sus primeros 90 días.</span></span>
+              <span class="dato"><small>Tiempo</small>4 a 8 semanas</span>
+              <span class="dato precio"><small>Inversión</small><b>Desde USD 2,500</b></span>
               <span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span>
             </summary>
             <div class="detalle">
-              <div>
-                <h4>Una audiencia sin una oferta clara es solo entretenimiento</h4>
-                <p>En una consultoría intensiva identificamos lo que tu mercado necesita y diseñamos contigo un producto o servicio de alto valor que le dé peso comercial a tu marca.</p>
+              <div class="intro">
+                <p>Tienes el conocimiento, el mensaje o el proyecto. Nosotros te ayudamos a transformarlo en un canal con una dirección clara, una identidad definida y contenidos pensados para conectar con la audiencia correcta.</p>
+                <p>Puedes elegir el nivel de acompañamiento que necesitas. En ambas modalidades, tu canal comienza con una base profesional y una dirección clara para sus primeros 90 días.</p>
               </div>
-              <div class="col-b">
-                <h4>Lo que recibes</h4>
-                <ul class="lista">
-                  <li>Una oferta high-ticket estructurada y validada.</li>
-                  <li>La arquitectura del embudo, para que cada visualización tenga un camino claro hacia la venta.</li>
-                </ul>
+              <div class="modalidades">
+                <div class="modalidad">
+                  <p class="etiqueta">Lanzamiento estratégico</p>
+                  <h4>Tu equipo recibe un canal completamente definido y listo para producir</h4>
+                  <p>Para personas, marcas u organizaciones que cuentan con un equipo capaz de grabar, editar y publicar, pero necesitan una dirección especializada para comenzar correctamente en YouTube.</p>
+                  <ul class="lista compacta">
+                    <li>Una dirección clara para diferenciar y posicionar el canal.</li>
+                    <li>Una identidad y presentación coherentes desde el lanzamiento.</li>
+                    <li>Doce contenidos estratégicos listos para entrar en producción.</li>
+                    <li>Cinco guiones completos y siete escaletas para facilitar la grabación.</li>
+                    <li>Una hoja de ruta y un calendario para los primeros 90 días.</li>
+                    <li>Criterios claros para mantener la calidad y la coherencia del contenido.</li>
+                    <li>Un equipo preparado para continuar produciendo con mayor seguridad y autonomía.</li>
+                  </ul>
+                  <div class="cifras">
+                    <p class="dato"><small>Tiempo estimado</small><b>Cuatro semanas</b></p>
+                    <p class="dato"><small>Inversión</small><b>Desde USD 2,500</b></p>
+                  </div>
+                  <p class="secundario">Pago: 50 % para iniciar y 50 % antes de la entrega final.</p>
+                  <a class="btn btn-primario" href="#contacto" data-servicio="lanzamiento-estrategico">Preparar mi canal para producir <span class="flecha" aria-hidden="true">→</span></a>
+                </div>
+                <div class="modalidad">
+                  <p class="etiqueta">Lanzamiento integral</p>
+                  <h4>Tu canal queda activo, producido y con sus primeros contenidos publicados</h4>
+                  <p>Para quienes quieren comenzar en YouTube, pero no cuentan con un equipo propio o prefieren delegar todo el proceso estratégico y audiovisual. Recibes todo lo del Lanzamiento estratégico, además de:</p>
+                  <ul class="lista compacta">
+                    <li>Un canal configurado, organizado y preparado para recibir a su audiencia.</li>
+                    <li>Una identidad audiovisual coherente desde la primera publicación.</li>
+                    <li>Un video de presentación del canal.</li>
+                    <li>Cuatro videos principales completamente producidos y publicados.</li>
+                    <li>Cinco miniaturas, cada una con tres variantes A/B/C.</li>
+                    <li>Títulos, descripciones y elementos de publicación preparados para cada contenido.</li>
+                    <li>Una base de contenidos para comenzar a obtener información real sobre la respuesta de la audiencia.</li>
+                    <li>Una dirección clara para continuar publicando durante los siguientes 90 días.</li>
+                  </ul>
+                  <div class="cifras">
+                    <p class="dato"><small>Tiempo estimado</small><b>Entre seis y ocho semanas</b></p>
+                    <p class="dato"><small>Inversión</small><b>Desde USD 6,500</b></p>
+                  </div>
+                  <p class="secundario">La estrategia ya está incluida. Pago: 50 % para reservar, 30 % antes de la grabación y 20 % antes de la entrega final.</p>
+                  <a class="btn btn-primario" href="#contacto" data-servicio="lanzamiento-integral">Lanzar mi canal con TFS <span class="flecha" aria-hidden="true">→</span></a>
+                </div>
               </div>
-              <p class="ancho accion-servicio"><a class="btn btn-primario" href="#contacto" data-servicio="3">Hablemos de este servicio <span class="flecha" aria-hidden="true">→</span></a></p>
+              <div class="tabla-caja">
+                <table class="tabla">
+                  <caption>¿Cuál modalidad de lanzamiento necesitas?</caption>
+                  <thead><tr><th scope="col"></th><th scope="col">Lanzamiento estratégico</th><th scope="col">Lanzamiento integral</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">Te conviene si…</th><td>Ya cuentas con un equipo que puede grabar, editar y publicar.</td><td>No tienes un equipo propio o prefieres delegar el lanzamiento completo.</td></tr>
+                    <tr><th scope="row">Resultado principal</th><td>Tu canal queda completamente definido y tu equipo preparado para producirlo.</td><td>Tu canal queda activo, producido y con sus primeros contenidos publicados.</td></tr>
+                    <tr><th scope="row">Dirección estratégica</th><td>Incluida</td><td>Incluida</td></tr>
+                    <tr><th scope="row">Plan de 90 días</th><td>Incluido</td><td>Incluido</td></tr>
+                    <tr><th scope="row">Contenidos preparados</th><td>12 contenidos: cinco guiones completos y siete escaletas.</td><td>Los mismos 12 contenidos estratégicos, más la producción inicial.</td></tr>
+                    <tr><th scope="row">Producción audiovisual</th><td>La realiza tu equipo.</td><td>La realiza Truth Frame Studio.</td></tr>
+                    <tr><th scope="row">Contenido publicado</th><td>No incluido. Tu equipo queda preparado para producirlo y publicarlo.</td><td>Un video de presentación y cuatro videos principales publicados.</td></tr>
+                    <tr><th scope="row">Miniaturas A/B/C</th><td>Dirección visual para que tu equipo las desarrolle.</td><td>Cinco miniaturas con tres variantes A/B/C por pieza.</td></tr>
+                    <tr><th scope="row">Tiempo estimado</th><td>Cuatro semanas</td><td>Entre seis y ocho semanas</td></tr>
+                    <tr><th scope="row">Inversión</th><td>Desde USD 2,500</td><td>Desde USD 6,500</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="nota">Si comienzas con el Lanzamiento estratégico y decides avanzar al Lanzamiento integral dentro de los siguientes 30 días, abonamos el 100 % de lo pagado a la nueva contratación.</p>
+              <div class="d-cols">
+                <div>
+                  <h4>Condiciones de producción</h4>
+                  <p>Para que sepas con precisión qué cubre tu inversión, el precio base contempla una localización en Santo Domingo, una jornada de grabación de hasta ocho horas y dos rondas de revisión por pieza.</p>
+                  <p>Los traslados, viajes, alquiler de localizaciones, escenografía, talento, maquillaje, vestuario, animación avanzada, música especial, jornadas adicionales y piezas que excedan las duraciones indicadas se cotizan por separado. Así adaptamos la propuesta a las necesidades reales del proyecto sin cargar el precio base con recursos que quizá no necesites.</p>
+                </div>
+                <div>
+                  <h4>¿Qué sucede después del lanzamiento?</h4>
+                  <p>Tendrás una dirección clara y una hoja de ruta para continuar desarrollando el canal durante sus primeros 90 días. Si cuentas con un equipo propio, podrás seguir produciendo con los recursos y criterios recibidos.</p>
+                  <p>Si prefieres mantener nuestro acompañamiento, podrás avanzar a uno de los planes de dirección mensual. La continuidad es opcional: antes de recomendarte un plan, revisaremos contigo qué nivel de apoyo necesita realmente tu canal.</p>
+                </div>
+              </div>
+              <p class="accion-servicio"><a class="btn btn-acento" href="#contacto" data-servicio="lanzamiento">Quiero lanzar mi canal <span class="flecha" aria-hidden="true">→</span></a><a class="btn btn-claro" href="#contacto" data-servicio="lanzamiento">Ayúdenme a elegir una modalidad</a></p>
             </div>
           </details>
 
+          <!-- 04 · Dirección mensual -->
           <details class="servicio" name="servicio" id="s4">
             <summary>
               <span class="num">04</span>
-              <span class="nombre-col"><span class="nombre">Producción audiovisual estratégica</span>
-                <span class="para">Para marcas y ejecutivos que necesitan calidad de cine pensada para retener a la audiencia.</span></span>
-              <span class="dato"><small>Tiempo</small>Por sprint o proyecto</span>
-              <span class="dato"><small>Inversión</small><b>Desde USD 2.000</b></span>
+              <span class="nombre-col"><span class="nombre">Dirección estratégica o integral de canal</span>
+                <span class="para">Trabajamos junto a tu equipo o asumimos todo el proceso para convertir tu canal en un sistema de contenido consistente, optimizado y orientado a resultados.</span></span>
+              <span class="dato"><small>Tiempo</small>Mensual, mínimo 6 meses</span>
+              <span class="dato precio"><small>Inversión</small><b>Desde USD 1,200/mes</b></span>
               <span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span>
             </summary>
             <div class="detalle">
-              <p class="ancho">Cotizamos por proyecto o por sprint (un bloque de grabación), para que todo el canal mantenga la misma línea visual.</p>
-              <div class="tipos">
-                <div class="tipo">
-                  <span class="letra">Tipo A</span>
-                  <h4>Estudio y agilidad</h4>
-                  <p>Formatos de volumen: series, podcasts y entrevistas. Grabación en bloque.</p>
-                  <p class="dato"><small>Inversión</small><b>Desde USD 2.500</b> por sprint de 4 a 5 contenidos</p>
+              <div class="intro">
+                <p>Un canal no crece únicamente por publicar más. Necesita tomar mejores decisiones de forma continua, aprovechar el contenido que ya existe y mantener una dirección coherente a medida que la audiencia responde.</p>
+                <p>Trabajamos mes a mes para que tu canal avance con prioridades claras, contenidos alineados y una presencia constante. Acompañamiento mínimo: seis meses.</p>
+              </div>
+              <div class="modalidades">
+                <div class="modalidad">
+                  <p class="etiqueta">Dirección estratégica y reactivación</p>
+                  <h4>Tu equipo produce. Nosotros mantenemos el canal enfocado y en movimiento.</h4>
+                  <p>Para canales que ya cuentan con un equipo capaz de grabar, editar y publicar, pero necesitan una dirección externa especializada para tomar mejores decisiones y aprovechar tanto los contenidos nuevos como el catálogo existente.</p>
+                  <ul class="lista compacta">
+                    <li>Prioridades claras para orientar el trabajo de cada mes.</li>
+                    <li>Nuevas propuestas de contenido alineadas con los objetivos del canal y la respuesta de la audiencia.</li>
+                    <li>Un catálogo renovado para que los contenidos valiosos vuelvan a tener oportunidades de ser descubiertos.</li>
+                    <li>Una organización más clara que facilite que la audiencia encuentre y continúe viendo contenido relacionado.</li>
+                    <li>Una presentación visual más coherente y competitiva.</li>
+                    <li>Un equipo interno mejor orientado para producir con intención.</li>
+                    <li>Decisiones mensuales basadas en el desempeño real del canal.</li>
+                    <li>Las optimizaciones estratégicas implementadas directamente en YouTube.</li>
+                  </ul>
+                  <div class="cifras">
+                    <p class="dato"><small>Inversión</small><b>Desde USD 1,200 mensuales</b></p>
+                  </div>
+                  <p class="secundario">No incluye grabación, producción audiovisual, edición de los videos nuevos, guiones completos, administración de otras redes ni gestión de comunidad.</p>
+                  <a class="btn btn-primario" href="#contacto" data-servicio="direccion-estrategica">Reactivar y dirigir mi canal <span class="flecha" aria-hidden="true">→</span></a>
                 </div>
-                <div class="tipo">
-                  <span class="letra">Tipo B</span>
-                  <h4>Formatos extensos y masterclases</h4>
-                  <p>Narrativa compleja para construir autoridad y respaldar ofertas high-ticket. Más preproducción y diseño de set.</p>
-                  <p class="dato"><small>Inversión</small><b>Desde USD 2.000</b> por proyecto</p>
-                </div>
-                <div class="tipo">
-                  <span class="letra">Tipo C</span>
-                  <h4>Documental y premium</h4>
-                  <p>Alta cinematografía, postproducción avanzada y diseño sonoro para diferenciarte por completo.</p>
-                  <p class="dato"><small>Inversión</small><b>Desde USD 8.000</b> por proyecto</p>
+                <div class="modalidad">
+                  <p class="etiqueta">Dirección integral con producción audiovisual</p>
+                  <h4>Delega la operación del canal sin perder la voz de tu marca</h4>
+                  <p>Para quienes necesitan mantener un canal activo, pero no cuentan con un equipo audiovisual completo o prefieren concentrarse en su conocimiento, su mensaje y su trabajo principal. Cada mes recibes:</p>
+                  <ul class="lista compacta">
+                    <li>Cuatro videos principales completamente producidos y publicados.</li>
+                    <li>Ocho contenidos verticales derivados de los videos principales.</li>
+                    <li>Cuatro guiones desarrollados para facilitar la grabación.</li>
+                    <li>Una jornada de grabación por lotes dirigida por nuestro equipo.</li>
+                    <li>Una presentación visual coherente en cada publicación.</li>
+                    <li>Miniaturas con variantes A/B/C para los nuevos contenidos.</li>
+                    <li>Títulos y elementos de publicación preparados para YouTube.</li>
+                    <li>Renovación progresiva del catálogo existente según el tamaño y las necesidades del canal.</li>
+                    <li>Una lectura mensual de resultados para orientar las siguientes decisiones.</li>
+                    <li>Acompañamiento continuo para mantener el canal activo, organizado y alineado con sus objetivos.</li>
+                  </ul>
+                  <div class="cifras">
+                    <p class="dato"><small>Inversión</small><b>Desde USD 3,000 mensuales</b></p>
+                  </div>
+                  <p class="secundario">El primer mes se dedica a comprender el punto de partida del canal y preparar la dirección de los contenidos.</p>
+                  <a class="btn btn-primario" href="#contacto" data-servicio="direccion-integral">Delegar la dirección y producción de mi canal <span class="flecha" aria-hidden="true">→</span></a>
                 </div>
               </div>
-              <p class="ancho accion-servicio"><a class="btn btn-primario" href="#contacto" data-servicio="4">Hablemos de este servicio <span class="flecha" aria-hidden="true">→</span></a></p>
+              <div class="tabla-caja">
+                <table class="tabla">
+                  <caption>Escala de dirección estratégica y reactivación</caption>
+                  <thead><tr><th scope="col">Plan</th><th scope="col">Criterio orientativo</th><th scope="col">Renovación mensual del catálogo</th><th scope="col" class="num-col">Inversión</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">Canal en desarrollo</th><td>Menos de 100K suscriptores <b>y</b> hasta 50 videos publicados</td><td>Hasta 4 videos, 1 lista temática y 1 Reel/Short</td><td class="num-col">USD 1,200/mes</td></tr>
+                    <tr><th scope="row">Canal en expansión</th><td>Entre 100K y 250K suscriptores <b>o</b> entre 51 y 150 videos publicados</td><td>Hasta 8 videos, 2 listas temáticas y 2 Reels/Shorts</td><td class="num-col">USD 1,600/mes</td></tr>
+                    <tr><th scope="row">Canal consolidado</th><td>Más de 250K suscriptores, más de 150 videos publicados <b>o</b> varias series activas</td><td>Hasta 12 videos, 4 listas temáticas y 4 Reels/Shorts</td><td class="num-col">USD 2,000/mes</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="tabla-caja">
+                <table class="tabla">
+                  <caption>Escala de dirección integral con producción audiovisual</caption>
+                  <thead><tr><th scope="col">Plan</th><th scope="col">Criterio orientativo</th><th scope="col">Renovación mensual del catálogo</th><th scope="col">Producción nueva mensual</th><th scope="col" class="num-col">Inversión</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">Canal en desarrollo</th><td>Menos de 100K suscriptores <b>y</b> hasta 50 videos publicados</td><td>Hasta 4 videos, 1 lista temática y 1 Reel/Short de reactivación</td><td>4 videos largos + 8 Shorts</td><td class="num-col">USD 3,000/mes</td></tr>
+                    <tr><th scope="row">Canal en expansión</th><td>Entre 100K y 250K suscriptores <b>o</b> entre 51 y 150 videos publicados</td><td>Hasta 8 videos, 2 listas temáticas y 2 Reels/Shorts de reactivación</td><td>4 videos largos + 8 Shorts</td><td class="num-col">USD 4,000/mes</td></tr>
+                    <tr><th scope="row">Canal consolidado</th><td>Más de 250K suscriptores, más de 150 videos publicados <b>o</b> varias series activas</td><td>Hasta 12 videos, 4 listas temáticas y 4 Reels/Shorts de reactivación</td><td>4 videos largos + 8 Shorts</td><td class="num-col">Desde USD 5,000/mes</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="d-cols">
+                <div>
+                  <h4>Renovación del catálogo existente</h4>
+                  <p>En los canales existentes, la estrategia incluye la recuperación del contenido antiguo. El nivel de trabajo se define por el criterio más alto que cumpla el canal. En cada video antiguo seleccionado podemos optimizar el título, la miniatura, la descripción, la pantalla final, las tarjetas y la lista de reproducción correspondiente.</p>
+                  <p>Las variantes A/B/C se reservan para los videos antiguos con mayor potencial; los demás reciben una miniatura final optimizada. En los canales nuevos, ese tiempo se emplea en desarrollar la arquitectura y las nuevas publicaciones.</p>
+                </div>
+                <div>
+                  <h4>¿Por qué un mínimo de seis meses?</h4>
+                  <p>Un canal necesita tiempo, continuidad y suficiente contenido publicado para generar información útil sobre la respuesta de su audiencia. El primer mes nos permite establecer el punto de partida; los siguientes, producir con consistencia, observar patrones y decidir con información más representativa.</p>
+                  <p>El compromiso de seis meses protege tu inversión frente a conclusiones apresuradas basadas en uno o dos contenidos aislados. Al finalizar, revisaremos contigo el trabajo realizado y definiremos si conviene continuar, ajustar el alcance o dejar la operación en manos de tu equipo.</p>
+                </div>
+              </div>
+              <div class="tabla-caja">
+                <table class="tabla">
+                  <caption>¿Qué modalidad de dirección necesita tu canal?</caption>
+                  <thead><tr><th scope="col"></th><th scope="col">Dirección estratégica y reactivación</th><th scope="col">Dirección integral con producción</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">Te conviene si…</th><td>Ya tienes un equipo que graba, edita y publica, pero necesita dirección especializada.</td><td>Quieres delegar también la producción audiovisual y la publicación del canal.</td></tr>
+                    <tr><th scope="row">Resultado principal</th><td>Tu equipo trabaja con prioridades claras y el canal recupera movimiento y coherencia.</td><td>Tu canal mantiene una operación mensual completa, activa y profesional.</td></tr>
+                    <tr><th scope="row">Dirección estratégica mensual</th><td>Incluida</td><td>Incluida</td></tr>
+                    <tr><th scope="row">Punto de partida del canal</th><td>Se establece durante el primer mes.</td><td>Se establece durante el primer mes.</td></tr>
+                    <tr><th scope="row">Nuevos contenidos</th><td>Recibes dirección e ideas para que tu equipo las produzca.</td><td>Producimos y publicamos cuatro videos principales y ocho contenidos verticales al mes.</td></tr>
+                    <tr><th scope="row">Guiones</th><td>No incluye guiones completos.</td><td>Cuatro guiones completos al mes.</td></tr>
+                    <tr><th scope="row">Producción audiovisual</th><td>La realiza tu equipo.</td><td>La realiza Truth Frame Studio.</td></tr>
+                    <tr><th scope="row">Renovación del catálogo</th><td>Incluida según el tamaño del canal.</td><td>Incluida según el tamaño del canal.</td></tr>
+                    <tr><th scope="row">Implementación en YouTube</th><td>Implementamos las optimizaciones estratégicas; tu equipo publica los contenidos nuevos.</td><td>Optimizamos, cargamos, programamos y publicamos los contenidos.</td></tr>
+                    <tr><th scope="row">Reunión y lectura mensual</th><td>Incluida</td><td>Incluida</td></tr>
+                    <tr><th scope="row">Acompañamiento mínimo</th><td>Seis meses</td><td>Seis meses</td></tr>
+                    <tr><th scope="row">Inversión</th><td>Desde USD 1,200 mensuales</td><td>Desde USD 3,000 mensuales</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="d-cols">
+                <div>
+                  <h4>Amplía el alcance a otras plataformas</h4>
+                  <p>Los ocho contenidos verticales de cada mes pueden adaptarse y distribuirse también en Instagram Reels, Facebook Reels y TikTok, para aprovechar mejor cada jornada de producción.</p>
+                  <div class="tabla-caja" style="margin-top:14px">
+                    <table class="tabla" style="min-width:0">
+                      <thead><tr><th scope="col">Plataformas adicionales</th><th scope="col" class="num-col">Inversión mensual</th></tr></thead>
+                      <tbody>
+                        <tr><td>Una plataforma</td><td class="num-col">USD 300</td></tr>
+                        <tr><td>Dos plataformas</td><td class="num-col">USD 500</td></tr>
+                        <tr><td>Tres plataformas</td><td class="num-col">USD 750</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <p class="secundario" style="margin-top:12px">Incluye adaptación de los ocho contenidos verticales, subtítulos, portada, llamado a la acción, carga o programación y un reporte básico.</p>
+                </div>
+                <div>
+                  <h4>Servicios que puedes añadir cuando los necesites</h4>
+                  <p>Para mantener el plan mensual enfocado y evitar que pagues por recursos que quizá no necesites, estos servicios se cotizan solo cuando aportan valor al proyecto:</p>
+                  <ul class="lista compacta" style="margin-top:12px">
+                    <li>Gestión de comentarios y mensajes directos.</li>
+                    <li>Community management.</li>
+                    <li>Campañas de publicidad pagada.</li>
+                    <li>Administración integral de otras redes sociales.</li>
+                    <li>Viajes y traslados.</li>
+                    <li>Alquiler de localizaciones.</li>
+                    <li>Talento, maquillaje, vestuario o escenografía.</li>
+                    <li>Producciones que requieran recursos técnicos especiales.</li>
+                  </ul>
+                  <p class="secundario" style="margin-top:12px">Antes de añadir cualquiera de ellos, definiremos contigo su propósito, alcance e inversión.</p>
+                </div>
+              </div>
+              <p class="accion-servicio"><a class="btn btn-acento" href="#contacto" data-servicio="direccion">Encontrar el plan para mi canal <span class="flecha" aria-hidden="true">→</span></a><a class="btn btn-claro" href="#contacto" data-servicio="direccion">Ayúdenme a elegir el plan adecuado</a></p>
             </div>
           </details>
 
+          <!-- 05 · Producciones especiales -->
           <details class="servicio" name="servicio" id="s5">
             <summary>
               <span class="num">05</span>
-              <span class="nombre-col"><span class="nombre">Growth partner: agencia 360</span>
-                <span class="para">Para CEOs y directivos que quieren delegar su ecosistema de contenido completo.</span></span>
-              <span class="dato"><small>Tiempo</small>Desde 4 semanas</span>
-              <span class="dato"><small>Inversión</small><b>Desde USD 4.000</b></span>
+              <span class="nombre-col"><span class="nombre">Producciones audiovisuales especiales</span>
+                <span class="para">Series, pódcast, entrevistas, cursos, clases magistrales, eventos, conciertos, documentales y producciones prémium, desde la idea inicial hasta la entrega final.</span></span>
+              <span class="dato"><small>Tiempo</small>Según el proyecto</span>
+              <span class="dato precio"><small>Inversión</small><b>Desde USD 3,000</b></span>
               <span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span>
             </summary>
             <div class="detalle">
-              <p class="ancho">Nos convertimos en tu brazo estratégico. La auditoría es la base, y a partir de ella hay dos formas de trabajar.</p>
-              <div>
-                <h4>Implementación estratégica</h4>
-                <p class="secundario">Diseñamos el sistema. Tu equipo lo ejecuta.</p>
-                <ul class="lista" style="margin-top:12px">
-                  <li>Objetivos, prioridades e indicadores.</li>
-                  <li>Plan de implementación a 90 días.</li>
-                  <li>Arquitectura de contenidos, formatos y calendario editorial.</li>
-                  <li>Flujos de trabajo, roles, plantillas y guías.</li>
-                  <li>Sesiones de trabajo y capacitación con tu equipo.</li>
-                </ul>
-                <p class="nota">4 a 6 semanas · desde USD 4.000, pago único.</p>
+              <div class="intro">
+                <p>Ya sea que tengas una idea inicial o un proyecto completamente definido, podemos ayudarte a convertirlo en una producción audiovisual sólida, coherente y lista para llegar a tu audiencia.</p>
+                <p>Desarrollamos soluciones a la medida para organizaciones, marcas y creadores. Tú defines el propósito y el impacto que quieres alcanzar; nuestro equipo se encarga de darle forma y llevar el proyecto hasta su entrega final.</p>
               </div>
-              <div class="col-b">
-                <h4>Implementación integral</h4>
-                <p class="secundario">Diseñamos el sistema y lo ponemos en marcha contigo.</p>
-                <ul class="lista" style="margin-top:12px">
-                  <li>Dirección estratégica y creativa.</li>
-                  <li>Planificación mensual de contenidos y campañas.</li>
-                  <li>Preproducción, producción y postproducción.</li>
-                  <li>Acompañamiento en publicación y lanzamiento.</li>
-                  <li>Revisión mensual de resultados y ajustes.</li>
-                </ul>
-                <p class="nota">Compromiso inicial de 3 meses · desde USD 4.000 al mes.</p>
+              <div class="modalidades">
+                <div class="modalidad">
+                  <p class="etiqueta">Series, pódcast y entrevistas</p>
+                  <h4>Una línea de contenido que tu audiencia quiera seguir</h4>
+                  <p>Creamos series, pódcast y formatos de entrevista que ayudan a tu organización o marca a comunicar su mensaje con claridad, fortalecer su identidad y construir una relación más consistente con su audiencia. Puede ser un programa piloto, una miniserie, una primera temporada o un conjunto de contenidos listos para publicar.</p>
+                  <div class="cifras"><p class="dato"><small>Inversión</small><b>Desde USD 3,000</b></p></div>
+                </div>
+                <div class="modalidad">
+                  <p class="etiqueta">Cursos y clases magistrales</p>
+                  <h4>Tu conocimiento, convertido en una experiencia de aprendizaje profesional</h4>
+                  <p>Transformamos tu experiencia, metodología o conocimiento especializado en un curso o clase magistral claro, atractivo y fácil de seguir, con piezas audiovisuales listas para integrarse en tu plataforma educativa.</p>
+                  <div class="cifras"><p class="dato"><small>Inversión</small><b>Desde USD 3,000</b></p></div>
+                </div>
+                <div class="modalidad">
+                  <p class="etiqueta">Eventos, conferencias y conciertos</p>
+                  <h4>Haz que la experiencia permanezca y llegue más allá del público presente</h4>
+                  <ul class="lista compacta">
+                    <li><b>Registro audiovisual:</b> una producción profesional que conserve la experiencia y la convierta en contenido de valor duradero.</li>
+                    <li><b>Transmisión en vivo:</b> para llevar el evento en tiempo real a una audiencia más amplia.</li>
+                    <li><b>Producción integral del evento:</b> desarrollamos y coordinamos el proyecto completo, desde su concepción hasta su ejecución.</li>
+                  </ul>
+                  <div class="cifras"><p class="dato"><small>Registro audiovisual</small><b>Desde USD 4,000</b></p></div>
+                </div>
+                <div class="modalidad">
+                  <p class="etiqueta">Documentales y producciones prémium</p>
+                  <h4>Una historia importante, convertida en legado audiovisual</h4>
+                  <p>Producimos documentales y proyectos de alto nivel para preservar una historia, comunicar una causa o presentar una visión con profundidad y fuerza narrativa: una pieza cinematográfica que fortalezca la reputación de tu organización y permanezca más allá de una campaña.</p>
+                  <div class="cifras"><p class="dato"><small>Inversión</small><b>Desde USD 8,000</b></p></div>
+                </div>
               </div>
-              <p class="ancho accion-servicio"><a class="btn btn-primario" href="#contacto" data-servicio="5">Hablemos de este servicio <span class="flecha" aria-hidden="true">→</span></a></p>
+              <div class="d-cols">
+                <div>
+                  <h4>Cómo se define la inversión</h4>
+                  <p>Cada producción se cotiza según su alcance, duración, jornadas de grabación, localizaciones, equipo técnico y piezas finales. Así recibes una propuesta ajustada a los recursos que tu proyecto realmente necesita.</p>
+                </div>
+                <div>
+                  <p>La creación o configuración de plataformas educativas, módulos digitales y pasarelas de pago puede añadirse a los proyectos de cursos mediante una cotización independiente.</p>
+                  <p>Para la producción integral de un evento, un documental o una producción de mayor complejidad, realizamos una reunión previa para comprender su visión y dimensión, y preparar una propuesta precisa.</p>
+                </div>
+              </div>
+              <p class="accion-servicio"><a class="btn btn-acento" href="#contacto" data-servicio="produccion">Cotizar una producción especial <span class="flecha" aria-hidden="true">→</span></a></p>
             </div>
           </details>
         </div>
-        <p class="aviso-precios">Los valores son de referencia. La propuesta final depende del alcance, y viajes, locaciones, talento y otros costos externos se cotizan aparte. ¿Tienes dudas? <a class="enlace" href="#preguntas">Revisa las preguntas frecuentes</a>.</p>
+        <p class="aviso-precios">Mostramos precios «Desde» cuando el alcance puede variar según la complejidad del proyecto. El alcance y el precio final se confirman en una propuesta comercial, donde también se especifican impuestos, viajes y gastos de terceros cuando correspondan. Los créditos y descuentos no son acumulables, salvo que la propuesta lo indique.</p>
+        <p class="aviso-precios">¿Dudas sobre pagos o plazos? <a class="enlace" href="#preguntas">Revisa las preguntas frecuentes</a>.</p>
+
+        <div class="elegir">
+          <div>
+            <h3 class="h3">¿No sabes cuál servicio necesita tu canal?</h3>
+            <p>Cuéntanos en qué etapa estás y qué quieres lograr. Revisaremos tu información y te responderemos en un plazo máximo de 24 horas para orientarte hacia el servicio adecuado.</p>
+          </div>
+          <a class="btn btn-acento" href="#contacto" data-servicio="orientacion">Cuéntanos sobre tu canal <span class="flecha" aria-hidden="true">→</span></a>
+        </div>
       </div>
     </section>
 
@@ -525,7 +826,7 @@
       <aside class="cierre" aria-label="Siguiente paso">
         <div class="contenedor">
           <p class="cierre-texto">¿Hablamos de tu canal?</p>
-          <a class="btn btn-acento" href="#contacto">Envíanos tu consulta <span class="flecha" aria-hidden="true">→</span></a>
+          <a class="btn btn-acento" href="#contacto">Cuéntanos sobre tu canal <span class="flecha" aria-hidden="true">→</span></a>
           <a class="siguiente" href="#portafolio"><small>Siguiente</small>Portafolio <span aria-hidden="true">→</span></a>
         </div>
       </aside>
@@ -539,7 +840,7 @@
           <h2 class="h2" id="portafolio-titulo">Portafolio</h2>
           <p class="lead">Series, podcasts, documentales y eventos que hemos dirigido y producido.</p>
         </div>
-        <h3 class="h3 bloque-titulo">Casos destacados</h3>
+        <h3 class="h3 bloque-titulo" id="casos">Casos destacados</h3>
         <ul class="casos">
           <li class="caso">
             <button class="pantalla" type="button" data-video="XEq-M-Qegdg" aria-label="Reproducir: Entendiendo Los Tiempos">
@@ -662,7 +963,7 @@
       <aside class="cierre" aria-label="Siguiente paso">
         <div class="contenedor">
           <p class="cierre-texto">¿Hablamos de tu canal?</p>
-          <a class="btn btn-acento" href="#contacto">Envíanos tu consulta <span class="flecha" aria-hidden="true">→</span></a>
+          <a class="btn btn-acento" href="#contacto">Cuéntanos sobre tu canal <span class="flecha" aria-hidden="true">→</span></a>
           <a class="siguiente" href="#nosotros"><small>Siguiente</small>Nosotros <span aria-hidden="true">→</span></a>
         </div>
       </aside>
@@ -671,19 +972,51 @@
     <!-- ============ NOSOTROS ============ -->
     <div class="panel" id="nosotros" data-titulo="Nosotros — Truth Frame Studio">
     <section class="seccion portada" aria-labelledby="nosotros-titulo">
-      <div class="contenedor">
-        <div class="cabecera">
-          <h2 class="h2" id="nosotros-titulo">La autoridad detrás del lente</h2>
+      <div class="contenedor nosotros-intro">
+        <div>
+          <h2 class="h2 h2-grande" id="nosotros-titulo">Grabar es fácil. Hacer que funcione es otra historia.</h2>
+          <div class="prosa">
+            <p>Cualquiera puede grabar y publicar un video. El verdadero desafío es crear contenido que consiga el clic, mantenga la atención, genere confianza y produzca resultados.</p>
+            <p>Para lograrlo no basta con una buena cámara. Se necesita entender a la audiencia, interpretar los datos, encontrar la idea correcta, construir una narrativa sólida y presentar cada video de una manera que despierte interés desde el primer momento.</p>
+            <p>En Truth Frame Studio conectamos estrategia, análisis y producción audiovisual para que cada contenido tenga un propósito claro: ampliar tu alcance, fortalecer tu autoridad y convertir la atención de la audiencia en oportunidades reales.</p>
+            <p>Durante más de 25 años hemos dirigido y producido proyectos para televisión, marcas, organizaciones y plataformas digitales. Esa experiencia nos permite identificar qué necesita cada proyecto y construir el proceso adecuado para llevarlo adelante.</p>
+            <p class="cierre-destacado">Nosotros ponemos el método, las ideas, la estrategia y la dirección técnica. Tú aportas el conocimiento, la experiencia y la voz que solo tú puedes llevar frente a la cámara. Juntos los convertimos en contenido capaz de llegar más lejos.</p>
+            <p class="sede">Operamos desde Santo Domingo, con estructura corporativa y legal en República Dominicana.</p>
+          </div>
         </div>
-        <figure class="nosotros-foto">
-          <img src="/assets/fotos/andres-diana-800.webp" srcset="/assets/fotos/andres-diana-800.webp 800w, /assets/fotos/andres-diana-1600.webp 1600w" sizes="(max-width: 1240px) 100vw, 1160px" alt="Diana Cardona y Andrés Figueroa sentados en su estudio, rodeados de luces de grabación." width="800" height="450" loading="lazy">
+        <figure>
+          <img src="/assets/fotos/andres-diana-800.webp" srcset="/assets/fotos/andres-diana-800.webp 800w, /assets/fotos/andres-diana-1600.webp 1600w" sizes="(max-width: 860px) 100vw, 460px" alt="Diana Cardona y Andrés Figueroa sentados en su estudio, rodeados de luces de grabación." width="800" height="450" loading="lazy">
         </figure>
-        <div class="nosotros">
-          <div class="prosa lead">
-            <p>No somos una agencia de marketing que intenta hacer videos. Somos realizadores audiovisuales y estrategas digitales que entendieron cómo funciona la retención en YouTube.</p>
-            <p>Detrás del estudio están Andrés Figueroa y Diana Cardona, esposos que trabajan juntos en producción audiovisual desde 1999. Suman más de 25 años de experiencia audiovisual y han trabajado en canales de Colombia, Estados Unidos y República Dominicana.</p>
-            <p class="secundario">Todo empezó en la universidad, con un documental sobre un misionero y un video institucional para una clínica. Siguieron varios años de producción de bodas, antes de los proyectos que hoy respaldan su experiencia.</p>
-            <p class="secundario">Operamos desde Santo Domingo, con estructura corporativa y legal en República Dominicana.</p>
+      </div>
+    </section>
+
+    <!-- Declaración de marca (catálogo aprobado, 18-sep) -->
+    <section class="seccion seccion-alt" aria-labelledby="declaracion-titulo">
+      <div class="contenedor declaracion">
+        <h2 class="h2" id="declaracion-titulo">Comunicación que genera valor y confianza</h2>
+        <div class="prosa">
+          <p>Truth Frame significa la verdad dentro del lente. Nuestro nombre representa la convicción de que una producción puede ser estratégica, atractiva y técnicamente excelente sin renunciar a la honestidad.</p>
+          <p>Somos un grupo de humanos trabajando para humanos. La tecnología amplía nuestras posibilidades, pero son el criterio, la experiencia probada y la responsabilidad profesional los que sostienen cada decisión.</p>
+          <p>Por eso elegimos trabajar con personas y organizaciones que tienen una visión clara, un propósito legítimo y conciencia del impacto que pueden generar. Buscamos proyectos que informen, eduquen, construyan confianza, preserven historias o aporten algo valioso a la sociedad.</p>
+          <p>Si eres un profesional con trayectoria, tienes conocimiento real y sabes que tu experiencia puede aportar valor a otras personas, queremos ayudarte a comunicarla con claridad, excelencia y autenticidad.</p>
+          <p>Si representas una organización comprometida con generar un impacto positivo, queremos convertir su visión en contenidos capaces de fortalecer su credibilidad, ampliar su alcance y conectar con las personas que necesitan conocerla.</p>
+          <p>Creemos que la confianza se construye cuando existe verdad detrás del mensaje. Tú aportas la experiencia, la visión y el propósito; nosotros ponemos el método, las ideas y la dirección técnica para llevarlos a la pantalla.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion" aria-labelledby="hitos-titulo">
+      <div class="contenedor">
+        <div class="trayectoria">
+          <div>
+            <h3 class="h3" id="hitos-titulo">Canales en los que hemos trabajado</h3>
+            <ul class="hitos" aria-labelledby="hitos-titulo">
+              <li><strong>IBSJ</strong><b>Más de 500.000 suscriptores</b><p>No existía el canal cuando Andrés llegó. Ha dirigido todo el proceso desde su creación y lo dirige hoy.</p></li>
+              <li><strong>Entendiendo Los Tiempos</strong><b>Más de 200.000 suscriptores</b><p>Andrés empezó el proyecto desde cero y asumió la dirección y producción audiovisual desde el inicio.</p></li>
+              <li><strong>Eternidad Plus</strong><b>Más de 110.000 suscriptores</b><p>Andrés y Diana propusieron y lideraron la transición de Radio Eternidad a Eternidad Plus. Andrés dirige hoy el canal.</p></li>
+              <li><strong>Aviva Nuestros Corazones</strong><b>Más de 150.000 suscriptores hasta 2023</b><p>Diana fue productora audiovisual hasta 2023. La cifra corresponde a esa etapa, no al canal hoy.</p></li>
+            </ul>
+            <p class="nota-hitos">Son canales a cuyo crecimiento hemos contribuido junto a sus equipos. Cifras aportadas por el estudio.</p>
           </div>
           <figure class="placas">
             <img src="/assets/fotos/andres-placas-800.webp" alt="Andrés Figueroa con tres placas de YouTube por 100.000 suscriptores, entre ellas las de Entendiendo Los Tiempos y Eternidad Plus." width="800" height="800" loading="lazy">
@@ -691,56 +1024,45 @@
           </figure>
         </div>
 
-        <h3 class="h3 equipo-titulo" id="hitos-titulo">Canales en los que hemos trabajado</h3>
-        <ul class="hitos" aria-labelledby="hitos-titulo">
-          <li><strong>IBSJ</strong><b>Más de 500.000 suscriptores</b><p>No existía el canal cuando Andrés llegó. Ha dirigido todo el proceso desde su creación y lo dirige hoy.</p></li>
-          <li><strong>Entendiendo Los Tiempos</strong><b>Más de 200.000 suscriptores</b><p>Andrés empezó el proyecto desde cero y asumió la dirección y producción audiovisual desde el inicio.</p></li>
-          <li><strong>Eternidad Plus</strong><b>Más de 110.000 suscriptores</b><p>Andrés y Diana propusieron y lideraron la transición de Radio Eternidad a Eternidad Plus. Andrés dirige hoy el canal.</p></li>
-          <li><strong>Aviva Nuestros Corazones</strong><b>Más de 150.000 suscriptores hasta 2023</b><p>Diana fue productora audiovisual hasta 2023. La cifra corresponde a esa etapa, no al canal hoy.</p></li>
-        </ul>
-        <p class="nota-hitos">Son canales a cuyo crecimiento hemos contribuido junto a sus equipos. Cifras aportadas por el estudio.</p>
-
-        <h3 class="h3 equipo-titulo" id="equipo-titulo">El equipo</h3>
-        <ul class="equipo" aria-labelledby="equipo-titulo">
+        <h3 class="h3 equipo-titulo" id="equipo">El equipo</h3>
+        <ul class="equipo" aria-labelledby="equipo">
           <li class="miembro">
             <img src="/assets/fotos/diana-estudio-800.webp" srcset="/assets/fotos/diana-estudio-800.webp 800w, /assets/fotos/diana-estudio-1600.webp 1536w" sizes="(max-width: 600px) 96px, 300px" alt="Retrato de Diana Cardona en el estudio." width="800" height="533" loading="lazy" style="object-position: 50% 30%">
             <div>
               <h4>Diana Cardona</h4>
-              <p class="rol">Dirección de estrategia y producción</p>
-              <p>Es el motor creativo y analítico del estudio. Une la calidad cinematográfica con el crecimiento basado en datos: diseña la narrativa, los flujos de trabajo y las tácticas de retención para que cada pieza, además de verse impecable, cumpla un objetivo concreto.</p>
-              <p>Tiene una larga experiencia en postproducción. Participó en la propuesta y la transición a Eternidad Plus, donde ha postproducido varias series, y fue productora audiovisual de Aviva Nuestros Corazones hasta 2023.</p>
+              <p class="rol">Cofundadora y directora de estrategia y proyectos</p>
+              <p>Productora y estratega audiovisual con más de 25 años de experiencia. Se especializa en estrategia de contenido para YouTube y lidera la investigación, el análisis de datos, la ideación y la preproducción de cada proyecto. Su trabajo define el enfoque, la narrativa y el sistema de contenido antes de encender la cámara.</p>
             </div>
           </li>
           <li class="miembro">
             <img src="/assets/fotos/andres-800.webp" srcset="/assets/fotos/andres-800.webp 800w, /assets/fotos/andres-1600.webp 1600w" sizes="(max-width: 600px) 96px, 300px" alt="Retrato de Andrés Figueroa en el set de grabación." width="800" height="450" loading="lazy" style="object-position: 57% 30%">
             <div>
               <h4>Andrés Figueroa</h4>
-              <p class="rol">Dirección y realización audiovisual</p>
-              <p>Convierte la estrategia en imágenes de calidad cinematográfica. En el set dirige la cámara, la luz y la narrativa visual, y une el rigor técnico con la sensibilidad humana para que cada proyecto comunique su mensaje con fuerza.</p>
-              <p>Hoy dirige los canales de IBSJ y Eternidad Plus, y asumió la dirección y producción audiovisual de Entendiendo Los Tiempos desde su inicio.</p>
+              <p class="rol">Cofundador y director de producción audiovisual</p>
+              <p>Lidera la realización y la producción audiovisual de los proyectos. Convierte la estrategia en una ejecución técnica y visual sólida, dirigiendo el rodaje, la cámara, la iluminación y la narrativa audiovisual. Actualmente dirige los canales de IBSJ y Eternidad Plus, y asumió la dirección y producción audiovisual de Entendiendo Los Tiempos desde su inicio.</p>
             </div>
           </li>
           <li class="miembro">
             <img src="/assets/fotos/valentina-800.webp" srcset="/assets/fotos/valentina-800.webp 734w" sizes="(max-width: 600px) 96px, 300px" alt="Retrato de Valentina García." width="734" height="1307" loading="lazy" style="object-position: 50% 18%">
             <div>
               <h4>Valentina García</h4>
-              <p class="rol">Estratega de conversión visual con IA</p>
-              <p>Es clave en la reestructuración de canales. Con inteligencia artificial y pruebas A/B constantes, analiza el CTR y el comportamiento de la audiencia para que cada miniatura se decida con datos y no por gusto, y gane más clics.</p>
+              <p class="rol">Especialista en optimización visual y pruebas A/B/C</p>
+              <p>Combina análisis de métricas y criterio visual para optimizar la presentación de cada contenido. Desarrolla miniaturas y variantes para pruebas A/B/C, interpreta el CTR y el comportamiento de la audiencia, y utiliza los resultados para tomar decisiones basadas en datos.</p>
             </div>
           </li>
           <li class="miembro">
             <img src="/assets/fotos/dario-800.webp" srcset="/assets/fotos/dario-800.webp 800w, /assets/fotos/dario-1600.webp 1254w" sizes="(max-width: 600px) 96px, 300px" alt="Retrato de Darío Cardona." width="800" height="800" loading="lazy" style="object-position: 48% 25%">
             <div>
               <h4>Darío Cardona</h4>
-              <p class="rol">Dirección de inteligencia artificial</p>
-              <p>Es el puente entre la excelencia cinematográfica del estudio y la tecnología. Integra la inteligencia artificial en los flujos de trabajo para asumir proyectos complejos y globales con agilidad, sin reemplazar el toque humano: lo libera para contar mejores historias.</p>
+              <p class="rol">Director de tecnología e inteligencia artificial</p>
+              <p>Lidera la integración de tecnología e inteligencia artificial en los proyectos de Truth Frame Studio. Diseña y ejecuta los ecosistemas digitales que complementan la estrategia de contenido, incluyendo páginas web, plataformas educativas, módulos de cursos y sistemas de pago.</p>
             </div>
           </li>
         </ul>
       </div>
     </section>
 
-    <section class="seccion seccion-editorial" aria-label="Diana Cardona">
+    <section class="seccion seccion-alt" aria-label="Diana Cardona">
       <div class="contenedor">
         <div class="cita">
           <figure>
@@ -748,7 +1070,7 @@
           </figure>
           <div>
             <blockquote>“Un video exitoso no se salva en la sala de edición si no nace de una gran idea.”</blockquote>
-            <p class="firma"><b>Diana Cardona</b>, directora de estrategia y producción</p>
+            <p class="firma"><b>Diana Cardona</b>, cofundadora y directora de estrategia y proyectos</p>
           </div>
         </div>
       </div>
@@ -756,7 +1078,7 @@
       <aside class="cierre" aria-label="Siguiente paso">
         <div class="contenedor">
           <p class="cierre-texto">¿Hablamos de tu canal?</p>
-          <a class="btn btn-acento" href="#contacto">Envíanos tu consulta <span class="flecha" aria-hidden="true">→</span></a>
+          <a class="btn btn-acento" href="#contacto">Cuéntanos sobre tu canal <span class="flecha" aria-hidden="true">→</span></a>
           <a class="siguiente" href="#contacto"><small>Siguiente</small>Contacto <span aria-hidden="true">→</span></a>
         </div>
       </aside>
@@ -767,9 +1089,10 @@
     <section class="seccion seccion-oscura portada" aria-labelledby="contacto-titulo">
       <div class="contenedor contacto">
         <div>
-          <h2 class="h2" id="contacto-titulo">¿Listo para construir autoridad real?</h2>
-          <p class="lead">Cuéntanos qué necesitas con unas preguntas rápidas. Diana te responde personalmente en un plazo máximo de 24 horas.</p>
+          <h2 class="h2" id="contacto-titulo">Cuéntanos sobre tu canal.</h2>
+          <p class="lead">Responde unas preguntas rápidas sobre tu proyecto. Diana te responde personalmente en un plazo máximo de 24 horas.</p>
           <p class="gratis">Consultar y pedir una propuesta no tiene costo.</p>
+          <p class="proposito">Trabajamos con proyectos que tienen verdad, visión y propósito.</p>
           <div class="directo">
             <span>¿Prefieres escribir directo?</span>
             <a href="https://wa.me/18496523537" rel="noopener" data-origen="contacto">WhatsApp +1 849 652 3537</a>
@@ -778,6 +1101,22 @@
         </div>
         <div class="form-caja">
         <form class="form" id="form-contacto" novalidate>
+          <!-- Servicio elegido con un botón del sitio: viaja con la consulta -->
+          <div class="form-servicio" hidden>
+            <p><small>Servicio que te interesa</small><b class="form-servicio-nombre"></b></p>
+            <button type="button" class="form-servicio-quitar" aria-label="Quitar el servicio elegido"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"/></svg></button>
+            <input type="hidden" name="servicio" value="">
+          </div>
+
+          <fieldset class="grupo" data-grupo="tipo">
+            <legend>¿Para qué tipo de proyecto buscas ayuda?</legend>
+            <div class="opciones dos-col">
+              <label class="opcion"><input type="radio" name="tipo" value="organizacion"><span>Una empresa, negocio u organización</span></label>
+              <label class="opcion"><input type="radio" name="tipo" value="marca_personal"><span>Mi marca personal</span></label>
+            </div>
+            <p class="error">Elige una opción.</p>
+          </fieldset>
+
           <fieldset class="grupo" data-grupo="ayuda">
             <legend>¿Cómo podemos ayudarte?</legend>
             <div class="opciones dos-col">
@@ -827,6 +1166,27 @@
           <div class="campo condicional" data-si="tiene_canal=si" hidden>
             <label for="f-canal">Enlace a tu canal de YouTube <span>(opcional)</span></label>
             <input id="f-canal" name="canal" type="url" inputmode="url" placeholder="https://youtube.com/@tucanal">
+          </div>
+          <div class="dos condicional" data-si="tiene_canal=si" hidden>
+            <div class="campo">
+              <label for="f-suscriptores">Suscriptores <span>(aprox.)</span></label>
+              <select id="f-suscriptores" name="suscriptores">
+                <option value="">Elige un rango</option>
+                <option value="menos_10k">Menos de 10K</option>
+                <option value="10k_100k">Entre 10K y 100K</option>
+                <option value="100k_250k">Entre 100K y 250K</option>
+                <option value="mas_250k">Más de 250K</option>
+              </select>
+            </div>
+            <div class="campo">
+              <label for="f-videos">Videos publicados <span>(aprox.)</span></label>
+              <select id="f-videos" name="videos">
+                <option value="">Elige un rango</option>
+                <option value="hasta_50">Hasta 50</option>
+                <option value="51_150">Entre 51 y 150</option>
+                <option value="mas_150">Más de 150</option>
+              </select>
+            </div>
           </div>
 
           <div class="campo">
@@ -886,7 +1246,7 @@
           <div class="form-error" role="alert" hidden>
             <p>No pudimos enviar tu consulta. Tus respuestas siguen aquí: inténtalo de nuevo en un momento. Si el problema sigue, <a href="https://wa.me/18496523537" rel="noopener" data-origen="error-formulario">escríbenos por WhatsApp</a>.</p>
           </div>
-          <button class="btn btn-primario enviar" type="submit"><span class="enviar-texto">Enviar consulta</span> <span class="flecha" aria-hidden="true">→</span></button>
+          <button class="btn btn-acento enviar" type="submit"><span class="enviar-texto">Enviar consulta</span> <span class="flecha" aria-hidden="true">→</span></button>
           <p class="pie">Diana te responderá en un plazo máximo de 24 horas.</p>
         </form>
         <div class="form-exito" tabindex="-1" hidden>
@@ -902,13 +1262,13 @@
           <ol>
             <li><h3 class="h3">Nos envías tu consulta</h3><p>Respondes unas preguntas rápidas sobre tu canal y lo que quieres lograr.</p></li>
             <li><h3 class="h3">Te respondemos en 24 horas</h3><p>Diana te escribe personalmente por el medio que elegiste, con lo que ya nos contaste.</p></li>
-            <li><h3 class="h3">Definimos el siguiente paso</h3><p>Según lo que necesites: una propuesta de auditoría, el lanzamiento de tu canal o la producción de tu contenido.</p></li>
+            <li><h3 class="h3">Definimos el siguiente paso</h3><p>Según lo que necesites: una sesión estratégica, una auditoría, el lanzamiento de tu canal o la dirección de tu contenido.</p></li>
           </ol>
         </div>
       </div>
     </section>
 
-    <!-- Preguntas frecuentes -->
+    <!-- Preguntas frecuentes (catálogo aprobado, 18-sep) -->
     <section class="seccion" id="preguntas" aria-labelledby="preguntas-titulo">
       <div class="contenedor faq">
         <div class="cabecera">
@@ -917,36 +1277,89 @@
         </div>
         <div class="preguntas">
           <details class="pregunta">
+            <summary>¿Cuál es el primer paso?<span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span></summary>
+            <div class="respuesta"><p>Nos envías tu consulta con el formulario de esta página. Diana te responde personalmente en un plazo máximo de 24 horas y, según lo que necesites, definimos juntos el siguiente paso. Consultar y pedir una propuesta no tiene costo.</p></div>
+          </details>
+          <details class="pregunta">
             <summary>¿Trabajan con clientes fuera de República Dominicana?<span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span></summary>
-            <p>Sí. Puedes venir a Santo Domingo y grabar una temporada completa en bloque, o enviamos nuestro equipo de rodaje a tus oficinas o a la locación que elijas, en cualquier país. Los viajes se cotizan aparte.</p>
+            <div class="respuesta">
+              <p>Sí. Podemos trabajar con personas, marcas y organizaciones de cualquier país. Los servicios de estrategia, auditoría, planificación y dirección pueden desarrollarse completamente en línea.</p>
+              <p>Cuando el proyecto incluye producción audiovisual, puedes viajar a Santo Domingo y realizar jornadas de grabación por lotes para producir contenido de varias semanas o meses, o nuestro equipo puede desplazarse a tu ciudad o país. Si es necesario viajar, los vuelos, el alojamiento, el transporte de equipos, los permisos y los gastos de producción local se cotizan por separado.</p>
+              <p>Antes de comenzar, evaluaremos contigo qué modalidad protege mejor la calidad, el calendario y la inversión de tu proyecto.</p>
+            </div>
           </details>
           <details class="pregunta">
             <summary>¿Necesito tener un canal para trabajar con ustedes?<span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span></summary>
-            <p>No. Con la incubadora de autoridad creamos tu canal desde cero. Y si todavía no tienes un producto o servicio de alto valor que vender, empezamos por diseñarlo contigo en la incubadora de oferta.</p>
+            <div class="respuesta"><p>No. Con el Lanzamiento de canal de YouTube construimos tu canal desde cero, y la Sesión estratégica también sirve si tu canal todavía es una idea. La auditoría, en cambio, está diseñada para canales que ya tienen contenido y datos para analizar.</p></div>
           </details>
           <details class="pregunta">
-            <summary>¿Cuánto tiempo toma cada servicio?<span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span></summary>
-            <p>El plan maestro de una auditoría toma 2 semanas, y su implementación, 3 meses. La incubadora de autoridad toma 4 semanas, y la de oferta, de 2 a 3. La implementación estratégica toma de 4 a 6 semanas, y la integral arranca con un compromiso de 3 meses.</p>
+            <summary>¿Cuánto tiempo tarda cada servicio?<span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span></summary>
+            <div class="respuesta">
+              <p>Los plazos dependen del alcance del servicio y comienzan cuando hemos recibido el pago correspondiente, el formulario completo y todos los materiales necesarios. Como referencia:</p>
+              <ul class="lista">
+                <li><b>Sesión estratégica:</b> la reunión dura dos horas. El informe y la hoja de ruta se entregan en un máximo de 48 horas.</li>
+                <li><b>Auditoría estratégica:</b> 10 días laborables.</li>
+                <li><b>Lanzamiento estratégico:</b> cuatro semanas, aproximadamente.</li>
+                <li><b>Lanzamiento integral:</b> entre seis y ocho semanas, aproximadamente.</li>
+                <li><b>Dirección estratégica o integral:</b> ciclos mensuales, con un compromiso inicial mínimo de seis meses.</li>
+                <li><b>Producciones audiovisuales especiales:</b> el calendario se define según el alcance, las jornadas de grabación, las localizaciones y la complejidad del proyecto.</li>
+              </ul>
+              <p>Antes de comenzar, recibirás un calendario claro con las etapas y fechas previstas.</p>
+            </div>
           </details>
           <details class="pregunta">
-            <summary>¿Qué incluyen los precios?<span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span></summary>
-            <p>Los valores que publicamos son puntos de partida. La propuesta final depende del alcance del proyecto, y los viajes, locaciones, talento y otros costos externos se cotizan aparte.</p>
+            <summary>¿Cómo funcionan los pagos?<span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span></summary>
+            <div class="respuesta">
+              <p>La forma de pago depende del alcance del servicio:</p>
+              <ul class="lista">
+                <li>La Sesión estratégica y la Auditoría estándar se pagan en su totalidad al reservar.</li>
+                <li>La Auditoría institucional se divide en dos pagos: 50 % para comenzar y 50 % antes de la sesión de entrega.</li>
+                <li>El Lanzamiento estratégico se divide en dos pagos: 50 % para comenzar y 50 % antes de la entrega final.</li>
+                <li>El Lanzamiento integral y las producciones especiales se dividen en tres etapas: 50 % para reservar, 30 % antes de la grabación y 20 % antes de recibir los archivos finales.</li>
+                <li>Los servicios de dirección mensual se pagan por anticipado al inicio de cada mes.</li>
+              </ul>
+              <p>Los viajes y servicios contratados con terceros se pagan antes de confirmar las reservas correspondientes. Antes de comenzar, recibirás una propuesta con el alcance, el calendario y la distribución de pagos claramente definidos.</p>
+            </div>
           </details>
           <details class="pregunta">
-            <summary>¿Puede mi equipo grabar el contenido?<span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span></summary>
-            <p>Sí. Los 10 guiones de la incubadora de autoridad los puede grabar tu equipo o el nuestro. Y en la implementación estratégica diseñamos el sistema para que tu equipo lo ejecute con autonomía.</p>
+            <summary>¿Cómo funciona la entrevista inicial de viabilidad?<span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span></summary>
+            <div class="respuesta">
+              <p>Es una conversación en línea de hasta 30 minutos, sin costo, que ofrecemos después de revisar tu formulario. Aplica para la Auditoría institucional, el Lanzamiento de canal, la Dirección mensual y las Producciones audiovisuales especiales. La Sesión estratégica y la Auditoría estándar pueden reservarse directamente.</p>
+              <p>Su propósito es confirmar que podemos ayudarte con tu necesidad, comprender el alcance general del proyecto y orientarte hacia el servicio adecuado. No incluye una auditoría, recomendaciones detalladas ni entregables. Cuando existe compatibilidad, recibes una propuesta comercial con el alcance, la inversión y los próximos pasos.</p>
+            </div>
           </details>
           <details class="pregunta">
-            <summary>¿Por qué hacen una entrevista de viabilidad?<span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span></summary>
-            <p>Porque un canal de autoridad solo funciona si detrás hay conocimiento y experiencia reales. Si vemos que el modelo no es sostenible a largo plazo, preferimos decírtelo antes de empezar.</p>
+            <summary>¿Qué necesitan de mí para comenzar?<span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span></summary>
+            <div class="respuesta">
+              <p>Te pediremos la información necesaria para comprender tu proyecto. Según el servicio, puede incluir:</p>
+              <ul class="lista">
+                <li>Información sobre tu negocio, organización o marca personal.</li>
+                <li>Objetivos, audiencia y prioridades del proyecto.</li>
+                <li>Enlace del canal y métricas relevantes, cuando corresponda.</li>
+                <li>Identidad visual, logotipos y otros materiales de marca.</li>
+                <li>Disponibilidad para reuniones, grabaciones y aprobaciones.</li>
+                <li>Una persona responsable de centralizar la comunicación y las decisiones, cuando trabajamos con una organización.</li>
+              </ul>
+              <p>No necesitas tener todo resuelto antes de contactarnos: te indicaremos exactamente qué materiales necesitamos y cómo compartirlos. Nunca te pediremos contraseñas personales; cuando sea necesario trabajar en una plataforma, usaremos los permisos y accesos disponibles para equipos.</p>
+            </div>
+          </details>
+          <details class="pregunta">
+            <summary>¿Garantizan una cantidad específica de visualizaciones o suscriptores?<span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span></summary>
+            <div class="respuesta">
+              <p>No prometemos una cifra específica de visualizaciones, suscriptores o ventas. Hacerlo no sería honesto, porque los resultados también dependen de la respuesta de la audiencia, la competencia, la constancia del proyecto, el mercado y el desempeño de cada contenido.</p>
+              <p>Lo que sí puedes esperar es un equipo con experiencia probada, decisiones fundamentadas en información real, producción profesional, seguimiento continuo y una dirección clara para tu canal. El Sistema TFS está diseñado para reducir la improvisación y darle a cada contenido mejores condiciones para generar alcance, confianza y oportunidades.</p>
+            </div>
+          </details>
+          <details class="pregunta">
+            <summary>¿Truth Frame Studio acepta todos los proyectos?<span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span></summary>
+            <div class="respuesta">
+              <p>Evaluamos cada solicitud antes de confirmar una colaboración. Para proteger la integridad del trabajo, la confianza entre las partes y la calidad del resultado, aceptamos proyectos compatibles con nuestros principios éticos, profesionales e institucionales.</p>
+              <p>Nos reservamos el derecho de no aceptar proyectos cuyo propósito, mensaje, prácticas o contenido entren en conflicto con nuestros valores, con la dignidad de las personas, con la legislación aplicable o con nuestros estándares profesionales. Una colaboración se confirma después de aprobar el alcance, aceptar la propuesta y realizar el pago correspondiente.</p>
+            </div>
           </details>
           <details class="pregunta">
             <summary>¿Mi canal tiene que ganar dinero con AdSense?<span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span></summary>
-            <p>No. No diseñamos canales para depender de la publicidad de YouTube, sino para que atraigan clientes: cada video lleva a tu audiencia hacia tu oferta.</p>
-          </details>
-          <details class="pregunta">
-            <summary>¿Cuál es el primer paso?<span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span></summary>
-            <p>Nos envías tu consulta con el formulario de esta página. Diana te responde personalmente en un plazo máximo de 24 horas y, según lo que necesites, definimos juntos el siguiente paso. Consultar y pedir una propuesta no tiene costo.</p>
+            <div class="respuesta"><p>No. No diseñamos canales para depender de la publicidad de YouTube, sino para que atraigan clientes: cada video lleva a tu audiencia hacia tu oferta.</p></div>
           </details>
         </div>
       </div>

@@ -10,4 +10,14 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://truthframestudio.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://truthframestudio.com/en/"/>
   </url>
+  <url>
+    <loc>https://truthframestudio.com/servicios/auditoria-canal-youtube/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://truthframestudio.com/servicios/auditoria-canal-youtube/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://truthframestudio.com/en/services/youtube-channel-audit/"/>
+  </url>
+  <url>
+    <loc>https://truthframestudio.com/en/services/youtube-channel-audit/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://truthframestudio.com/servicios/auditoria-canal-youtube/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://truthframestudio.com/en/services/youtube-channel-audit/"/>
+  </url>
 </urlset>

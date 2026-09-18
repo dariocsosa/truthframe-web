@@ -18,8 +18,10 @@
   --tfs-editorial: #EAE8E4;  /* casos, notas, testimonios */
   --tfs-negro: #000000;      /* técnico; texto sobre coral */
 
-  --tfs-texto: var(--tfs-charcoal);
-  --tfs-fondo: var(--tfs-blanco);
+  /* Entrega 02 (18-sep): interfaz oscura y cinematográfica. Fondos negro y charcoal,
+     texto en blanco cálido (el editorial de la marca), coral solo para acción. */
+  --tfs-texto: var(--tfs-editorial);
+  --tfs-fondo: var(--tfs-negro);
   --tfs-foco: var(--tfs-coral);
 
   /* Tipografía — Inter para todo lo que se lee */

@@ -15,13 +15,29 @@
     saludo: "Hi Truth Frame Studio! I'm ",
     enviando: "Sending…", enviar: "Send inquiry", seguirWa: "Continue on WhatsApp",
     pieWa: "WhatsApp will open with your answers ready to send.",
-    medio: { whatsapp: "WhatsApp", correo: "email" }
+    medio: { whatsapp: "WhatsApp", correo: "email" },
+    servicio: "Service I'm interested in:",
+    servicios: {
+      sesion: "YouTube strategy session", auditoria: "Channel strategy audit",
+      lanzamiento: "YouTube channel launch", "lanzamiento-estrategico": "Strategic launch",
+      "lanzamiento-integral": "Full-service launch", direccion: "Strategic or full-service channel management",
+      "direccion-estrategica": "Strategic management and reactivation",
+      "direccion-integral": "Full-service management with video production", produccion: "Special video productions"
+    }
   } : {
     pausar: "Pausar video de fondo", reanudar: "Reproducir video de fondo",
     saludo: "¡Hola, Truth Frame Studio! Soy ",
     enviando: "Enviando…", enviar: "Enviar consulta", seguirWa: "Continuar en WhatsApp",
     pieWa: "Se abrirá WhatsApp con tus respuestas listas para enviar.",
-    medio: { whatsapp: "WhatsApp", correo: "correo electrónico" }
+    medio: { whatsapp: "WhatsApp", correo: "correo electrónico" },
+    servicio: "Servicio que me interesa:",
+    servicios: {
+      sesion: "Sesión estratégica para YouTube", auditoria: "Auditoría estratégica de canal",
+      lanzamiento: "Lanzamiento de canal de YouTube", "lanzamiento-estrategico": "Lanzamiento estratégico",
+      "lanzamiento-integral": "Lanzamiento integral", direccion: "Dirección estratégica o integral de canal",
+      "direccion-estrategica": "Dirección estratégica y reactivación",
+      "direccion-integral": "Dirección integral con producción audiovisual", produccion: "Producciones audiovisuales especiales"
+    }
   };
   var reducir = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (ANALITICA) {
@@ -52,6 +68,7 @@
   if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 
   function panelDe(hash) {
+    if (!paneles.length) return null;  // páginas sin pestañas (p. ej. la de la auditoría)
     var id = (hash || "").replace(/^#/, "");
     if (!id) return { panel: "inicio" };
     if (ids.indexOf(id) > -1) return { panel: id };
@@ -138,6 +155,7 @@
   });
 
   function alCambiarUrl() {
+    if (!paneles.length) return;
     var r = panelDe(location.hash) || { panel: "inicio" };
     if (r.panel !== actual || r.destino) ir(r.panel, r.destino, "restaurar", false);
   }
@@ -189,32 +207,30 @@
     if (!reducir) requestAnimationFrame(tick);
   }
 
-  /* ================= Servicios ================= */
-  var chips = $$(".chip[data-abrir]");
+  /* ================= Servicios =================
+     El selector ("Encuentra el acompañamiento…") y los caminos del inicio abren el servicio
+     recomendado con data-abrir="s2". */
   function abrirServicio(id) {
     var d = document.getElementById(id);
     if (!d) return;
     // Acordeón exclusivo también en navegadores sin <details name>
     $$(".servicio").forEach(function (x) { if (x !== d) x.open = false; });
     d.open = true;
-    chips.forEach(function (c) { c.setAttribute("aria-pressed", String(c.dataset.abrir === id)); });
     requestAnimationFrame(function () {
       d.scrollIntoView({ block: "start", behavior: reducir ? "auto" : "smooth" });
+      $("summary", d).focus({ preventScroll: true });
     });
   }
-  chips.forEach(function (c) {
-    c.setAttribute("aria-pressed", "false");
-    c.addEventListener("click", function () {
-      medir("guia", { servicio: c.dataset.abrir });
-      abrirServicio(c.dataset.abrir);
-      $("summary", document.getElementById(c.dataset.abrir)).focus({ preventScroll: true });
-    });
-  });
-  // Abrir un servicio a mano desmarca la guía
   $$(".servicio summary").forEach(function (sm) {
     sm.addEventListener("click", function () {
       if (!sm.parentNode.open) medir("servicio", { servicio: sm.parentNode.id });
-      chips.forEach(function (c) { c.setAttribute("aria-pressed", "false"); });
+    });
+  });
+  $$(".situacion").forEach(function (d, i) {
+    d.addEventListener("toggle", function () {
+      if (d.open) medir("guia", { situacion: i + 1 });
+      // Acordeón exclusivo también en navegadores sin <details name>
+      if (d.open) $$(".situacion").forEach(function (x) { if (x !== d) x.open = false; });
     });
   });
 
@@ -330,7 +346,11 @@
   var form = $("#form-contacto");
   var exito = $(".form-exito");
   var abierto = Date.now();
-  var PARA_SERVICIO = { 1: "mejorar", 2: "crear", 3: "orientacion", 4: "delegar", 5: "delegar" };
+  // Servicio elegido con un botón (data-servicio) → opción de "¿Cómo podemos ayudarte?"
+  var AYUDA_DE = {
+    sesion: "orientacion", auditoria: "mejorar", lanzamiento: "crear", "lanzamiento-estrategico": "crear",
+    "lanzamiento-integral": "crear", "direccion-estrategica": "mejorar", "direccion-integral": "delegar", orientacion: "orientacion"
+  };
 
   function valor(nombre) {
     var marcados = $$('[name="' + nombre + '"]:checked:not(:disabled)', form);
@@ -386,7 +406,7 @@
 
   function datos() {
     var d = { idioma: en ? "en" : "es", nombre: form.elements.nombre.value.trim() };
-    ["ayuda", "objetivo", "tiene_canal", "medio"].forEach(function (k) { d[k] = valor(k)[0] || ""; });
+    ["tipo", "ayuda", "objetivo", "tiene_canal", "medio"].forEach(function (k) { d[k] = valor(k)[0] || ""; });
     d.redes = valor("redes").join(", ");
     $$("input:not([type=radio]):not([type=checkbox]):not(:disabled), select:not(:disabled)", form).forEach(function (el) {
       if (el.name && !(el.name in d)) d[el.name] = el.value.trim();
@@ -396,28 +416,47 @@
   }
 
   function mensajeWhatsApp() {
-    // En el orden del formulario: preguntas con sus respuestas y los campos abiertos visibles
+    // En el orden del formulario: servicio elegido, preguntas con sus respuestas y los campos visibles
     var lineas = [t.saludo + form.elements.nombre.value.trim() + "."];
-    $$(".grupo, .campo.condicional", form).forEach(function (el) {
-      if (el.hidden) return;
+    var sv = form.elements.servicio.value;
+    if (sv && t.servicios[sv]) lineas.push("• " + t.servicio + " " + t.servicios[sv]);
+    $$(".grupo, .campo", form).forEach(function (el) {
+      if (el.closest("[hidden]")) return;
       if (el.classList.contains("grupo")) {
         var r = $$("input:checked", el).map(texto).join(", ");
         if (r) lineas.push("• " + $("legend", el).firstChild.textContent.trim() + " " + r);
-      } else {
-        var campo = $("input:not([type=tel])", el);
-        if (campo && campo.value.trim() && campo.type !== "email") lineas.push("   " + campo.value.trim());
+        return;
       }
+      var campo = $("input, select", el);
+      if (!campo || campo.name === "nombre" || campo.name === "pais" || campo.type === "tel" || !campo.value.trim()) return;
+      var etiqueta = $("label", el).firstChild.textContent.trim();
+      var v = campo.tagName === "SELECT" ? campo.options[campo.selectedIndex].text : campo.value.trim();
+      lineas.push(el.classList.contains("condicional") && campo.name === "otras_redes" ? "   " + v : "• " + etiqueta + ": " + v);
     });
     return lineas.join("\n");
   }
 
-  function elegirServicio(n) {
+  // Servicio elegido: se muestra arriba del formulario y viaja con la consulta
+  var cajaServicio = form && $(".form-servicio", form);
+  function elegirServicio(clave) {
     if (!form) return;
-    var v = PARA_SERVICIO[n];
+    var nombre = t.servicios[clave];
+    form.elements.servicio.value = nombre ? clave : "";
+    if (cajaServicio) {
+      cajaServicio.hidden = !nombre;
+      $(".form-servicio-nombre", cajaServicio).textContent = nombre || "";
+    }
+    var v = AYUDA_DE[clave];
     var r = v && $('[name="ayuda"][value="' + v + '"]', form);
     if (!r) return;
     r.checked = true;
     r.dispatchEvent(new Event("change", { bubbles: true }));
+  }
+  if (cajaServicio) {
+    $(".form-servicio-quitar", cajaServicio).addEventListener("click", function () {
+      elegirServicio("");
+      $('[name="tipo"]', form).focus();
+    });
   }
 
   function modoWhatsApp() {
@@ -464,7 +503,7 @@
         body: JSON.stringify(d)
       }).then(function (r) { return r.json(); }).then(function (r) {
         if (!r || r.ok !== true) throw new Error("sin confirmación");
-        medir("formulario", { ayuda: d.ayuda, medio: d.medio });
+        medir("formulario", { ayuda: d.ayuda, medio: d.medio, servicio: d.servicio || "" });
         $(".exito-medio", exito).textContent = t.medio[d.medio];
         form.hidden = true;
         exito.hidden = false;
@@ -504,6 +543,13 @@
 
   // Estado inicial (enlace directo a #algo)
   (function () {
+    // Enlace desde otra página con el servicio elegido: /?servicio=auditoria#contacto
+    var pedido = /[?&]servicio=([\w-]+)/.exec(location.search);
+    if (pedido) {
+      elegirServicio(pedido[1]);
+      history.replaceState(null, "", location.pathname + location.hash);
+    }
+    if (!paneles.length) return;
     var r = panelDe(location.hash) || { panel: "inicio" };
     actual = r.panel;
     aplicar(r.panel, r.destino, "arriba");
