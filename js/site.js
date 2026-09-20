@@ -13,30 +13,32 @@
   var t = en ? {
     pausar: "Pause background video", reanudar: "Play background video",
     saludo: "Hi Truth Frame Studio! I'm ",
-    enviando: "Sending…", enviar: "Send inquiry", seguirWa: "Continue on WhatsApp",
+    enviando: "Sending…", enviar: "Send my information", seguirWa: "Continue on WhatsApp",
     pieWa: "WhatsApp will open with your answers ready to send.",
+    pieCorreo: "Diana will reply within 24 hours at the latest.",
     medio: { whatsapp: "WhatsApp", correo: "email" },
     servicio: "Service I'm interested in:",
     servicios: {
-      sesion: "YouTube strategy session", auditoria: "Channel strategy audit",
-      lanzamiento: "YouTube channel launch", "lanzamiento-estrategico": "Strategic launch",
-      "lanzamiento-integral": "Full-service launch", direccion: "Strategic or full-service channel management",
-      "direccion-estrategica": "Strategic management and reactivation",
-      "direccion-integral": "Full-service management with video production", produccion: "Special video productions"
+      sesion: "YouTube strategy session", lanzamiento: "YouTube channel launch",
+      direccion: "Channel management and growth", contenidos: "Content production",
+      especiales: "Special productions", "direccion-medios": "Media direction",
+      "gestion-medios": "Full digital media management",
+      "evento-transmision": "Event production and streaming", "evento-integral": "Full event production"
     }
   } : {
     pausar: "Pausar video de fondo", reanudar: "Reproducir video de fondo",
     saludo: "¡Hola, Truth Frame Studio! Soy ",
-    enviando: "Enviando…", enviar: "Enviar consulta", seguirWa: "Continuar en WhatsApp",
+    enviando: "Enviando…", enviar: "Enviar mi información", seguirWa: "Continuar en WhatsApp",
     pieWa: "Se abrirá WhatsApp con tus respuestas listas para enviar.",
+    pieCorreo: "Diana te responderá en un plazo máximo de 24 horas.",
     medio: { whatsapp: "WhatsApp", correo: "correo electrónico" },
     servicio: "Servicio que me interesa:",
     servicios: {
-      sesion: "Sesión estratégica para YouTube", auditoria: "Auditoría estratégica de canal",
-      lanzamiento: "Lanzamiento de canal de YouTube", "lanzamiento-estrategico": "Lanzamiento estratégico",
-      "lanzamiento-integral": "Lanzamiento integral", direccion: "Dirección estratégica o integral de canal",
-      "direccion-estrategica": "Dirección estratégica y reactivación",
-      "direccion-integral": "Dirección integral con producción audiovisual", produccion: "Producciones audiovisuales especiales"
+      sesion: "Sesión estratégica para YouTube", lanzamiento: "Lanzamiento de canal desde cero",
+      direccion: "Dirección y crecimiento de canal", contenidos: "Producción de contenidos",
+      especiales: "Producciones especiales", "direccion-medios": "Dirección de medios",
+      "gestion-medios": "Gestión integral de medios",
+      "evento-transmision": "Producción audiovisual y transmisión", "evento-integral": "Producción integral del evento"
     }
   };
   var reducir = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -47,7 +49,7 @@
     sc.setAttribute("data-website-id", ANALITICA);
     document.head.appendChild(sc);
   }
-  // Eventos: pestana, servicio, guia, video, formulario, whatsapp
+  // Eventos: pestana, division, video, formulario, whatsapp
   function medir(evento, datos) {
     try { if (window.umami) window.umami.track(evento, datos); } catch (e) {}
   }
@@ -149,7 +151,6 @@
     if (location.hash !== hash) history.pushState({ panel: r.panel }, "", url);
     // Acciones que viajan con el enlace
     ir(r.panel, r.destino, "arriba", true, function () {
-      if (a.dataset.abrir) abrirServicio(a.dataset.abrir);
       if (a.dataset.servicio) elegirServicio(a.dataset.servicio);
     });
   });
@@ -207,31 +208,12 @@
     if (!reducir) requestAnimationFrame(tick);
   }
 
-  /* ================= Servicios =================
-     El selector ("Encuentra el acompañamiento…") y los caminos del inicio abren el servicio
-     recomendado con data-abrir="s2". */
-  function abrirServicio(id) {
-    var d = document.getElementById(id);
-    if (!d) return;
-    // Acordeón exclusivo también en navegadores sin <details name>
-    $$(".servicio").forEach(function (x) { if (x !== d) x.open = false; });
-    d.open = true;
-    requestAnimationFrame(function () {
-      d.scrollIntoView({ block: "start", behavior: reducir ? "auto" : "smooth" });
-      $("summary", d).focus({ preventScroll: true });
-    });
-  }
-  $$(".servicio summary").forEach(function (sm) {
-    sm.addEventListener("click", function () {
-      if (!sm.parentNode.open) medir("servicio", { servicio: sm.parentNode.id });
-    });
-  });
-  $$(".situacion").forEach(function (d, i) {
-    d.addEventListener("toggle", function () {
-      if (d.open) medir("guia", { situacion: i + 1 });
-      // Acordeón exclusivo también en navegadores sin <details name>
-      if (d.open) $$(".situacion").forEach(function (x) { if (x !== d) x.open = false; });
-    });
+  /* ================= Divisiones =================
+     Desde la reestructuración del 19-sep cada división tiene su página. Aquí solo medimos
+     por cuál entró el visitante. */
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest('.division, .caminos a');
+    if (a) medir("division", { ruta: a.getAttribute("href") });
   });
 
   /* ================= Portafolio: filtros ================= */
@@ -261,7 +243,7 @@
     var li = boton.closest("li");
     return {
       video: boton.dataset.video, lista: boton.dataset.lista,
-      titulo: $("h3", li).textContent, desc: ($(".caso-meta", li) || $("p", li)).textContent
+      titulo: $("h3", li).textContent, desc: ($(".caso-meta", li) || $("h3 + p", li) || $("p", li)).textContent
     };
   }
   function cargar() {
@@ -346,10 +328,19 @@
   var form = $("#form-contacto");
   var exito = $(".form-exito");
   var abierto = Date.now();
-  // Servicio elegido con un botón (data-servicio) → opción de "¿Cómo podemos ayudarte?"
-  var AYUDA_DE = {
-    sesion: "orientacion", auditoria: "mejorar", lanzamiento: "crear", "lanzamiento-estrategico": "crear",
-    "lanzamiento-integral": "crear", "direccion-estrategica": "mejorar", "direccion-integral": "delegar", orientacion: "orientacion"
+  // Servicio elegido con un botón (data-servicio o ?servicio=): preselecciona las respuestas
+  // del área correspondiente. Cada clave es un radio del formulario.
+  var RESPUESTAS_DE = {
+    sesion: { area: "youtube" },
+    lanzamiento: { area: "youtube", tiene_canal: "no" },
+    direccion: { area: "youtube", tiene_canal: "si" },
+    contenidos: { area: "produccion", produccion_tipo: "contenidos" },
+    especiales: { area: "produccion", produccion_tipo: "especial" },
+    "direccion-medios": { area: "agencia", agencia_tipo: "direccion" },
+    "gestion-medios": { area: "agencia", agencia_tipo: "delegar" },
+    "evento-transmision": { area: "eventos", evento_tipo: "organizado" },
+    "evento-integral": { area: "eventos", evento_tipo: "integral" },
+    orientacion: { area: "no_seguro" }
   };
 
   function valor(nombre) {
@@ -406,9 +397,10 @@
 
   function datos() {
     var d = { idioma: en ? "en" : "es", nombre: form.elements.nombre.value.trim() };
-    ["tipo", "ayuda", "objetivo", "tiene_canal", "medio"].forEach(function (k) { d[k] = valor(k)[0] || ""; });
-    d.redes = valor("redes").join(", ");
-    $$("input:not([type=radio]):not([type=checkbox]):not(:disabled), select:not(:disabled)", form).forEach(function (el) {
+    ["tipo", "area", "tiene_canal", "produccion_tipo", "agencia_tipo", "evento_tipo", "medio"].forEach(function (k) {
+      d[k] = valor(k)[0] || "";
+    });
+    $$("input:not([type=radio]):not([type=checkbox]):not(:disabled), select:not(:disabled), textarea:not(:disabled)", form).forEach(function (el) {
       if (el.name && !(el.name in d)) d[el.name] = el.value.trim();
     });
     d.segundos = Math.round((Date.now() - abierto) / 1000);
@@ -427,11 +419,11 @@
         if (r) lineas.push("• " + $("legend", el).firstChild.textContent.trim() + " " + r);
         return;
       }
-      var campo = $("input, select", el);
+      var campo = $("input, select, textarea", el);
       if (!campo || campo.name === "nombre" || campo.name === "pais" || campo.type === "tel" || !campo.value.trim()) return;
       var etiqueta = $("label", el).firstChild.textContent.trim();
       var v = campo.tagName === "SELECT" ? campo.options[campo.selectedIndex].text : campo.value.trim();
-      lineas.push(el.classList.contains("condicional") && campo.name === "otras_redes" ? "   " + v : "• " + etiqueta + ": " + v);
+      lineas.push("• " + etiqueta + ": " + v);
     });
     return lineas.join("\n");
   }
@@ -446,11 +438,15 @@
       cajaServicio.hidden = !nombre;
       $(".form-servicio-nombre", cajaServicio).textContent = nombre || "";
     }
-    var v = AYUDA_DE[clave];
-    var r = v && $('[name="ayuda"][value="' + v + '"]', form);
-    if (!r) return;
-    r.checked = true;
-    r.dispatchEvent(new Event("change", { bubbles: true }));
+    var respuestas = RESPUESTAS_DE[clave];
+    if (!respuestas) return;
+    var ultimo = null;
+    Object.keys(respuestas).forEach(function (campo) {
+      var r = $('[name="' + campo + '"][value="' + respuestas[campo] + '"]', form);
+      // El área se marca primero: las preguntas que dependen de ella están ocultas hasta entonces
+      if (r) { r.checked = true; ultimo = r; condiciones(); }
+    });
+    if (ultimo) ultimo.dispatchEvent(new Event("change", { bubbles: true }));
   }
   if (cajaServicio) {
     $(".form-servicio-quitar", cajaServicio).addEventListener("click", function () {
@@ -459,20 +455,22 @@
     });
   }
 
-  function modoWhatsApp() {
-    $(".enviar-texto", form).textContent = t.seguirWa;
-    $(".pie", form).textContent = t.pieWa;
+  /* El botón depende del medio elegido (reestructuración del 19-sep, §8):
+     WhatsApp → «Continuar en WhatsApp»; correo → «Enviar mi información».
+     Sin FORMULARIO no hay a dónde enviar el correo, así que todo sale por WhatsApp. */
+  function porWhatsApp() { return !FORMULARIO || valor("medio")[0] !== "correo"; }
+  function actualizarBoton() {
+    var wa = porWhatsApp();
+    $(".enviar-texto", form).textContent = wa ? t.seguirWa : t.enviar;
+    $(".pie", form).textContent = wa ? t.pieWa : t.pieCorreo;
   }
 
   if (form) {
-    if (!FORMULARIO) modoWhatsApp();
     condiciones();
+    actualizarBoton();
     form.addEventListener("change", function (e) {
-      // Crear un canal desde cero sugiere "No, todavía no" (se puede cambiar)
-      if (e.target.name === "ayuda" && e.target.value === "crear" && !valor("tiene_canal").length) {
-        $('[name="tiene_canal"][value="no"]', form).checked = true;
-      }
       condiciones();
+      if (e.target.name === "medio") actualizarBoton();
       var g = e.target.closest(".grupo, .campo");
       if (g && g.classList.contains("invalido")) marcar(g, false);
     });
@@ -486,9 +484,11 @@
       $(".form-error", form).hidden = true;
       if (!validar()) return;
       var d = datos();
+      var wa = porWhatsApp();
+      var texto = wa ? mensajeWhatsApp() : "";
       if (!FORMULARIO) {
-        medir("whatsapp", { origen: "formulario", ayuda: d.ayuda });
-        window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(mensajeWhatsApp()), "_blank", "noopener");
+        medir("whatsapp", { origen: "formulario", area: d.area });
+        window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(texto), "_blank", "noopener");
         return;
       }
       if (form.elements.sitio_web.value) return;  // trampa para robots
@@ -503,7 +503,12 @@
         body: JSON.stringify(d)
       }).then(function (r) { return r.json(); }).then(function (r) {
         if (!r || r.ok !== true) throw new Error("sin confirmación");
-        medir("formulario", { ayuda: d.ayuda, medio: d.medio, servicio: d.servicio || "" });
+        medir("formulario", { area: d.area, medio: d.medio, servicio: d.servicio || "" });
+        // Quien eligió WhatsApp sigue la conversación allá; quien eligió correo ve la confirmación
+        if (wa) {
+          medir("whatsapp", { origen: "formulario", area: d.area });
+          window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(texto), "_blank", "noopener");
+        }
         $(".exito-medio", exito).textContent = t.medio[d.medio];
         form.hidden = true;
         exito.hidden = false;
@@ -511,7 +516,7 @@
       }).catch(function () {
         $(".form-error", form).hidden = false;
         boton.disabled = false;
-        etiqueta.textContent = t.enviar;
+        actualizarBoton();
       });
     });
   }
@@ -555,7 +560,6 @@
     aplicar(r.panel, r.destino, "arriba");
     // Las fuentes cambian las alturas: se repite el salto cuando todo cargó
     if (r.destino) window.addEventListener("load", function () { r.destino.scrollIntoView({ block: "start" }); });
-    if (/^#s\d$/.test(location.hash)) abrirServicio(location.hash.slice(1));
   })();
 
   var anio = $("#anio");

@@ -758,6 +758,70 @@ strong, b { color: var(--texto-fuerte); }
   .siguiente { margin-left: 0; width: 100%; text-align: left; padding-top: 16px; border-top: 1px solid var(--linea); }
 }
 
+/* ---------- Divisiones: las cuatro rutas del inicio (reestructuración 19-sep) ----------
+   Botones coral con texto negro, como pidió Diana. Coral es acción, no decoración:
+   estos botones son la acción principal del inicio. */
+.divisiones { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.division {
+  display: grid; gap: 10px; align-content: start;
+  padding: clamp(22px, 3vw, 30px); border-radius: 14px;
+  background: var(--tfs-coral); color: var(--tfs-negro); text-decoration: none;
+  border: 1px solid var(--tfs-coral); transition: background .18s, color .18s, transform .18s;
+}
+.division b { font-size: clamp(1.25rem, 2vw, 1.625rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.015em;
+  display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+.division b i { font-style: normal; flex: none; transition: transform .18s; }
+.division span { font-size: .9375rem; line-height: 1.45; opacity: .78; }
+.division:hover { background: var(--tfs-negro); color: var(--tfs-coral); transform: translateY(-2px); }
+.division:hover b i { transform: translateX(4px); }
+.division:focus-visible { outline: 3px solid var(--tfs-blanco); outline-offset: 3px; }
+@media (max-width: 760px) { .divisiones { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .division, .division b i { transition: none; } .division:hover { transform: none; } }
+
+/* Submenú de Servicios en el encabezado (solo escritorio) */
+.nav .con-sub { position: relative; }
+.nav .submenu {
+  position: absolute; top: 100%; left: -16px; z-index: 5; min-width: 280px; padding: 8px;
+  display: grid; gap: 2px; border: 1px solid var(--linea); border-radius: 12px; background: #0B0B0B;
+  box-shadow: 0 12px 32px rgba(0,0,0,.6);
+  opacity: 0; visibility: hidden; transform: translateY(-4px); transition: opacity .15s, transform .15s, visibility .15s;
+}
+.nav .con-sub:hover .submenu, .nav .con-sub:focus-within .submenu { opacity: 1; visibility: visible; transform: none; }
+.nav .submenu a { display: block; padding: 10px 12px; border-radius: 8px; font-size: .9375rem; color: var(--texto); }
+.nav .submenu a::after { display: none; }
+.nav .submenu a:hover { background: var(--sup-3); color: var(--texto-fuerte); }
+@media (prefers-reduced-motion: reduce) { .nav .submenu { transition: none; } }
+
+/* Proyectos destacados del inicio: cuatro, en dos columnas */
+.obras.destacados { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 24px; }
+.obra .etiqueta-obra { font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--tfs-coral); margin-top: 14px; }
+.obra .etiqueta-obra + h3 { margin-top: 4px; }
+.obra .sin-video { position: relative; display: block; aspect-ratio: 16 / 9; border-radius: var(--radio); overflow: hidden; background: var(--sup-2); border: 1px solid var(--linea); }
+.obra .sin-video img { width: 100%; height: 100%; object-fit: cover; }
+.obra .sin-video.logo img { object-fit: contain; padding: 14% 22%; opacity: .85; }
+
+/* Índice de Servicios: las cuatro divisiones en dos filas */
+.caminos-cuatro { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 860px) { .caminos-cuatro { grid-template-columns: 1fr; } }
+@media (max-width: 600px) { .obras.destacados { grid-template-columns: 1fr; } }
+
+/* Modalidades de una división: bloques largos, uno debajo del otro */
+.oferta { display: grid; gap: clamp(24px, 4vw, 40px); }
+.oferta-bloque { border: 1px solid var(--linea); border-radius: 14px; background: var(--sup-2); padding: clamp(24px, 4vw, 40px);
+  scroll-margin-top: calc(var(--header) + 16px); }
+.oferta-bloque .h2 { font-size: clamp(1.5rem, 2.6vw, 2rem); max-width: 22ch; }
+.oferta-bloque > p { margin-top: 16px; color: var(--texto-2); max-width: 70ch; }
+.oferta-bloque > p.destacado { color: var(--texto-fuerte); font-size: 1.0625rem; }
+.oferta-bloque h3 { margin-top: 28px; margin-bottom: 12px; }
+.oferta-bloque .cifras { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--linea); }
+.oferta-bloque .acciones { margin-top: 24px; }
+.oferta-bloque .nota { margin-top: 20px; }
+.diferenciador {
+  margin-top: 24px; padding: 20px 24px; border-left: 2px solid var(--tfs-coral); background: var(--sup-3); border-radius: 0 10px 10px 0;
+  font-size: 1.0625rem; line-height: 1.5; color: var(--texto-fuerte);
+}
+.aclaracion { margin-top: 20px; padding-left: 16px; border-left: 2px solid var(--linea-fuerte); font-size: .9375rem; color: var(--texto-2); max-width: 70ch; }
+
 /* ---------- Página de servicio (Auditoría) ---------- */
 .pagina-portada { position: relative; padding-block: clamp(56px, 9vw, 120px) clamp(48px, 7vw, 96px); border-bottom: 1px solid var(--linea);
   background: radial-gradient(ellipse 80% 60% at 85% 0%, #1b1b1b 0%, rgba(0,0,0,0) 70%), var(--fondo); }

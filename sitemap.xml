@@ -11,13 +11,43 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://truthframestudio.com/en/"/>
   </url>
   <url>
-    <loc>https://truthframestudio.com/servicios/auditoria-canal-youtube/</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://truthframestudio.com/servicios/auditoria-canal-youtube/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://truthframestudio.com/en/services/youtube-channel-audit/"/>
+    <loc>https://truthframestudio.com/youtube/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://truthframestudio.com/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://truthframestudio.com/en/youtube/"/>
   </url>
   <url>
-    <loc>https://truthframestudio.com/en/services/youtube-channel-audit/</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://truthframestudio.com/servicios/auditoria-canal-youtube/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://truthframestudio.com/en/services/youtube-channel-audit/"/>
+    <loc>https://truthframestudio.com/en/youtube/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://truthframestudio.com/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://truthframestudio.com/en/youtube/"/>
+  </url>
+  <url>
+    <loc>https://truthframestudio.com/produccion-audiovisual/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://truthframestudio.com/produccion-audiovisual/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://truthframestudio.com/en/video-production/"/>
+  </url>
+  <url>
+    <loc>https://truthframestudio.com/en/video-production/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://truthframestudio.com/produccion-audiovisual/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://truthframestudio.com/en/video-production/"/>
+  </url>
+  <url>
+    <loc>https://truthframestudio.com/agencia-de-medios-digitales/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://truthframestudio.com/agencia-de-medios-digitales/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://truthframestudio.com/en/digital-media-agency/"/>
+  </url>
+  <url>
+    <loc>https://truthframestudio.com/en/digital-media-agency/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://truthframestudio.com/agencia-de-medios-digitales/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://truthframestudio.com/en/digital-media-agency/"/>
+  </url>
+  <url>
+    <loc>https://truthframestudio.com/eventos-en-vivo/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://truthframestudio.com/eventos-en-vivo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://truthframestudio.com/en/live-events/"/>
+  </url>
+  <url>
+    <loc>https://truthframestudio.com/en/live-events/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://truthframestudio.com/eventos-en-vivo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://truthframestudio.com/en/live-events/"/>
   </url>
 </urlset>

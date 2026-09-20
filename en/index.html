@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Truth Frame Studio — YouTube strategy and production</title>
-  <meta name="description" content="YouTube strategy and production studio in Santo Domingo. We audit channels, build new ones from scratch and support organizations that want to hand off their entire content process.">
+  <title>Truth Frame Studio | Video production and digital strategy</title>
+  <meta name="description" content="Video production studio in Santo Domingo. We build YouTube channels, content, digital ecosystems and live events for brands and organizations.">
   <link rel="canonical" href="https://truthframestudio.com/en/">
   <link rel="alternate" hreflang="es" href="https://truthframestudio.com/">
   <link rel="alternate" hreflang="en" href="https://truthframestudio.com/en/">
   <link rel="alternate" hreflang="x-default" href="https://truthframestudio.com/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Truth Frame Studio">
-  <meta property="og:title" content="Truth Frame Studio — YouTube strategy and production">
-  <meta property="og:description" content="Take your YouTube channel further.">
+  <meta property="og:title" content="Truth Frame Studio | Video production and digital strategy">
+  <meta property="og:description" content="Video production that connects people and brands.">
   <meta property="og:url" content="https://truthframestudio.com/en/">
   <meta property="og:image" content="https://truthframestudio.com/assets/og-en.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Diana Cardona and Andrés Figueroa of Truth Frame Studio in their recording studio.">
+  <meta property="og:image:alt" content="Diana Cardona and Andrés Figueroa, of Truth Frame Studio, in their recording studio.">
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#000000">
@@ -30,7 +30,7 @@
     /* Initial tab before first paint (avoids flicker). The rest is in js/site.js */
     (function (d) {
       var p = ["inicio", "servicios", "portafolio", "nosotros", "contacto"], h = location.hash.slice(1);
-      var dentro = { metodo: "servicios", selector: "servicios", s1: "servicios", s2: "servicios", s3: "servicios", s4: "servicios", s5: "servicios",
+      var dentro = { logistica: "servicios", divisiones: "inicio",
                      casos: "portafolio", clientes: "inicio", equipo: "nosotros", preguntas: "contacto" };
       d.className += " js";
       d.setAttribute("data-panel", p.indexOf(h) > -1 ? h : (dentro[h] || "inicio"));
@@ -47,7 +47,7 @@
     "url": "https://truthframestudio.com/en/",
     "logo": "https://truthframestudio.com/assets/logos/Logo_TFS_black_1.svg",
     "image": "https://truthframestudio.com/assets/fotos/andres-diana-1600.jpg",
-    "description": "YouTube strategy and production: channel audits, channel launches from scratch, strategic and full-service channel management, and special video productions.",
+    "description": "Video production and digital strategy studio: YouTube channels, content production, digital media direction and management, and live event production.",
     "telephone": "+1-849-652-3537",
     "address": { "@type": "PostalAddress", "addressLocality": "Santo Domingo", "addressCountry": "DO" },
     "areaServed": "Worldwide",
@@ -69,7 +69,14 @@
       </a>
       <nav class="nav" id="nav" aria-label="Main">
         <ul>
-          <li><a href="#servicios">Services</a></li>
+          <li class="con-sub"><a href="#servicios">Services</a>
+            <ul class="submenu">
+              <li><a href="/en/youtube/">YouTube</a></li>
+              <li><a href="/en/video-production/">Video production</a></li>
+              <li><a href="/en/digital-media-agency/">Content and digital media agency</a></li>
+              <li><a href="/en/live-events/">Live events</a></li>
+            </ul>
+          </li>
           <li><a href="#portafolio">Portfolio</a></li>
           <li><a href="#nosotros">About</a></li>
           <li><a href="#contacto">Contact</a></li>
@@ -77,13 +84,13 @@
         <span class="indicador" aria-hidden="true"></span>
       </nav>
       <a class="idioma" href="/" hreflang="es" lang="es" aria-label="Versión en español">ES</a>
-      <a class="btn btn-acento btn-hablemos" href="#contacto"><span class="cta-largo">Tell us about your channel</span><span class="cta-corto">Your channel</span> <span class="flecha" aria-hidden="true">→</span></a>
+      <a class="btn btn-acento btn-hablemos" href="#contacto"><span class="cta-largo">Tell us about your project</span><span class="cta-corto">Your project</span> <span class="flecha" aria-hidden="true">→</span></a>
     </div>
   </header>
 
   <main id="contenido" tabindex="-1">
     <!-- ============ INICIO ============ -->
-    <div class="panel" id="inicio" data-titulo="Truth Frame Studio — YouTube strategy and production">
+    <div class="panel" id="inicio" data-titulo="Truth Frame Studio | Video production and digital strategy">
     <section class="hero" aria-labelledby="hero-titulo">
       <div class="hero-video" aria-hidden="true">
         <video autoplay muted loop playsinline preload="metadata" poster="/assets/video/hero-poster.jpg">
@@ -105,12 +112,12 @@
       </div>
       <div class="hero-texto">
         <div class="contenedor">
-          <p class="claim">Strategy + production for YouTube</p>
-          <h1 class="h1" id="hero-titulo">Take your YouTube channel further.</h1>
-          <p class="lead">We audit channels that need better results, build new projects from scratch and support organizations that want to hand off their entire content process.</p>
+          <p class="claim" lang="es">Visión · Producción · Impacto</p>
+          <h1 class="h1" id="hero-titulo">Video production that connects people and brands.</h1>
+          <p class="lead">We build and run YouTube channels, produce content and live events, and manage digital media to turn your vision into communication that earns trust and creates impact.</p>
           <div class="acciones">
-            <a class="btn btn-acento" href="#contacto">Tell us about your channel <span class="flecha" aria-hidden="true">→</span></a>
-            <a class="btn btn-claro" href="#casos">See case studies</a>
+            <a class="btn btn-acento" href="#contacto">Tell us about your project <span class="flecha" aria-hidden="true">→</span></a>
+            <a class="btn btn-claro" href="#servicios">See our services</a>
           </div>
         </div>
       </div>
@@ -119,67 +126,77 @@
     <section class="credenciales" aria-label="Track record">
       <div class="contenedor">
         <ul>
-          <li><strong>25+ years</strong><span>of experience in strategy, direction and video production.</span></li>
-          <li><strong>0 → 500K+</strong><span>subscribers at IBSJ, which had no channel when Andrés arrived. He built it and still leads it today.</span></li>
-          <li><strong>200K+</strong><span>subscribers on Entendiendo Los Tiempos, a project Andrés started from scratch and led on the video side from day one.</span></li>
-          <li><strong>110K+</strong><span>subscribers on Eternidad Plus. Andrés and Diana led its transition from Radio Eternidad, and Andrés runs the channel today.</span></li>
+          <li><strong>Since 1999</strong><span>creating and directing video productions.</span></li>
+          <li><strong>3,000+ pieces</strong><span>of video produced and directed for channels, brands and organizations.</span></li>
+          <li><strong>20+ years</strong><span>leading live streams and live events.</span></li>
+          <li><strong>500K+</strong><span>subscribers: experience growing YouTube channels to audiences of more than 500K.</span></li>
         </ul>
       </div>
     </section>
 
-    <section class="seccion" aria-labelledby="tesis-titulo">
+    <section class="seccion" aria-labelledby="mensaje-titulo">
       <div class="contenedor tesis">
-        <h2 class="h2" id="tesis-titulo">YouTube is not a place to just upload videos.</h2>
+        <h2 class="h2" id="mensaje-titulo">There is a message only you can deliver.</h2>
         <div class="prosa lead">
-          <p>Social media gives you visibility for 24 hours. YouTube is the world’s second-largest search engine, and a good video keeps bringing in clients years after it goes live.</p>
-          <p>That’s why we don’t make content to fill a calendar. We design a system built around your business: what to say, how to package it so people watch, and where to take viewers next. No templates, and no relying on AdSense.</p>
-          <p class="secundario">We work with corporations, personal brands, organizations, ministries and experts.</p>
+          <p>Your experience has given you a voice of your own. But a message doesn’t fulfill its purpose until someone can understand it, remember it and find value in it.</p>
+          <p>At Truth Frame Studio we combine content strategy, data and video production to give your vision the shape and direction it needs to reach the right audience.</p>
+          <p>You bring the knowledge and the voice. We help you turn them into communication that earns trust and creates impact.</p>
+          <p><a class="btn btn-primario" href="#contacto">I want my message to go further <span class="flecha" aria-hidden="true">→</span></a></p>
         </div>
       </div>
     </section>
 
-    <!-- Paths: visitors self-select -->
-    <section class="seccion caminos-seccion" aria-labelledby="caminos-titulo">
+    <!-- Las cuatro divisiones: cada botón lleva a su página -->
+    <section class="seccion caminos-seccion" id="divisiones" aria-labelledby="divisiones-titulo">
       <div class="contenedor">
         <div class="cabecera">
-          <h2 class="h2" id="caminos-titulo">Where is your channel today?</h2>
+          <h2 class="h2" id="divisiones-titulo">How can we help?</h2>
         </div>
-        <ul class="caminos">
-          <li><a href="#servicios" data-abrir="s2"><small>I already have a channel</small><b>I want to know what’s holding it back</b><span>Channel strategy audit</span><i aria-hidden="true">→</i></a></li>
-          <li><a href="#servicios" data-abrir="s3"><small>I don’t have a channel yet</small><b>I want to start from scratch, with a clear direction</b><span>YouTube channel launch</span><i aria-hidden="true">→</i></a></li>
-          <li><a href="#servicios" data-abrir="s4"><small>We have an active channel</small><b>We want to hand off the content process</b><span>Strategic or full-service channel management</span><i aria-hidden="true">→</i></a></li>
-        </ul>
-        <p class="aviso-precios">Just need clarity to make a decision? <a class="enlace" href="#servicios" data-abrir="s1">Learn about the YouTube strategy session</a>.</p>
+        <div class="divisiones">
+          <a class="division" href="/en/youtube/"><b>YouTube <i aria-hidden="true">→</i></b><span>Build, grow or lead your channel with a clear vision.</span></a>
+          <a class="division" href="/en/video-production/"><b>Video production <i aria-hidden="true">→</i></b><span>Turn your ideas into professional content.</span></a>
+          <a class="division" href="/en/digital-media-agency/"><b>Content and digital media agency <i aria-hidden="true">→</i></b><span>Give your whole ecosystem direction, or hand over its management.</span></a>
+          <a class="division" href="/en/live-events/"><b>Live events <i aria-hidden="true">→</i></b><span>Produce, stream and extend the impact of your event.</span></a>
+        </div>
       </div>
     </section>
 
     <!-- Featured -->
     <section class="seccion" aria-labelledby="destacados-titulo" style="padding-top:0">
       <div class="contenedor">
-        <div class="cabecera cabecera-fila">
-          <h2 class="h2" id="destacados-titulo">Recent work</h2>
-          <a class="enlace" href="#portafolio">See the full portfolio</a>
+        <div class="cabecera">
+          <h2 class="h2" id="destacados-titulo">Real experience behind every project</h2>
+          <p class="lead">We have created, directed and produced channels, series and events for audiences in several countries. These projects show some of the ways we help turn a vision into an experience that earns trust and creates impact.</p>
         </div>
-        <ul class="obras">
+        <ul class="obras destacados">
+          <li class="obra" data-cat="podcast">
+            <button class="pantalla" type="button" data-video="XEq-M-Qegdg" aria-label="Play: Entendiendo Los Tiempos">
+              <img src="/assets/portafolio/elt.webp" alt="" width="640" height="360" loading="lazy"><span class="play"><svg viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M3 1.5v11a.5.5 0 0 0 .76.43l9-5.5a.5.5 0 0 0 0-.86l-9-5.5A.5.5 0 0 0 3 1.5z"/></svg></span>
+            </button>
+            <p class="etiqueta-obra">YouTube</p>
+            <h3>Entendiendo los Tiempos</h3><p>A channel built from scratch and grown into a community of more than 200K subscribers</p>
+          </li>
           <li class="obra" data-cat="series">
             <button class="pantalla" type="button" data-video="V4FZVsunWzs" aria-label="Play: La Mesa">
               <img src="/assets/portafolio/la-mesa.webp" alt="" width="640" height="360" loading="lazy"><span class="play"><svg viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M3 1.5v11a.5.5 0 0 0 .76.43l9-5.5a.5.5 0 0 0 0-.86l-9-5.5A.5.5 0 0 0 3 1.5z"/></svg></span>
             </button>
-            <h3>La Mesa</h3><p>Series with Alba Rodríguez for Eternidad+</p>
+            <p class="etiqueta-obra">Video production</p>
+            <h3>La Mesa</h3><p>An original series bringing together meaningful conversation, food and a visual identity of its own</p>
           </li>
-          <li class="obra" data-cat="documentales">
-            <button class="pantalla" type="button" data-video="Z4koZQvQOzM" aria-label="Play: ¿Prohibido predicar en París?">
-              <img src="/assets/portafolio/predicar-paris.webp" alt="" width="640" height="360" loading="lazy"><span class="play"><svg viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M3 1.5v11a.5.5 0 0 0 .76.43l9-5.5a.5.5 0 0 0 0-.86l-9-5.5A.5.5 0 0 0 3 1.5z"/></svg></span>
-            </button>
-            <h3>¿Prohibido predicar en París?</h3><p>Documentary on the Latinos evangelizing Europe</p>
+          <li class="obra">
+            <span class="sin-video logo"><img src="/assets/clientes/ibsj.webp" alt="IBSJ logo" width="273" height="180" loading="lazy"></span>
+            <p class="etiqueta-obra">Media direction</p>
+            <h3>IBSJ</h3><p>A channel created and led from day one, with an audience that today exceeds 500K subscribers</p>
           </li>
           <li class="obra" data-cat="eventos">
-            <button class="pantalla" type="button" data-video="nYQP3e2VED0" aria-label="Play: Filarmónica Appassionato">
-              <img src="/assets/portafolio/appassionato.webp" alt="" width="640" height="360" loading="lazy"><span class="play"><svg viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M3 1.5v11a.5.5 0 0 0 .76.43l9-5.5a.5.5 0 0 0 0-.86l-9-5.5A.5.5 0 0 0 3 1.5z"/></svg></span>
+            <button class="pantalla" type="button" data-video="QzHeCktoeLU" aria-label="Play: Filarmónica Appassionato">
+              <img src="/assets/portafolio/appassionato-concierto.webp" alt="" width="640" height="360" loading="lazy"><span class="play"><svg viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M3 1.5v11a.5.5 0 0 0 .76.43l9-5.5a.5.5 0 0 0 0-.86l-9-5.5A.5.5 0 0 0 3 1.5z"/></svg></span>
             </button>
-            <h3>Filarmónica Appassionato</h3><p>Young Euro Classic 2024, Konzerthaus Berlin</p>
+            <p class="etiqueta-obra">Live events</p>
+            <h3>Filarmónica Appassionato</h3><p>Video production of the concert presented at Young Euro Classic 2024, at the Konzerthaus Berlin</p>
           </li>
         </ul>
+        <p class="acciones" style="margin-top:32px"><a class="btn btn-claro" href="#portafolio">See our portfolio</a></p>
       </div>
     </section>
 
@@ -199,7 +216,7 @@
     <section class="seccion seccion-alt" id="clientes" aria-labelledby="clientes-titulo">
       <div class="contenedor">
         <div class="cabecera">
-          <h2 class="h2" id="clientes-titulo">Clients who have been part of our journey</h2>
+          <h2 class="h2" id="clientes-titulo">Brands and organizations that have trusted our work</h2>
         </div>
         <ul class="clientes">
           <li><img class="ancho" src="/assets/clientes/eternidad-plus.webp" alt="Eternidad Plus" width="640" height="122" loading="lazy"></li>
@@ -216,606 +233,65 @@
         </ul>
       </div>
     </section>
+    <section class="seccion seccion-oscura" aria-labelledby="cta-final-titulo">
+      <div class="contenedor">
+        <div class="cabecera">
+          <h2 class="h2 h2-grande" id="cta-final-titulo">Your project starts with a conversation</h2>
+          <p class="lead">Tell us what you want to communicate, produce or transform. We’ll review your information and reply personally within 24 hours to point you to the right service.</p>
+        </div>
+        <div class="acciones" style="margin-top:0">
+          <a class="btn btn-acento" href="#contacto">Tell us about your project <span class="flecha" aria-hidden="true">→</span></a>
+          <a class="btn btn-claro" href="https://wa.me/18496523537" rel="noopener" data-origen="cta-inicio">Message us on WhatsApp</a>
+        </div>
+      </div>
+    </section>
       <aside class="cierre" aria-label="Next step">
         <div class="contenedor">
-          <p class="cierre-texto">Ready to talk about your channel?</p>
-          <a class="btn btn-acento" href="#contacto">Tell us about your channel <span class="flecha" aria-hidden="true">→</span></a>
           <a class="siguiente" href="#servicios"><small>Next</small>Services <span aria-hidden="true">→</span></a>
         </div>
       </aside>
     </div>
 
-    <!-- ============ SERVICES ============ -->
+    <!-- ============ SERVICIOS ============
+         Reestructuración aprobada por Diana (19-sep): cuatro divisiones, cada una con su página.
+         insumos/documentos/Truth_Frame_Studio_Reestructuracion_Web_Aprobada.md -->
     <div class="panel" id="servicios" data-titulo="Services — Truth Frame Studio">
     <section class="seccion portada" aria-labelledby="servicios-titulo">
       <div class="contenedor">
         <div class="cabecera">
           <h2 class="h2" id="servicios-titulo">Services</h2>
-          <p class="lead">A step-by-step offer focused on YouTube: from a single session to decide your next move to managing your entire channel.</p>
+          <p class="lead">Four divisions, one team. Pick the one closest to what you need and see how we work.</p>
         </div>
-
-        <!-- Selector: each situation leads to the recommended service -->
-        <div class="selector" id="selector">
-          <h3 class="h3 selector-titulo">Find the support you need</h3>
-          <p class="lead">Not every project is at the same stage. Find the situation that sounds most like yours and discover the service that can help you move forward.</p>
-          <div class="situaciones">
-            <details class="situacion" name="situacion">
-              <summary>I need clarity to make a decision<span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span></summary>
-              <div class="situacion-cuerpo">
-                <p>You have an idea, a specific challenge or a channel you don’t know how to grow. Get expert guidance and define your next step.</p>
-                <p class="recomendado">Recommended service <b>YouTube strategy session</b></p>
-                <a class="btn btn-primario" href="#s1" data-abrir="s1">Book my session <span class="flecha" aria-hidden="true">→</span></a>
-              </div>
-            </details>
-            <details class="situacion" name="situacion">
-              <summary>I want to know what’s holding my channel back<span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span></summary>
-              <div class="situacion-cuerpo">
-                <p>You need to understand what’s working, what needs to change and where your channel’s real growth opportunities are.</p>
-                <p class="recomendado">Recommended service <b>Channel strategy audit</b></p>
-                <a class="btn btn-primario" href="#s2" data-abrir="s2">Audit my channel <span class="flecha" aria-hidden="true">→</span></a>
-              </div>
-            </details>
-            <details class="situacion" name="situacion">
-              <summary>I want to start a channel from scratch<span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span></summary>
-              <div class="situacion-cuerpo">
-                <p>You have the knowledge, the message or the brand, but you need clear direction to turn them into a professional channel that’s ready to publish.</p>
-                <p class="recomendado">Recommended service <b>YouTube channel launch</b></p>
-                <a class="btn btn-primario" href="#s3" data-abrir="s3">Launch my channel <span class="flecha" aria-hidden="true">→</span></a>
-              </div>
-            </details>
-            <details class="situacion" name="situacion">
-              <summary>I need ongoing direction or want to hand off production<span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span></summary>
-              <div class="situacion-cuerpo">
-                <p>Your channel already exists and needs to regain momentum, keep a consistent strategy or have a team that also takes on video production.</p>
-                <p class="recomendado">Recommended service <b>Strategic or full-service channel management</b></p>
-                <a class="btn btn-primario" href="#s4" data-abrir="s4">Find my plan <span class="flecha" aria-hidden="true">→</span></a>
-              </div>
-            </details>
-            <details class="situacion" name="situacion">
-              <summary>I have a special video production<span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span></summary>
-              <div class="situacion-cuerpo">
-                <p>You need to develop a series, a podcast, a course, an event, a concert, a documentary or another custom video project.</p>
-                <p class="recomendado">Recommended service <b>Special video productions</b></p>
-                <a class="btn btn-primario" href="#s5" data-abrir="s5">Let’s talk about my project <span class="flecha" aria-hidden="true">→</span></a>
-              </div>
-            </details>
-            <div class="ayuda-elegir">
-              <p><b>Still not sure which to choose?</b>Tell us what stage you’re at. We’ll review your information and point you to the best option.</p>
-              <a class="btn btn-claro" href="#contacto" data-servicio="orientacion">Help me choose <span class="flecha" aria-hidden="true">→</span></a>
-            </div>
-          </div>
-        </div>
-
-        <h3 class="h3 bloque-titulo">Our services</h3>
-        <div class="servicios">
-          <!-- 01 · Strategy session -->
-          <details class="servicio" name="servicio" id="s1">
-            <summary>
-              <span class="num">01</span>
-              <span class="nombre-col"><span class="nombre">YouTube strategy session</span>
-                <span class="para">Two hours with Diana to pinpoint what’s holding your channel back and leave with a clear action plan for the next 30 days.</span></span>
-              <span class="dato"><small>Timeframe</small>2-hour session</span>
-              <span class="dato precio"><small>Investment</small><b>USD 250</b></span>
-              <span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span>
-            </summary>
-            <div class="detalle">
-              <div class="intro">
-                <p>A one-on-one, two-hour session with Diana to pinpoint what’s holding your channel back, sort out your priorities and define a concrete action plan for the next 30 days.</p>
-                <p>You’ll get personalized strategic guidance, a detailed report with the conclusions of the meeting and a clear roadmap to move forward over the next 30 days.</p>
-              </div>
-              <div class="d-cols">
-                <div>
-                  <h4>Who is this session for?</h4>
-                  <ul class="lista compacta">
-                    <li>You want to start a YouTube channel and need clarity to make the first decisions.</li>
-                    <li>You have a business or a personal brand and want to turn YouTube into a platform that builds trust and brings opportunities and clients.</li>
-                    <li>You already have a channel, but you don’t know what’s holding it back or what your next step should be.</li>
-                    <li>You’re thinking about closing or abandoning your channel because you didn’t get the results you expected.</li>
-                    <li>You have several ideas, but you need to organize them and turn them into concrete priorities.</li>
-                    <li>You have to make an important decision about your channel’s content, audience, format or direction.</li>
-                    <li>You want to validate your project before investing in an audit, a production or broader support.</li>
-                  </ul>
-                  <p class="secundario" style="margin-top:14px">It doesn’t matter whether your channel is still an idea, already active or something you’ve thought about giving up on. The session adapts to where you are, to help you regain clarity and set a concrete direction.</p>
-                </div>
-                <div>
-                  <h4>Includes</h4>
-                  <ul class="lista compacta">
-                    <li>A short questionnaire beforehand to understand your channel and main challenge.</li>
-                    <li>A preliminary review of one YouTube channel.</li>
-                    <li>A two-hour strategy session with Diana.</li>
-                    <li>Attendance for you and one additional team member at no extra cost.</li>
-                    <li>A detailed session report.</li>
-                    <li>A one-page roadmap with priorities for the next 30 days.</li>
-                    <li>The summary and roadmap delivered within 48 hours of the session.</li>
-                  </ul>
-                  <h4>How it works</h4>
-                  <ol class="pasos">
-                    <li>You book your session with a payment of USD 250 and choose an available date.</li>
-                    <li>You fill out a short form about your situation and, if you already have a channel, share the link.</li>
-                    <li>Diana reviews your information before the meeting.</li>
-                    <li>We hold the two-hour strategy session online.</li>
-                    <li>Within 48 hours you receive the detailed report and the roadmap for the next 30 days.</li>
-                  </ol>
-                </div>
-              </div>
-              <div class="cifras">
-                <p class="dato"><small>Investment</small><b>USD 250</b></p>
-                <p class="dato"><small>Format</small><b>Online, from any country</b></p>
-                <p class="dato"><small>Delivery</small><b>Report and roadmap within 48 hours</b></p>
-              </div>
-              <p class="nota">If you hire a broader service within 15 days of the session, we credit 60% of what you paid for the session toward it.</p>
-              <div class="d-cols">
-                <div>
-                  <h4>Session scope</h4>
-                  <p>So the two hours stay focused on your most urgent need, the session is designed to work on one priority challenge or decision.</p>
-                  <p>If your channel needs a full review, implementation, video production, thumbnail design or scriptwriting, we’ll recommend the service that can address those needs in the right depth.</p>
-                  <h4>Online and confidential</h4>
-                  <p>The session is held online only, so you can book it from any country. To protect your confidentiality, it’s private and neither party records it on video. The report is for internal use, and you can share it with the team members who will carry out the project.</p>
-                </div>
-                <div>
-                  <h4>Changes, cancellations and no-shows</h4>
-                  <p>Payment confirms and holds your spot on the calendar. You can reschedule your session once at no extra cost, as long as you ask at least six hours before the scheduled time.</p>
-                  <p>If an emergency comes up, write to us as soon as possible so we can look at your case. If you don’t attend and don’t let us know in advance, the session will be considered completed and you’ll need to book a new one.</p>
-                  <p>Payments are non-refundable. If Truth Frame Studio needs to cancel the session, you can choose to reschedule it or receive a full refund.</p>
-                </div>
-              </div>
-              <div class="tabla-caja">
-                <table class="tabla">
-                  <caption>Do you need a strategy session or an audit?</caption>
-                  <thead><tr><th scope="col"></th><th scope="col">Strategy session</th><th scope="col">Channel audit</th></tr></thead>
-                  <tbody>
-                    <tr><th scope="row">Right for you if…</th><td>You need to solve a specific challenge, validate an idea or define your next step.</td><td>You need a full understanding of what’s limiting the channel and a new direction.</td></tr>
-                    <tr><th scope="row">Focus</th><td>One priority problem or decision.</td><td>The channel, its content and its strategic direction as a whole.</td></tr>
-                    <tr><th scope="row">Depth</th><td>Guidance focused on your most urgent need.</td><td>An in-depth diagnosis carried out by our team.</td></tr>
-                    <tr><th scope="row">Outcome</th><td>Clarity, concrete decisions and a 30-day roadmap.</td><td>A complete diagnosis, priorities and a 90-day strategic plan.</td></tr>
-                    <tr><th scope="row">Sessions</th><td>One two-hour session with Diana.</td><td>A diagnostic session and a delivery session.</td></tr>
-                    <tr><th scope="row">Deliverable</th><td>A report of conclusions and a 30-day roadmap.</td><td>A full report, a roadmap and strategic ideas ready to execute.</td></tr>
-                    <tr><th scope="row">Investment</th><td>USD 250</td><td>From USD 900</td></tr>
-                  </tbody>
-                </table>
-              </div>
-              <p class="accion-servicio"><a class="btn btn-acento" href="#contacto" data-servicio="sesion">Book my session <span class="flecha" aria-hidden="true">→</span></a><a class="btn btn-claro" href="#s2" data-abrir="s2">Does your channel need a full review? See the audit</a></p>
-            </div>
-          </details>
-
-          <!-- 02 · Audit (has its own page) -->
-          <details class="servicio" name="servicio" id="s2">
-            <summary>
-              <span class="num">02</span>
-              <span class="nombre-col"><span class="nombre">Channel strategy audit</span>
-                <span class="para">Find out what’s working, what’s holding back your channel’s growth and what to prioritize over the next 90 days.</span></span>
-              <span class="dato"><small>Timeframe</small>10 business days</span>
-              <span class="dato precio"><small>Investment</small><b>From USD 900</b></span>
-              <span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span>
-            </summary>
-            <div class="detalle">
-              <div class="intro">
-                <p>An in-depth diagnosis to understand what’s working, what’s limiting the channel’s growth and which decisions need to be made over the next 90 days.</p>
-                <p><b>Ideal for</b> existing channels that publish content but need to improve their reach, retention, positioning, presentation or conversion.</p>
-                <p>You’ll get a complete reading of the channel and a prioritized plan to stop publishing on instinct and start making decisions based on goals, audience and data.</p>
-              </div>
-              <div class="d-cols">
-                <div>
-                  <h4>What you get</h4>
-                  <ul class="lista compacta">
-                    <li>Clarity on what’s limiting the channel’s growth.</li>
-                    <li>A strategic direction for the next 90 days.</li>
-                    <li>Priorities to better focus your team’s time, budget and work.</li>
-                    <li>Opportunities to revive valuable content from your back catalog.</li>
-                    <li>Clear criteria for making better decisions about upcoming videos.</li>
-                    <li>A team aligned around the same direction.</li>
-                    <li>Strategic ideas ready to start executing.</li>
-                  </ul>
-                  <h4>Process</h4>
-                  <ol class="pasos">
-                    <li>You fill out a form and receive a guide with the information we need to get started.</li>
-                    <li>We hold the diagnostic session to understand your goals and the outcome you expect.</li>
-                    <li>Our team applies the TFS System to your project.</li>
-                    <li>You receive the diagnosis, priorities, roadmap and strategic ideas for your audit level.</li>
-                    <li>After delivery, you have five business days to send follow-up questions by email.</li>
-                  </ol>
-                </div>
-                <div>
-                  <h4>Deliverables</h4>
-                  <ul class="lista compacta">
-                    <li>A full report in PDF.</li>
-                    <li>An executive summary.</li>
-                    <li>An assessment of the channel’s main areas.</li>
-                    <li>A list of what to keep, what to change and what to stop doing.</li>
-                    <li>Recommendations on formats, topics, titles and thumbnails.</li>
-                    <li>A prioritized action plan and a 90-day roadmap.</li>
-                    <li>12 strategic content ideas, each with an angle, goal, format and working title so your team can produce it.</li>
-                    <li>A report with the conclusions, decisions, priorities and next steps agreed in the delivery session.</li>
-                  </ul>
-                  <h4>Our own system</h4>
-                  <p>We apply the <b>TFS System</b>, our own methodology that connects strategy, analysis and video production. You receive the diagnosis, the priorities and the roadmap; we take care of the process needed to build them.</p>
-                  <p>You won’t have to share passwords or give us admin access to the channel. You can invite one team member to both sessions.</p>
-                </div>
-              </div>
-              <div class="modalidades">
-                <div class="modalidad">
-                  <p class="etiqueta">Standard audit</p>
-                  <p>For growing channels with one main content line. Sessions led by Diana, director of strategy.</p>
-                  <div class="cifras">
-                    <p class="dato"><small>Investment</small><b>USD 900</b></p>
-                    <p class="dato"><small>Delivery</small><b>10 business days</b></p>
-                    <p class="dato"><small>Payment</small><b>100% when booking</b></p>
-                  </div>
-                </div>
-                <div class="modalidad">
-                  <p class="etiqueta">Institutional audit</p>
-                  <p>For established channels, organizations or projects with several series, formats or audiences. Sessions with Diana and Andrés, co-founders of TFS.</p>
-                  <div class="cifras">
-                    <p class="dato"><small>Investment</small><b>From USD 1,500</b></p>
-                    <p class="dato"><small>Delivery</small><b>Up to 15 business days</b></p>
-                    <p class="dato"><small>Payment</small><b>50% to start and 50% before delivery</b></p>
-                  </div>
-                </div>
-              </div>
-              <p class="nota">The timeline starts once we receive payment, the form and all the requested metrics. If you took the Strategy session first and hire the audit within the following 15 days, we credit 60% of what you paid for the session.</p>
-              <p class="accion-servicio"><a class="btn btn-acento" href="#contacto" data-servicio="auditoria">Request an audit <span class="flecha" aria-hidden="true">→</span></a><a class="btn btn-claro" href="/en/services/youtube-channel-audit/">See the audit in detail</a></p>
-            </div>
-          </details>
-
-          <!-- 03 · Launch -->
-          <details class="servicio" name="servicio" id="s3">
-            <summary>
-              <span class="num">03</span>
-              <span class="nombre-col"><span class="nombre">YouTube channel launch</span>
-                <span class="para">We build your channel from scratch with a clear strategy, a defined identity and a content plan designed for its first 90 days.</span></span>
-              <span class="dato"><small>Timeframe</small>4 to 8 weeks</span>
-              <span class="dato precio"><small>Investment</small><b>From USD 2,500</b></span>
-              <span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span>
-            </summary>
-            <div class="detalle">
-              <div class="intro">
-                <p>You have the knowledge, the message or the project. We help you turn it into a channel with clear direction, a defined identity and content designed to connect with the right audience.</p>
-                <p>You can choose the level of support you need. Either way, your channel starts with a professional foundation and clear direction for its first 90 days.</p>
-              </div>
-              <div class="modalidades">
-                <div class="modalidad">
-                  <p class="etiqueta">Strategic launch</p>
-                  <h4>Your team receives a fully defined channel, ready to produce</h4>
-                  <p>For people, brands or organizations with a team that can shoot, edit and publish, but that need expert direction to start off right on YouTube.</p>
-                  <ul class="lista compacta">
-                    <li>Clear direction to differentiate and position the channel.</li>
-                    <li>A consistent identity and presentation from launch day.</li>
-                    <li>Twelve strategic content pieces ready to go into production.</li>
-                    <li>Five full scripts and seven outlines to make recording easier.</li>
-                    <li>A roadmap and a calendar for the first 90 days.</li>
-                    <li>Clear criteria to keep the content’s quality and consistency.</li>
-                    <li>A team ready to keep producing with more confidence and independence.</li>
-                  </ul>
-                  <div class="cifras">
-                    <p class="dato"><small>Estimated time</small><b>Four weeks</b></p>
-                    <p class="dato"><small>Investment</small><b>From USD 2,500</b></p>
-                  </div>
-                  <p class="secundario">Payment: 50% to start and 50% before final delivery.</p>
-                  <a class="btn btn-primario" href="#contacto" data-servicio="lanzamiento-estrategico">Get my channel ready to produce <span class="flecha" aria-hidden="true">→</span></a>
-                </div>
-                <div class="modalidad">
-                  <p class="etiqueta">Full-service launch</p>
-                  <h4>Your channel goes live, produced and with its first content published</h4>
-                  <p>For those who want to start on YouTube but don’t have their own team or prefer to hand off the entire strategy and video process. You get everything in the Strategic launch, plus:</p>
-                  <ul class="lista compacta">
-                    <li>A channel set up, organized and ready to welcome its audience.</li>
-                    <li>A consistent visual identity from the very first upload.</li>
-                    <li>A channel trailer.</li>
-                    <li>Four main videos, fully produced and published.</li>
-                    <li>Five thumbnails, each with three A/B/C variants.</li>
-                    <li>Titles, descriptions and publishing elements prepared for every piece.</li>
-                    <li>A content base to start getting real data on how the audience responds.</li>
-                    <li>Clear direction to keep publishing over the following 90 days.</li>
-                  </ul>
-                  <div class="cifras">
-                    <p class="dato"><small>Estimated time</small><b>Six to eight weeks</b></p>
-                    <p class="dato"><small>Investment</small><b>From USD 6,500</b></p>
-                  </div>
-                  <p class="secundario">Strategy is already included. Payment: 50% to book, 30% before shooting and 20% before final delivery.</p>
-                  <a class="btn btn-primario" href="#contacto" data-servicio="lanzamiento-integral">Launch my channel with TFS <span class="flecha" aria-hidden="true">→</span></a>
-                </div>
-              </div>
-              <div class="tabla-caja">
-                <table class="tabla">
-                  <caption>Which launch option do you need?</caption>
-                  <thead><tr><th scope="col"></th><th scope="col">Strategic launch</th><th scope="col">Full-service launch</th></tr></thead>
-                  <tbody>
-                    <tr><th scope="row">Right for you if…</th><td>You already have a team that can shoot, edit and publish.</td><td>You don’t have your own team or prefer to hand off the whole launch.</td></tr>
-                    <tr><th scope="row">Main outcome</th><td>Your channel is fully defined and your team is ready to produce it.</td><td>Your channel is live, produced and has its first content published.</td></tr>
-                    <tr><th scope="row">Strategic direction</th><td>Included</td><td>Included</td></tr>
-                    <tr><th scope="row">90-day plan</th><td>Included</td><td>Included</td></tr>
-                    <tr><th scope="row">Content prepared</th><td>12 pieces: five full scripts and seven outlines.</td><td>The same 12 strategic pieces, plus the initial production.</td></tr>
-                    <tr><th scope="row">Video production</th><td>Done by your team.</td><td>Done by Truth Frame Studio.</td></tr>
-                    <tr><th scope="row">Published content</th><td>Not included. Your team is ready to produce and publish it.</td><td>A channel trailer and four main videos published.</td></tr>
-                    <tr><th scope="row">A/B/C thumbnails</th><td>Visual direction for your team to create them.</td><td>Five thumbnails with three A/B/C variants each.</td></tr>
-                    <tr><th scope="row">Estimated time</th><td>Four weeks</td><td>Six to eight weeks</td></tr>
-                    <tr><th scope="row">Investment</th><td>From USD 2,500</td><td>From USD 6,500</td></tr>
-                  </tbody>
-                </table>
-              </div>
-              <p class="nota">If you start with the Strategic launch and decide to move up to the Full-service launch within 30 days, we credit 100% of what you paid toward it.</p>
-              <div class="d-cols">
-                <div>
-                  <h4>Production terms</h4>
-                  <p>So you know exactly what your investment covers, the base price includes one location in Santo Domingo, one shooting day of up to eight hours and two rounds of revisions per piece.</p>
-                  <p>Transportation, travel, location rental, set design, talent, makeup, wardrobe, advanced animation, custom music, extra shooting days and pieces longer than the stated durations are quoted separately. That way we tailor the proposal to what the project really needs, without loading the base price with resources you may not need.</p>
-                </div>
-                <div>
-                  <h4>What happens after the launch?</h4>
-                  <p>You’ll have clear direction and a roadmap to keep developing the channel during its first 90 days. If you have your own team, you can keep producing with the resources and criteria you received.</p>
-                  <p>If you’d rather keep working with us, you can move on to one of our monthly management plans. Continuing is optional: before recommending a plan, we’ll review with you how much support your channel really needs.</p>
-                </div>
-              </div>
-              <p class="accion-servicio"><a class="btn btn-acento" href="#contacto" data-servicio="lanzamiento">I want to launch my channel <span class="flecha" aria-hidden="true">→</span></a><a class="btn btn-claro" href="#contacto" data-servicio="lanzamiento">Help me choose an option</a></p>
-            </div>
-          </details>
-
-          <!-- 04 · Monthly management -->
-          <details class="servicio" name="servicio" id="s4">
-            <summary>
-              <span class="num">04</span>
-              <span class="nombre-col"><span class="nombre">Strategic or full-service channel management</span>
-                <span class="para">We work alongside your team or take on the whole process to turn your channel into a consistent, optimized, results-driven content system.</span></span>
-              <span class="dato"><small>Timeframe</small>Monthly, 6-month minimum</span>
-              <span class="dato precio"><small>Investment</small><b>From USD 1,200/month</b></span>
-              <span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span>
-            </summary>
-            <div class="detalle">
-              <div class="intro">
-                <p>A channel doesn’t grow just by publishing more. It needs to keep making better decisions, make the most of the content it already has and hold a consistent direction as the audience responds.</p>
-                <p>We work month by month so your channel moves forward with clear priorities, aligned content and a steady presence. Minimum engagement: six months.</p>
-              </div>
-              <div class="modalidades">
-                <div class="modalidad">
-                  <p class="etiqueta">Strategic management and reactivation</p>
-                  <h4>Your team produces. We keep the channel focused and moving.</h4>
-                  <p>For channels that already have a team able to shoot, edit and publish, but need expert outside direction to make better decisions and get the most from both new content and the existing catalog.</p>
-                  <ul class="lista compacta">
-                    <li>Clear priorities to guide each month’s work.</li>
-                    <li>New content ideas aligned with the channel’s goals and the audience’s response.</li>
-                    <li>A refreshed catalog so valuable content gets a new chance to be discovered.</li>
-                    <li>Clearer organization that helps viewers find and keep watching related content.</li>
-                    <li>A more consistent and competitive visual presentation.</li>
-                    <li>An in-house team with better guidance to produce with intent.</li>
-                    <li>Monthly decisions based on the channel’s actual performance.</li>
-                    <li>Strategic optimizations implemented directly on YouTube.</li>
-                  </ul>
-                  <div class="cifras">
-                    <p class="dato"><small>Investment</small><b>From USD 1,200 per month</b></p>
-                  </div>
-                  <p class="secundario">Does not include shooting, video production, editing new videos, full scripts, managing other social networks or community management.</p>
-                  <a class="btn btn-primario" href="#contacto" data-servicio="direccion-estrategica">Reactivate and manage my channel <span class="flecha" aria-hidden="true">→</span></a>
-                </div>
-                <div class="modalidad">
-                  <p class="etiqueta">Full-service management with video production</p>
-                  <h4>Hand off the channel’s operation without losing your brand’s voice</h4>
-                  <p>For those who need to keep a channel active but don’t have a full video team, or prefer to focus on their expertise, their message and their core work. Every month you get:</p>
-                  <ul class="lista compacta">
-                    <li>Four main videos, fully produced and published.</li>
-                    <li>Eight vertical videos cut from the main videos.</li>
-                    <li>Four fully developed scripts to make recording easier.</li>
-                    <li>One batch recording day directed by our team.</li>
-                    <li>A consistent visual presentation on every upload.</li>
-                    <li>Thumbnails with A/B/C variants for new content.</li>
-                    <li>Titles and publishing elements prepared for YouTube.</li>
-                    <li>Gradual refresh of the existing catalog based on the channel’s size and needs.</li>
-                    <li>A monthly results review to guide the next decisions.</li>
-                    <li>Ongoing support to keep the channel active, organized and aligned with its goals.</li>
-                  </ul>
-                  <div class="cifras">
-                    <p class="dato"><small>Investment</small><b>From USD 3,000 per month</b></p>
-                  </div>
-                  <p class="secundario">The first month is spent understanding the channel’s starting point and preparing the content direction.</p>
-                  <a class="btn btn-primario" href="#contacto" data-servicio="direccion-integral">Hand off my channel’s management and production <span class="flecha" aria-hidden="true">→</span></a>
-                </div>
-              </div>
-              <div class="tabla-caja">
-                <table class="tabla">
-                  <caption>Strategic management and reactivation tiers</caption>
-                  <thead><tr><th scope="col">Plan</th><th scope="col">Guideline</th><th scope="col">Monthly catalog refresh</th><th scope="col" class="num-col">Investment</th></tr></thead>
-                  <tbody>
-                    <tr><th scope="row">Growing channel</th><td>Under 100K subscribers <b>and</b> up to 50 published videos</td><td>Up to 4 videos, 1 themed playlist and 1 Reel/Short</td><td class="num-col">USD 1,200/month</td></tr>
-                    <tr><th scope="row">Expanding channel</th><td>100K to 250K subscribers <b>or</b> 51 to 150 published videos</td><td>Up to 8 videos, 2 themed playlists and 2 Reels/Shorts</td><td class="num-col">USD 1,600/month</td></tr>
-                    <tr><th scope="row">Established channel</th><td>Over 250K subscribers, over 150 published videos <b>or</b> several active series</td><td>Up to 12 videos, 4 themed playlists and 4 Reels/Shorts</td><td class="num-col">USD 2,000/month</td></tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="tabla-caja">
-                <table class="tabla">
-                  <caption>Full-service management with video production tiers</caption>
-                  <thead><tr><th scope="col">Plan</th><th scope="col">Guideline</th><th scope="col">Monthly catalog refresh</th><th scope="col">New monthly production</th><th scope="col" class="num-col">Investment</th></tr></thead>
-                  <tbody>
-                    <tr><th scope="row">Growing channel</th><td>Under 100K subscribers <b>and</b> up to 50 published videos</td><td>Up to 4 videos, 1 themed playlist and 1 reactivation Reel/Short</td><td>4 long-form videos + 8 Shorts</td><td class="num-col">USD 3,000/month</td></tr>
-                    <tr><th scope="row">Expanding channel</th><td>100K to 250K subscribers <b>or</b> 51 to 150 published videos</td><td>Up to 8 videos, 2 themed playlists and 2 reactivation Reels/Shorts</td><td>4 long-form videos + 8 Shorts</td><td class="num-col">USD 4,000/month</td></tr>
-                    <tr><th scope="row">Established channel</th><td>Over 250K subscribers, over 150 published videos <b>or</b> several active series</td><td>Up to 12 videos, 4 themed playlists and 4 reactivation Reels/Shorts</td><td>4 long-form videos + 8 Shorts</td><td class="num-col">From USD 5,000/month</td></tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="d-cols">
-                <div>
-                  <h4>Refreshing the existing catalog</h4>
-                  <p>For existing channels, the strategy includes reviving older content. The workload is set by the highest criterion the channel meets. For each selected older video we can optimize the title, thumbnail, description, end screen, cards and matching playlist.</p>
-                  <p>A/B/C variants are reserved for the older videos with the most potential; the rest get one optimized final thumbnail. For new channels, that time goes into building the channel structure and new uploads.</p>
-                </div>
-                <div>
-                  <h4>Why a six-month minimum?</h4>
-                  <p>A channel needs time, continuity and enough published content to generate useful data about how its audience responds. The first month lets us set the starting point; the following months let us produce consistently, spot patterns and decide with more representative data.</p>
-                  <p>The six-month commitment protects your investment from hasty conclusions based on one or two isolated videos. At the end, we’ll review the work with you and decide whether to continue, adjust the scope or hand the operation over to your team.</p>
-                </div>
-              </div>
-              <div class="tabla-caja">
-                <table class="tabla">
-                  <caption>Which management option does your channel need?</caption>
-                  <thead><tr><th scope="col"></th><th scope="col">Strategic management and reactivation</th><th scope="col">Full-service management with production</th></tr></thead>
-                  <tbody>
-                    <tr><th scope="row">Right for you if…</th><td>You already have a team that shoots, edits and publishes, but it needs expert direction.</td><td>You also want to hand off the channel’s video production and publishing.</td></tr>
-                    <tr><th scope="row">Main outcome</th><td>Your team works with clear priorities and the channel regains momentum and consistency.</td><td>Your channel keeps a complete, active and professional monthly operation.</td></tr>
-                    <tr><th scope="row">Monthly strategic direction</th><td>Included</td><td>Included</td></tr>
-                    <tr><th scope="row">Channel starting point</th><td>Set during the first month.</td><td>Set during the first month.</td></tr>
-                    <tr><th scope="row">New content</th><td>You get direction and ideas for your team to produce.</td><td>We produce and publish four main videos and eight vertical videos a month.</td></tr>
-                    <tr><th scope="row">Scripts</th><td>Full scripts not included.</td><td>Four full scripts a month.</td></tr>
-                    <tr><th scope="row">Video production</th><td>Done by your team.</td><td>Done by Truth Frame Studio.</td></tr>
-                    <tr><th scope="row">Catalog refresh</th><td>Included, based on channel size.</td><td>Included, based on channel size.</td></tr>
-                    <tr><th scope="row">Implementation on YouTube</th><td>We implement the strategic optimizations; your team publishes new content.</td><td>We optimize, upload, schedule and publish the content.</td></tr>
-                    <tr><th scope="row">Monthly meeting and review</th><td>Included</td><td>Included</td></tr>
-                    <tr><th scope="row">Minimum engagement</th><td>Six months</td><td>Six months</td></tr>
-                    <tr><th scope="row">Investment</th><td>From USD 1,200 per month</td><td>From USD 3,000 per month</td></tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="d-cols">
-                <div>
-                  <h4>Extend your reach to other platforms</h4>
-                  <p>Each month’s eight vertical videos can also be adapted and distributed on Instagram Reels, Facebook Reels and TikTok, to get more out of every production day.</p>
-                  <div class="tabla-caja" style="margin-top:14px">
-                    <table class="tabla" style="min-width:0">
-                      <thead><tr><th scope="col">Additional platforms</th><th scope="col" class="num-col">Monthly investment</th></tr></thead>
-                      <tbody>
-                        <tr><td>One platform</td><td class="num-col">USD 300</td></tr>
-                        <tr><td>Two platforms</td><td class="num-col">USD 500</td></tr>
-                        <tr><td>Three platforms</td><td class="num-col">USD 750</td></tr>
-                      </tbody>
-                    </table>
-                  </div>
-                  <p class="secundario" style="margin-top:12px">Includes adapting the eight vertical videos, captions, cover image, call to action, upload or scheduling, and a basic report.</p>
-                </div>
-                <div>
-                  <h4>Services you can add when you need them</h4>
-                  <p>To keep the monthly plan focused and avoid paying for resources you may not need, these services are quoted only when they add value to the project:</p>
-                  <ul class="lista compacta" style="margin-top:12px">
-                    <li>Comment and direct message management.</li>
-                    <li>Community management.</li>
-                    <li>Paid advertising campaigns.</li>
-                    <li>Full management of other social networks.</li>
-                    <li>Travel and transportation.</li>
-                    <li>Location rental.</li>
-                    <li>Talent, makeup, wardrobe or set design.</li>
-                    <li>Productions that require special technical resources.</li>
-                  </ul>
-                  <p class="secundario" style="margin-top:12px">Before adding any of them, we’ll agree with you on its purpose, scope and investment.</p>
-                </div>
-              </div>
-              <p class="accion-servicio"><a class="btn btn-acento" href="#contacto" data-servicio="direccion">Find the right plan for my channel <span class="flecha" aria-hidden="true">→</span></a><a class="btn btn-claro" href="#contacto" data-servicio="direccion">Help me choose the right plan</a></p>
-            </div>
-          </details>
-
-          <!-- 05 · Special productions -->
-          <details class="servicio" name="servicio" id="s5">
-            <summary>
-              <span class="num">05</span>
-              <span class="nombre-col"><span class="nombre">Special video productions</span>
-                <span class="para">Series, podcasts, interviews, courses, masterclasses, events, concerts, documentaries and premium productions, from first idea to final delivery.</span></span>
-              <span class="dato"><small>Timeframe</small>Depends on the project</span>
-              <span class="dato precio"><small>Investment</small><b>From USD 3,000</b></span>
-              <span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span>
-            </summary>
-            <div class="detalle">
-              <div class="intro">
-                <p>Whether you have an early idea or a fully defined project, we can help you turn it into a solid, consistent video production that’s ready to reach your audience.</p>
-                <p>We build custom solutions for organizations, brands and creators. You define the purpose and the impact you want; our team shapes it and takes the project through to final delivery.</p>
-              </div>
-              <div class="modalidades">
-                <div class="modalidad">
-                  <p class="etiqueta">Series, podcasts and interviews</p>
-                  <h4>A content line your audience will want to follow</h4>
-                  <p>We create series, podcasts and interview formats that help your organization or brand communicate its message clearly, strengthen its identity and build a steadier relationship with its audience. It can be a pilot, a miniseries, a first season or a set of pieces ready to publish.</p>
-                  <div class="cifras"><p class="dato"><small>Investment</small><b>From USD 3,000</b></p></div>
-                </div>
-                <div class="modalidad">
-                  <p class="etiqueta">Courses and masterclasses</p>
-                  <h4>Your knowledge, turned into a professional learning experience</h4>
-                  <p>We turn your experience, methodology or specialist knowledge into a clear, engaging, easy-to-follow course or masterclass, with videos ready to add to your learning platform.</p>
-                  <div class="cifras"><p class="dato"><small>Investment</small><b>From USD 3,000</b></p></div>
-                </div>
-                <div class="modalidad">
-                  <p class="etiqueta">Events, conferences and concerts</p>
-                  <h4>Make the experience last and reach beyond the people in the room</h4>
-                  <ul class="lista compacta">
-                    <li><b>Event filming:</b> a professional production that preserves the experience and turns it into lasting, valuable content.</li>
-                    <li><b>Live streaming:</b> to bring the event to a wider audience in real time.</li>
-                    <li><b>Full event production:</b> we develop and coordinate the entire project, from concept to execution.</li>
-                  </ul>
-                  <div class="cifras"><p class="dato"><small>Event filming</small><b>From USD 4,000</b></p></div>
-                </div>
-                <div class="modalidad">
-                  <p class="etiqueta">Documentaries and premium productions</p>
-                  <h4>An important story, turned into a lasting film legacy</h4>
-                  <p>We produce documentaries and high-end projects to preserve a story, communicate a cause or present a vision with depth and narrative power: a cinematic piece that strengthens your organization’s reputation and lasts beyond any single campaign.</p>
-                  <div class="cifras"><p class="dato"><small>Investment</small><b>From USD 8,000</b></p></div>
-                </div>
-              </div>
-              <div class="d-cols">
-                <div>
-                  <h4>How the investment is set</h4>
-                  <p>Each production is quoted based on its scope, length, shooting days, locations, technical crew and final deliverables. That way you get a proposal matched to the resources your project really needs.</p>
-                </div>
-                <div>
-                  <p>Building or setting up learning platforms, digital modules and payment gateways can be added to course projects under a separate quote.</p>
-                  <p>For full event production, a documentary or a more complex production, we hold a preliminary meeting to understand its vision and scale and prepare a precise proposal.</p>
-                </div>
-              </div>
-              <p class="accion-servicio"><a class="btn btn-acento" href="#contacto" data-servicio="produccion">Get a quote for a special production <span class="flecha" aria-hidden="true">→</span></a></p>
-            </div>
-          </details>
-        </div>
-        <p class="aviso-precios">We show “From” prices when the scope can vary with the project’s complexity. The final scope and price are confirmed in a proposal, which also specifies taxes, travel and third-party costs where applicable. Credits and discounts can’t be combined unless the proposal says otherwise.</p>
-        <p class="aviso-precios">Questions about payments or timelines? <a class="enlace" href="#preguntas">See the FAQ</a>.</p>
-
-        <div class="elegir">
-          <div>
-            <h3 class="h3">Not sure which service your channel needs?</h3>
-            <p>Tell us what stage you’re at and what you want to achieve. We’ll review your information and reply within 24 hours to point you to the right service.</p>
-          </div>
-          <a class="btn btn-acento" href="#contacto" data-servicio="orientacion">Tell us about your channel <span class="flecha" aria-hidden="true">→</span></a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Method -->
-    <section class="seccion seccion-oscura" id="metodo" aria-labelledby="metodo-titulo">
-      <div class="contenedor">
-        <div class="cabecera">
-          <h2 class="h2" id="metodo-titulo">The idea first. Then the camera.</h2>
-          <p class="lead">We don’t guess what keeps an audience watching: we design it in the script, shape it on set and refine it in the edit. When we review a channel, we work on four fronts.</p>
-        </div>
-        <div class="pilares">
-          <div class="pilar">
-            <h3 class="h3">Packaging that earns the click</h3>
-            <p>Titles that raise a question and thumbnails tested in A, B and C versions. If nobody clicks, the best video doesn’t exist.</p>
-          </div>
-          <div class="pilar">
-            <h3 class="h3">A hook in the first seconds</h3>
-            <p>We open with the strongest line in the content so no one leaves in the first minute, without changing what makes the format work.</p>
-          </div>
-          <div class="pilar">
-            <h3 class="h3">Shorts that lead to the full episode</h3>
-            <p>We turn the best moments in your archive into Shorts and Reels designed to bring new viewers to the long episodes.</p>
-          </div>
-          <div class="pilar">
-            <h3 class="h3">An audience you own</h3>
-            <p>Relying only on YouTube is building on rented land. We design ways to turn viewers into contacts you own.</p>
-          </div>
+        <ul class="caminos caminos-cuatro">
+          <li><a href="/en/youtube/"><small>YouTube</small><b>Build, grow or lead your channel with a clear vision</b><span>Strategy session · Launch from scratch · Management and growth</span><i aria-hidden="true">→</i></a></li>
+          <li><a href="/en/video-production/"><small>Video production</small><b>Turn your ideas into professional content</b><span>Content production · Special productions</span><i aria-hidden="true">→</i></a></li>
+          <li><a href="/en/digital-media-agency/"><small>Content and digital media agency</small><b>Give your whole ecosystem direction, or hand over its management</b><span>Media direction · Full media management</span><i aria-hidden="true">→</i></a></li>
+          <li><a href="/en/live-events/"><small>Live events</small><b>Produce, stream and extend the impact of your event</b><span>Production and streaming · Full event production</span><i aria-hidden="true">→</i></a></li>
+        </ul>
+        <div class="ayuda-elegir">
+          <p><b>Still not sure which one?</b>Tell us where you are. We’ll review your information and point you to the option that fits best.</p>
+          <a class="btn btn-claro" href="#contacto" data-servicio="orientacion">Help me choose <span class="flecha" aria-hidden="true">→</span></a>
         </div>
       </div>
     </section>
 
     <!-- Logistics -->
-    <section class="seccion" aria-labelledby="logistica-titulo">
+    <section class="seccion seccion-alt" id="logistica" aria-labelledby="logistica-titulo">
       <div class="contenedor logistica">
         <figure>
           <img src="/assets/fotos/diana-estudio-800.webp" srcset="/assets/fotos/diana-estudio-800.webp 800w, /assets/fotos/diana-estudio-1600.webp 1536w" sizes="(max-width: 860px) 100vw, 620px" alt="Diana Cardona on the Truth Frame Studio set, with studio lights and a black backdrop." width="800" height="533" loading="lazy">
         </figure>
         <div>
           <h2 class="h2" id="logistica-titulo">We shoot wherever your schedule allows.</h2>
-          <p class="lead secundario" style="margin-top:16px">Our operation is built around an executive’s pace.</p>
+          <p class="lead secundario" style="margin-top:16px">We operate from Santo Domingo and work on projects in the Dominican Republic and abroad.</p>
           <div class="modos">
             <div class="modo">
               <h3 class="h3">You come to Santo Domingo</h3>
-              <p>We batch-record full seasons. We plan production retreats and premium locations in the Dominican Republic.</p>
+              <p>We batch-record full seasons, with production retreats and locations across the Dominican Republic.</p>
             </div>
             <div class="modo">
               <h3 class="h3">We come to you</h3>
-              <p>We send a film crew to your offices or to any location in the world.</p>
+              <p>We send a film crew to your offices or to any location. Travel, accommodation and local production are quoted separately.</p>
             </div>
           </div>
         </div>
@@ -823,8 +299,8 @@
     </section>
       <aside class="cierre" aria-label="Next step">
         <div class="contenedor">
-          <p class="cierre-texto">Ready to talk about your channel?</p>
-          <a class="btn btn-acento" href="#contacto">Tell us about your channel <span class="flecha" aria-hidden="true">→</span></a>
+          <p class="cierre-texto">Shall we talk about your project?</p>
+          <a class="btn btn-acento" href="#contacto">Tell us about your project <span class="flecha" aria-hidden="true">→</span></a>
           <a class="siguiente" href="#portafolio"><small>Next</small>Portfolio <span aria-hidden="true">→</span></a>
         </div>
       </aside>
@@ -960,8 +436,8 @@
     </section>
       <aside class="cierre" aria-label="Next step">
         <div class="contenedor">
-          <p class="cierre-texto">Ready to talk about your channel?</p>
-          <a class="btn btn-acento" href="#contacto">Tell us about your channel <span class="flecha" aria-hidden="true">→</span></a>
+          <p class="cierre-texto">Shall we talk about your project?</p>
+          <a class="btn btn-acento" href="#contacto">Tell us about your project <span class="flecha" aria-hidden="true">→</span></a>
           <a class="siguiente" href="#nosotros"><small>Next</small>About <span aria-hidden="true">→</span></a>
         </div>
       </aside>
@@ -972,14 +448,14 @@
     <section class="seccion portada" aria-labelledby="nosotros-titulo">
       <div class="contenedor nosotros-intro">
         <div>
-          <h2 class="h2 h2-grande" id="nosotros-titulo">Shooting is easy. Making it work is another story.</h2>
+          <h2 class="h2 h2-grande" id="nosotros-titulo">To communicate is to turn a vision into meaning.</h2>
           <div class="prosa">
-            <p>Anyone can shoot and publish a video. The real challenge is creating content that earns the click, holds attention, builds trust and delivers results.</p>
-            <p>A good camera isn’t enough for that. It takes understanding the audience, reading the data, finding the right idea, building a solid narrative and presenting every video in a way that sparks interest from the very first moment.</p>
-            <p>At Truth Frame Studio we bring together strategy, analysis and video production so every piece of content has a clear purpose: expanding your reach, strengthening your authority and turning your audience’s attention into real opportunities.</p>
-            <p>For more than 25 years we have directed and produced projects for television, brands, organizations and digital platforms. That experience lets us see what each project needs and build the right process to move it forward.</p>
-            <p class="cierre-destacado">We bring the method, the ideas, the strategy and the technical direction. You bring the knowledge, the experience and the voice that only you can take in front of the camera. Together, we turn them into content that goes further.</p>
-            <p class="sede">We operate from Santo Domingo, with our corporate and legal structure in the Dominican Republic.</p>
+            <p>A vision can be clear to the person who built it, but it still needs the right form for other people to understand it, remember it and find value in it.</p>
+            <p>Since 1999 we have helped turn ideas, knowledge and stories into video content and experiences that faithfully represent what each person, brand or organization wants to say.</p>
+            <p>At Truth Frame Studio we combine strategy, data, direction and video production to develop YouTube channels, content, digital ecosystems and live events with a clear purpose.</p>
+            <p>Our experience lets us interpret each client’s vision and translate it into communication that is professional, honest and meaningful to their audience.</p>
+            <p class="cierre-destacado">You bring the knowledge, the experience and the vision. We bring the method, the ideas, the strategy and the direction to give them a form your audience can understand, remember and value.</p>
+            <p class="sede">We operate from Santo Domingo and work on projects in the Dominican Republic and abroad.</p>
           </div>
         </div>
         <figure>
@@ -1028,32 +504,36 @@
             <img src="/assets/fotos/diana-estudio-800.webp" srcset="/assets/fotos/diana-estudio-800.webp 800w, /assets/fotos/diana-estudio-1600.webp 1536w" sizes="(max-width: 600px) 96px, 300px" alt="Portrait of Diana Cardona in the studio." width="800" height="533" loading="lazy" style="object-position: 50% 30%">
             <div>
               <h4>Diana Cardona</h4>
-              <p class="rol">Co-founder, Director of Strategy and Projects</p>
-              <p>Video producer and strategist with more than 25 years of experience. She specializes in YouTube content strategy and leads the research, data analysis, ideation and pre-production of every project. Her work defines the approach, the narrative and the content system before the camera is ever turned on.</p>
+              <p class="rol">Co-founder, director of strategy and projects</p>
+              <p>Video producer and strategist working since 1999. She leads research, data analysis, ideation, pre-production and the strategic direction of the studio’s projects. Her work defines the angle, the narrative and the content system before the camera is switched on.</p>
+              <p>Her deep editing experience lets her lead the post-production team and oversee the final result of every project, making sure the narrative, the visual style and each delivered piece stay true to the vision set at the start.</p>
             </div>
           </li>
           <li class="miembro">
             <img src="/assets/fotos/andres-800.webp" srcset="/assets/fotos/andres-800.webp 800w, /assets/fotos/andres-1600.webp 1600w" sizes="(max-width: 600px) 96px, 300px" alt="Portrait of Andrés Figueroa on set." width="800" height="450" loading="lazy" style="object-position: 57% 30%">
             <div>
               <h4>Andrés Figueroa</h4>
-              <p class="rol">Co-founder, Director of Video Production</p>
-              <p>He leads the filming and video production of every project, turning strategy into solid technical and visual execution by directing the shoot, camera, lighting and visual storytelling. He currently runs the IBSJ and Eternidad Plus channels, and has led direction and video production for Entendiendo Los Tiempos since it began.</p>
+              <p class="rol">Co-founder, director of production</p>
+              <p>Director and video producer with a solid career that began in 1997. He leads the making and execution of productions, turning each project’s strategic vision into a coherent, professional and high-impact visual experience.</p>
+              <p>A specialist in live streaming and in leading technical crews, he accompanies every production from concept and planning through execution and post-production. He currently runs the IBSJ and Eternidad Plus channels, and has led the direction and video production of Entendiendo los Tiempos since it began.</p>
             </div>
           </li>
           <li class="miembro">
             <img src="/assets/fotos/valentina-800.webp" srcset="/assets/fotos/valentina-800.webp 734w" sizes="(max-width: 600px) 96px, 300px" alt="Portrait of Valentina García." width="734" height="1307" loading="lazy" style="object-position: 50% 18%">
             <div>
               <h4>Valentina García</h4>
-              <p class="rol">Visual Optimization and A/B/C Testing Specialist</p>
-              <p>She combines metrics analysis with a strong visual eye to optimize how each piece of content is presented. She designs thumbnails and variants for A/B/C tests, interprets click-through rate and audience behavior, and uses the results to make data-driven decisions.</p>
+              <p class="rol">Specialist in visual optimization and audience analysis</p>
+              <p>She develops and refines the visual proposals that represent each piece of content before the audience decides to watch it. Her work combines visual judgement, metrics analysis and an understanding of audience behavior.</p>
+              <p>At the studio she designs thumbnails and runs A/B/C tests to find the options that best capture attention, communicate clearly and strengthen the performance of each piece.</p>
             </div>
           </li>
           <li class="miembro">
-            <img src="/assets/fotos/dario-800.webp" srcset="/assets/fotos/dario-800.webp 800w, /assets/fotos/dario-1600.webp 1254w" sizes="(max-width: 600px) 96px, 300px" alt="Portrait of Darío Cardona." width="800" height="800" loading="lazy" style="object-position: 48% 25%">
+            <img src="/assets/fotos/dario-800.webp" srcset="/assets/fotos/dario-800.webp 800w, /assets/fotos/dario-1600.webp 1254w" sizes="(max-width: 600px) 96px, 300px" alt="Portrait of Darío Sosa." width="800" height="800" loading="lazy" style="object-position: 48% 25%">
             <div>
-              <h4>Darío Cardona</h4>
-              <p class="rol">Director of Technology and Artificial Intelligence</p>
-              <p>He leads the integration of technology and artificial intelligence into Truth Frame Studio’s projects. He designs and builds the digital ecosystems that complement the content strategy, including websites, learning platforms, course modules and payment systems.</p>
+              <h4>Darío Sosa</h4>
+              <p class="rol">Specialist in artificial intelligence and digital platforms</p>
+              <p>He develops the technology that widens the reach and the possibilities of each project. His work brings together artificial intelligence, web development and the creation of digital ecosystems tailored to each client.</p>
+              <p>At the studio he builds websites, learning platforms, course modules, payment gateways and the other digital pieces needed to turn an idea into a platform that works, stays organized and is ready to grow.</p>
             </div>
           </li>
         </ul>
@@ -1075,8 +555,8 @@
     </section>
       <aside class="cierre" aria-label="Next step">
         <div class="contenedor">
-          <p class="cierre-texto">Ready to talk about your channel?</p>
-          <a class="btn btn-acento" href="#contacto">Tell us about your channel <span class="flecha" aria-hidden="true">→</span></a>
+          <p class="cierre-texto">Shall we talk about your project?</p>
+          <a class="btn btn-acento" href="#contacto">Tell us about your project <span class="flecha" aria-hidden="true">→</span></a>
           <a class="siguiente" href="#contacto"><small>Next</small>Contact <span aria-hidden="true">→</span></a>
         </div>
       </aside>
@@ -1087,8 +567,8 @@
     <section class="seccion seccion-oscura portada" aria-labelledby="contacto-titulo">
       <div class="contenedor contacto">
         <div>
-          <h2 class="h2" id="contacto-titulo">Tell us about your channel.</h2>
-          <p class="lead">Answer a few quick questions about your project. Diana will reply personally within 24 hours.</p>
+          <h2 class="h2" id="contacto-titulo">Tell us about your project.</h2>
+          <p class="lead">Answer a few quick questions. Diana replies personally within 24 hours at the latest.</p>
           <p class="gratis">Asking questions and requesting a proposal is free.</p>
           <p class="proposito">We work with projects that have truth, vision and purpose.</p>
           <div class="directo">
@@ -1109,52 +589,26 @@
           <fieldset class="grupo" data-grupo="tipo">
             <legend>What kind of project do you need help with?</legend>
             <div class="opciones dos-col">
-              <label class="opcion"><input type="radio" name="tipo" value="organizacion"><span>A company, business or organization</span></label>
-              <label class="opcion"><input type="radio" name="tipo" value="marca_personal"><span>My personal brand</span></label>
+              <label class="opcion"><input type="radio" name="tipo" value="organizacion"><span>Company, business or organization</span></label>
+              <label class="opcion"><input type="radio" name="tipo" value="marca_personal"><span>Personal brand</span></label>
             </div>
             <p class="error">Choose an option.</p>
           </fieldset>
 
-          <fieldset class="grupo" data-grupo="ayuda">
-            <legend>How can we help?</legend>
-            <div class="opciones dos-col">
-              <label class="opcion"><input type="radio" name="ayuda" value="mejorar"><span>Improve my channel</span></label>
-              <label class="opcion"><input type="radio" name="ayuda" value="crear"><span>Start a channel from scratch</span></label>
-              <label class="opcion"><input type="radio" name="ayuda" value="delegar"><span>Hand off content production</span></label>
-              <label class="opcion"><input type="radio" name="ayuda" value="orientacion"><span>I need guidance</span></label>
-            </div>
-            <p class="error">Choose an option.</p>
-          </fieldset>
-
-          <fieldset class="grupo condicional" data-grupo="redes" data-si="ayuda=delegar" hidden>
-            <legend>Which platforms do you need help with? <span>You can choose more than one.</span></legend>
-            <div class="opciones tres-col">
-              <label class="opcion"><input type="checkbox" name="redes" value="youtube"><span>YouTube</span></label>
-              <label class="opcion"><input type="checkbox" name="redes" value="instagram"><span>Instagram</span></label>
-              <label class="opcion"><input type="checkbox" name="redes" value="facebook"><span>Facebook</span></label>
-              <label class="opcion"><input type="checkbox" name="redes" value="tiktok"><span>TikTok</span></label>
-              <label class="opcion"><input type="checkbox" name="redes" value="otros"><span>Other</span></label>
-            </div>
-            <p class="error">Choose at least one option.</p>
-          </fieldset>
-          <div class="campo condicional" data-si="redes=otros" hidden>
-            <label for="f-otras">Which others?</label>
-            <input id="f-otras" name="otras_redes" data-requerido>
-            <p class="error">Tell us which other platforms.</p>
-          </div>
-
-          <fieldset class="grupo" data-grupo="objetivo">
-            <legend>What would you like to achieve first?</legend>
+          <fieldset class="grupo" data-grupo="area">
+            <legend>Which area do you need help with?</legend>
             <div class="opciones">
-              <label class="opcion"><input type="radio" name="objetivo" value="alcance"><span>Reach more people and build a community</span></label>
-              <label class="opcion"><input type="radio" name="objetivo" value="ingresos"><span>Earn income from my content</span></label>
-              <label class="opcion"><input type="radio" name="objetivo" value="clientes"><span>Attract clients and sell my products or services</span></label>
+              <label class="opcion"><input type="radio" name="area" value="youtube"><span>YouTube</span></label>
+              <label class="opcion"><input type="radio" name="area" value="produccion"><span>Video production</span></label>
+              <label class="opcion"><input type="radio" name="area" value="agencia"><span>Content and digital media agency</span></label>
+              <label class="opcion"><input type="radio" name="area" value="eventos"><span>Live events</span></label>
+              <label class="opcion"><input type="radio" name="area" value="no_seguro"><span>I’m not sure</span></label>
             </div>
             <p class="error">Choose an option.</p>
           </fieldset>
 
-          <fieldset class="grupo" data-grupo="tiene_canal">
-            <legend>Do you already have a YouTube channel?</legend>
+          <fieldset class="grupo condicional" data-grupo="tiene_canal" data-si="area=youtube" hidden>
+            <legend>Do you already have a channel?</legend>
             <div class="opciones dos-col">
               <label class="opcion"><input type="radio" name="tiene_canal" value="si"><span>Yes</span></label>
               <label class="opcion"><input type="radio" name="tiene_canal" value="no"><span>Not yet</span></label>
@@ -1162,30 +616,40 @@
             <p class="error">Choose an option.</p>
           </fieldset>
           <div class="campo condicional" data-si="tiene_canal=si" hidden>
-            <label for="f-canal">Link to your YouTube channel <span>(optional)</span></label>
+            <label for="f-canal">Link to your channel <span>(optional)</span></label>
             <input id="f-canal" name="canal" type="url" inputmode="url" placeholder="https://youtube.com/@yourchannel">
           </div>
-          <div class="dos condicional" data-si="tiene_canal=si" hidden>
-            <div class="campo">
-              <label for="f-suscriptores">Subscribers <span>(approx.)</span></label>
-              <select id="f-suscriptores" name="suscriptores">
-                <option value="">Choose a range</option>
-                <option value="menos_10k">Under 10K</option>
-                <option value="10k_100k">10K to 100K</option>
-                <option value="100k_250k">100K to 250K</option>
-                <option value="mas_250k">Over 250K</option>
-              </select>
+
+          <fieldset class="grupo condicional" data-grupo="produccion_tipo" data-si="area=produccion" hidden>
+            <legend>What do you have in mind?</legend>
+            <div class="opciones">
+              <label class="opcion"><input type="radio" name="produccion_tipo" value="contenidos"><span>Content or a series</span></label>
+              <label class="opcion"><input type="radio" name="produccion_tipo" value="especial"><span>A special production</span></label>
+              <label class="opcion"><input type="radio" name="produccion_tipo" value="no_seguro"><span>I’m not sure yet</span></label>
             </div>
-            <div class="campo">
-              <label for="f-videos">Published videos <span>(approx.)</span></label>
-              <select id="f-videos" name="videos">
-                <option value="">Choose a range</option>
-                <option value="hasta_50">Up to 50</option>
-                <option value="51_150">51 to 150</option>
-                <option value="mas_150">Over 150</option>
-              </select>
+            <p class="error">Choose an option.</p>
+          </fieldset>
+
+          <fieldset class="grupo condicional" data-grupo="agencia_tipo" data-si="area=agencia" hidden>
+            <legend>What do you need?</legend>
+            <div class="opciones">
+              <label class="opcion"><input type="radio" name="agencia_tipo" value="direccion"><span>Overall direction for my current team</span></label>
+              <label class="opcion"><input type="radio" name="agencia_tipo" value="delegar"><span>Hand over the whole content ecosystem</span></label>
+              <label class="opcion"><input type="radio" name="agencia_tipo" value="no_seguro"><span>I’m not sure yet</span></label>
             </div>
-          </div>
+            <p class="error">Choose an option.</p>
+          </fieldset>
+          <p class="aclaracion condicional" data-si="area=agencia" hidden>Our agency service brings YouTube together with the rest of your digital media as the main platform. We don’t manage a single social network on its own.</p>
+
+          <fieldset class="grupo condicional" data-grupo="evento_tipo" data-si="area=eventos" hidden>
+            <legend>Where is your event right now?</legend>
+            <div class="opciones">
+              <label class="opcion"><input type="radio" name="evento_tipo" value="organizado"><span>Production or streaming of an event already organized</span></label>
+              <label class="opcion"><input type="radio" name="evento_tipo" value="integral"><span>Full production, starting from the idea</span></label>
+              <label class="opcion"><input type="radio" name="evento_tipo" value="no_seguro"><span>I’m not sure yet</span></label>
+            </div>
+            <p class="error">Choose an option.</p>
+          </fieldset>
 
           <div class="campo">
             <label for="f-nombre">Name</label>
@@ -1239,18 +703,23 @@
             <p class="error">Please enter a valid email.</p>
           </div>
 
-          <div class="trampa" aria-hidden="true"><label>Leave this field empty <input name="sitio_web" tabindex="-1" autocomplete="off"></label></div>
+          <div class="campo">
+            <label for="f-mensaje">Tell us briefly what you want to achieve <span>(optional)</span></label>
+            <textarea id="f-mensaje" name="mensaje" rows="3" maxlength="600"></textarea>
+          </div>
+
+          <div class="trampa" aria-hidden="true"><label>Do not fill in this field <input name="sitio_web" tabindex="-1" autocomplete="off"></label></div>
 
           <div class="form-error" role="alert" hidden>
             <p>We couldn’t send your inquiry. Your answers are still here: please try again in a moment. If the problem continues, <a href="https://wa.me/18496523537" rel="noopener" data-origen="error-formulario">message us on WhatsApp</a>.</p>
           </div>
-          <button class="btn btn-acento enviar" type="submit"><span class="enviar-texto">Send inquiry</span> <span class="flecha" aria-hidden="true">→</span></button>
-          <p class="pie">Diana will reply within 24 hours.</p>
+          <button class="btn btn-acento enviar" type="submit"><span class="enviar-texto">Send my information</span> <span class="flecha" aria-hidden="true">→</span></button>
+          <p class="pie">Diana will reply within 24 hours at the latest.</p>
         </form>
         <div class="form-exito" tabindex="-1" hidden>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6"/></svg>
-          <h3>Thank you for telling us about your project!</h3>
-          <p>We’ve received your inquiry. Diana will reply by <b class="exito-medio"></b> within 24 hours.</p>
+          <h3>Thanks for telling us about your project!</h3>
+          <p>We got your inquiry. Diana will reply by <b class="exito-medio"></b> within 24 hours at the latest.</p>
         </div>
         </div>
       </div>
@@ -1258,9 +727,9 @@
         <div class="proceso">
           <h3 class="h3">How we start</h3>
           <ol>
-            <li><h3 class="h3">You send us your inquiry</h3><p>You answer a few quick questions about your channel and what you want to achieve.</p></li>
+            <li><h3 class="h3">Nos envías tu consulta</h3><p>You answer a few quick questions about your project and what you want to achieve.</p></li>
             <li><h3 class="h3">We reply within 24 hours</h3><p>Diana writes to you personally through the channel you chose, building on what you already told us.</p></li>
-            <li><h3 class="h3">We agree on the next step</h3><p>Depending on what you need: a strategy session, an audit, your channel launch or managing your content.</p></li>
+            <li><h3 class="h3">We define the next step</h3><p>We point you to the right service and, when it applies, prepare a proposal with scope, schedule and investment.</p></li>
           </ol>
         </div>
       </div>
@@ -1279,16 +748,35 @@
             <div class="respuesta"><p>Send us your inquiry through the form on this page. Diana will reply personally within 24 hours and, depending on what you need, we’ll agree on the next step together. Asking questions and requesting a proposal is free.</p></div>
           </details>
           <details class="pregunta">
+            <summary>What exactly does Truth Frame Studio do?<span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span></summary>
+            <div class="respuesta">
+              <p>We are a strategy and video production studio. Our work is organized into four divisions:</p>
+              <ul class="lista">
+                <li><b>YouTube:</b> strategy session, channel launch from scratch and management of an existing channel.</li>
+                <li><b>Video production:</b> content produced in blocks, and special productions.</li>
+                <li><b>Content and digital media agency:</b> media direction or full management of the ecosystem.</li>
+                <li><b>Live events:</b> production and streaming, or full event production.</li>
+              </ul>
+            </div>
+          </details>
+          <details class="pregunta">
             <summary>Do you work with clients outside the Dominican Republic?<span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span></summary>
             <div class="respuesta">
-              <p>Yes. We can work with people, brands and organizations in any country. Strategy, audit, planning and management services can be done entirely online.</p>
+              <p>Yes. We can work with people, brands and organizations anywhere. Strategy, planning and management services can run entirely online.</p>
               <p>When the project includes video production, you can travel to Santo Domingo for batch recording days that produce several weeks or months of content, or our team can travel to your city or country. When travel is needed, flights, lodging, equipment transport, permits and local production costs are quoted separately.</p>
               <p>Before we start, we’ll work out with you which option best protects your project’s quality, schedule and investment.</p>
             </div>
           </details>
           <details class="pregunta">
             <summary>Do I need to have a channel to work with you?<span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span></summary>
-            <div class="respuesta"><p>No. With the YouTube channel launch we build your channel from scratch, and the Strategy session also works if your channel is still an idea. The audit, on the other hand, is designed for channels that already have content and data to analyze.</p></div>
+            <div class="respuesta"><p>No. With the Channel launch we build and produce your channel from scratch, and the Strategy session also works when your channel is still an idea. And if what you need doesn’t involve YouTube, the Video production and Live events divisions work project by project.</p></div>
+          </details>
+          <details class="pregunta">
+            <summary>Can you handle just my Instagram, Facebook or TikTok?<span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span></summary>
+            <div class="respuesta">
+              <p>No. Our agency service treats YouTube as the main platform of the ecosystem and, from there, directs the other digital channels so they widen the content’s reach and keep the same direction.</p>
+              <p>We don’t offer individual networks or standalone packages, and we don’t work as a community manager for a single platform. That decision protects the coherence of the message and the result of the project.</p>
+            </div>
           </details>
           <details class="pregunta">
             <summary>How long does each service take?<span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span></summary>
@@ -1296,11 +784,10 @@
               <p>Timelines depend on the scope of the service and start once we have received the corresponding payment, the completed form and all the necessary materials. As a guide:</p>
               <ul class="lista">
                 <li><b>Strategy session:</b> the meeting lasts two hours. The report and roadmap are delivered within 48 hours.</li>
-                <li><b>Strategy audit:</b> 10 business days.</li>
-                <li><b>Strategic launch:</b> about four weeks.</li>
-                <li><b>Full-service launch:</b> about six to eight weeks.</li>
-                <li><b>Strategic or full-service management:</b> monthly cycles, with an initial six-month minimum.</li>
-                <li><b>Special video productions:</b> the schedule depends on the scope, shooting days, locations and complexity of the project.</li>
+                <li><b>Channel launch:</b> six to eight weeks.</li>
+                <li><b>Channel management and growth:</b> monthly cycles, with an initial commitment of at least six months. The first month is a full assessment and the definition of priorities.</li>
+                <li><b>Digital media direction or management:</b> monthly cycles, with an initial six-month commitment.</li>
+                <li><b>Content production, special productions and events:</b> the schedule depends on the scope, the shooting days, the locations and the complexity of the project.</li>
               </ul>
               <p>Before we start, you’ll receive a clear calendar with the planned stages and dates.</p>
             </div>
@@ -1308,23 +795,20 @@
           <details class="pregunta">
             <summary>How do payments work?<span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span></summary>
             <div class="respuesta">
-              <p>The payment schedule depends on the scope of the service:</p>
+              <p>How you pay depends on the service:</p>
               <ul class="lista">
-                <li>The Strategy session and the Standard audit are paid in full when booking.</li>
-                <li>The Institutional audit is split into two payments: 50% to start and 50% before the delivery session.</li>
-                <li>The Strategic launch is split into two payments: 50% to start and 50% before final delivery.</li>
-                <li>The Full-service launch and special productions are split into three stages: 50% to book, 30% before shooting and 20% before you receive the final files.</li>
-                <li>Monthly management services are paid in advance at the start of each month.</li>
+                <li>The Strategy session is paid in full on booking.</li>
+                <li>Monthly services are paid in advance at the start of each month.</li>
+                <li>Content production and Special productions are paid 50 % to book, 30 % before filming and 20 % before final delivery.</li>
+                <li>The Channel launch is paid 50 % to begin, 30 % before filming and 20 % before release.</li>
+                <li>Events are paid 50 % to begin, 30 % before the event and 20 % before the final content is delivered.</li>
               </ul>
-              <p>Travel and third-party services are paid before the corresponding bookings are confirmed. Before we start, you’ll receive a proposal that clearly sets out the scope, the calendar and the payment schedule.</p>
+              <p>Third-party costs — venue rental, extra equipment, set design, external sound and lighting, talent, travel, accommodation, transport, permits, security and special logistics — are paid before each booking is confirmed. Before we begin, you’ll receive a proposal with the scope, the schedule and the payment split clearly set out.</p>
             </div>
           </details>
           <details class="pregunta">
-            <summary>How does the initial fit call work?<span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span></summary>
-            <div class="respuesta">
-              <p>It’s a free online conversation of up to 30 minutes that we offer after reviewing your form. It applies to the Institutional audit, the Channel launch, Monthly management and Special video productions. The Strategy session and the Standard audit can be booked directly.</p>
-              <p>Its purpose is to confirm that we can help with what you need, understand the overall scope of the project and point you to the right service. It doesn’t include an audit, detailed recommendations or deliverables. When there’s a good fit, you receive a proposal with the scope, the investment and the next steps.</p>
-            </div>
+            <summary>Is the Strategy session credited if I hire another service afterwards?<span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span></summary>
+            <div class="respuesta"><p>Yes. If you hire a channel launch or management service within 15 days of the session, we credit 60 % of what you paid for it.</p></div>
           </details>
           <details class="pregunta">
             <summary>What do you need from me to get started?<span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span></summary>
@@ -1345,7 +829,7 @@
             <summary>Do you guarantee a specific number of views or subscribers?<span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span></summary>
             <div class="respuesta">
               <p>We don’t promise a specific number of views, subscribers or sales. Doing so wouldn’t be honest, because results also depend on how the audience responds, the competition, the project’s consistency, the market and how each piece of content performs.</p>
-              <p>What you can expect is a team with proven experience, decisions grounded in real data, professional production, ongoing follow-up and clear direction for your channel. The TFS System is designed to reduce improvisation and give every piece of content better conditions to generate reach, trust and opportunities.</p>
+              <p>What you can expect is a team with proven experience, decisions grounded in real information, professional production, continuous follow-up and a clear direction. We work with a system of our own, backed by data, experience and an understanding of the audience, designed to reduce guesswork and give each piece of content better conditions to generate reach, trust and opportunities.</p>
             </div>
           </details>
           <details class="pregunta">
@@ -1357,7 +841,7 @@
           </details>
           <details class="pregunta">
             <summary>Does my channel need to make money from AdSense?<span class="toggle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg></span></summary>
-            <div class="respuesta"><p>No. We don’t design channels to rely on YouTube ads; we design them to bring in clients, with every video leading your audience toward your offer.</p></div>
+            <div class="respuesta"><p>No. We don’t design channels to depend on YouTube advertising, but to widen your reach, strengthen your authority and create real opportunities for your project.</p></div>
           </details>
         </div>
       </div>
