@@ -4,8 +4,12 @@
 
   var WHATSAPP = "18496523537";
   // Registro de consultas (Google Apps Script, ver tools/formulario/). Vacío = el formulario
-  // abre WhatsApp con las respuestas, como antes. window.TFS_FORMULARIO solo se usa en pruebas.
+  // no guarda nada: abre WhatsApp, o el correo de quien escribe si eligió «correo electrónico».
+  // window.TFS_FORMULARIO solo se usa en pruebas.
   var FORMULARIO = window.TFS_FORMULARIO || "";
+  // Correo de Diana, en partes para que no lo recojan los robots de spam. Solo se arma cuando
+  // alguien elige «correo» y todavía no hay registro configurado.
+  var CORREO = ["dicardona.studio", "gmail.com"];
   // Analítica sin cookies (Umami Cloud). Pegar aquí el "Website ID"; vacío = sin analítica.
   var ANALITICA = "";
   var raiz = document.documentElement;
@@ -13,8 +17,10 @@
   var t = en ? {
     pausar: "Pause background video", reanudar: "Play background video",
     saludo: "Hi Truth Frame Studio! I'm ",
+    asunto: "Inquiry from truthframestudio.com — ",
     enviando: "Sending…", enviar: "Send my information", seguirWa: "Continue on WhatsApp",
     pieWa: "WhatsApp will open with your answers ready to send.",
+    pieAbrirCorreo: "Your email app will open with your answers ready to send to Diana.",
     pieCorreo: "Diana will reply within 24 hours at the latest.",
     medio: { whatsapp: "WhatsApp", correo: "email" },
     servicio: "Service I'm interested in:",
@@ -28,8 +34,10 @@
   } : {
     pausar: "Pausar video de fondo", reanudar: "Reproducir video de fondo",
     saludo: "¡Hola, Truth Frame Studio! Soy ",
+    asunto: "Consulta desde truthframestudio.com — ",
     enviando: "Enviando…", enviar: "Enviar mi información", seguirWa: "Continuar en WhatsApp",
     pieWa: "Se abrirá WhatsApp con tus respuestas listas para enviar.",
+    pieAbrirCorreo: "Se abrirá tu correo con las respuestas listas para enviarle a Diana.",
     pieCorreo: "Diana te responderá en un plazo máximo de 24 horas.",
     medio: { whatsapp: "WhatsApp", correo: "correo electrónico" },
     servicio: "Servicio que me interesa:",
@@ -407,8 +415,8 @@
     return d;
   }
 
-  function mensajeWhatsApp() {
-    // En el orden del formulario: servicio elegido, preguntas con sus respuestas y los campos visibles
+  function mensaje() {
+    // Sirve para WhatsApp y para el correo. En el orden del formulario: servicio elegido, preguntas con sus respuestas y los campos visibles
     var lineas = [t.saludo + form.elements.nombre.value.trim() + "."];
     var sv = form.elements.servicio.value;
     if (sv && t.servicios[sv]) lineas.push("• " + t.servicio + " " + t.servicios[sv]);
@@ -457,12 +465,14 @@
 
   /* El botón depende del medio elegido (reestructuración del 19-sep, §8):
      WhatsApp → «Continuar en WhatsApp»; correo → «Enviar mi información».
-     Sin FORMULARIO no hay a dónde enviar el correo, así que todo sale por WhatsApp. */
-  function porWhatsApp() { return !FORMULARIO || valor("medio")[0] !== "correo"; }
+     Sin FORMULARIO no hay dónde guardar la consulta: quien elige WhatsApp sigue por WhatsApp y
+     quien elige correo abre su propio correo con las respuestas escritas. A nadie se le lleva a
+     un medio que no eligió, y no se promete un envío que no ocurre. */
+  function porCorreo() { return valor("medio")[0] === "correo"; }
   function actualizarBoton() {
-    var wa = porWhatsApp();
-    $(".enviar-texto", form).textContent = wa ? t.seguirWa : t.enviar;
-    $(".pie", form).textContent = wa ? t.pieWa : t.pieCorreo;
+    var correo = porCorreo();
+    $(".enviar-texto", form).textContent = correo ? t.enviar : t.seguirWa;
+    $(".pie", form).textContent = correo ? (FORMULARIO ? t.pieCorreo : t.pieAbrirCorreo) : t.pieWa;
   }
 
   if (form) {
@@ -484,11 +494,18 @@
       $(".form-error", form).hidden = true;
       if (!validar()) return;
       var d = datos();
-      var wa = porWhatsApp();
-      var texto = wa ? mensajeWhatsApp() : "";
+      var correo = porCorreo();
+      var texto = mensaje();
       if (!FORMULARIO) {
-        medir("whatsapp", { origen: "formulario", area: d.area });
-        window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(texto), "_blank", "noopener");
+        if (correo) {
+          medir("formulario", { area: d.area, medio: "correo", envio: "mailto" });
+          location.href = "mailto:" + CORREO.join("@") +
+            "?subject=" + encodeURIComponent(t.asunto + d.nombre) +
+            "&body=" + encodeURIComponent(texto);
+        } else {
+          medir("whatsapp", { origen: "formulario", area: d.area });
+          window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(texto), "_blank", "noopener");
+        }
         return;
       }
       if (form.elements.sitio_web.value) return;  // trampa para robots
@@ -505,7 +522,7 @@
         if (!r || r.ok !== true) throw new Error("sin confirmación");
         medir("formulario", { area: d.area, medio: d.medio, servicio: d.servicio || "" });
         // Quien eligió WhatsApp sigue la conversación allá; quien eligió correo ve la confirmación
-        if (wa) {
+        if (!correo) {
           medir("whatsapp", { origen: "formulario", area: d.area });
           window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(texto), "_blank", "noopener");
         }
