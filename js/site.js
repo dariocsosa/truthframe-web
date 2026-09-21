@@ -2,14 +2,12 @@
 (function () {
   "use strict";
 
-  var WHATSAPP = "18496523537";
-  // Registro de consultas (Google Apps Script, ver tools/formulario/). Vacío = el formulario
-  // no guarda nada: abre WhatsApp, o el correo de quien escribe si eligió «correo electrónico».
+  // Registro de consultas (Google Apps Script, ver tools/formulario/). Vacío = el formulario no
+  // guarda nada: abre el correo de quien escribe con las respuestas listas para Diana.
   // window.TFS_FORMULARIO solo se usa en pruebas.
   var FORMULARIO = window.TFS_FORMULARIO || "";
-  // Correo de Diana, en partes para que no lo recojan los robots de spam. Solo se arma cuando
-  // alguien elige «correo» y todavía no hay registro configurado.
-  var CORREO = ["dicardona.studio", "gmail.com"];
+  // Correo público de Diana (cambios finales, 21-sep, §10: va en el pie de página)
+  var CORREO = "dicardona.studio@gmail.com";
   // Analítica sin cookies (Umami Cloud). Pegar aquí el "Website ID"; vacío = sin analítica.
   var ANALITICA = "";
   var raiz = document.documentElement;
@@ -18,12 +16,8 @@
     pausar: "Pause background video", reanudar: "Play background video",
     saludo: "Hi Truth Frame Studio! I'm ",
     asunto: "Inquiry from truthframestudio.com — ",
-    enviando: "Sending…", enviar: "Send my information", seguirWa: "Continue on WhatsApp",
-    pieWa: "WhatsApp will open with your answers ready to send.",
-    pieAbrirCorreo: "Your email app will open with your answers ready to send to Diana.",
-    pieCorreo: "Diana will reply within 24 hours at the latest.",
-    medio: { whatsapp: "WhatsApp", correo: "email" },
-    servicio: "Service I'm interested in:",
+    enviando: "Sending…",
+    servicio: "Service I'm interested in:", whatsapp: "WhatsApp",
     servicios: {
       sesion: "YouTube strategy session", lanzamiento: "YouTube channel launch",
       direccion: "Channel management and growth", contenidos: "Content production",
@@ -35,12 +29,8 @@
     pausar: "Pausar video de fondo", reanudar: "Reproducir video de fondo",
     saludo: "¡Hola, Truth Frame Studio! Soy ",
     asunto: "Consulta desde truthframestudio.com — ",
-    enviando: "Enviando…", enviar: "Enviar mi información", seguirWa: "Continuar en WhatsApp",
-    pieWa: "Se abrirá WhatsApp con tus respuestas listas para enviar.",
-    pieAbrirCorreo: "Se abrirá tu correo con las respuestas listas para enviarle a Diana.",
-    pieCorreo: "Diana te responderá en un plazo máximo de 24 horas.",
-    medio: { whatsapp: "WhatsApp", correo: "correo electrónico" },
-    servicio: "Servicio que me interesa:",
+    enviando: "Enviando…",
+    servicio: "Servicio que me interesa:", whatsapp: "WhatsApp",
     servicios: {
       sesion: "Sesión estratégica para YouTube", lanzamiento: "Lanzamiento de canal desde cero",
       direccion: "Dirección y crecimiento de canal", contenidos: "Producción de contenidos",
@@ -330,26 +320,28 @@
   }
 
   /* ================= Contacto =================
-     Preguntas de selección con campos condicionales. Lo que queda oculto se deshabilita:
-     no se valida ni se envía. Con FORMULARIO configurado, la consulta se guarda y solo
-     se confirma cuando el registro responde {ok: true}. */
+     Formulario de los cambios finales (21-sep, §9): tipo de proyecto → área → una pregunta que
+     depende del área → enlace, objetivo y datos de contacto. La respuesta va siempre por correo.
+     Lo que queda oculto se deshabilita: no se valida ni se envía. Con FORMULARIO configurado, la
+     consulta se guarda y solo se confirma cuando el registro responde {ok: true}. */
   var form = $("#form-contacto");
   var exito = $(".form-exito");
   var abierto = Date.now();
   // Servicio elegido con un botón (data-servicio o ?servicio=): preselecciona las respuestas
   // del área correspondiente. Cada clave es un radio del formulario.
   var RESPUESTAS_DE = {
-    sesion: { area: "youtube" },
-    lanzamiento: { area: "youtube", tiene_canal: "no" },
-    direccion: { area: "youtube", tiene_canal: "si" },
+    sesion: { area: "youtube", youtube_tipo: "sesion" },
+    lanzamiento: { area: "youtube", youtube_tipo: "lanzar" },
+    direccion: { area: "youtube", youtube_tipo: "potenciar" },
     contenidos: { area: "produccion", produccion_tipo: "contenidos" },
     especiales: { area: "produccion", produccion_tipo: "especial" },
     "direccion-medios": { area: "agencia", agencia_tipo: "direccion" },
     "gestion-medios": { area: "agencia", agencia_tipo: "delegar" },
-    "evento-transmision": { area: "eventos", evento_tipo: "organizado" },
+    "evento-transmision": { area: "eventos", evento_tipo: "transmision" },
     "evento-integral": { area: "eventos", evento_tipo: "integral" },
     orientacion: { area: "no_seguro" }
   };
+  var RADIOS = ["tipo", "area", "youtube_tipo", "produccion_tipo", "agencia_tipo", "evento_tipo"];
 
   function valor(nombre) {
     var marcados = $$('[name="' + nombre + '"]:checked:not(:disabled)', form);
@@ -372,7 +364,7 @@
 
   function marcar(el, malo) {
     el.classList.toggle("invalido", malo);
-    $$("input, select", el).forEach(function (x) {
+    $$("input, select, textarea", el).forEach(function (x) {
       if (x.type !== "radio" && x.type !== "checkbox") x.setAttribute("aria-invalid", String(malo));
     });
   }
@@ -404,10 +396,8 @@
   }
 
   function datos() {
-    var d = { idioma: en ? "en" : "es", nombre: form.elements.nombre.value.trim() };
-    ["tipo", "area", "tiene_canal", "produccion_tipo", "agencia_tipo", "evento_tipo", "medio"].forEach(function (k) {
-      d[k] = valor(k)[0] || "";
-    });
+    var d = { idioma: en ? "en" : "es" };
+    RADIOS.forEach(function (k) { d[k] = valor(k)[0] || ""; });
     $$("input:not([type=radio]):not([type=checkbox]):not(:disabled), select:not(:disabled), textarea:not(:disabled)", form).forEach(function (el) {
       if (el.name && !(el.name in d)) d[el.name] = el.value.trim();
     });
@@ -415,8 +405,13 @@
     return d;
   }
 
+  function telefono() {
+    var pais = $("#f-pais").value, num = $("#f-telefono").value.trim();
+    return pais === "otro" ? num : pais.replace(/^[A-Z]{2} /, "") + " " + num;
+  }
+
   function mensaje() {
-    // Sirve para WhatsApp y para el correo. En el orden del formulario: servicio elegido, preguntas con sus respuestas y los campos visibles
+    // Para el correo: servicio elegido, preguntas con sus respuestas y los campos llenos, en el orden del formulario
     var lineas = [t.saludo + form.elements.nombre.value.trim() + "."];
     var sv = form.elements.servicio.value;
     if (sv && t.servicios[sv]) lineas.push("• " + t.servicio + " " + t.servicios[sv]);
@@ -427,11 +422,10 @@
         if (r) lineas.push("• " + $("legend", el).firstChild.textContent.trim() + " " + r);
         return;
       }
-      var campo = $("input, select, textarea", el);
-      if (!campo || campo.name === "nombre" || campo.name === "pais" || campo.type === "tel" || !campo.value.trim()) return;
-      var etiqueta = $("label", el).firstChild.textContent.trim();
-      var v = campo.tagName === "SELECT" ? campo.options[campo.selectedIndex].text : campo.value.trim();
-      lineas.push("• " + etiqueta + ": " + v);
+      if ($("#f-telefono", el)) { lineas.push("• " + t.whatsapp + ": " + telefono()); return; }
+      var campo = $("input, textarea", el);
+      if (!campo || campo.name === "nombre" || !campo.value.trim()) return;
+      lineas.push("• " + $("label", el).firstChild.textContent.trim() + ": " + campo.value.trim());
     });
     return lineas.join("\n");
   }
@@ -448,13 +442,11 @@
     }
     var respuestas = RESPUESTAS_DE[clave];
     if (!respuestas) return;
-    var ultimo = null;
     Object.keys(respuestas).forEach(function (campo) {
       var r = $('[name="' + campo + '"][value="' + respuestas[campo] + '"]', form);
-      // El área se marca primero: las preguntas que dependen de ella están ocultas hasta entonces
-      if (r) { r.checked = true; ultimo = r; condiciones(); }
+      // El área se marca primero: la pregunta que depende de ella está oculta hasta entonces
+      if (r) { r.checked = true; condiciones(); marcar(r.closest(".grupo"), false); }
     });
-    if (ultimo) ultimo.dispatchEvent(new Event("change", { bubbles: true }));
   }
   if (cajaServicio) {
     $(".form-servicio-quitar", cajaServicio).addEventListener("click", function () {
@@ -463,24 +455,10 @@
     });
   }
 
-  /* El botón depende del medio elegido (reestructuración del 19-sep, §8):
-     WhatsApp → «Continuar en WhatsApp»; correo → «Enviar mi información».
-     Sin FORMULARIO no hay dónde guardar la consulta: quien elige WhatsApp sigue por WhatsApp y
-     quien elige correo abre su propio correo con las respuestas escritas. A nadie se le lleva a
-     un medio que no eligió, y no se promete un envío que no ocurre. */
-  function porCorreo() { return valor("medio")[0] === "correo"; }
-  function actualizarBoton() {
-    var correo = porCorreo();
-    $(".enviar-texto", form).textContent = correo ? t.enviar : t.seguirWa;
-    $(".pie", form).textContent = correo ? (FORMULARIO ? t.pieCorreo : t.pieAbrirCorreo) : t.pieWa;
-  }
-
   if (form) {
     condiciones();
-    actualizarBoton();
     form.addEventListener("change", function (e) {
       condiciones();
-      if (e.target.name === "medio") actualizarBoton();
       var g = e.target.closest(".grupo, .campo");
       if (g && g.classList.contains("invalido")) marcar(g, false);
     });
@@ -494,23 +472,19 @@
       $(".form-error", form).hidden = true;
       if (!validar()) return;
       var d = datos();
-      var correo = porCorreo();
-      var texto = mensaje();
       if (!FORMULARIO) {
-        if (correo) {
-          medir("formulario", { area: d.area, medio: "correo", envio: "mailto" });
-          location.href = "mailto:" + CORREO.join("@") +
-            "?subject=" + encodeURIComponent(t.asunto + d.nombre) +
-            "&body=" + encodeURIComponent(texto);
-        } else {
-          medir("whatsapp", { origen: "formulario", area: d.area });
-          window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(texto), "_blank", "noopener");
-        }
+        // Sin registro todavía: se abre el correo de quien escribe con las respuestas para Diana.
+        // Si no tiene programa de correo, el aviso de abajo le deja la dirección a mano.
+        medir("formulario", { area: d.area, envio: "mailto", servicio: d.servicio || "" });
+        $(".pie-correo", form).hidden = false;
+        location.href = "mailto:" + CORREO + "?subject=" + encodeURIComponent(t.asunto + d.nombre) +
+          "&body=" + encodeURIComponent(mensaje());
         return;
       }
       if (form.elements.sitio_web.value) return;  // trampa para robots
       var boton = $(".enviar", form);
       var etiqueta = $(".enviar-texto", boton);
+      var original = etiqueta.textContent;
       boton.disabled = true;
       etiqueta.textContent = t.enviando;
       // Petición "simple" (sin preflight): Apps Script no responde a OPTIONS
@@ -519,21 +493,16 @@
         headers: { "Content-Type": "text/plain;charset=utf-8" },
         body: JSON.stringify(d)
       }).then(function (r) { return r.json(); }).then(function (r) {
+        // Solo se confirma si la consulta quedó guardada y el aviso a Diana salió (§12)
         if (!r || r.ok !== true) throw new Error("sin confirmación");
-        medir("formulario", { area: d.area, medio: d.medio, servicio: d.servicio || "" });
-        // Quien eligió WhatsApp sigue la conversación allá; quien eligió correo ve la confirmación
-        if (!correo) {
-          medir("whatsapp", { origen: "formulario", area: d.area });
-          window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(texto), "_blank", "noopener");
-        }
-        $(".exito-medio", exito).textContent = t.medio[d.medio];
+        medir("formulario", { area: d.area, servicio: d.servicio || "" });
         form.hidden = true;
         exito.hidden = false;
         exito.focus();
       }).catch(function () {
         $(".form-error", form).hidden = false;
         boton.disabled = false;
-        actualizarBoton();
+        etiqueta.textContent = original;
       });
     });
   }

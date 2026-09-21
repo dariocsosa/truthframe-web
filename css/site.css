@@ -284,7 +284,8 @@ strong, b { color: var(--texto-fuerte); }
 .credenciales ul { display: grid; grid-template-columns: repeat(4, 1fr); }
 .credenciales li { padding: 32px 24px 32px 0; display: grid; gap: 8px; align-content: start; }
 .credenciales li + li { padding-left: 24px; border-left: 1px solid var(--linea); }
-.credenciales strong { font-size: clamp(2rem, 3.4vw, 2.75rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1; white-space: nowrap; }
+.credenciales strong { font-size: clamp(1.75rem, 2.6vw, 2.25rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; }
+.credenciales strong small { display: block; margin-bottom: 6px; font-size: .8125rem; font-weight: 500; letter-spacing: .02em; color: var(--texto-2); }
 .credenciales span { font-size: .9375rem; line-height: 1.4; color: var(--texto-2); max-width: 30ch; }
 @media (max-width: 1080px) and (min-width: 761px) {
   .credenciales ul { grid-template-columns: repeat(2, 1fr); }
@@ -554,11 +555,15 @@ strong, b { color: var(--texto-fuerte); }
 }
 
 /* Testimonios (ocultos hasta tener testimonios reales) */
-.testimonios { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
-.testimonio { padding: 28px; border-radius: 12px; background: var(--sup-2); border: 1px solid var(--linea); display: grid; gap: 20px; align-content: space-between; }
-.testimonio blockquote { margin: 0; font-size: 1.0625rem; line-height: 1.5; }
-.testimonio p { font-size: .875rem; color: var(--texto-2); }
-.testimonio p b { display: block; font-weight: 600; }
+/* Cambios finales (21-sep, §7): parecidos a una publicación de X. Foto circular pequeña, nombre y
+   cargo al lado, comentario breve debajo; fondo negro con detalles coral. */
+.testimonios { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+.testimonio { padding: 20px 22px 22px; border-radius: 14px; background: var(--tfs-negro); border: 1px solid var(--linea); border-top: 2px solid var(--tfs-coral); display: grid; gap: 14px; align-content: start; }
+.testimonio-autor { display: flex; align-items: center; gap: 12px; }
+.testimonio-autor img { width: 44px; height: 44px; flex: none; border-radius: 50%; object-fit: cover; background: var(--sup-3); box-shadow: 0 0 0 2px var(--tfs-negro), 0 0 0 3px var(--tfs-coral); }
+.testimonio-autor p { font-size: .8125rem; line-height: 1.35; color: var(--texto-2); }
+.testimonio-autor b { display: block; font-size: .9375rem; font-weight: 600; }
+.testimonio blockquote { margin: 0; font-size: 1rem; line-height: 1.55; color: var(--texto); }
 
 /* ---------- Clientes: logos monocromáticos sobre oscuro ---------- */
 .clientes { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--linea); border-left: 1px solid var(--linea); }
@@ -603,6 +608,16 @@ strong, b { color: var(--texto-fuerte); }
 .placas figcaption { margin-top: 10px; font-size: .875rem; color: var(--texto-2); max-width: 36ch; }
 @media (max-width: 960px) { .trayectoria { grid-template-columns: 1fr; } }
 
+/* Resultados por canal: cuatro tarjetas (cambios finales, 21-sep, §7) */
+.resultados { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 28px; }
+.resultados li { display: grid; gap: 6px; align-content: start; padding: 24px; border-radius: 14px; background: var(--sup-2); border: 1px solid var(--linea); position: relative; }
+.resultados li::before { content: ""; position: absolute; top: -1px; left: 24px; width: 32px; height: 2px; background: var(--tfs-coral); }
+.resultados .canal { font-size: .875rem; font-weight: 600; letter-spacing: .02em; color: var(--texto-2); }
+.resultados .cifra { font-size: clamp(2rem, 3.4vw, 2.75rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; color: var(--texto-fuerte); }
+.resultados .cifra span { display: block; margin-top: 4px; font-size: .9375rem; font-weight: 500; letter-spacing: 0; color: var(--texto); }
+.resultados p:last-child { margin-top: 8px; padding-top: 12px; border-top: 1px solid var(--linea); font-size: .9375rem; color: var(--texto-2); }
+@media (max-width: 560px) { .resultados { grid-template-columns: 1fr; } }
+
 /* Hitos por canal */
 .hitos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 32px; margin-top: 32px; }
 .hitos li { display: grid; gap: 4px; align-content: start; padding-top: 16px; border-top: 2px solid var(--linea); }
@@ -625,6 +640,7 @@ strong, b { color: var(--texto-fuerte); }
   font-size: .875rem; line-height: 1.35; font-weight: 500; color: var(--texto-2);
 }
 .miembro .rol::after { content: ""; position: absolute; left: 0; bottom: 0; width: 24px; height: 2px; background: var(--tfs-coral); }
+.miembro .lugar { display: block; margin-top: 4px; font-size: .8125rem; font-weight: 400; color: var(--texto-3); }
 .miembro p:not(.rol) { font-size: .9375rem; line-height: 1.55; }
 .miembro p:not(.rol) + p { margin-top: 10px; }
 @media (max-width: 1080px) {
@@ -718,6 +734,8 @@ strong, b { color: var(--texto-fuerte); }
 .form-exito p { color: var(--texto-2); max-width: 36ch; }
 .form .btn { width: 100%; }
 .form .pie { font-size: .8125rem; color: var(--texto-2); text-align: center; }
+.form .pie a { color: var(--texto-fuerte); text-decoration-color: var(--tfs-coral); text-underline-offset: 3px; }
+.campo .ayuda { margin-top: -2px; font-size: .8125rem; color: var(--texto-2); }
 @media (max-width: 860px) { .contacto { grid-template-columns: 1fr; } }
 
 /* ---------- Preguntas frecuentes ---------- */
@@ -758,23 +776,22 @@ strong, b { color: var(--texto-fuerte); }
   .siguiente { margin-left: 0; width: 100%; text-align: left; padding-top: 16px; border-top: 1px solid var(--linea); }
 }
 
-/* ---------- Divisiones: las cuatro rutas del inicio (reestructuración 19-sep) ----------
-   Botones coral con texto negro, como pidió Diana. Coral es acción, no decoración:
-   estos botones son la acción principal del inicio. */
+/* ---------- Divisiones: las cuatro rutas del inicio ----------
+   Cambios finales (21-sep, §1): títulos grandes en coral y descripción pequeña en gris claro,
+   sobre tarjeta oscura. El título en coral es la acción de la tarjeta (lleva a su página). */
 .divisiones { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 .division {
-  display: grid; gap: 10px; align-content: start;
-  padding: clamp(22px, 3vw, 30px); border-radius: 14px;
-  background: var(--tfs-coral); color: var(--tfs-negro); text-decoration: none;
-  border: 1px solid var(--tfs-coral); transition: background .18s, color .18s, transform .18s;
+  display: grid; gap: 12px; align-content: start;
+  padding: clamp(24px, 3.4vw, 36px); border-radius: 14px;
+  background: var(--sup-2); color: var(--texto-2); text-decoration: none;
+  border: 1px solid var(--linea); transition: border-color .18s, background-color .18s, transform .18s;
 }
-.division b { font-size: clamp(1.25rem, 2vw, 1.625rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.015em;
+.division b { font-size: clamp(1.625rem, 2.8vw, 2.25rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; color: var(--tfs-coral);
   display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
 .division b i { font-style: normal; flex: none; transition: transform .18s; }
-.division span { font-size: .9375rem; line-height: 1.45; opacity: .78; }
-.division:hover { background: var(--tfs-negro); color: var(--tfs-coral); transform: translateY(-2px); }
+.division span { font-size: .9375rem; line-height: 1.45; color: var(--texto-2); }
+.division:hover { border-color: var(--tfs-coral); background: var(--sup-3); transform: translateY(-2px); }
 .division:hover b i { transform: translateX(4px); }
-.division:focus-visible { outline: 3px solid var(--tfs-blanco); outline-offset: 3px; }
 @media (max-width: 760px) { .divisiones { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .division, .division b i { transition: none; } .division:hover { transform: none; } }
 
@@ -878,11 +895,18 @@ strong, b { color: var(--texto-fuerte); }
 
 /* ---------- Footer ---------- */
 .footer { background: var(--tfs-negro); color: var(--tfs-blanco); padding-block: 64px 32px; border-top: 1px solid var(--linea); }
-.footer-top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; align-items: flex-end; }
+.footer-top { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 4fr) minmax(0, 4fr); gap: 40px; align-items: start; }
 .footer-top img { width: 240px; }
-.footer nav ul { display: flex; flex-wrap: wrap; gap: 12px 28px; }
-.footer nav a { text-decoration: none; font-size: .9375rem; color: var(--texto-2); }
-.footer nav a:hover { color: var(--tfs-blanco); text-decoration: underline; text-decoration-color: var(--tfs-coral); text-underline-offset: 4px; }
+.footer-lema { margin-top: 20px; font-size: 1.0625rem; font-weight: 600; color: var(--texto-fuerte); max-width: 26ch; }
+.footer-titulo { margin-bottom: 14px; font-size: .75rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--texto-3); }
+.footer-col ul { display: grid; gap: 10px; }
+.footer-col p + p { margin-top: 10px; }
+.footer-col, .footer-col p { font-size: .9375rem; color: var(--texto-2); }
+.footer a { text-decoration: none; color: var(--texto-2); }
+.footer-col a[href^="mailto:"] { color: var(--texto-fuerte); font-weight: 600; }
+.footer a:hover { color: var(--tfs-blanco); text-decoration: underline; text-decoration-color: var(--tfs-coral); text-underline-offset: 4px; }
+@media (max-width: 860px) { .footer-top { grid-template-columns: 1fr 1fr; } .footer-marca { grid-column: 1 / -1; } }
+@media (max-width: 520px) { .footer-top { grid-template-columns: 1fr; } }
 .footer-bottom {
   margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--linea);
   display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px;
@@ -908,3 +932,42 @@ strong, b { color: var(--texto-fuerte); }
   .filtros::-webkit-scrollbar { display: none; }
   .filtro { white-space: nowrap; }
 }
+
+/* ---------- Pestañas entre las cuatro áreas de servicio (cambios finales, 21-sep, §1) ----------
+   Idénticas en las cuatro páginas. Activa: coral con texto negro; resto: negro, borde y texto coral.
+   En celular se desplazan de lado. */
+.servicios-nav { border-bottom: 1px solid var(--linea); background: var(--fondo); }
+.servicios-nav ul { display: flex; gap: 10px; padding-block: 16px; overflow-x: auto; scrollbar-width: none; }
+.servicios-nav ul::-webkit-scrollbar { display: none; }
+.servicios-nav a {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 8px 18px; border-radius: 999px; white-space: nowrap;
+  border: 1.5px solid var(--tfs-coral); background: var(--tfs-negro); color: var(--tfs-coral);
+  font-size: .9375rem; font-weight: 600; text-decoration: none; transition: background-color .15s, color .15s;
+}
+.servicios-nav a:hover { background: rgba(242,78,85,.12); }
+.servicios-nav a[aria-current="page"] { background: var(--tfs-coral); color: var(--tfs-negro); }
+@media (max-width: 600px) { .servicios-nav .contenedor { padding-inline: 0; } .servicios-nav ul { padding-inline: var(--gutter); } }
+
+/* Desplegables dentro de una modalidad (reserva, cancelación, niveles) */
+.oferta-bloque .desplegables { margin-top: 28px; }
+.oferta-bloque .pregunta summary { font-size: 1.0625rem; padding: 18px 0; }
+.oferta-bloque .respuesta { max-width: 72ch; padding-right: 0; }
+.oferta-bloque .respuesta .pasos li::before { color: var(--texto-fuerte); }
+.oferta-bloque .respuesta .tabla-caja { margin-bottom: 4px; }
+.alcance { padding: clamp(24px, 4vw, 32px) clamp(24px, 4vw, 40px); border-left: 2px solid var(--tfs-coral); background: var(--sup-1); border-radius: 0 14px 14px 0; }
+.alcance p { margin-top: 10px; color: var(--texto-2); max-width: 72ch; }
+
+/* Eventos: video principal y referencias */
+.video-principal { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(32px, 5vw, 72px); align-items: center; }
+.obras-una { grid-template-columns: 1fr; }
+.obras-cuatro { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 960px) { .video-principal { grid-template-columns: 1fr; } .obras-cuatro { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .obras-cuatro { grid-template-columns: 1fr; } }
+
+/* ---------- Política de privacidad ---------- */
+.legal { max-width: 72ch; }
+.legal h2 { margin-top: 40px; font-size: 1.25rem; line-height: 1.3; font-weight: 600; color: var(--texto-fuerte); }
+.legal p, .legal li { color: var(--texto-2); }
+.legal p { margin-top: 12px; }
+.legal .lista { margin-top: 12px; }
+.legal a { color: var(--texto-fuerte); text-decoration-color: var(--tfs-coral); text-underline-offset: 3px; }
