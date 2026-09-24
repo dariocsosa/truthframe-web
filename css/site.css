@@ -575,6 +575,7 @@ strong, b { color: var(--texto-fuerte); }
 .clientes li:hover img { opacity: 1; }
 .clientes img.alto { max-height: 72px; }      /* logos casi cuadrados */
 .clientes img.ancho { max-height: 40px; }     /* logos muy horizontales */
+.clientes img.muy-ancho { max-width: min(100%, 220px); max-height: 20px; }  /* una sola línea de texto (Contra Cultura) */
 .clientes-nota { margin-top: 16px; font-size: .8125rem; color: var(--texto-3); }
 @media (max-width: 860px) { .clientes { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 @media (max-width: 560px) { .clientes { grid-template-columns: repeat(2, minmax(0, 1fr)); } .clientes li { min-height: 104px; padding: 18px; } }
@@ -599,6 +600,7 @@ strong, b { color: var(--texto-fuerte); }
 
 /* Declaración de marca */
 .declaracion { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: clamp(32px, 6vw, 88px); align-items: start; }
+.declaracion > .h2 { color: var(--tfs-coral); }  /* correcciones adicionales (24-sep, §5) */
 .declaracion .prosa p { color: var(--texto-2); }
 .declaracion .prosa p:first-child { color: var(--texto-fuerte); font-size: 1.125rem; }
 @media (max-width: 860px) { .declaracion { grid-template-columns: 1fr; } }
@@ -777,21 +779,23 @@ strong, b { color: var(--texto-fuerte); }
 }
 
 /* ---------- Divisiones: las cuatro rutas del inicio ----------
-   Cambios finales (21-sep, §1): títulos grandes en coral y descripción pequeña en gris claro,
-   sobre tarjeta oscura. El título en coral es la acción de la tarjeta (lleva a su página). */
+   Correcciones adicionales (24-sep, §1): vuelven los botones coral de la reestructuración, ahora con
+   texto blanco, como pidió Diana. El blanco sobre coral (3,4:1) solo cumple contraste como texto
+   grande, por eso el título es de 26 px o más y la frase de 19 px en negrita. */
 .divisiones { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 .division {
   display: grid; gap: 12px; align-content: start;
   padding: clamp(24px, 3.4vw, 36px); border-radius: 14px;
-  background: var(--sup-2); color: var(--texto-2); text-decoration: none;
-  border: 1px solid var(--linea); transition: border-color .18s, background-color .18s, transform .18s;
+  background: var(--tfs-coral); color: var(--tfs-blanco); text-decoration: none;
+  transition: background-color .18s, transform .18s;
 }
-.division b { font-size: clamp(1.625rem, 2.8vw, 2.25rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; color: var(--tfs-coral);
+.division b { font-size: clamp(1.625rem, 2.8vw, 2.25rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em;
   display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
 .division b i { font-style: normal; flex: none; transition: transform .18s; }
-.division span { font-size: .9375rem; line-height: 1.45; color: var(--texto-2); }
-.division:hover { border-color: var(--tfs-coral); background: var(--sup-3); transform: translateY(-2px); }
+.division span { font-size: 1.1875rem; font-weight: 600; line-height: 1.4; }
+.division:hover { background: #E0434A; transform: translateY(-2px); }
 .division:hover b i { transform: translateX(4px); }
+.division:focus-visible { outline: 3px solid var(--tfs-blanco); outline-offset: 3px; }
 @media (max-width: 760px) { .divisiones { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .division, .division b i { transition: none; } .division:hover { transform: none; } }
 
@@ -809,18 +813,20 @@ strong, b { color: var(--texto-fuerte); }
 .nav .submenu a:hover { background: var(--sup-3); color: var(--texto-fuerte); }
 @media (prefers-reduced-motion: reduce) { .nav .submenu { transition: none; } }
 
-/* Proyectos destacados del inicio: cuatro, en dos columnas */
-.obras.destacados { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 24px; }
+/* Proyectos destacados del inicio: los nueve videos de las correcciones adicionales (24-sep, §4),
+   en la cuadrícula de tres columnas del portafolio */
 .obra .etiqueta-obra { font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--tfs-coral); margin-top: 14px; }
 .obra .etiqueta-obra + h3 { margin-top: 4px; }
 /* Tarjeta que lleva a un canal, no a un video: el icono es una flecha de enlace externo */
 .pantalla.externa { display: block; }
 .pantalla.externa .play svg { width: 15px; height: 15px; margin: 0; }
 
-/* Índice de Servicios: las cuatro divisiones en dos filas */
+/* Índice de Servicios: las cuatro divisiones en dos filas. El nombre de cada una, grande y en coral
+   (correcciones adicionales, 24-sep, §1); el titular sigue en blanco y la tarjeta, negra */
 .caminos-cuatro { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.caminos-cuatro small { font-size: clamp(1.25rem, 1.8vw, 1.5rem); font-weight: 700; letter-spacing: -0.01em; line-height: 1.2; color: var(--tfs-coral); }
+.caminos-cuatro b { font-size: clamp(1.0625rem, 1.4vw, 1.25rem); }
 @media (max-width: 860px) { .caminos-cuatro { grid-template-columns: 1fr; } }
-@media (max-width: 600px) { .obras.destacados { grid-template-columns: 1fr; } }
 
 /* Modalidades de una división: bloques largos, uno debajo del otro */
 .oferta { display: grid; gap: clamp(24px, 4vw, 40px); }
@@ -828,6 +834,9 @@ strong, b { color: var(--texto-fuerte); }
   scroll-margin-top: calc(var(--header) + 16px); }
 .oferta-bloque .h2 { font-size: clamp(1.5rem, 2.6vw, 2rem); max-width: 22ch; }
 .oferta-bloque > p { margin-top: 16px; color: var(--texto-2); max-width: 70ch; }
+/* Nombre de cada modalidad, grande y en coral: es lo que dice qué servicio es (Diana, 24-sep) */
+.oferta-bloque > p.antetitulo { margin: 0 0 8px; font-size: clamp(1.25rem, 1.8vw, 1.5rem); font-weight: 700; line-height: 1.2;
+  letter-spacing: -0.01em; text-transform: none; color: var(--tfs-coral); }
 .oferta-bloque > p.destacado { color: var(--texto-fuerte); font-size: 1.0625rem; }
 .oferta-bloque h3 { margin-top: 28px; margin-bottom: 12px; }
 .oferta-bloque .cifras { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--linea); }
@@ -954,8 +963,8 @@ strong, b { color: var(--texto-fuerte); }
 .oferta-bloque .respuesta { max-width: 72ch; padding-right: 0; }
 .oferta-bloque .respuesta .pasos li::before { color: var(--texto-fuerte); }
 .oferta-bloque .respuesta .tabla-caja { margin-bottom: 4px; }
-.alcance { padding: clamp(24px, 4vw, 32px) clamp(24px, 4vw, 40px); border-left: 2px solid var(--tfs-coral); background: var(--sup-1); border-radius: 0 14px 14px 0; }
-.alcance p { margin-top: 10px; color: var(--texto-2); max-width: 72ch; }
+.alcance, .tarifa-ministerios { padding: clamp(24px, 4vw, 32px) clamp(24px, 4vw, 40px); border-left: 2px solid var(--tfs-coral); background: var(--sup-1); border-radius: 0 14px 14px 0; }
+.alcance p, .tarifa-ministerios p { margin-top: 10px; color: var(--texto-2); max-width: 72ch; }
 
 /* Eventos: video principal y referencias */
 .video-principal { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(32px, 5vw, 72px); align-items: center; }

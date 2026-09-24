@@ -341,7 +341,7 @@
     "evento-integral": { area: "eventos", evento_tipo: "integral" },
     orientacion: { area: "no_seguro" }
   };
-  var RADIOS = ["tipo", "area", "youtube_tipo", "produccion_tipo", "agencia_tipo", "evento_tipo"];
+  var RADIOS = ["tipo", "ministerio", "area", "youtube_tipo", "produccion_tipo", "agencia_tipo", "evento_tipo"];
 
   function valor(nombre) {
     var marcados = $$('[name="' + nombre + '"]:checked:not(:disabled)', form);
