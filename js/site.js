@@ -5,7 +5,7 @@
   // Registro de consultas (Google Apps Script, ver tools/formulario/). Vacío = el formulario no
   // guarda nada: abre el correo de quien escribe con las respuestas listas para Diana.
   // window.TFS_FORMULARIO solo se usa en pruebas.
-  var FORMULARIO = window.TFS_FORMULARIO || "";
+  var FORMULARIO = window.TFS_FORMULARIO || "https://script.google.com/macros/s/AKfycbwBpL72KSp-kJQ2RzB195u-CJj-PyX0X770gAQx58-zDRMmprck7TLBlNaJAY8jE8EyYA/exec";
   // Correo público de Diana (cambios finales, 21-sep, §10: va en el pie de página)
   var CORREO = "dicardona.studio@gmail.com";
   // Analítica sin cookies (Umami Cloud). Pegar aquí el "Website ID"; vacío = sin analítica.
