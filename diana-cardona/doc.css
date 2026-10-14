@@ -1,40 +1,70 @@
-/* Carta y CV de Diana Cardona: hoja blanca con la marca TFS. Se ve en pantalla y se imprime a PDF (A4). */
-:root{--tinta:#161616;--gris:#5b5955;--linea:#d9d6d0;--coral:#F24E55;--pend:#E8B04B}
+/* Carta y CV de Diana Cardona. Parten del CV original de Diana: banda negra con su foto,
+   cargo en coral y pie con nombre. A4; se ve en pantalla y se imprime a PDF. */
+:root{--negro:#161616;--tinta:#1d1d1d;--gris:#5a5752;--linea:#dcd9d3;--coral:#F24E55}
 *,*::before,*::after{box-sizing:border-box}
-html{background:#ECEAE6}
-body{margin:0;font-family:"Inter",system-ui,sans-serif;color:var(--tinta);font-size:10.5pt;line-height:1.5;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration-color:var(--coral);text-underline-offset:3px}
+html{background:#e9e7e3}
+body{margin:0;font-family:"Inter",system-ui,sans-serif;color:var(--tinta);font-size:9.5pt;line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:var(--tinta);text-decoration:underline;text-decoration-color:var(--coral);text-decoration-thickness:1.5px;text-underline-offset:2px}
 h1,h2,h3,p,ul{margin:0}ul{padding:0;list-style:none}
-.barra{background:#000;color:#fff;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:.9rem}
-.barra a{color:#fff;text-decoration:none;border-bottom:2px solid var(--coral);padding-bottom:2px}
-.hoja{width:210mm;min-height:297mm;margin:24px auto;background:#fff;padding:18mm 18mm 16mm;box-shadow:0 6px 30px rgba(0,0,0,.12)}
-.cab{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;padding-bottom:14px;border-bottom:3px solid #000;margin-bottom:18px}
-.cab h1{font-size:25pt;line-height:1;font-weight:800;letter-spacing:-.03em}
-.cab .rol{font-size:10.5pt;color:var(--gris);margin-top:6px}
-.cab .contacto{font-size:9pt;text-align:right;color:var(--gris);line-height:1.6}
-.cab img{height:22px;width:auto;display:block;margin-left:auto;margin-bottom:8px}
-h2{font-size:9.5pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid var(--linea);padding-bottom:5px;margin:20px 0 10px;color:#000}
-h3{font-size:10.5pt;font-weight:700}
-.meta{font-size:9pt;color:var(--gris)}
-.item{margin-bottom:12px;break-inside:avoid}
-.item ul{margin-top:4px;padding-left:14px;list-style:disc}
-.item li{margin-bottom:3px}
-.cifras{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:12px 0 4px}
-.cifras div{border-top:2px solid #000;padding-top:6px}
-.cifras b{display:block;font-size:14pt;letter-spacing:-.02em}
-.cifras span{font-size:8.5pt;color:var(--gris);line-height:1.3;display:block}
-.carta p{margin-bottom:11px}
-.carta .asunto{font-weight:700;margin:16px 0}
-.pend{background:#FFF3D6;outline:1px dashed var(--pend);padding:0 3px}
-@media (max-width:820px){
-  .hoja{width:auto;min-height:0;margin:0;padding:22px 18px;box-shadow:none}
-  .cab{flex-direction:column}.cab .contacto{text-align:left}.cab img{margin-left:0}
-  .cifras{grid-template-columns:1fr 1fr}
+p{text-wrap:pretty;orphans:2;widows:2}
+.barra{background:#000;color:#fff;padding:12px 20px;display:flex;justify-content:space-between;gap:12px;font-size:.9rem}
+.barra a{color:#fff}
+
+.hoja{position:relative;width:210mm;height:297mm;margin:22px auto;background:#fff;box-shadow:0 6px 30px rgba(0,0,0,.14);overflow:hidden;display:flex;flex-direction:column}
+.banda{background:var(--negro);color:#fff;display:grid;grid-template-columns:1fr 40mm;gap:10mm;padding:11mm 16mm;align-items:center}
+.banda h1{font-size:26pt;line-height:1.05;font-weight:800;letter-spacing:-.01em;text-transform:uppercase}
+.banda .rol{margin-top:4.5mm;color:var(--coral);font-weight:700;font-size:10.5pt;line-height:1.35;text-transform:uppercase;letter-spacing:.02em}
+.banda .sub{margin-top:3mm;font-size:8.8pt;color:#d9d6d0;line-height:1.55}
+.banda img{width:40mm;height:56mm;object-fit:cover;object-position:50% 22%;display:block}
+.banda.sin-foto{grid-template-columns:1fr;padding:11mm 16mm 9mm}
+.banda.sin-foto h1{font-size:23pt}
+
+.cuerpo{padding:6mm 16mm 0;flex:1}
+.cifras{display:grid;grid-template-columns:repeat(3,1fr);border-block:1px solid var(--linea);margin:4.5mm 0 1mm}
+.cifras div{padding:2.6mm 3mm 2.6mm 4mm;border-left:1px solid var(--linea)}
+.cifras div:first-child{border:0;padding-left:0}
+.cifras b{display:block;font-size:14pt;font-weight:800;letter-spacing:-.02em;line-height:1.2}
+.cifras span{display:block;font-size:7.8pt;color:var(--gris);line-height:1.35;margin-top:.6mm}
+
+h2{font-size:8.6pt;font-weight:800;text-transform:uppercase;letter-spacing:.14em;border-top:2px solid var(--tinta);padding-top:2mm;margin:6mm 0 2.5mm}
+h2.primero{margin-top:0}
+h3{font-size:10.4pt;font-weight:800;margin-top:3.4mm}
+.meta{font-size:8.6pt;color:var(--gris);margin-top:.4mm}
+.meta b{color:var(--tinta);font-weight:600}
+.item{break-inside:avoid}
+.item p{margin-top:1.4mm}
+.item p strong{font-weight:600}
+
+.pie{display:flex;justify-content:space-between;margin:0 16mm;padding:3mm 0 6mm;border-top:1px solid var(--linea);font-size:7.6pt;color:var(--gris);letter-spacing:.04em;text-transform:uppercase}
+.pie span:last-child::before{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--coral);margin-right:2mm;vertical-align:middle}
+.carta .pie span:last-child{display:none}
+
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:2mm 9mm}
+
+.carta .cuerpo{padding:9mm 28mm 0}
+.carta .banda{padding-inline:28mm}
+.carta .pie{margin-inline:28mm}
+.carta p{margin-bottom:3.6mm;font-size:10.2pt;line-height:1.6}
+.carta .fecha{color:var(--gris);font-size:9pt;margin-bottom:5mm}
+.carta .asunto{font-weight:700;font-size:10.4pt;margin-bottom:5mm}
+.firma{margin-top:6mm}
+.firma .espacio{height:9mm}
+
+@media screen and (max-width:820px){
+  .hoja{width:auto;height:auto;margin:0;box-shadow:none}
+  .banda{grid-template-columns:1fr;padding:22px 18px}
+  .banda img{width:100%;height:260px;margin-top:14px}
+  .cuerpo,.carta .cuerpo{padding:18px}
+  .pie{margin:0 18px}
+  .cifras{grid-template-columns:1fr}
+  .cifras div{border:0;padding-left:0}
+  .dos{grid-template-columns:1fr}
 }
 @page{size:A4;margin:0}
 @media print{
   html,body{background:#fff}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   .barra{display:none}
-  .hoja{margin:0;box-shadow:none;width:210mm;min-height:auto;padding:16mm 17mm}
-  .pend{background:none;outline:none}
+  .hoja{margin:0;box-shadow:none;width:210mm;height:297mm;break-after:page}
+  .hoja:last-of-type{break-after:auto}
 }
