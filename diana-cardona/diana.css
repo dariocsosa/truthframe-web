@@ -1,0 +1,152 @@
+/* Diana Cardona — portafolio de aplicación (página no listada).
+   Hereda tokens.css del sitio. Coral = acción. Fondo negro, texto blanco cálido. */
+:root{
+  --fondo:#000; --sup-1:#0E0E0E; --sup-2:#161616; --sup-3:#1F1F1F;
+  --linea:rgba(255,255,255,.13); --linea-fuerte:rgba(255,255,255,.3);
+  --texto:var(--tfs-editorial); --fuerte:#fff; --texto-2:#B5B2AC; --texto-3:#8F8C87;
+  --ancho:1120px; --gutter:clamp(18px,4.5vw,44px); color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{background:#000;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:#000;color:var(--texto);font-family:var(--tfs-fuente);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3,p,ul,ol,figure,dl,dd{margin:0}
+ul,ol{padding:0;list-style:none}
+strong{color:var(--fuerte);font-weight:600}
+:focus-visible{outline:3px solid var(--tfs-coral);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--ancho);margin-inline:auto;padding-inline:var(--gutter)}
+.sec{padding-block:clamp(56px,9vw,112px)}
+.sec.alt{background:var(--sup-1);border-block:1px solid var(--linea)}
+
+/* Barra superior */
+.top{position:sticky;top:0;z-index:20;background:rgba(0,0,0,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--linea)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.top img{height:26px;width:auto}
+.top nav{display:flex;gap:clamp(14px,3vw,28px);font-size:.9375rem;font-weight:500}
+.top nav a{text-decoration:none;color:var(--texto-2);padding:6px 0;border-bottom:2px solid transparent}
+.top nav a:hover,.top nav a[aria-current]{color:#fff;border-color:var(--tfs-coral)}
+
+/* Tipografía */
+h1{font-size:clamp(2.75rem,7vw,5rem);line-height:1;font-weight:800;letter-spacing:-.035em;color:#fff}
+h2{font-size:clamp(1.75rem,3.6vw,2.6rem);line-height:1.1;font-weight:700;letter-spacing:-.025em;color:#fff;max-width:20ch}
+h3{font-size:1.1875rem;line-height:1.3;font-weight:600;color:#fff}
+.lead{font-size:clamp(1.125rem,1.7vw,1.375rem);line-height:1.5;color:var(--texto);max-width:34em}
+.nota{font-size:.875rem;color:var(--texto-3);line-height:1.5}
+.sec-head{display:grid;gap:16px;margin-bottom:clamp(32px,5vw,56px)}
+.sec-head p{max-width:46em;color:var(--texto-2)}
+
+/* Botones */
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:12px 22px;border-radius:8px;font-weight:600;text-decoration:none;font-size:1rem;border:1.5px solid transparent}
+.btn.acc{background:var(--tfs-coral);color:#000}
+.btn.acc:hover{background:#ff6a70}
+.btn.ghost{border-color:var(--linea-fuerte);color:#fff}
+.btn.ghost:hover{border-color:#fff}
+
+/* Hero con visor */
+.hero{padding-block:clamp(40px,7vw,88px)}
+.hero .wrap{display:grid;gap:clamp(32px,5vw,64px);grid-template-columns:1.15fr .85fr;align-items:center}
+.hero .claim{font-size:.8125rem;letter-spacing:.3em;text-transform:uppercase;color:var(--texto-2);margin-bottom:22px}
+.hero h1 span{display:block;font-size:clamp(1.25rem,2.4vw,1.75rem);font-weight:500;letter-spacing:-.01em;color:var(--texto);margin-top:20px;line-height:1.3}
+.visor{position:relative;padding:14px}
+.visor::before,.visor::after,.visor i::before,.visor i::after{content:"";position:absolute;width:30px;height:30px;border:3px solid #fff;pointer-events:none}
+.visor::before{top:0;left:0;border-right:0;border-bottom:0}
+.visor::after{top:0;right:0;border-left:0;border-bottom:0}
+.visor i::before{bottom:0;left:0;border-right:0;border-top:0}
+.visor i::after{bottom:0;right:0;border-left:0;border-top:0}
+.visor i{position:absolute;inset:0;pointer-events:none}
+.visor .rec{position:absolute;top:28px;left:30px;display:flex;align-items:center;gap:8px;font-size:.75rem;font-weight:600;letter-spacing:.12em;color:#fff;text-shadow:0 1px 6px #000}
+.visor .rec b{width:9px;height:9px;border-radius:50%;background:var(--tfs-coral)}
+.visor img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%}
+@media (prefers-reduced-motion:no-preference){.visor .rec b{animation:rec 1.6s steps(2,jump-none) infinite}@keyframes rec{50%{opacity:.15}}}
+
+/* Requisitos del cargo → evidencia */
+.mapa{display:grid;gap:0;border-top:1px solid var(--linea)}
+.mapa li{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.4fr);gap:8px clamp(20px,4vw,48px);padding:22px 0;border-bottom:1px solid var(--linea)}
+.mapa h3{font-size:1.0625rem}
+.mapa p{color:var(--texto-2)}
+.mapa a{color:#fff;text-underline-offset:4px;text-decoration-color:var(--tfs-coral)}
+
+/* Caso: ficha dentro del visor */
+.caso{display:grid;gap:clamp(28px,5vw,56px);grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);align-items:start}
+.ficha{background:var(--sup-2);padding:clamp(26px,3.5vw,40px)}
+.ficha dl{display:grid;gap:0}
+.ficha .fila{display:grid;grid-template-columns:minmax(0,auto) 1fr;gap:6px 20px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--linea)}
+.ficha .fila:last-child{border:0}
+.ficha dt{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;letter-spacing:-.03em;color:#fff;font-variant-numeric:tabular-nums;line-height:1.05}
+.ficha dd{color:var(--texto-2);font-size:.9375rem;line-height:1.4}
+.fuente{margin-top:14px}
+.relato p+p{margin-top:14px}
+.pilares{display:grid;gap:0;margin-top:28px;border-top:1px solid var(--linea)}
+.pilares li{padding:14px 0;border-bottom:1px solid var(--linea)}
+.pilares strong{display:block;margin-bottom:2px}
+.pilares span{color:var(--texto-2);font-size:.9688rem}
+
+/* Proyección = secuencia */
+.tiempo{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:clamp(32px,5vw,48px);border-top:2px solid var(--linea-fuerte)}
+.tiempo li{padding:22px 16px 0 0;position:relative}
+.tiempo li::before{content:"";position:absolute;top:-8px;left:0;width:12px;height:12px;background:#000;border:2px solid #fff;border-radius:50%}
+.tiempo b{display:block;font-size:1.25rem;color:#fff;letter-spacing:-.02em}
+.tiempo span{display:block;color:var(--texto-2);font-size:.875rem}
+
+/* Sistema de contenido */
+.cascada{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,24px);margin-top:28px}
+.cascada li{background:var(--sup-2);padding:20px;border-top:2px solid var(--linea-fuerte)}
+.cascada p{color:var(--texto-2);font-size:.9375rem;margin-top:6px}
+
+/* Canales */
+.tabla{width:100%;border-collapse:collapse}
+.tabla th,.tabla td{text-align:left;padding:16px 12px 16px 0;border-bottom:1px solid var(--linea);vertical-align:top}
+.tabla th{font-size:.8125rem;font-weight:500;color:var(--texto-3);letter-spacing:.04em}
+.tabla td:first-child{color:#fff;font-weight:600}
+.tabla .cifra{font-weight:800;color:#fff;font-size:1.25rem;letter-spacing:-.02em;white-space:nowrap}
+
+/* Videos */
+.videos{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,24px)}
+.videos a{text-decoration:none;display:block}
+.videos img{aspect-ratio:16/9;object-fit:cover;width:100%;background:var(--sup-3)}
+.videos h3{margin-top:12px;font-size:1rem}
+.videos p{font-size:.875rem;color:var(--texto-3);margin-top:2px}
+.videos a:hover h3{text-decoration:underline;text-decoration-color:var(--tfs-coral);text-underline-offset:4px}
+
+/* Cierre */
+.cierre h2{max-width:18ch}
+footer{border-top:1px solid var(--linea);padding-block:28px;color:var(--texto-3);font-size:.875rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+
+/* Por confirmar (solo en borrador) */
+.pendiente{outline:2px dashed #E8B04B;outline-offset:6px}
+.pend-tag{display:inline-block;font-size:.75rem;font-weight:700;color:#000;background:#E8B04B;padding:2px 8px;border-radius:4px;margin-left:8px;vertical-align:middle}
+
+@media (max-width:860px){
+  .hero .wrap,.caso{grid-template-columns:1fr}
+  .visor{max-width:420px}
+  .mapa li{grid-template-columns:1fr}
+  .tiempo{grid-template-columns:1fr 1fr;row-gap:28px}
+  .cascada,.videos{grid-template-columns:1fr 1fr}
+}
+@media (max-width:560px){
+  .cascada,.videos{grid-template-columns:1fr}
+  .tiempo{grid-template-columns:1fr}
+  .tabla thead{display:none}
+  .tabla,.tabla tbody,.tabla tr,.tabla td{display:block}
+  .tabla tr{padding:14px 0;border-bottom:1px solid var(--linea)}
+  .tabla td{border:0;padding:2px 0}
+  .btn{width:100%;justify-content:center}
+}
+
+/* PDF del portafolio: páginas de 1200 px, fondo negro, sin barra superior */
+@page{size:1200px 1500px;margin:0}
+@media print{
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  html,body{background:#000}
+  .top{position:static;backdrop-filter:none}
+  .sec{break-inside:avoid;padding-block:56px}
+  .hero{break-inside:avoid;padding-block:56px}
+  .caso,.mapa li,.tabla tr,.videos li,.cascada li,.pilares li,.tiempo li{break-inside:avoid}
+  .pendiente{outline:none}
+  .pend-tag{display:none}
+  .btns{display:none}
+}
