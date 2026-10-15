@@ -923,19 +923,6 @@ strong, b { color: var(--texto-fuerte); }
 }
 .footer .claim { color: var(--texto-2); }
 
-/* WhatsApp flotante */
-.flotante {
-  position: fixed; right: 20px; bottom: 20px; z-index: 40;
-  display: inline-flex; align-items: center; gap: 10px;
-  min-height: 52px; padding: 0 20px 0 16px; border-radius: 999px;
-  background: var(--tfs-charcoal); color: var(--tfs-blanco); text-decoration: none; font-weight: 600; font-size: .9375rem;
-  box-shadow: 0 6px 24px rgba(0,0,0,.5), 0 0 0 1px var(--linea);
-  transition: opacity .2s, transform .2s;
-}
-.flotante svg { width: 22px; height: 22px; }
-.flotante:hover { background: #5A5A5A; }
-.flotante.oculto { opacity: 0; transform: translateY(12px); pointer-events: none; }
-@media (max-width: 900px) { .flotante { display: none; } }
 @media (max-width: 600px) {
   .filtros { flex-wrap: nowrap; overflow-x: auto; column-gap: 12px; scrollbar-width: none; margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter); }
   .filtros::-webkit-scrollbar { display: none; }
