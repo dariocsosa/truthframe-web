@@ -170,3 +170,11 @@ a{text-decoration-color:var(--tfs-coral);text-underline-offset:3px}
   .tiempo li{border-top:0;padding:0 0 22px}
   .tiempo li::before{left:-30px;top:4px}
 }
+
+/* organizaciones y versión PDF */
+.logos-cl{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--linea);border:1px solid var(--linea)}
+.logos-cl li{background:var(--sup-1);display:flex;align-items:center;justify-content:center;padding:26px 18px;min-height:96px}
+.logos-cl img{max-width:130px;max-height:44px;width:auto;height:auto;object-fit:contain;opacity:.92}
+.solo-pdf{display:none}
+html.pdf .solo-pdf{display:block;background:var(--sup-3);border-bottom:2px solid var(--tfs-coral);color:var(--texto);padding:18px var(--gutter);text-align:center;font-size:1.0625rem;line-height:1.5}
+html.pdf .solo-pdf a{color:#fff;font-weight:700;text-decoration:underline;text-decoration-color:var(--tfs-coral);text-underline-offset:4px}
