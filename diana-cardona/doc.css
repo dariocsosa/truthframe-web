@@ -41,14 +41,14 @@ h3{font-size:10.4pt;font-weight:800;margin-top:3.4mm}
 
 .dos{display:grid;grid-template-columns:1fr 1fr;gap:2mm 9mm}
 
-.carta .cuerpo{padding:9mm 28mm 0}
-.carta .banda{padding-inline:28mm}
-.carta .pie{margin-inline:28mm}
-.carta p{margin-bottom:3.6mm;font-size:10.2pt;line-height:1.6}
+.carta .cuerpo{padding:7mm 26mm 0}
+.carta .banda{padding-inline:26mm}
+.carta .pie{margin-inline:26mm}
+.carta p{margin-bottom:3mm;font-size:9.9pt;line-height:1.55}
 .carta .fecha{color:var(--gris);font-size:9pt;margin-bottom:5mm}
 .carta .asunto{font-weight:700;font-size:10.4pt;margin-bottom:5mm}
 .firma{margin-top:6mm}
-.firma .espacio{height:9mm}
+.firma .espacio{height:7mm}
 
 @media screen and (max-width:820px){
   .hoja{width:auto;height:auto;margin:0;box-shadow:none}
