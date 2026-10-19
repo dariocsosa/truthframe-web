@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guion para Diana</title>
+<meta name="description" content="Guion para explicar el trabajo de Truth Frame Studio con Cosiaca.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/assets/iconos/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/tokens.css">
+<style>
+:root{--sup-1:#0E0E0E;--sup-2:#161616;--sup-3:#1F1F1F;--linea:rgba(255,255,255,.13);--linea-f:rgba(255,255,255,.32);--t2:#B5B2AC;--t3:#8F8C87;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:#000;color:var(--tfs-editorial);font-family:var(--tfs-fuente);font-size:1.0625rem;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:760px;margin-inline:auto;padding:0 20px 96px}
+header{position:sticky;top:0;z-index:5;background:rgba(0,0,0,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--linea)}
+header .wrap{display:flex;gap:10px;align-items:center;justify-content:space-between;padding:10px 20px;flex-wrap:wrap}
+header img{height:22px;width:auto}
+nav{display:flex;gap:6px;flex-wrap:wrap}
+nav a{font-size:.8125rem;font-weight:500;color:var(--t2);text-decoration:none;border:1px solid var(--linea);border-radius:99px;padding:6px 13px}
+nav a:hover{color:#fff;border-color:#fff}
+h1{font-size:clamp(2rem,6vw,2.8rem);line-height:1.05;font-weight:800;letter-spacing:-.03em;color:#fff;margin:44px 0 12px}
+h2{font-size:1.6rem;line-height:1.15;font-weight:700;letter-spacing:-.02em;color:#fff;margin:64px 0 6px;scroll-margin-top:70px}
+h3{font-size:1.05rem;color:#fff;margin:26px 0 6px}
+p{margin:0 0 14px}
+strong{color:#fff;font-weight:600}
+.sub{color:var(--t2);font-size:.95rem}
+.tiempo{display:inline-block;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--t2);border:1px solid var(--linea-f);border-radius:99px;padding:3px 12px;margin-bottom:14px}
+.habla{border-left:3px solid var(--tfs-coral);padding:2px 0 2px 20px;margin:18px 0}
+.habla p{font-size:1.1rem;line-height:1.7}
+.cue{background:var(--sup-3);border-radius:8px;padding:8px 14px;font-size:.875rem;color:var(--t2);margin:6px 0 16px}
+.cue b{color:#fff}
+.caja{background:var(--sup-1);border:1px solid var(--linea);border-radius:14px;padding:18px 22px;margin:16px 0}
+.caja ul,.caja ol{margin:8px 0 0;padding-left:20px}
+.caja li{margin-bottom:8px}
+.no{border-color:rgba(255,180,171,.4)}
+.qa h3{margin-top:30px}
+a.btn{display:inline-flex;align-items:center;min-height:48px;padding:12px 22px;border-radius:8px;background:var(--tfs-coral);color:#000;font-weight:600;text-decoration:none}
+a.btn:hover{background:#ff6a70}
+:focus-visible{outline:3px solid var(--tfs-coral);outline-offset:3px;border-radius:4px}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <img src="/assets/logos/Logo_TFS_white_2.svg" alt="Truth Frame Studio" width="130" height="22">
+  <nav aria-label="Secciones"><a href="#corto">30 s</a><a href="#medio">2 min</a><a href="#pantalla">Con pantalla</a><a href="#preguntas">Preguntas</a><a href="#evitar">Evitar</a></nav>
+</div></header>
+
+<div class="wrap">
+<h1>Cómo contar el trabajo con Cosiaca</h1>
+<p class="sub">Guion para la conversación con Eloisa. Está escrito en primera persona para que lo digas con tus palabras: no lo leas, tómalo como mapa. Las cifras son las reales; si no la recuerdas, di «alrededor de».</p>
+<p><a class="btn" href="/diana-cardona/como-trabajamos/" target="_blank" rel="noopener">Abrir la presentación</a></p>
+
+<h2 id="idea">La idea en una frase</h2>
+<div class="caja"><p style="margin:0"><strong>La IA prepara las decisiones; las personas deciden; todo queda escrito.</strong> Si Eloisa solo se queda con eso, ya entendió.</p></div>
+
+<h2 id="corto">Versión de 30 segundos</h2>
+<span class="tiempo">Si preguntan «¿cómo trabajan?»</span>
+<div class="habla">
+<p>Trabajamos con un asistente de inteligencia artificial que se llama Cosiaca. No lo usamos para que opine por nosotros, sino para que prepare cada decisión: junta lo que sabemos del cliente, plantea dos o tres opciones con una recomendación y lo que arriesga cada una. El cliente elige, se ejecuta según el riesgo y todo queda registrado. Con ese método sacamos en nueve días 75 decisiones de un sitio web, sin perder nada en chats.</p>
+</div>
+
+<h2 id="medio">Versión de 2 minutos</h2>
+<span class="tiempo">Para explicar el trabajo completo</span>
+
+<h3>1. El problema</h3>
+<div class="habla"><p>En cualquier proyecto se toman cientos de decisiones pequeñas, y casi siempre se pierden en WhatsApp o en correos: «¿qué dijimos del botón?», «¿cuál de las tres opciones era?». Eso nos pasaba también a nosotros.</p></div>
+
+<h3>2. Qué hicimos</h3>
+<div class="habla"><p>Montamos un espacio privado para cada cliente, donde cada pregunta llega como una tarjeta: la situación, las opciones, cuál recomendamos y qué pasa si elige cada una. El cliente elige con un clic y deja su nota si quiere. Así tomamos las decisiones de mi propio sitio, y las de un médico, el Dr. Marco Sosa, para tres libros de salud integrativa.</p></div>
+
+<h3>3. Dónde entra la IA</h3>
+<div class="habla"><p>Cosiaca lee lo que llegó, lo cruza con lo que ya sabemos —documentos, decisiones anteriores, reglas de marca— y prepara las opciones. Detrás hay una base de conocimiento donde cada dato tiene su fuente, y varios asistentes que miran lo mismo desde puntos de vista distintos: uno cuida lo que pidió el cliente, otro lo que se puede entregar, otro lo que se verá en público. Si no están de acuerdo, el desacuerdo se muestra, no se esconde.</p></div>
+
+<h3>4. Dónde está el límite</h3>
+<div class="habla"><p>La IA no decide lo importante. Hay niveles: lo interno y reversible lo hace sola; lo que ya decidió el cliente lo hace y avisa; lo que tiene precio, plazos o compromisos espera a una persona; y el dinero, las claves o los contratos nunca los toca sola.</p></div>
+
+<h3>5. Qué tiene que ver con YouTube</h3>
+<div class="habla"><p>Es el mismo método que aplicaría a un canal: partir de los datos de YouTube Studio, plantear hipótesis que se puedan defender, dar al cliente dos o tres caminos con su costo y riesgo, y dejar lo decidido escrito para medir después. Mi trabajo no es opinar sobre un canal; es que quien decide tenga delante lo que necesita.</p></div>
+
+<h2 id="pantalla">Si comparte pantalla</h2>
+<span class="tiempo">4 minutos · usa la presentación</span>
+<div class="caja">
+<p style="margin:0"><strong>Antes de la llamada</strong></p>
+<ol>
+<li>Abre la presentación en una pestaña propia y pulsa <strong>F</strong> para pantalla completa. Avanzas con las flechas.</li>
+<li>Comparte <strong>solo esa pestaña</strong>, no toda la pantalla.</li>
+<li>Deja este guion en el celular o en otra ventana que no compartas.</li>
+<li>No abras el espacio real de clientes en la llamada, salvo que Eloisa lo pida. Si lo hace, entra solo a «Truth Frame Studio»; <strong>nunca al espacio del Dr. Marco</strong>, porque ahí hay decisiones de sus libros.</li>
+</ol>
+</div>
+
+<div class="cue"><b>Diapositiva 1.</b> «Voy a mostrarte en pocos minutos cómo tomamos decisiones con Cosiaca.»</div>
+<div class="cue"><b>Diapositiva 2.</b> «Antes todo esto vivía en chats. Hoy cada decisión tiene opciones, recomendación y registro.»</div>
+<div class="cue"><b>Diapositiva 3.</b> Pulsa los cinco pasos en orden y di una frase de cada uno: «sabemos, Cosiaca prepara, la persona decide, se ejecuta, queda escrito».</div>
+<div class="cue"><b>Diapositiva 4 (la importante).</b> Elige la opción C primero: «ves que tiene un nivel 3, porque hay dinero de por medio; no sale sola». Luego la A: «esta es la que elegí yo, la recomendada». Pulsa «Enviar decisión» y señala el registro de la derecha: <b>quién, qué y cuándo</b>.</div>
+<div class="cue"><b>Diapositiva 5.</b> «La IA actúa según el riesgo. Lo que tiene precio o compromiso lo decide una persona.»</div>
+<div class="cue"><b>Diapositiva 6.</b> «Detrás hay un mismo conocimiento y varias miradas. Si discrepan, el desacuerdo queda a la vista.»</div>
+<div class="cue"><b>Diapositiva 7.</b> «Esto es lo que traigo a un canal: datos, hipótesis, opciones, decisión y medición.»</div>
+
+<h2 id="preguntas">Preguntas que pueden hacerte</h2>
+<div class="qa">
+
+<h3>¿Quién decide, la IA o tú?</h3>
+<div class="habla"><p>Decidimos las personas. La IA prepara y ejecuta lo que ya está decidido y es de bajo riesgo. Lo que implica dinero, plazos o compromisos pasa siempre por una persona.</p></div>
+
+<h3>¿Qué es Cosiaca y qué son los «sapients»?</h3>
+<div class="habla"><p>Cosiaca es el asistente con el que conversamos día a día: prepara documentos, opciones y avisos. Los sapients son la capa de conocimiento que está detrás: asistentes que comparten una base de datos verificada, con fuentes, pero que miran distinto. Los desarrolla Darío Sosa, nuestro especialista en inteligencia artificial.</p></div>
+
+<h3>¿Qué parte la hiciste tú?</h3>
+<div class="habla"><p>Yo pongo el criterio y las decisiones: qué quiere el cliente, qué es aceptable, qué se publica. Lo reviso, lo corrijo y lo apruebo. La plataforma técnica la construye Darío. No pretendo haberla programado; sí haberla usado a fondo para dirigir proyectos reales.</p></div>
+
+<h3>¿La IA se equivoca?</h3>
+<div class="habla"><p>Sí, y por eso hay niveles y revisión humana. Por ejemplo, en un proyecto el asistente propuso algo visual sin mirar antes lo que ya existía, y lo corregimos. Aprendimos a que revise siempre lo existente antes de proponer.</p></div>
+
+<h3>¿Qué resultados concretos tienen?</h3>
+<div class="habla"><p>De proceso, que son los que puedo respaldar: 75 decisiones de un sitio web en nueve días, sin perder ninguna; tres libros de salud integrativa, de más de 800 páginas en total, listos para la revisión del médico con sus decisiones ya planteadas, y mi propio portafolio, CV y postulación a este cargo. No te voy a atribuir resultados de crecimiento de un canal a este método, porque no son de esto.</p></div>
+
+<h3>¿Cómo cuidan la confidencialidad?</h3>
+<div class="habla"><p>Cada cliente tiene su espacio y solo entran las personas autorizadas, con verificación por correo. Lo de un cliente no se ve en el de otro, y no se publican datos de clientes sin su permiso.</p></div>
+
+<h3>¿Y esto cómo me sirve a mí como consultora?</h3>
+<div class="habla"><p>Me sirve para dar a tus clientes de YouTube decisiones mejor preparadas: cada recomendación con sus datos, sus opciones y su riesgo, y el seguimiento escrito de lo que se decidió y de lo que pasó después.</p></div>
+
+</div>
+
+<h2 id="evitar">Qué evitar</h2>
+<div class="caja no">
+<ul>
+<li><strong>No digas que la IA «toma las decisiones».</strong> Dices que prepara y que tú decides.</li>
+<li><strong>No digas que programaste la plataforma.</strong> Es de Darío; tú la usas y diriges.</li>
+<li><strong>No prometas cifras de crecimiento</strong> (vistas, suscriptores, ventas) atribuidas a este método.</li>
+<li><strong>No cuentes detalles de los libros ni de las decisiones médicas</strong> del Dr. Marco; basta con «libros de salud integrativa».</li>
+<li><strong>No sumes suscriptores</strong> de los canales ni uses «30 años».</li>
+<li><strong>No expliques el método paso a paso</strong> de TFS para canales: eso es lo que vendes.</li>
+</ul>
+</div>
+
+<h2>Cierre posible</h2>
+<div class="habla"><p>Lo que traigo a tu equipo es esto: criterio de producción y de YouTube, y una forma de trabajar donde cada recomendación llega con su evidencia, el cliente decide informado y todo queda escrito. Es lo que más valoran los clientes cuando algo sale bien y lo que más los protege cuando algo sale mal.</p></div>
+
+</div>
+</body>
+</html>

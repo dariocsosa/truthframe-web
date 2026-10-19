@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cómo decidimos con Cosiaca</title>
+<meta name="description" content="Cómo Truth Frame Studio convierte el conocimiento en decisiones humanas informadas, con Cosiaca y el espacio de clientes.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/assets/iconos/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/tokens.css">
+<style>
+:root{
+  --fondo:#000; --sup-1:#0E0E0E; --sup-2:#161616; --sup-3:#1F1F1F;
+  --linea:rgba(255,255,255,.13); --linea-fuerte:rgba(255,255,255,.32);
+  --texto:var(--tfs-editorial); --fuerte:#fff; --texto-2:#B5B2AC; --texto-3:#8F8C87;
+  --gutter:clamp(20px,5vw,72px); color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:#000;color:var(--texto);font-family:var(--tfs-fuente);font-size:clamp(1rem,1.35vw,1.25rem);line-height:1.55;-webkit-font-smoothing:antialiased;overflow:hidden}
+h1,h2,h3,p,ul,ol,figure{margin:0}
+ul,ol{padding:0;list-style:none}
+a{color:inherit}
+strong{color:#fff;font-weight:600}
+:focus-visible{outline:3px solid var(--tfs-coral);outline-offset:3px;border-radius:4px}
+button{font:inherit;color:inherit;cursor:pointer}
+
+/* Marco de la presentación */
+.barra{position:fixed;inset:0 0 auto 0;z-index:10;display:flex;align-items:center;justify-content:space-between;height:60px;padding-inline:var(--gutter);background:linear-gradient(#000 40%,transparent)}
+.barra img{height:24px;width:auto}
+.barra .acciones{display:flex;gap:10px;align-items:center}
+.barra a,.barra button{background:none;border:1px solid var(--linea);border-radius:8px;padding:7px 13px;font-size:.8125rem;font-weight:500;color:var(--texto-2);text-decoration:none}
+.barra a:hover,.barra button:hover{border-color:#fff;color:#fff}
+.progreso{position:fixed;left:0;bottom:0;height:3px;background:var(--tfs-coral);width:0;transition:width .35s ease;z-index:11}
+.pie{position:fixed;inset:auto 0 0 0;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:0 var(--gutter) 22px;pointer-events:none}
+.pie>*{pointer-events:auto}
+.cuenta{font-size:.8125rem;color:var(--texto-3);letter-spacing:.08em;font-variant-numeric:tabular-nums}
+.nav{display:flex;gap:10px}
+.nav button{width:46px;height:46px;border-radius:50%;background:var(--sup-2);border:1px solid var(--linea-fuerte);display:grid;place-items:center;font-size:1.2rem;line-height:1}
+.nav button:hover:not(:disabled){background:var(--tfs-coral);border-color:var(--tfs-coral);color:#000}
+.nav button:disabled{opacity:.3;cursor:default}
+
+.diapos{height:100%}
+.diapo{position:absolute;inset:0;padding:96px var(--gutter) 96px;display:none;overflow-y:auto;align-content:center}
+.diapo.activa{display:grid;animation:entra .45s ease both}
+@keyframes entra{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.diapo.activa{animation:none}.progreso{transition:none}}
+.cont{width:100%;max-width:1180px;margin-inline:auto}
+
+.claim{font-size:.8125rem;letter-spacing:.3em;text-transform:uppercase;color:var(--texto-2);margin-bottom:22px}
+h1{font-size:clamp(2.4rem,6.2vw,5.2rem);line-height:1.02;font-weight:800;letter-spacing:-.035em;color:#fff;max-width:17ch}
+h2{font-size:clamp(1.8rem,3.9vw,3.1rem);line-height:1.08;font-weight:700;letter-spacing:-.028em;color:#fff;max-width:22ch}
+h3{font-size:1.1rem;line-height:1.3;font-weight:600;color:#fff}
+.lead{font-size:clamp(1.1rem,1.8vw,1.5rem);line-height:1.45;color:var(--texto);max-width:36em;margin-top:22px}
+.peq{font-size:.875rem;color:var(--texto-3);line-height:1.5}
+
+/* Portada con visor */
+.visor{position:relative;padding:clamp(28px,5vw,64px)}
+.visor::before,.visor::after,.visor i::before,.visor i::after{content:"";position:absolute;width:34px;height:34px;border:3px solid #fff;pointer-events:none}
+.visor::before{top:0;left:0;border-right:0;border-bottom:0}
+.visor::after{top:0;right:0;border-left:0;border-bottom:0}
+.visor i::before{bottom:0;left:0;border-right:0;border-top:0}
+.visor i::after{bottom:0;right:0;border-left:0;border-top:0}
+.visor i{position:absolute;inset:0;pointer-events:none}
+.rec{display:inline-flex;align-items:center;gap:9px;font-size:.75rem;font-weight:600;letter-spacing:.14em;color:#fff;margin-bottom:26px}
+.rec::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--tfs-coral)}
+@media (prefers-reduced-motion:no-preference){.rec::before{animation:late 1.6s steps(2,jump-none) infinite}}
+@keyframes late{50%{opacity:.25}}
+
+/* Problema */
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,56px);margin-top:36px}
+.caja{background:var(--sup-1);border:1px solid var(--linea);border-radius:14px;padding:clamp(20px,2.4vw,32px)}
+.caja h3{margin-bottom:14px;color:var(--texto-2);font-weight:500;font-size:.9rem;letter-spacing:.04em}
+.chat{display:grid;gap:9px}
+.chat p{background:var(--sup-3);border-radius:12px 12px 12px 3px;padding:10px 14px;font-size:.95rem;max-width:88%;color:var(--texto)}
+.chat p:nth-child(even){justify-self:end;border-radius:12px 12px 3px 12px;background:#26262A}
+.chat p.lost{opacity:.4}
+.lista-ok li{padding:11px 0 11px 30px;border-bottom:1px solid var(--linea);position:relative}
+.lista-ok li:last-child{border:0}
+.lista-ok li::before{content:"";position:absolute;left:0;top:19px;width:14px;height:8px;border-left:3px solid #fff;border-bottom:3px solid #fff;transform:rotate(-45deg) scale(.9)}
+
+/* Circuito */
+.circuito{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:44px;position:relative}
+.paso{position:relative;text-align:left;background:none;border:0;border-top:3px solid var(--linea-fuerte);padding:20px 18px 0 0;color:var(--texto-2)}
+.paso .n{display:block;font-size:.8rem;letter-spacing:.2em;color:var(--texto-3);margin-bottom:10px;font-variant-numeric:tabular-nums}
+.paso h3{color:var(--texto-2);font-size:1.15rem;transition:color .2s}
+.paso:hover h3,.paso.on h3{color:#fff}
+.paso.on{border-top-color:var(--tfs-coral)}
+.detalle{margin-top:34px;min-height:7.5em;background:var(--sup-1);border:1px solid var(--linea);border-radius:14px;padding:clamp(20px,2.6vw,34px);display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:start}
+.detalle .quien{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--texto-2);border:1px solid var(--linea-fuerte);border-radius:99px;padding:6px 14px;white-space:nowrap}
+.detalle p{max-width:46em}
+.detalle .ej{display:block;margin-top:10px;color:var(--texto-2);font-size:.95rem}
+
+/* Tarjeta de decisión (réplica) */
+.demo{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(18px,3vw,40px);margin-top:30px;align-items:start}
+.tarjeta{background:var(--sup-2);border:1px solid var(--linea-fuerte);border-radius:16px;padding:clamp(18px,2.4vw,30px)}
+.tarjeta .tema{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--texto-3);margin-bottom:10px}
+.tarjeta h3{font-size:clamp(1.15rem,1.7vw,1.5rem);line-height:1.25}
+.tarjeta .det{color:var(--texto-2);font-size:.95rem;margin:10px 0 18px}
+.opcion{display:grid;grid-template-columns:34px 1fr auto;gap:12px;align-items:start;width:100%;text-align:left;background:var(--sup-1);border:1.5px solid var(--linea);border-radius:12px;padding:13px 14px;margin-bottom:10px;transition:border-color .15s,background .15s}
+.opcion:hover{border-color:var(--linea-fuerte)}
+.opcion .l{width:30px;height:30px;border-radius:50%;border:1.5px solid var(--linea-fuerte);display:grid;place-items:center;font-weight:700;font-size:.9rem}
+.opcion .t{font-size:.95rem;line-height:1.4}
+.opcion .rec-tag{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--texto-2);border:1px solid var(--linea-fuerte);border-radius:99px;padding:3px 9px;white-space:nowrap}
+.opcion[aria-pressed="true"]{border-color:var(--tfs-coral);background:#1a1112}
+.opcion[aria-pressed="true"] .l{background:var(--tfs-coral);border-color:var(--tfs-coral);color:#000}
+.comentario{width:100%;margin-top:6px;background:var(--sup-1);border:1.5px solid var(--linea);border-radius:12px;padding:12px 14px;color:var(--texto);font:inherit;font-size:.95rem;min-height:64px;resize:none}
+.enviar{margin-top:14px;display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:12px 24px;border-radius:8px;background:var(--tfs-coral);color:#000;font-weight:600;border:0}
+.enviar:disabled{background:var(--sup-3);color:var(--texto-3);cursor:default}
+.enviar:not(:disabled):hover{background:#ff6a70}
+.efecto{background:var(--sup-1);border:1px solid var(--linea);border-radius:16px;padding:clamp(18px,2.4vw,30px);min-height:300px}
+.efecto h3{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--texto-3);font-weight:500;margin-bottom:16px}
+.efecto .vacio{color:var(--texto-3);font-size:.95rem}
+.nivel{display:inline-flex;align-items:center;gap:10px;font-weight:600;color:#fff;margin-bottom:12px}
+.nivel b{display:grid;place-items:center;width:30px;height:30px;border-radius:8px;background:var(--sup-3);border:1px solid var(--linea-fuerte)}
+.efecto .accion{color:var(--texto);font-size:.95rem;line-height:1.5}
+.rastro{margin-top:18px;padding-top:16px;border-top:1px solid var(--linea);display:grid;gap:8px;font-size:.85rem;color:var(--texto-2)}
+.rastro li{display:grid;grid-template-columns:62px 1fr;gap:10px}
+.rastro time{color:var(--texto-3);font-variant-numeric:tabular-nums}
+.rastro li{animation:entra .4s ease both}
+
+/* Niveles */
+.niveles{display:grid;gap:12px;margin-top:36px}
+.niv{display:grid;grid-template-columns:70px 230px 1fr;gap:18px;align-items:center;background:var(--sup-1);border:1px solid var(--linea);border-radius:14px;padding:16px 20px}
+.niv .num{font-size:2.2rem;font-weight:800;color:#fff;letter-spacing:-.03em;line-height:1}
+.niv h3{font-size:1.05rem}
+.niv p{color:var(--texto-2);font-size:.95rem}
+.niv.regla{border-color:var(--linea-fuerte);background:var(--sup-3)}
+.niv:nth-child(1) .num{opacity:.4}.niv:nth-child(2) .num{opacity:.6}.niv:nth-child(3) .num{opacity:.8}
+
+/* Sapients */
+.tres{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,24px);margin-top:34px}
+.sap{background:var(--sup-1);border:1px solid var(--linea);border-radius:14px;padding:22px}
+.sap .oficio{color:var(--texto-2);font-size:.9rem;margin:6px 0 14px}
+.sap p{font-size:.95rem}
+.base{margin-top:18px;border:1px dashed var(--linea-fuerte);border-radius:14px;padding:16px 22px;display:flex;gap:16px;align-items:center;justify-content:center;color:var(--texto);text-align:center;flex-wrap:wrap}
+.base strong{letter-spacing:.02em}
+
+/* YouTube */
+.fila{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,2vw,24px);margin-top:36px}
+.fila li{border-top:3px solid var(--linea-fuerte);padding-top:16px}
+.fila li:last-child{border-color:var(--tfs-coral)}
+.fila h3{margin-bottom:8px}
+.fila p{color:var(--texto-2);font-size:.95rem}
+.cierre{margin-top:38px;font-size:clamp(1.15rem,2vw,1.6rem);line-height:1.35;color:#fff;max-width:30em;font-weight:500;letter-spacing:-.01em}
+
+@media (min-width:901px){.una{max-width:none;font-size:clamp(1.6rem,2.8vw,2.3rem)}.demo{margin-top:18px}.comentario{min-height:44px}.tarjeta .det{margin:8px 0 14px}.opcion{margin-bottom:8px;padding:10px 14px}}
+@media (max-width:900px){
+  body{overflow:auto}
+  .diapo{position:static;display:none;padding-top:84px;min-height:100vh}
+  .dos,.demo,.tres,.fila{grid-template-columns:1fr}
+  .circuito{grid-template-columns:1fr;gap:6px}
+  .paso{padding-bottom:12px}
+  .detalle{grid-template-columns:1fr;gap:12px}
+  .niv{grid-template-columns:52px 1fr}
+  .niv p{grid-column:1/-1}
+  .barra .acciones .solo-pc{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="barra">
+  <img src="/assets/logos/Logo_TFS_white_2.svg" alt="Truth Frame Studio" width="140" height="24">
+  <div class="acciones">
+    <a href="/diana-cardona/como-trabajamos/guion/" class="solo-pc" target="_blank" rel="noopener">Guion</a>
+    <button type="button" id="pantalla" class="solo-pc">Pantalla completa</button>
+  </div>
+</header>
+<div class="progreso" id="progreso" role="presentation"></div>
+
+<main class="diapos" id="diapos">
+
+<!-- 1 PORTADA -->
+<section class="diapo activa" aria-label="Portada">
+  <div class="cont visor">
+    <i></i>
+    <p class="rec">DECISIONES CON RASTRO</p>
+    <h1>Decidir bien, con el cliente, sin perder nada en el camino.</h1>
+    <p class="lead">Así trabajamos en Truth Frame Studio con <strong>Cosiaca</strong>, nuestro asistente de inteligencia artificial: la IA prepara, las personas deciden y todo queda escrito.</p>
+    <p class="claim" style="margin:34px 0 0">Visión · Producción · Impacto</p>
+  </div>
+</section>
+
+<!-- 2 PROBLEMA -->
+<section class="diapo" aria-label="El problema">
+  <div class="cont">
+    <p class="claim">El problema</p>
+    <h2>Un proyecto se decide en cientos de pequeñas respuestas. Casi todas se pierden.</h2>
+    <div class="dos">
+      <div class="caja">
+        <h3>ANTES · mensajes sueltos</h3>
+        <div class="chat">
+          <p>¿Dejamos el botón de WhatsApp?</p>
+          <p>Sí, ya veremos</p>
+          <p class="lost">¿Cuál analítica? Había tres opciones…</p>
+          <p class="lost">Te mando el PDF otra vez</p>
+        </div>
+      </div>
+      <div class="caja">
+        <h3>AHORA · una decisión, un registro</h3>
+        <ul class="lista-ok">
+          <li>Cada pregunta llega con <strong>opciones, recomendación y consecuencia</strong>.</li>
+          <li>La persona <strong>elige con un clic</strong> y puede dejar su nota.</li>
+          <li>Queda <strong>quién decidió, qué y cuándo</strong>, y cómo deshacerlo.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="peq" style="margin-top:22px">En el sitio de Truth Frame Studio se tomaron 75 decisiones en nueve días. Hoy ninguna depende de buscar en un chat.</p>
+  </div>
+</section>
+
+<!-- 3 CIRCUITO -->
+<section class="diapo" aria-label="El circuito">
+  <div class="cont">
+    <p class="claim">El circuito</p>
+    <h2>Del conocimiento a la decisión: cinco pasos.</h2>
+    <div class="circuito" role="tablist" aria-label="Pasos del circuito">
+      <button class="paso on" role="tab" aria-selected="true" data-i="0"><span class="n">01</span><h3>Lo que sabemos</h3></button>
+      <button class="paso" role="tab" aria-selected="false" data-i="1"><span class="n">02</span><h3>Cosiaca prepara</h3></button>
+      <button class="paso" role="tab" aria-selected="false" data-i="2"><span class="n">03</span><h3>La persona decide</h3></button>
+      <button class="paso" role="tab" aria-selected="false" data-i="3"><span class="n">04</span><h3>Se ejecuta</h3></button>
+      <button class="paso" role="tab" aria-selected="false" data-i="4"><span class="n">05</span><h3>Queda escrito</h3></button>
+    </div>
+    <div class="detalle" id="detalle" aria-live="polite">
+      <span class="quien" id="d-quien">Conocimiento</span>
+      <p id="d-txt"></p>
+    </div>
+  </div>
+</section>
+
+<!-- 4 DEMO -->
+<section class="diapo" aria-label="Una decisión real">
+  <div class="cont">
+    <p class="claim">Una decisión real · espacio de clientes</p>
+    <h2 class="una">Así se ve decidir. Elige una opción.</h2>
+    <div class="demo">
+      <div class="tarjeta">
+        <p class="tema">Truth Frame Studio · pendiente</p>
+        <h3>Analítica del sitio: ¿cuál usamos?</h3>
+        <p class="det">Queremos medir visitas por página, clics en los botones y envíos del formulario, sin cookies. Con la que elijas activamos la analítica y dejamos la política de privacidad en su versión final.</p>
+        <div id="opciones">
+          <button type="button" class="opcion" aria-pressed="false" data-k="A"><span class="l">A</span><span class="t">Umami: ya está integrado en el sitio, es gratis y no usa cookies. Mide lo que pediste.</span><span class="rec-tag">Recomendada</span></button>
+          <button type="button" class="opcion" aria-pressed="false" data-k="B"><span class="l">B</span><span class="t">Cloudflare Web Analytics: gratis, pero mide menos.</span><span></span></button>
+          <button type="button" class="opcion" aria-pressed="false" data-k="C"><span class="l">C</span><span class="t">Plausible: cuesta unos USD 9 al mes.</span><span></span></button>
+        </div>
+        <textarea class="comentario" id="coment" placeholder="Si quieres, deja una nota…" aria-label="Nota opcional"></textarea>
+        <button type="button" class="enviar" id="enviar" disabled>Enviar decisión</button>
+        <p class="peq" style="margin-top:10px">Demostración: no guarda nada. La decisión real de Diana fue la opción A.</p>
+      </div>
+      <div class="efecto" id="efecto" aria-live="polite">
+        <h3>Lo que activa tu decisión</h3>
+        <p class="vacio">Cada opción trae escrita, antes de elegirla, la acción que dispara y quién la ejecuta. Elige una para verla.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 NIVELES -->
+<section class="diapo" aria-label="Niveles de autonomía">
+  <div class="cont">
+    <p class="claim">Quién hace qué</p>
+    <h2>La IA actúa según el riesgo. Lo que importa lo decide una persona.</h2>
+    <div class="niveles">
+      <div class="niv"><span class="num">0</span><h3>Hacer solo</h3><p>Interno y reversible: anotar la decisión, guardar un archivo, actualizar el estado.</p></div>
+      <div class="niv"><span class="num">1</span><h3>Hacer y avisar</h3><p>Ya decidido por el cliente y fácil de deshacer: se hace, se prueba y se avisa con la forma de revertirlo.</p></div>
+      <div class="niv"><span class="num">2</span><h3>Preparar y esperar el OK</h3><p>Se deja listo (borrador, cotización, cambio grande) y no sale hasta que una persona lo apruebe.</p></div>
+      <div class="niv"><span class="num">3</span><h3>Nunca solo</h3><p>Dinero, credenciales, contratos, borrar datos, enviar algo a terceros.</p></div>
+      <div class="niv regla"><span class="num">!</span><h3>La regla de oro</h3><p>Nada con precio, plazo o compromiso nuevo sale sin que una persona lo vea. Ante la duda, el nivel sube.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 SAPIENTS -->
+<section class="diapo" aria-label="Detrás: el conocimiento">
+  <div class="cont">
+    <p class="claim">Detrás de las opciones</p>
+    <h2>Un mismo conocimiento, tres miradas distintas.</h2>
+    <p class="lead" style="margin-top:16px">Los <strong>sapients</strong> son asistentes que comparten una base de conocimiento verificada —cada dato con su fuente y su confianza— pero miran distinto. Si discrepan, el desacuerdo queda visible y la persona decide con él delante.</p>
+    <div class="tres">
+      <div class="sap"><h3>La que cuida lo pedido</h3><p class="oficio">Mirada de cliente</p><p>Revisa que la propuesta responda a lo que la clienta realmente solicitó.</p></div>
+      <div class="sap"><h3>El que entrega</h3><p class="oficio">Mirada de producción</p><p>Pregunta qué frena la entrega y qué se puede deshacer si algo falla.</p></div>
+      <div class="sap"><h3>La que cuida lo público</h3><p class="oficio">Mirada de marca</p><p>Vigila lo que verá el público y lo que nunca debe publicarse.</p></div>
+    </div>
+    <div class="base"><strong>Base compartida de conocimiento</strong><span class="peq" style="color:var(--texto-2)">documentos del cliente · decisiones anteriores · reglas de marca · fuentes con fecha</span></div>
+    <p class="peq" style="margin-top:16px">En construcción: funciona con clientes reales y seguimos afinándolo. La plataforma la desarrolla Darío Sosa; el criterio de cada caso es del equipo.</p>
+  </div>
+</section>
+
+<!-- 7 YOUTUBE -->
+<section class="diapo" aria-label="Aplicado a YouTube">
+  <div class="cont">
+    <p class="claim">Lo que esto significa para un canal</p>
+    <h2>Es el mismo método: preparar la mejor decisión y dejarla escrita.</h2>
+    <ol class="fila">
+      <li><h3>Datos del canal</h3><p>YouTube Studio: retención, clics, fuentes de tráfico. Cada cifra con su origen.</p></li>
+      <li><h3>Hipótesis con evidencia</h3><p>Qué está pasando y por qué lo creemos, sin inventar lo que los datos no dicen.</p></li>
+      <li><h3>Opciones con costo y riesgo</h3><p>Dos o tres caminos, una recomendación y lo que implica cada uno.</p></li>
+      <li><h3>Decisión y medición</h3><p>El cliente decide, se ejecuta y se mide. Lo aprendido vuelve al conocimiento.</p></li>
+    </ol>
+    <p class="cierre">No se trata de opinar sobre un canal. Se trata de que quien decide tenga delante lo que necesita, y de que lo decidido quede escrito.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="pie">
+  <span class="cuenta" id="cuenta">1 / 7</span>
+  <div class="nav">
+    <button type="button" id="ant" aria-label="Anterior" disabled>&larr;</button>
+    <button type="button" id="sig" aria-label="Siguiente">&rarr;</button>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var ds=[].slice.call(document.querySelectorAll('.diapo')),i=0;
+  var $=function(id){return document.getElementById(id)};
+  function ir(n){
+    if(n<0||n>=ds.length)return;
+    ds[i].classList.remove('activa');i=n;ds[i].classList.add('activa');ds[i].scrollTop=0;
+    $('cuenta').textContent=(i+1)+' / '+ds.length;
+    $('progreso').style.width=((i+1)/ds.length*100)+'%';
+    $('ant').disabled=i===0;$('sig').disabled=i===ds.length-1;
+    try{history.replaceState(null,'','#'+(i+1))}catch(e){}
+  }
+  $('ant').onclick=function(){ir(i-1)};$('sig').onclick=function(){ir(i+1)};
+  document.addEventListener('keydown',function(e){
+    if(/^(TEXTAREA|INPUT)$/.test(e.target.tagName))return;
+    if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();ir(i+1)}
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();ir(i-1)}
+    else if(e.key==='Home')ir(0);else if(e.key==='End')ir(ds.length-1);
+    else if(e.key==='f'||e.key==='F')pc();
+  });
+  function pc(){try{document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen()}catch(e){}}
+  $('pantalla').onclick=pc;
+  var h=parseInt((location.hash||'').slice(1),10);ir(h>=1&&h<=ds.length?h-1:0);
+  if(!(h>1))$('progreso').style.width=(1/ds.length*100)+'%';
+
+  /* Circuito */
+  var pasos=[
+    ['Conocimiento','Todo lo que el estudio sabe de un cliente vive ordenado: sus documentos, lo que ya se decidió, las reglas de marca. Cada dato lleva su fuente y su fecha, y nada se borra: si algo cambia, se reemplaza y queda la historia.','Ejemplo: el brief de la clienta, el brand kit, las 75 decisiones anteriores.'],
+    ['Cosiaca','Cosiaca lee lo que llegó, lo cruza con lo que ya sabemos y prepara la decisión: dos o tres opciones, una recomendación, lo que cuesta y lo que arriesga cada una. No decide: ordena la información para que decidir sea fácil.','Ejemplo: «Analítica del sitio: Umami, Cloudflare o Plausible».'],
+    ['Una persona','La clienta ve la pregunta en su espacio, elige y deja una nota si quiere. Su respuesta, verificada con su correo, es la única que activa una acción. Un comentario suelto no dispara nada.','Ejemplo: Diana elige la opción A.'],
+    ['Cosiaca y el equipo','Cada opción trae escrita su acción y su nivel de riesgo. Lo reversible se hace y se avisa; lo que compromete dinero, plazos o a terceros espera a una persona del equipo.','Ejemplo: se activa la analítica y se publica la política de privacidad final.'],
+    ['Registro','Queda escrito quién decidió, qué, cuándo, qué se hizo con eso y cómo se deshace. La próxima decisión parte de ahí, no de la memoria de nadie.','Ejemplo: la decisión de WhatsApp (se quitó el botón) sigue consultable, con su fecha.']
+  ];
+  var bs=[].slice.call(document.querySelectorAll('.paso'));
+  function paso(n){
+    bs.forEach(function(b,k){b.classList.toggle('on',k===n);b.setAttribute('aria-selected',k===n)});
+    $('d-quien').textContent=pasos[n][0];
+    $('d-txt').innerHTML=pasos[n][1]+'<span class="ej">'+pasos[n][2]+'</span>';
+  }
+  bs.forEach(function(b){b.onclick=function(){paso(+b.dataset.i)}});paso(0);
+
+  /* Demo de la tarjeta */
+  var efectos={
+    A:{n:2,a:'Se crea la cuenta de Umami, se pega el identificador en el sitio, se deja la política de privacidad en su versión final, se prueba y se publica.',q:'Espera el OK de una persona del equipo antes de salir.'},
+    B:{n:2,a:'Se activa Cloudflare Web Analytics, se ajusta el código y la política de privacidad a esa herramienta, se prueba y se publica.',q:'Espera el OK de una persona del equipo antes de salir.'},
+    C:{n:3,a:'Se abre la cuenta de Plausible y se paga USD 9 al mes. Después se ajusta el código y la política.',q:'Nivel 3: tiene dinero de por medio, nunca sale sin una persona.'}
+  };
+  var sel=null,ops=[].slice.call(document.querySelectorAll('.opcion'));
+  ops.forEach(function(o){o.onclick=function(){
+    sel=o.dataset.k;ops.forEach(function(x){x.setAttribute('aria-pressed',x===o)});$('enviar').disabled=false;
+    var e=efectos[sel];
+    $('efecto').innerHTML='<h3>Lo que activa tu decisión</h3><p class="nivel"><b>'+e.n+'</b> Nivel '+e.n+'</p><p class="accion">'+e.a+'</p><p class="peq" style="margin-top:10px">'+e.q+'</p>';
+  }});
+  $('enviar').onclick=function(){
+    if(!sel)return;var e=efectos[sel];
+    var ahora=new Date().toLocaleTimeString('es-CO',{hour:'2-digit',minute:'2-digit'});
+    var n=$('coment').value.trim();
+    $('efecto').innerHTML='<h3>Lo que activa tu decisión</h3><p class="nivel"><b>'+e.n+'</b> Nivel '+e.n+'</p><p class="accion">'+e.a+'</p>'
+      +'<ul class="rastro"><li><time>'+ahora+'</time><span>Decisión registrada: opción '+sel+(n?' · con nota':'')+'</span></li>'
+      +'<li><time>'+ahora+'</time><span>Aviso al equipo, con la acción que sigue</span></li>'
+      +'<li><time>'+ahora+'</time><span>'+e.q+'</span></li></ul>';
+    $('enviar').disabled=true;$('enviar').textContent='Decisión enviada';
+  };
+})();
+</script>
+</body>
+</html>
