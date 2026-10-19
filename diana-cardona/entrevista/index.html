@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mesa de entrevista</title>
+<meta name="description" content="Mesa de apoyo para la entrevista de Diana Cardona con Wolf Digital Marketing Consulting.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/assets/iconos/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/tokens.css">
+<style>
+:root{
+  --sup-1:#0E0E0E;--sup-2:#161616;--sup-3:#1F1F1F;--linea:rgba(255,255,255,.13);--linea-f:rgba(255,255,255,.32);
+  --t:var(--tfs-editorial);--t2:#B5B2AC;--t3:#8F8C87;--aviso:#FFB4AB;color-scheme:dark
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{background:#000;color:var(--t);font-family:var(--tfs-fuente);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;display:flex;flex-direction:column}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:inherit}
+strong,b{color:#fff;font-weight:600}
+:focus-visible{outline:3px solid var(--tfs-coral);outline-offset:2px;border-radius:6px}
+h1,h2,h3,p,ul,ol{margin:0}ul,ol{padding:0;list-style:none}
+
+/* Barra superior (junto a la cámara: lo mínimo) */
+.top{flex:none;display:flex;align-items:center;justify-content:center;gap:12px;padding:8px 14px;border-bottom:1px solid var(--linea);background:#000}
+.top .marca{font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;color:var(--t3);margin-right:auto;white-space:nowrap}
+.reloj{display:flex;align-items:center;gap:10px}
+.reloj output{font-variant-numeric:tabular-nums;font-weight:700;min-width:46px;text-align:right}
+.reloj output.pasa{color:var(--aviso)}
+.barra{width:84px;height:5px;border-radius:9px;background:var(--sup-3);overflow:hidden}
+.barra i{display:block;height:100%;width:0;background:#fff}
+.barra i.pasa{background:var(--aviso)}
+.chip{background:var(--sup-2);border:1px solid var(--linea-f);border-radius:8px;padding:7px 13px;font-size:.8125rem;font-weight:600;white-space:nowrap}
+.chip:hover{border-color:#fff}
+.chip[aria-pressed="true"]{background:#fff;color:#000;border-color:#fff}
+
+/* Zona central */
+.centro{flex:1;overflow-y:auto;padding:18px 16px 24px}
+.col{max-width:860px;margin-inline:auto}
+.panel{display:none}.panel.on{display:block}
+
+/* Tarjeta de respuesta */
+.resp{background:var(--sup-1);border:1px solid var(--linea-f);border-radius:16px;padding:clamp(18px,3vw,30px);margin-bottom:18px}
+.resp-cab{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.resp-cab .n{font-size:.8rem;color:var(--t3);font-variant-numeric:tabular-nums;letter-spacing:.1em}
+.resp-cab .flechas{margin-left:auto;display:flex;gap:8px}
+.flecha{width:44px;height:44px;border-radius:50%;background:var(--sup-3);border:1px solid var(--linea-f);font-size:1.15rem;display:grid;place-items:center}
+.flecha:hover{background:var(--tfs-coral);border-color:var(--tfs-coral);color:#000}
+.lang{display:inline-flex;border:1px solid var(--linea-f);border-radius:8px;overflow:hidden}
+.lang button{background:none;border:0;padding:7px 14px;font-size:.8125rem;font-weight:700;color:var(--t2)}
+.lang button[aria-pressed="true"]{background:#fff;color:#000}
+.pregunta{font-size:clamp(1.05rem,2vw,1.25rem);color:var(--t2);margin-bottom:10px}
+.ancla{font-size:clamp(1.5rem,3.4vw,2.2rem);line-height:1.15;font-weight:700;letter-spacing:-.02em;color:#fff;margin-bottom:18px}
+.puntos{display:grid;gap:11px;margin-bottom:6px}
+.puntos li{position:relative;padding-left:22px;font-size:clamp(1.05rem,1.9vw,1.3rem);line-height:1.4}
+.puntos li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:9px;border-radius:50%;background:var(--tfs-coral)}
+.en-txt{font-size:clamp(1.15rem,2.1vw,1.45rem);line-height:1.5;color:#fff;font-weight:500}
+.cuidado{margin-top:16px;border:1px solid rgba(255,180,171,.45);border-radius:10px;padding:10px 14px;color:var(--aviso);font-size:.95rem}
+.cuidado b{color:var(--aviso)}
+.defender{margin-top:10px;color:var(--t3);font-size:.875rem}
+body.ensayo .resp .ancla~*,body.ensayo .resp .cuerpo{display:none}
+body.ensayo .resp.mostrar .ancla~*,body.ensayo .resp.mostrar .cuerpo{display:revert}
+body.ensayo .resp:not(.mostrar) .ancla{display:none}
+.revelar{display:none;margin-top:6px;min-height:48px;padding:12px 22px;border:0;border-radius:8px;background:var(--tfs-coral);color:#000;font-weight:600}
+body.ensayo .resp:not(.mostrar) .revelar{display:inline-block}
+body.ensayo .resp.mostrar .revelar{display:none}
+
+/* Rejilla de preguntas */
+.rej{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:9px}
+.q{display:grid;grid-template-columns:30px 1fr;gap:10px;align-items:center;text-align:left;background:var(--sup-2);border:1px solid var(--linea);border-radius:12px;padding:12px 14px;min-height:56px}
+.q .k{width:28px;height:28px;border-radius:7px;background:var(--sup-3);display:grid;place-items:center;font-size:.8rem;font-weight:700;color:var(--t2)}
+.q span:last-child{font-size:.95rem;line-height:1.25;font-weight:500}
+.q:hover{border-color:var(--linea-f)}
+.q[aria-current="true"]{border-color:var(--tfs-coral);background:#171011}
+.q[aria-current="true"] .k{background:var(--tfs-coral);color:#000}
+.q.visto .k::after{content:"";}
+.q.visto{opacity:.62}.q.visto[aria-current="true"]{opacity:1}
+
+/* Otros paneles */
+.sec-t{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--t3);margin:0 0 10px}
+.tarj{background:var(--sup-1);border:1px solid var(--linea);border-radius:14px;padding:18px 20px;margin-bottom:12px}
+.tarj.grande{border-color:var(--linea-f)}
+.tarj h3{font-size:1rem;color:#fff;margin-bottom:8px}
+.tarj .en-txt{font-size:clamp(1.1rem,2vw,1.35rem)}
+.tarj .es{color:var(--t2);font-size:.95rem;margin-top:8px}
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.dato{display:grid;grid-template-columns:150px 1fr;gap:14px;padding:12px 0;border-bottom:1px solid var(--linea)}
+.dato:last-child{border:0}
+.dato b{font-size:1.3rem;letter-spacing:-.02em}
+.dato span{color:var(--t2);font-size:.95rem}
+.dato em{display:block;font-style:normal;color:var(--aviso);font-size:.85rem;margin-top:3px}
+.pal{display:flex;flex-wrap:wrap;gap:8px}
+.pal span{background:var(--sup-3);border-radius:8px;padding:6px 12px;font-size:.95rem}
+.pal small{color:var(--t3);margin-left:6px}
+
+/* Dock inferior */
+.dock{flex:none;display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap;padding:10px 12px;border-top:1px solid var(--linea);background:#000}
+.dock .tabs{display:flex;gap:6px;flex-wrap:wrap}
+.tab{background:none;border:1px solid var(--linea);border-radius:99px;padding:9px 16px;font-size:.875rem;font-weight:600;color:var(--t2)}
+.tab:hover{color:#fff;border-color:var(--linea-f)}
+.tab[aria-selected="true"]{background:#fff;color:#000;border-color:#fff}
+.dock .sep{width:1px;height:26px;background:var(--linea-f);margin:0 6px}
+.enl{display:flex;gap:6px;flex-wrap:wrap}
+.enl a{text-decoration:none;background:var(--sup-2);border:1px solid var(--linea-f);border-radius:8px;padding:9px 14px;font-size:.875rem;font-weight:600}
+.enl a:hover{background:var(--tfs-coral);border-color:var(--tfs-coral);color:#000}
+@media (max-width:720px){.dos{grid-template-columns:1fr}.dato{grid-template-columns:1fr;gap:2px}.dock .sep{display:none}.top .marca{display:none}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <span class="marca">Mesa de entrevista · Diana Cardona</span>
+  <div class="reloj" role="timer" aria-label="Cronómetro de respuesta">
+    <output id="lec">0:00</output>
+    <div class="barra"><i id="rel"></i></div>
+    <button class="chip" id="rb" type="button">Cronómetro 90 s</button>
+  </div>
+  <button class="chip" id="ens" type="button" aria-pressed="false">Ensayo</button>
+</header>
+
+<main class="centro" id="centro">
+<div class="col">
+
+<!-- PREGUNTAS -->
+<section class="panel on" id="p-preg" aria-label="Preguntas">
+  <article class="resp" id="resp">
+    <div class="resp-cab">
+      <span class="n" id="rn"></span>
+      <div class="lang" role="group" aria-label="Idioma de la respuesta">
+        <button type="button" id="l-es" aria-pressed="true">ES</button>
+        <button type="button" id="l-en" aria-pressed="false">EN</button>
+      </div>
+      <div class="flechas">
+        <button class="flecha" id="ant" type="button" aria-label="Pregunta anterior">&larr;</button>
+        <button class="flecha" id="sig" type="button" aria-label="Pregunta siguiente">&rarr;</button>
+      </div>
+    </div>
+    <p class="pregunta" id="rq"></p>
+    <h1 class="ancla" id="ra"></h1>
+    <div class="cuerpo" id="rc"></div>
+    <button class="revelar" id="rev" type="button">Ver respuesta</button>
+  </article>
+  <p class="sec-t">Toca una pregunta o usa las teclas 1–9, 0 y las flechas</p>
+  <div class="rej" id="rej"></div>
+</section>
+
+<!-- ENGLISH -->
+<section class="panel" id="p-en" aria-label="In English">
+  <p class="sec-t">Para hablar de ti misma en inglés</p>
+  <div class="tarj grande">
+    <h3>1 · Dilo al empezar (con calma, sonriendo)</h3>
+    <p class="en-txt">“Before we start, a quick apology: my English is a bit rusty. I understand it very well, and with a little more practice I'd speak it quickly. I've worked for several years with people in the United States who only spoke English, and we understood each other well.”</p>
+    <p class="es">Es verdad y la defiende: lo entiendes bien, y el trabajo con gente de EE. UU. fue real. Dilo una vez; no te disculpes más después.</p>
+  </div>
+  <div class="tarj grande">
+    <h3>2 · Sobre mí, en 45 segundos</h3>
+    <p class="en-txt">“I'm Diana Cardona, an audiovisual producer with twenty-seven years of experience, and co-founder of Truth Frame Studio in Santo Domingo. For eight years I produced the video for Aviva Nuestros Corazones, a channel that grew from thirty thousand to over a hundred and seventy thousand subscribers, and I also handled its analytics and playlist structure. This year I advise two YouTube channels one-on-one: I read the data in YouTube Studio, find the main problem, and say what to do first. I'd like to bring that to Wolf Digital's clients.”</p>
+  </div>
+  <div class="tarj">
+    <h3>3 · Si necesitas más tiempo o no entendiste</h3>
+    <div class="dos">
+      <p class="en-txt">“Could you say that again, please?”</p>
+      <p class="en-txt">“Let me think for a second.”</p>
+      <p class="en-txt">“Let me say it in a simpler way.”</p>
+      <p class="en-txt">“Do you mean…?”</p>
+      <p class="en-txt">“I'll give you an example.”</p>
+      <p class="en-txt">“I understand you perfectly; I'm just looking for the word.”</p>
+    </div>
+  </div>
+  <div class="tarj">
+    <h3>4 · Palabras que vas a usar</h3>
+    <div class="pal">
+      <span>CTR<small>si-ti-ar</small></span><span>impressions<small>im-préshons</small></span><span>watch time<small>uóch táim</small></span>
+      <span>traffic source<small>tráfic sors</small></span><span>thumbnail<small>zámneil</small></span><span>audience<small>ó-diens</small></span>
+      <span>analytics<small>ana-lí-tics</small></span><span>playlist<small>pléi-list</small></span><span>monetization<small>mo-ne-tai-séi-shon</small></span>
+      <span>diagnosis<small>dai-ag-nó-sis</small></span><span>deliverable<small>di-lí-ve-ra-bol</small></span>
+    </div>
+  </div>
+  <div class="tarj grande">
+    <h3>5 · Cierre</h3>
+    <p class="en-txt">“Thank you for your time. I'd be glad to do a live diagnosis of a channel you choose, so you can see how I work.”</p>
+  </div>
+</section>
+
+<!-- RESCATE -->
+<section class="panel" id="p-res" aria-label="Rescate">
+  <p class="sec-t">Si te quedas en blanco</p>
+  <div class="tarj grande"><h3>Se te va una palabra</h3><p class="en-txt">“Give me a second — I know that word better in Spanish.”</p><p class="es">«Dame un segundo: esa palabra la sé mejor en español.»</p></div>
+  <div class="tarj grande"><h3>La pregunta es larga o compleja</h3><p class="en-txt">“Let me take a moment to organize that.”</p><p class="es">«Déjame un momento para ordenarlo.» Respira, mira la cámara, empieza con la idea principal.</p></div>
+  <div class="tarj grande"><h3>No entendiste</h3><p class="en-txt">“Could you repeat that? I want to answer the right thing.”</p><p class="es">«¿Puedes repetirlo? Quiero responder lo correcto.»</p></div>
+  <div class="tarj grande"><h3>No sabes la cifra exacta</h3><p class="en-txt">“I don't want to give you a number from memory. It's in the report, and I can send it to you.”</p><p class="es">«No quiero darte un número de memoria: está en el informe y te lo puedo enviar.» Mejor eso que inventarlo.</p></div>
+  <div class="tarj grande"><h3>Te estás alargando</h3><p class="en-txt">“I'll stop there — tell me if you want more detail on any part.”</p><p class="es">«Me detengo aquí; dime si quieres más detalle de alguna parte.»</p></div>
+  <div class="tarj grande"><h3>Te preguntan algo que no hiciste</h3><p class="en-txt">“I haven't done that yet. What I have done is…”</p><p class="es">«Eso todavía no lo he hecho. Lo que sí he hecho es…» y pasas a lo que sí.</p></div>
+</section>
+
+<!-- MIS PREGUNTAS -->
+<section class="panel" id="p-mis" aria-label="Mis preguntas">
+  <p class="sec-t">Tus preguntas para Eloisa · lleva cinco, usa tres</p>
+  <div class="tarj grande"><h3>1 · El cargo</h3><p class="en-txt">“Is the role as an employee or as an independent contractor, and how many hours a week?”</p><p class="es">¿Es empleada o contratista, y cuántas horas a la semana?</p></div>
+  <div class="tarj grande"><h3>2 · Los clientes</h3><p class="en-txt">“How many clients would I work with, and what size are their channels?”</p><p class="es">¿Con cuántos clientes trabajaría y de qué tamaño son sus canales?</p></div>
+  <div class="tarj grande"><h3>3 · El éxito</h3><p class="en-txt">“What would a good first quarter look like for you?”</p><p class="es">¿Cómo sería un buen primer trimestre?</p></div>
+  <div class="tarj grande"><h3>4 · El día a día</h3><p class="en-txt">“How do you structure a diagnosis and what do clients receive at the end?”</p><p class="es">¿Cómo estructuran un diagnóstico y qué recibe el cliente al final?</p></div>
+  <div class="tarj grande"><h3>5 · El inglés</h3><p class="en-txt">“How much of the work is in English, with clients or with the team?”</p><p class="es">¿Cuánto del trabajo es en inglés, con clientes o con el equipo?</p></div>
+  <div class="tarj grande"><h3>Al terminar</h3><p class="en-txt">“What are the next steps and timing?”</p><p class="es">¿Cuáles son los siguientes pasos y los tiempos?</p></div>
+</section>
+
+<!-- DATOS -->
+<section class="panel" id="p-dat" aria-label="Datos">
+  <p class="sec-t">Tus cifras, cómo decirlas y qué no decir</p>
+  <div class="tarj">
+    <div class="dato"><b>27 años</b><span>De producción audiovisual, desde 1999.<em>«27 años de trayectoria». Nada de «30».</em></span></div>
+    <div class="dato"><b>30K → +170K</b><span>Suscriptores de Aviva Nuestros Corazones, 2014–2023, mientras produjiste su video.<em>«Produje su video»; no «yo lo hice crecer». Cifra hasta 2023.</em></span></div>
+    <div class="dato"><b>51 millones</b><span>Veces que YouTube mostró las miniaturas de Entendiendo Los Tiempos en 2026, con un catálogo de más de 500 videos.<em>Cuéntalo como dato del diagnóstico, no como logro.</em></span></div>
+    <div class="dato"><b>CTR 4,67 %</b><span>De ese canal. Duración media de visualización: 14 min 22 s en episodios largos, cerca de la mitad.<em>Si piden más cifras: «están en el informe».</em></span></div>
+    <div class="dato"><b>6 meses</b><span>Plan de Entendiendo Los Tiempos: empieza midiendo el CTR por fuente de tráfico.<em>Con evaluación final.</em></span></div>
+    <div class="dato"><b>9 meses · 90 días</b><span>Eternidad Plus: red de canales por audiencia, informe de datos de 90 días, modelo de autosostenibilidad en tres niveles.<em>«Primeros resultados positivos en clics»: sin porcentajes de memoria.</em></span></div>
+    <div class="dato"><b>2 asesorías</b><span>De estrategia de YouTube 1:1 en 2026, con diagnóstico y plan por escrito.<em>Es lo reciente: dilo con naturalidad.</em></span></div>
+    <div class="dato"><b>3 × 3</b><span>Marco: tres masterclasses de tres videos, más clases en video para Hotmart.<em>Lo clínico es del Dr. Sosa. Sin detalles médicos.</em></span></div>
+    <div class="dato"><b>Tiempo completo</b><span>Horario compatible con Ciudad de México.<em></em></span></div>
+  </div>
+</section>
+
+</div>
+</main>
+
+<nav class="dock" aria-label="Navegación">
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" aria-selected="true" data-p="p-preg">Preguntas</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="p-en">In English</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="p-res">Rescate</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="p-mis">Mis preguntas</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="p-dat">Datos</button>
+  </div>
+  <span class="sep"></span>
+  <div class="enl">
+    <a href="/diana-cardona/como-trabajamos/" target="_blank" rel="noopener">Presentación</a>
+    <a href="/diana-cardona/como-trabajamos/guion/" target="_blank" rel="noopener">Speech</a>
+    <a href="/diana-cardona/" target="_blank" rel="noopener">Portafolio</a>
+    <a href="/diana-cardona/cv/" target="_blank" rel="noopener">CV</a>
+    <a href="/diana-cardona/carta/" target="_blank" rel="noopener">Postulación</a>
+  </div>
+</nav>
+
+<script>
+(function(){
+var Q=[
+{t:"Cuéntame de ti",
+ a:"Soy productora; hoy leo canales y digo qué hacer primero.",
+ p:["27 años de producción audiovisual, desde 1999. Cofundadora de Truth Frame Studio: producción, operación de contenidos y estrategia.","Ocho años produciendo Aviva Nuestros Corazones, de 30.000 a más de 170.000 suscriptores.","En 2026 asesoro a dos canales uno a uno, con diagnóstico y plan por escrito.","Cierre: «Por eso este cargo.»"],
+ en:"I'm Diana Cardona, an audiovisual producer with 27 years of experience and co-founder of Truth Frame Studio, in Santo Domingo. I produced the video for Aviva Nuestros Corazones for eight years while it grew from 30,000 to over 170,000 subscribers. This year I advise two YouTube channels one-on-one: I read the data, find the main problem, and say what to do first."},
+{t:"¿Por qué este cargo y por qué Wolf?",
+ a:"El trabajo que describen es el que hago hoy.",
+ p:["Hice YouTube Mastery 2.0 con Eloisa y quiero aplicar ese método con sus clientes.","Analizo con YouTube Studio y vidIQ: CTR, duración de visualización, fuentes de tráfico.","Además produzco: puedo ejecutar lo que recomiendo.","Disponible de tiempo completo, con horario de Ciudad de México."],
+ c:"Sin adular. Habla de lo que sí conoces de Wolf; no inventes detalles de su método.",
+ en:"This role describes what I do today: reading a channel's data and telling the client what to do first. I took Eloisa's YouTube Mastery 2.0 and I'd like to apply that method with your clients. I also produce, so I can execute what I recommend. I'm available full time, on a Mexico City schedule."},
+{t:"¿Cómo diagnosticas un canal?",
+ a:"Leo los datos, encuentro el problema principal y digo qué hacer primero.",
+ p:["Ejemplo, Entendiendo Los Tiempos: más de 500 videos, 51 millones de impresiones en 2026, CTR de 4,67 %.","Quien entra a un episodio largo ve 14 min 22 s, cerca de la mitad.","El plan de seis meses empieza midiendo el CTR por fuente de tráfico, para confirmar dónde está la palanca.","Entrego diagnóstico, propuesta y plan por escrito, con evaluación al final."],
+ c:"No cuentes tu método paso a paso: es lo que vendes. Cuenta el resultado: claridad y prioridad.",
+ en:"At Entendiendo Los Tiempos, a catalog of over 500 videos, YouTube showed the thumbnails more than 51 million times in 2026, with a 4.67% CTR. Viewers of long episodes watch about 14 minutes 22 seconds, nearly half. The six-month plan starts by measuring CTR by traffic source, to confirm where the lever is."},
+{t:"Un canal que hayas hecho crecer",
+ a:"Produje el video de Aviva mientras pasó de 30.000 a más de 170.000.",
+ p:["Octubre de 2014 a 2023: toda la producción de video, hasta la conferencia de Guadalajara.","El canal logró la monetización con AdSense durante mi trabajo allí.","Gestioné la analítica en YouTube Studio, las listas de reproducción y la estructura de la página principal.","Conferencias Mujer Verdadera: 2015, 2017, 2020 y 2023."],
+ c:"Di «produje» y «gestioné», no «yo lo hice crecer». La cifra llega hasta 2023.",
+ en:"I produced Aviva's video for eight years while the channel went from 30,000 to over 170,000 subscribers and reached AdSense monetization. I also handled analytics in YouTube Studio, the playlist architecture and the home page structure to help discovery."},
+{t:"Eternidad Plus",
+ a:"Propuse pasar de un canal único a una red de canales por audiencia.",
+ p:["Informe de datos de 90 días y modelo de autosostenibilidad en tres niveles.","Plan de implementación a nueve meses, con evaluación final.","Capacité al equipo de producción en la plataforma.","Hemos iterado títulos y miniaturas, con primeros resultados positivos en clics."],
+ c:"Sin porcentajes de memoria. Si preguntan: «Está en el informe y te lo envío».",
+ d:"Prepárate para defenderlo: qué cambió en títulos y miniaturas, y en qué clics.",
+ en:"At Eternidad Plus I proposed expanding from one channel to a network of channels by audience, with a 90-day data report, a three-level sustainability model and a nine-month plan. I trained their production team on the platform, and we've been iterating titles and thumbnails, with early positive results in clicks."},
+{t:"Tu experiencia en consultoría es reciente",
+ a:"Sí: la asesoría uno a uno es de este año. Leer canales y producir, no.",
+ p:["27 años produciendo; ocho gestionando un canal por dentro.","Dos asesorías con entregables por escrito y evaluación final.","Me formé con YouTube Mastery 2.0.","Propuesta: un diagnóstico en vivo de un canal que ustedes elijan."],
+ c:"Sin disculparte de más. Reconoce, reencuadra y ofrece la prueba.",
+ en:"Yes, one-on-one advising is new — this year. What isn't new is reading channels and producing. I've delivered a written diagnosis, proposal and plan for two channels, with a final evaluation. I'd be glad to do a live diagnosis of a channel you choose."},
+{t:"¿Cómo trabajas con equipos y clientes?",
+ a:"Coordino equipos y prioridades, y entrego por escrito.",
+ p:["Coordinación de equipos, prioridades de producción y flujos de edición.","Supervisión del equipo de miniaturas, con pruebas A/B/C.","Clientes internacionales: B&H Publishing, Ligonier Ministries, LifeWay Mujeres, Compassion International, Habitat for Humanity.","Capacitación del equipo de Eternidad Plus."],
+ c:"Solo los clientes que están en tu CV.",
+ en:"I coordinate teams, editing workflows and thumbnail A/B/C tests, and I've worked with international clients such as B&H Publishing, Ligonier Ministries, LifeWay Mujeres, Compassion International and Habitat for Humanity."},
+{t:"Cuéntame del proyecto del Dr. Marco Sosa",
+ a:"Un ecosistema de ventas y educación con YouTube como embudo.",
+ p:["Mi parte: planeación y producción del video, creación del canal, estructura editorial de tres masterclasses de tres videos y clases en video para Hotmart.","El sitio y la parte técnica los hace el equipo; el proyecto está en lanzamiento.","El contenido clínico es del Dr. Sosa."],
+ c:"Sin detalles médicos ni de sus decisiones. Sin cifras de ventas: no existen aún.",
+ en:"I'm part of the team of Dr. Marco Sosa's sales and education ecosystem, with YouTube as the funnel. My part is video planning and production, creating the YouTube channel, the editorial structure of three masterclasses and the video classes for Hotmart. The clinical content is the doctor's."},
+{t:"¿Y la inteligencia artificial? ¿Cómo trabajan?",
+ a:"Con Sapient la IA prepara las decisiones; las personas deciden; todo queda escrito.",
+ p:["Sapient es nuestra plataforma de gestión de conocimiento: de lo que sabemos de un cliente a una decisión informada.","Prepara opciones con recomendación y riesgo; el cliente elige y queda el registro.","Lo mismo aplica a un canal: datos, hipótesis, opciones, decisión y medición.","Si quiere verlo: tengo una presentación corta (botón «Presentación»)."],
+ c:"La IA no «decide». Y la plataforma la desarrolla Darío Sosa: tú la usas y diriges.",
+ en:"We work with Sapient, a knowledge management platform. The AI prepares each decision with options and a recommendation; people decide; everything is recorded. I'd apply the same approach to a channel: data, hypothesis, options, decision and measurement."},
+{t:"Tu inglés",
+ a:"Lo entiendo muy bien y lo hablaría con fluidez con algo de práctica.",
+ p:["Mi inglés es intermedio. Trabajé varios años con personas en Estados Unidos que solo hablaban inglés y nos entendimos bien.","Si hace falta, puedo hacer la entrevista o parte de ella en inglés.","Pasa a la pestaña «In English»."],
+ c:"Dilo una vez, con tranquilidad. Es honesto y no te resta.",
+ en:"My English is a bit rusty, but I understand it very well, and with a little more practice I'd speak it quickly. I've worked for several years with people in the United States who only spoke English, and we understood each other well."},
+{t:"Disponibilidad y horario",
+ a:"Tiempo completo, horario compatible con Ciudad de México.",
+ p:["Vivo en Santo Domingo.","Fecha de inicio: la que acordemos."],
+  en:"I'm available full time, on a schedule compatible with Mexico City."},
+{t:"Expectativa salarial",
+ a:"Primero preguntar su rango. Si insisten: USD 4.000 al mes.",
+ p:["«Prefiero conocer el presupuesto del cargo.»","Si insisten: «USD 4.000 mensuales por tiempo completo, como contratista; abierta a conversar según el alcance y a revisarlo a los 90 días.»","Después, silencio."],
+ c:"No menciones tu piso ni lo que cobras en TFS. Una frase y callarte.",
+ en:"Could you share the budget range for the role? If you'd like a number: USD 4,000 a month, full time, as a contractor. I'm open to discussing it based on scope, and reviewing it at 90 days."},
+{t:"¿Cuál es tu debilidad?",
+ a:"Mi inglés hablado y mi experiencia de consultoría necesitan más horas.",
+ p:["Inglés: lo entiendo muy bien, me falta soltura al hablar.","Consultoría: la asesoría 1:1 es reciente, por eso quiero hacerla a escala con un equipo como el de Wolf.","Lo que tengo: 27 años produciendo y criterio de canal."],
+ c:"Dos cosas reales, dichas con calma. Sin inventar una «debilidad disfrazada de virtud».",
+ en:"My spoken English needs practice, although I understand it very well. And my one-on-one consulting is recent, which is why I'm eager to do it at scale with a team like yours."},
+{t:"¿Qué harías en tus primeros 90 días?",
+ a:"Aprender cómo trabajan y entregar diagnósticos claros desde el principio.",
+ p:["Entender cómo trabaja Wolf con sus clientes y qué espera de cada entrega.","Empezar con diagnósticos con datos de YouTube Studio y planes por escrito.","Medir y evaluar al final, como hago hoy con mis dos asesorías."],
+ c:"No prometas resultados de crecimiento.",
+ en:"In the first 90 days I'd learn how you work with your clients, start with data-based diagnoses from YouTube Studio, deliver clear written plans, and measure and evaluate at the end, as I do today."}
+];
+
+var $=function(i){return document.getElementById(i)},i=0,lang='es',visto={};
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+function pintar(){
+  var q=Q[i];
+  $('rn').textContent=(i+1)+' / '+Q.length;
+  $('rq').textContent=q.t;
+  $('ra').textContent=lang==='es'?q.a:q.a;
+  var h='';
+  if(lang==='es'){
+    h='<ul class="puntos">'+q.p.map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul>';
+  }else{
+    h='<p class="en-txt">“'+esc(q.en)+'”</p>';
+  }
+  if(q.c)h+='<p class="cuidado"><b>Cuidado · </b>'+esc(q.c)+'</p>';
+  if(q.d)h+='<p class="defender">'+esc(q.d)+'</p>';
+  $('rc').innerHTML=h;
+  $('resp').classList.remove('mostrar');
+  visto[i]=1;
+  [].forEach.call(document.querySelectorAll('.q'),function(b,k){
+    b.setAttribute('aria-current',k===i);b.classList.toggle('visto',!!visto[k]&&k!==i);
+  });
+  $('l-es').setAttribute('aria-pressed',lang==='es');$('l-en').setAttribute('aria-pressed',lang==='en');
+}
+function ir(n){i=(n+Q.length)%Q.length;pintar()}
+var rej=$('rej');
+rej.innerHTML=Q.map(function(q,k){var key=k<9?String(k+1):(k===9?'0':String(k+1));return '<button class="q" type="button" data-k="'+k+'"><span class="k">'+key+'</span><span>'+esc(q.t)+'</span></button>'}).join('');
+rej.addEventListener('click',function(e){var b=e.target.closest('.q');if(b){ir(+b.dataset.k);window.scrollTo(0,0);$('centro').scrollTop=0}});
+$('ant').onclick=function(){ir(i-1)};$('sig').onclick=function(){ir(i+1)};
+$('l-es').onclick=function(){lang='es';pintar()};$('l-en').onclick=function(){lang='en';pintar()};
+$('rev').onclick=function(){$('resp').classList.add('mostrar')};
+$('ens').onclick=function(){var on=document.body.classList.toggle('ensayo');$('ens').setAttribute('aria-pressed',on);$('resp').classList.remove('mostrar')};
+
+/* Pestañas */
+var tabs=[].slice.call(document.querySelectorAll('.tab'));
+function panel(id){
+  tabs.forEach(function(t){t.setAttribute('aria-selected',t.dataset.p===id)});
+  [].forEach.call(document.querySelectorAll('.panel'),function(p){p.classList.toggle('on',p.id===id)});
+  $('centro').scrollTop=0;
+}
+tabs.forEach(function(t){t.onclick=function(){panel(t.dataset.p)}});
+
+/* Teclado */
+document.addEventListener('keydown',function(e){
+  if(e.metaKey||e.ctrlKey||e.altKey)return;
+  var k=e.key;
+  if(k==='ArrowRight'||k==='n'){ir(i+1)}else if(k==='ArrowLeft'||k==='p'){ir(i-1)}
+  else if(/^[1-9]$/.test(k)){panel('p-preg');ir(+k-1)}else if(k==='0'){panel('p-preg');ir(9)}
+  else if(k==='e'||k==='E'){lang=lang==='es'?'en':'es';panel('p-preg');pintar()}
+  else if(k==='t'||k==='T'){$('rb').click()}
+});
+
+/* Cronómetro de 90 s */
+var corre=false,t0=0,raf=0;
+function reloj(ms){
+  var s=ms/1000,m=Math.floor(s/60),r=Math.floor(s%60);
+  $('lec').textContent=m+':'+(r<10?'0'+r:r);
+  var pasa=s>90;$('rel').style.width=Math.min(100,s/90*100)+'%';
+  $('rel').classList.toggle('pasa',pasa);$('lec').classList.toggle('pasa',pasa);
+}
+function tick(){if(!corre)return;reloj(Date.now()-t0);raf=requestAnimationFrame(tick)}
+$('rb').onclick=function(){
+  var b=$('rb');
+  if(corre){corre=false;cancelAnimationFrame(raf);b.textContent='Reiniciar'}
+  else if(b.textContent==='Reiniciar'){reloj(0);b.textContent='Cronómetro 90 s'}
+  else{corre=true;t0=Date.now();b.textContent='Parar';tick()}
+};
+pintar();
+})();
+</script>
+</body>
+</html>
