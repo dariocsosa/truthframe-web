@@ -53,6 +53,17 @@ table.t{width:100%;border-collapse:collapse;font-size:8.4pt;margin-top:2mm}
 .vacio:first-of-type{border-top:0}
 .vacio q{color:#9d9a94;font-style:italic;quotes:none;display:block;margin-top:.4mm}
 .vacio .btn{background:var(--coral);color:#000;font-weight:700;padding:1mm 2.6mm;border-radius:3px;font-size:7pt;white-space:nowrap}
+.mock .chips{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6mm}
+.mock .chips div{background:#0e0e0e;border:1px solid #262626;border-radius:3px;padding:1.4mm 1.8mm}
+.mock .chips b{display:block;font-size:10pt;color:#fff}.mock .chips span{color:#9d9a94;font-size:6.6pt}
+.mock .c h4 em{font-style:normal;text-transform:none;letter-spacing:0;font-weight:500;color:#8d8a84}
+.mock .c.nuevo{border-color:#3a3a3a}
+table.cruce{width:100%;border-collapse:collapse;font-size:7.4pt}
+.cruce th{text-align:left;color:#8d8a84;font-weight:600;padding:0 2mm 1mm 0;border-bottom:1px solid #2a2a2a}
+.cruce td{padding:1.2mm 2mm 1.2mm 0;border-bottom:1px solid #222;color:#d8d5cf;vertical-align:middle}
+.cruce td:first-child{font-weight:600;white-space:nowrap}
+.cruce i{display:inline-block;height:2mm;background:#d9d6d0;border-radius:1px;vertical-align:middle;margin-right:1.4mm;max-width:22mm}
+.cruce td strong{color:#fff}
 .leyenda{font-size:7.6pt;color:var(--gris);margin-top:1.6mm}
 
 @media screen and (max-width:820px){
@@ -81,13 +92,13 @@ table.t{width:100%;border-collapse:collapse;font-size:8.4pt;margin-top:2mm}
 
     <h2>La propuesta en una idea</h2>
     <p class="lead">Llegar a cada asesoría con el diagnóstico del canal ya armado, para que el tiempo de la estratega se use en decidir y no en revisar.</p>
-    <p>Para eso traigo la plataforma que estoy construyendo para mis clientes actuales de asesoría. Aprende lo que un creador ha dicho en sus videos y lo cruza con las métricas de su canal. De ahí salen qué repite, qué ha cambiado, qué le falta decir y qué le funciona. Todo queda ligado al video y al minuto exactos.</p>
+    <p>Para eso traigo la plataforma que estoy construyendo para mis clientes actuales de asesoría. Aprende lo que un creador ha dicho en sus videos y lo cruza con las métricas de su canal. De ahí salen de qué habla, qué repite, qué ha cambiado, qué le falta decir y qué temas le rinden más. Todo queda ligado al video y al minuto exactos.</p>
 
     <h2>Cómo funcionaría</h2>
     <div class="pasos">
       <div class="paso"><b>1. Antes</b>El creador entrega el enlace de su canal y sus métricas 48 horas antes.<small>Con un video tutorial de 10 minutos.</small></div>
       <div class="paso"><b>2. Wiki</b>La plataforma trae los videos, los transcribe y construye su base de conocimiento.<small>Con citas al minuto.</small></div>
-      <div class="paso"><b>3. Diagnóstico</b>Cadencia, formatos, temas, mejores piezas y vacíos de contenido.<small>La estratega lo revisa y lo afina.</small></div>
+      <div class="paso"><b>3. Diagnóstico</b>Métricas del canal cruzadas con sus temas, posturas y vacíos de contenido.<small>La estratega lo revisa y lo afina.</small></div>
       <div class="paso"><b>4. Sesión</b>1 a 1, o en una clínica de 5 creadores del mismo nivel.<small>Foco en la dirección estratégica.</small></div>
       <div class="paso"><b>5. Seguimiento</b>Cada mes, temas propuestos con sus propias palabras y cifras.<small>Se mide y se ajusta.</small></div>
     </div>
@@ -107,47 +118,43 @@ table.t{width:100%;border-collapse:collapse;font-size:8.4pt;margin-top:2mm}
 <article class="hoja">
   <div class="cuerpo" style="padding-top:11mm">
     <h2 class="primero">La plataforma</h2>
-    <p>Esta es la pantalla de diagnóstico que vería la estratega antes de cada sesión. Es una pantalla ilustrativa con datos ficticios, que muestra lo que la plataforma ordena para ella.</p>
+    <p>Esta es la pantalla de diagnóstico que vería la estratega antes de cada sesión. Junta dos capas: las métricas de YouTube, que Eloísa ya sabe leer, y el conocimiento que hay dentro de los contenidos del creador: de qué habla, qué posturas tiene, dónde se contradice y qué le falta decir. La novedad es el cruce entre las dos.</p>
 
-    <div class="mock" role="img" aria-label="Pantalla ilustrativa del diagnóstico de un canal: cadencia de publicación, mezcla de formatos, temas y vacíos de contenido">
+    <div class="mock" role="img" aria-label="Pantalla ilustrativa: métricas de YouTube del canal, conocimiento de sus contenidos y el cruce entre ambos">
       <div class="top"><div><b>Canal de ejemplo</b> <span>· 212 videos · 2019–2026</span></div><span class="marca">Datos ilustrativos</span></div>
       <div class="grid">
         <div class="c">
-          <h4>Cadencia · últimos 12 meses</h4>
-          <svg viewBox="0 0 240 64" width="100%" aria-hidden="true">
-            <g fill="#d9d6d0">
-              <rect x="4" y="22" width="14" height="30"/><rect x="24" y="12" width="14" height="40"/><rect x="44" y="30" width="14" height="22"/>
-              <rect x="84" y="18" width="14" height="34"/><rect x="104" y="34" width="14" height="18"/>
-              <rect x="164" y="26" width="14" height="26"/><rect x="184" y="16" width="14" height="36"/><rect x="204" y="38" width="14" height="14"/><rect x="224" y="46" width="12" height="6"/>
-            </g>
-            <g fill="#F24E55"><rect x="64" y="50" width="14" height="2"/><rect x="124" y="50" width="14" height="2"/><rect x="144" y="50" width="14" height="2"/></g>
-            <line x1="0" y1="52.5" x2="240" y2="52.5" stroke="#444"/>
-            <g fill="#8d8a84" font-size="6" font-family="Inter,sans-serif"><text x="4" y="62">nov</text><text x="64" y="62">ene</text><text x="124" y="62">mar</text><text x="184" y="62">jun</text></g>
-          </svg>
-          <p>Tres meses sin publicar. Lleva 5 semanas sin subir.</p>
+          <h4>De YouTube <em>· lo que ya lees</em></h4>
+          <div class="chips">
+            <div><b>4,8 %</b><span>CTR</span></div>
+            <div><b>6:12</b><span>duración media</span></div>
+            <div><b>1,2 M</b><span>impresiones</span></div>
+            <div><b>41 %</b><span>tráfico sugerido</span></div>
+          </div>
+          <p>Con la exportación de Studio. Sin ella, solo vistas, me gusta y comentarios públicos.</p>
         </div>
-        <div class="c">
-          <h4>Mezcla de formatos</h4>
-          <div class="barra-h"><span>Videos largos</span><i style="width:78%"></i><span>78 %</span></div>
-          <div class="barra-h"><span>Cortos</span><i style="width:22%"></i><span>22 %</span></div>
-          <p>Los cortos rinden más interacción por vista que los largos.</p>
-        </div>
-        <div class="c">
-          <h4>Temas que domina y repite</h4>
+        <div class="c nuevo">
+          <h4>De sus contenidos <em>· lo que agrega la plataforma</em></h4>
           <div class="barra-h"><span>Fe y trabajo</span><i style="width:100%"></i><span>31</span></div>
           <div class="barra-h"><span>Familia</span><i style="width:77%"></i><span>24</span></div>
           <div class="barra-h"><span>Finanzas</span><i style="width:29%"></i><span>9</span></div>
           <div class="barra-h"><span>Salud emocional</span><i class="poco" style="width:7%"></i><span>2</span></div>
+          <p>Videos por tema, de lo que realmente dijo.</p>
         </div>
-        <div class="c">
-          <h4>Mejores piezas y qué comparten</h4>
-          <p>Las 5 con más interacción abren con una historia personal y duran entre 9 y 14 minutos.</p>
-          <p>Postura actual frente a «Finanzas»: cambió entre 2021 y 2024 (2 videos que se contradicen).</p>
+        <div class="c ancho nuevo">
+          <h4>El cruce <em>· conocimiento × rendimiento</em></h4>
+          <table class="cruce">
+            <tr><th>Tema</th><th>Retención media</th><th>CTR</th><th>Lectura</th></tr>
+            <tr><td>Fe y trabajo</td><td><i style="width:52%"></i> 52 %</td><td>4,6 %</td><td>Domina y rinde: es su núcleo.</td></tr>
+            <tr><td>Familia</td><td><i style="width:44%"></i> 44 %</td><td>4,1 %</td><td>Mucho material, rinde por debajo.</td></tr>
+            <tr><td>Finanzas</td><td><i style="width:63%"></i> 63 %</td><td>6,2 %</td><td><strong>Poco publicado y rinde más: oportunidad.</strong></td></tr>
+            <tr><td>Salud emocional</td><td>pocos datos</td><td>—</td><td>En su base, casi sin videos: vacío.</td></tr>
+          </table>
         </div>
-        <div class="c ancho">
-          <h4>Vacíos de contenido y siguiente paso</h4>
-          <div class="vacio"><div><strong>Salud emocional</strong>: está en su base, pero casi nunca bajó a video.<q>Lo dijo en el video 118, min. 14:32, y no lo desarrolló.</q></div><span class="btn">Pasar al plan</span></div>
-          <div class="vacio"><div><strong>Serie propuesta:</strong> tres videos con sus propias palabras y el formato que ya le funcionó.<q>Fuente: videos 118, 141 y 167.</q></div><span class="btn">Pasar al plan</span></div>
+        <div class="c ancho nuevo">
+          <h4>Postura y siguiente paso</h4>
+          <div class="vacio"><div><strong>Finanzas:</strong> su postura cambió entre 2021 y 2024, y dos videos se contradicen.<q>Video 57, min. 8:10, y video 164, min. 3:45.</q></div><span class="btn">Revisar con el creador</span></div>
+          <div class="vacio"><div><strong>Serie propuesta:</strong> tres videos sobre Finanzas, con sus propias palabras y el formato que ya le funcionó.<q>Fuentes: videos 57, 164 y 171.</q></div><span class="btn">Pasar al plan</span></div>
         </div>
       </div>
     </div>
@@ -159,11 +166,11 @@ table.t{width:100%;border-collapse:collapse;font-size:8.4pt;margin-top:2mm}
       <tr><td style="white-space:normal;font-weight:400">
         <ul class="pts"><li>Base de conocimiento por cliente, con citas verificables, temas y postura.</li>
         <li>Traer los videos y métricas públicas de un canal. Probado con un canal real de 370 videos en unos 15 segundos.</li>
-        <li>Análisis de cadencia, formatos y mejores piezas.</li>
+        <li>Análisis de cadencia, formatos y mejores piezas con datos públicos.</li>
         <li>Creación de piezas con la voz del creador, con controles editoriales.</li>
         <li>Perfiles de equipo y recorrido de aprobación.</li></ul></td>
       <td style="white-space:normal;font-weight:400">
-        <ul class="pts"><li>Conexión con YouTube Analytics, con autorización del creador.</li>
+        <ul class="pts"><li>Conexión con YouTube Analytics, con autorización del creador, y con ella el cruce de temas con retención y CTR.</li>
         <li>Transcripción automática de todos los videos de un canal nuevo.</li>
         <li>Espacio separado por cliente, para atender varios a la vez.</li>
         <li>Tablero semanal de propuestas y calendario editorial.</li>
