@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Propuesta operativa — Diana Cardona</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/assets/iconos/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/tokens.css">
+<link rel="stylesheet" href="/diana-cardona/doc.css">
+<style>
+.banda.sin-foto h1{text-transform:none;font-size:22pt}
+.lead{font-size:11pt;line-height:1.5;font-weight:500;margin-top:2mm}
+.cuerpo p+p{margin-top:2mm}
+ul.pts li{position:relative;padding-left:4mm;margin-top:1.3mm}
+ul.pts li::before{content:"";position:absolute;left:0;top:.62em;width:4px;height:4px;border-radius:50%;background:var(--coral)}
+.pasos{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin:3mm 0 1mm;counter-reset:p}
+.paso{border:1px solid var(--linea);padding:2.6mm 2.4mm;position:relative;background:#fafaf8;font-size:8pt;line-height:1.4}
+.paso+.paso{border-left:0}
+.paso::after{content:"›";position:absolute;right:-1.6mm;top:50%;transform:translateY(-50%);width:3.2mm;height:5mm;line-height:5mm;text-align:center;background:#fff;color:var(--coral);font-weight:800;z-index:1;font-size:11pt}
+.paso:last-child::after{display:none}
+.paso b{display:block;font-size:8.6pt;margin-bottom:.8mm}
+.paso small{display:block;margin-top:1.2mm;color:var(--gris);font-size:7.2pt}
+.vuelta{font-size:7.8pt;color:var(--gris);text-align:center;margin-top:1.4mm}
+.vuelta b{color:var(--tinta)}
+
+table.t{width:100%;border-collapse:collapse;font-size:8.4pt;margin-top:2mm}
+.t th{font-size:7.4pt;text-transform:uppercase;letter-spacing:.08em;text-align:left;color:var(--gris);border-bottom:1.5px solid var(--tinta);padding:1.4mm 2mm 1.4mm 0}
+.t td{border-bottom:1px solid var(--linea);padding:1.8mm 2mm 1.8mm 0;vertical-align:top}
+.t td:first-child{font-weight:600;white-space:nowrap}
+.nota{font-size:8pt;color:var(--gris);line-height:1.45;margin-top:2mm}
+.dos-col{display:grid;grid-template-columns:1fr 1fr;gap:0 9mm}
+.caja{border:1px solid var(--linea);padding:3mm 3.4mm;background:#fafaf8;margin-top:2mm}
+.caja h3{margin-top:0;font-size:9.4pt}
+.caja ul.pts li{margin-top:1mm;font-size:8.8pt}
+
+/* Pantalla ilustrativa */
+.mock{background:#0e0e0e;color:#ecebe7;border-radius:6px;padding:0;margin-top:3mm;overflow:hidden;font-size:7.6pt;line-height:1.4}
+.mock .top{display:flex;justify-content:space-between;align-items:center;padding:2.2mm 3.4mm;border-bottom:1px solid #2a2a2a;background:#161616}
+.mock .top b{font-size:8.6pt}
+.mock .top span{color:#b5b2ac}
+.mock .marca{font-size:6.6pt;letter-spacing:.1em;text-transform:uppercase;border:1px solid #555;padding:.5mm 1.8mm;border-radius:3px;color:#d8d5cf}
+.mock .grid{display:grid;grid-template-columns:1fr 1fr;gap:2.4mm;padding:3mm}
+.mock .c{background:#161616;border:1px solid #262626;border-radius:4px;padding:2.4mm 2.8mm}
+.mock .c h4{margin:0 0 1.6mm;font-size:7.4pt;font-weight:700;letter-spacing:.04em;color:#b5b2ac;text-transform:uppercase}
+.mock .c p{color:#cfccc6;margin-top:1.4mm}
+.mock .ancho{grid-column:1/-1}
+.barra-h{display:grid;grid-template-columns:27mm 1fr 8mm;gap:2mm;align-items:center;margin-top:1.1mm}
+.barra-h i{display:block;height:2.4mm;background:#d9d6d0;border-radius:1px}
+.barra-h i.poco{background:var(--coral)}
+.barra-h span:last-child{color:#b5b2ac;text-align:right}
+.vacio{display:grid;grid-template-columns:1fr auto;gap:3mm;align-items:center;padding:1.8mm 0;border-top:1px solid #262626}
+.vacio:first-of-type{border-top:0}
+.vacio q{color:#9d9a94;font-style:italic;quotes:none;display:block;margin-top:.4mm}
+.vacio .btn{background:var(--coral);color:#000;font-weight:700;padding:1mm 2.6mm;border-radius:3px;font-size:7pt;white-space:nowrap}
+.leyenda{font-size:7.6pt;color:var(--gris);margin-top:1.6mm}
+
+@media screen and (max-width:820px){
+  .pasos{grid-template-columns:1fr}.paso+.paso{border-left:1px solid var(--linea);border-top:0}.paso::after{display:none}
+  .dos-col,.mock .grid{grid-template-columns:1fr}
+  .t td:first-child{white-space:normal}
+  .barra-h{grid-template-columns:24mm 1fr 8mm}
+}
+</style>
+</head>
+<body>
+<div class="barra"><a href="/diana-cardona/">← Portafolio de Diana</a><a href="/assets/diana/Diana_Cardona_Propuesta_Operativa.pdf" download>Descargar PDF</a></div>
+
+<!-- Página 1 -->
+<article class="hoja">
+  <header class="banda sin-foto">
+    <div>
+      <h1>Propuesta operativa</h1>
+      <p class="rol">Asesorías y seguimiento a escala</p>
+      <p class="sub">Para Eloísa · Wolf Digital Marketing Consulting<br>Diana Cardona · Octubre 2026</p>
+    </div>
+  </header>
+  <div class="cuerpo">
+    <h2 class="primero">El reto</h2>
+    <p>Hay muchos alumnos de la academia listos para dar el siguiente paso y que necesitan un servicio de continuidad a largo plazo. Hoy <strong>380 personas esperan una sesión de estrategia</strong>. Atenderlas a mano significa horas de revisión de videos por cada una, un cuello de botella y un riesgo real de desgaste para quien las atienda.</p>
+
+    <h2>La propuesta en una idea</h2>
+    <p class="lead">Llegar a cada asesoría con el diagnóstico del canal ya armado, para que el tiempo de la estratega se use en decidir y no en revisar.</p>
+    <p>Para eso traigo la plataforma que estoy construyendo para mis clientes actuales de asesoría. Aprende lo que un creador ha dicho en sus videos y lo cruza con las métricas de su canal. De ahí salen qué repite, qué ha cambiado, qué le falta decir y qué le funciona. Todo queda ligado al video y al minuto exactos.</p>
+
+    <h2>Cómo funcionaría</h2>
+    <div class="pasos">
+      <div class="paso"><b>1. Antes</b>El creador entrega el enlace de su canal y sus métricas 48 horas antes.<small>Con un video tutorial de 10 minutos.</small></div>
+      <div class="paso"><b>2. Wiki</b>La plataforma trae los videos, los transcribe y construye su base de conocimiento.<small>Con citas al minuto.</small></div>
+      <div class="paso"><b>3. Diagnóstico</b>Cadencia, formatos, temas, mejores piezas y vacíos de contenido.<small>La estratega lo revisa y lo afina.</small></div>
+      <div class="paso"><b>4. Sesión</b>1 a 1, o en una clínica de 5 creadores del mismo nivel.<small>Foco en la dirección estratégica.</small></div>
+      <div class="paso"><b>5. Seguimiento</b>Cada mes, temas propuestos con sus propias palabras y cifras.<small>Se mide y se ajusta.</small></div>
+    </div>
+    <p class="vuelta"><b>Lo medido en el mes vuelve al wiki</b> y el ciclo siguiente parte de lo aprendido.</p>
+
+    <h2>Qué se le pide al creador antes de la sesión</h2>
+    <ul class="pts">
+      <li><strong>Solo con el enlace del canal</strong> se trabaja con datos públicos: videos, fechas, duración, vistas, me gusta y comentarios.</li>
+      <li><strong>Con la exportación de YouTube Studio</strong> (o autorizando una lectura de solo consulta) se suman retención, impresiones, tasa de clics, suscriptores ganados y fuentes de tráfico. El tutorial explica cómo exportarla paso a paso.</li>
+      <li>Si el creador o su equipo ya tiene guiones, la plataforma los ingiere y se evita transcribir.</li>
+    </ul>
+  </div>
+  <footer class="pie"><span>Diana Cardona / Propuesta operativa</span><span>1</span></footer>
+</article>
+
+<!-- Página 2 -->
+<article class="hoja">
+  <div class="cuerpo" style="padding-top:11mm">
+    <h2 class="primero">La plataforma</h2>
+    <p>Esta es la pantalla de diagnóstico que vería la estratega antes de cada sesión. Es una pantalla ilustrativa con datos ficticios, que muestra lo que la plataforma ordena para ella.</p>
+
+    <div class="mock" role="img" aria-label="Pantalla ilustrativa del diagnóstico de un canal: cadencia de publicación, mezcla de formatos, temas y vacíos de contenido">
+      <div class="top"><div><b>Canal de ejemplo</b> <span>· 212 videos · 2019–2026</span></div><span class="marca">Datos ilustrativos</span></div>
+      <div class="grid">
+        <div class="c">
+          <h4>Cadencia · últimos 12 meses</h4>
+          <svg viewBox="0 0 240 64" width="100%" aria-hidden="true">
+            <g fill="#d9d6d0">
+              <rect x="4" y="22" width="14" height="30"/><rect x="24" y="12" width="14" height="40"/><rect x="44" y="30" width="14" height="22"/>
+              <rect x="84" y="18" width="14" height="34"/><rect x="104" y="34" width="14" height="18"/>
+              <rect x="164" y="26" width="14" height="26"/><rect x="184" y="16" width="14" height="36"/><rect x="204" y="38" width="14" height="14"/><rect x="224" y="46" width="12" height="6"/>
+            </g>
+            <g fill="#F24E55"><rect x="64" y="50" width="14" height="2"/><rect x="124" y="50" width="14" height="2"/><rect x="144" y="50" width="14" height="2"/></g>
+            <line x1="0" y1="52.5" x2="240" y2="52.5" stroke="#444"/>
+            <g fill="#8d8a84" font-size="6" font-family="Inter,sans-serif"><text x="4" y="62">nov</text><text x="64" y="62">ene</text><text x="124" y="62">mar</text><text x="184" y="62">jun</text></g>
+          </svg>
+          <p>Tres meses sin publicar. Lleva 5 semanas sin subir.</p>
+        </div>
+        <div class="c">
+          <h4>Mezcla de formatos</h4>
+          <div class="barra-h"><span>Videos largos</span><i style="width:78%"></i><span>78 %</span></div>
+          <div class="barra-h"><span>Cortos</span><i style="width:22%"></i><span>22 %</span></div>
+          <p>Los cortos rinden más interacción por vista que los largos.</p>
+        </div>
+        <div class="c">
+          <h4>Temas que domina y repite</h4>
+          <div class="barra-h"><span>Fe y trabajo</span><i style="width:100%"></i><span>31</span></div>
+          <div class="barra-h"><span>Familia</span><i style="width:77%"></i><span>24</span></div>
+          <div class="barra-h"><span>Finanzas</span><i style="width:29%"></i><span>9</span></div>
+          <div class="barra-h"><span>Salud emocional</span><i class="poco" style="width:7%"></i><span>2</span></div>
+        </div>
+        <div class="c">
+          <h4>Mejores piezas y qué comparten</h4>
+          <p>Las 5 con más interacción abren con una historia personal y duran entre 9 y 14 minutos.</p>
+          <p>Postura actual frente a «Finanzas»: cambió entre 2021 y 2024 (2 videos que se contradicen).</p>
+        </div>
+        <div class="c ancho">
+          <h4>Vacíos de contenido y siguiente paso</h4>
+          <div class="vacio"><div><strong>Salud emocional</strong>: está en su base, pero casi nunca bajó a video.<q>Lo dijo en el video 118, min. 14:32, y no lo desarrolló.</q></div><span class="btn">Pasar al plan</span></div>
+          <div class="vacio"><div><strong>Serie propuesta:</strong> tres videos con sus propias palabras y el formato que ya le funcionó.<q>Fuente: videos 118, 141 y 167.</q></div><span class="btn">Pasar al plan</span></div>
+        </div>
+      </div>
+    </div>
+    <p class="leyenda">Pantalla ilustrativa con datos ficticios. En la plataforma, cada afirmación abre el video en el minuto citado.</p>
+
+    <h2>Qué hay hoy y qué se construye</h2>
+    <table class="t">
+      <tr><th>Funciona hoy</th><th>Se construye en el piloto</th></tr>
+      <tr><td style="white-space:normal;font-weight:400">
+        <ul class="pts"><li>Base de conocimiento por cliente, con citas verificables, temas y postura.</li>
+        <li>Traer los videos y métricas públicas de un canal. Probado con un canal real de 370 videos en unos 15 segundos.</li>
+        <li>Análisis de cadencia, formatos y mejores piezas.</li>
+        <li>Creación de piezas con la voz del creador, con controles editoriales.</li>
+        <li>Perfiles de equipo y recorrido de aprobación.</li></ul></td>
+      <td style="white-space:normal;font-weight:400">
+        <ul class="pts"><li>Conexión con YouTube Analytics, con autorización del creador.</li>
+        <li>Transcripción automática de todos los videos de un canal nuevo.</li>
+        <li>Espacio separado por cliente, para atender varios a la vez.</li>
+        <li>Tablero semanal de propuestas y calendario editorial.</li>
+        <li>Radar de demanda: qué busca la gente sobre los temas del creador.</li></ul></td></tr>
+    </table>
+  </div>
+  <footer class="pie"><span>Diana Cardona / Propuesta operativa</span><span>2</span></footer>
+</article>
+
+<!-- Página 3 -->
+<article class="hoja">
+  <div class="cuerpo" style="padding-top:11mm">
+    <h2 class="primero">Capacidad: lo que esperamos y cómo lo comprobamos</h2>
+    <p>Estas cifras son <strong>estimaciones de partida</strong>, hechas con mi experiencia y no con mediciones. El piloto existe para reemplazarlas por datos reales.</p>
+    <table class="t">
+      <tr><th>Modalidad</th><th>Horas de trabajo (estimadas)</th><th>Capacidad con 20 h a la semana</th></tr>
+      <tr><td>Hoy, a mano</td><td>Auditar el canal 4 a 5 h, más 2 h de sesión: unas 6 a 7 h por cliente.</td><td>Unos 11 a 13 clientes al mes.</td></tr>
+      <tr><td>1 a 1 con la plataforma</td><td>1 h revisando el diagnóstico, 1,5 a 2 h de sesión y 0,5 h de informe: unas 3 a 3,5 h por cliente.</td><td>Unos 23 a 27 clientes al mes.</td></tr>
+      <tr><td>Clínicas de 5 creadores</td><td>Por clínica: 1,5 h de preparación, 1,5 h en vivo y 1,25 h de informes cortos: unas 4,25 h, o 0,85 h por creador.</td><td>4 clínicas a la semana (unas 17 h) atienden a 20 creadores. Son unos 80 al mes.</td></tr>
+    </table>
+    <p class="nota">Con solo clínicas, la lista actual de 380 personas se absorbería en unos 5 meses. Con solo sesiones 1 a 1, en más de 15. En la práctica se combinarían: clínicas para absorber la lista y sesiones 1 a 1 para quien necesite más profundidad. La lista seguirá recibiendo gente nueva, así que este cálculo cubre la demanda de hoy y no la futura.</p>
+    <p class="nota">Las clínicas dan menos tiempo individual por creador y funcionan mejor con creadores de nivel parecido. Quien participe acepta, antes de entrar, que el grupo vea las métricas generales de su canal.</p>
+
+    <h2>Piloto propuesto</h2>
+    <div class="dos-col">
+      <div>
+        <ul class="pts">
+          <li><strong>Duración:</strong> 4 a 6 semanas.</li>
+          <li><strong>Participantes:</strong> 10 personas de la lista de espera, que Eloísa elija. Podrían ser 5 en sesión 1 a 1 y 5 en una clínica.</li>
+          <li><strong>Producto:</strong> a cada uno, diagnóstico previo, la sesión y un informe breve con el plan.</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:8.6pt;font-weight:700;margin-bottom:1mm">Qué mediríamos</p>
+        <ul class="pts">
+          <li>Horas reales de trabajo por cliente en cada modalidad.</li>
+          <li>Cuántos creadores entregan el pre-diagnóstico a tiempo.</li>
+          <li>Satisfacción del creador, con una pregunta al final de la sesión.</li>
+          <li>Cuántos aceptan el seguimiento mensual.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="nota" style="margin-top:2mm">Al cerrar, un informe corto con la decisión de seguir, ajustar o parar, con los números a la vista.</p>
+
+    <h2>Límites que conviene decir de entrada</h2>
+    <ul class="pts">
+      <li>Sin la autorización del creador no hay retención ni impresiones, solo datos públicos.</li>
+      <li>Con menos de 30 publicaciones, las cifras son indicativas y no concluyentes.</li>
+      <li>La clasificación de temas es aproximada. Orienta, y no sustituye el criterio de la estratega.</li>
+      <li>La plataforma ordena la evidencia y reduce la intuición. No garantiza resultados ni predice qué video va a funcionar.</li>
+      <li>Los videos se transcriben con lo que el creador entregue: archivos, enlaces o guiones propios.</li>
+    </ul>
+  </div>
+  <footer class="pie"><span>Diana Cardona / Propuesta operativa</span><span>3</span></footer>
+</article>
+
+<!-- Página 4 -->
+<article class="hoja">
+  <div class="cuerpo" style="padding-top:11mm">
+    <h2 class="primero">Cómo trabajaríamos juntas</h2>
+    <ul class="pts">
+      <li>Yo lideraría este frente dentro de Wolf Digital: el diagnóstico, las sesiones, las clínicas y el seguimiento.</li>
+      <li>La plataforma la pongo yo, con mi equipo de inteligencia artificial, y sigue siendo mía. Wolf Digital conserva su relación y su marca con los alumnos.</li>
+      <li>Cómo se estructura la colaboración y sus condiciones económicas lo conversamos juntas en la segunda reunión, una vez que veamos los resultados esperados del piloto.</li>
+    </ul>
+
+    <h2>Cómo cuidamos los datos</h2>
+    <ul class="pts">
+      <li>Los datos de cada creador son suyos y no se mezclan con los de otro: cada uno tiene su base y su espacio.</li>
+      <li>Nada se publica sin pasar por la aprobación definida, y todo lo que la plataforma dice del creador remite a un video y un minuto.</li>
+      <li>La voz del creador manda: lo que agrega el sistema se marca y se revisa.</li>
+      <li>El acceso es solo para personas autorizadas, con permisos por perfil.</li>
+    </ul>
+
+    <h2>Si te parece bien, los próximos pasos</h2>
+    <ul class="pts">
+      <li><strong>Una segunda reunión</strong> para ver la plataforma en pantalla y revisar este plan contigo.</li>
+      <li><strong>Definir el piloto</strong>: las 10 personas, las fechas y qué cuenta como éxito.</li>
+      <li><strong>Preparar el tutorial</strong> de pre-diagnóstico para que los creadores lleguen listos.</li>
+    </ul>
+
+    <div class="caja" style="margin-top:7mm">
+      <h3>Una propuesta sobre la mesa</h3>
+      <p style="margin-top:1.4mm">No la planteo como la solución definitiva, sino como una propuesta para que la evaluemos juntas. Todo lo que está por construir lo construyo con tu opinión desde el principio.</p>
+      <p style="margin-top:2.4mm"><strong>Diana Cardona</strong> · @dicardona · dianac.figueroa@gmail.com</p>
+    </div>
+  </div>
+  <footer class="pie"><span>Diana Cardona / Propuesta operativa</span><span>4</span></footer>
+</article>
+</body>
+</html>
