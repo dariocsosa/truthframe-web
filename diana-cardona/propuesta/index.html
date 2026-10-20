@@ -34,36 +34,6 @@ table.t{width:100%;border-collapse:collapse;font-size:8.4pt;margin-top:2mm}
 .caja h3{margin-top:0;font-size:9.4pt}
 .caja ul.pts li{margin-top:1mm;font-size:8.8pt}
 
-/* Pantalla ilustrativa */
-.mock{background:#0e0e0e;color:#ecebe7;border-radius:6px;padding:0;margin-top:3mm;overflow:hidden;font-size:7.6pt;line-height:1.4}
-.mock .top{display:flex;justify-content:space-between;align-items:center;padding:2.2mm 3.4mm;border-bottom:1px solid #2a2a2a;background:#161616}
-.mock .top b{font-size:8.6pt}
-.mock .top span{color:#b5b2ac}
-.mock .marca{font-size:6.6pt;letter-spacing:.1em;text-transform:uppercase;border:1px solid #555;padding:.5mm 1.8mm;border-radius:3px;color:#d8d5cf}
-.mock .grid{display:grid;grid-template-columns:1fr 1fr;gap:2.4mm;padding:3mm}
-.mock .c{background:#161616;border:1px solid #262626;border-radius:4px;padding:2.4mm 2.8mm}
-.mock .c h4{margin:0 0 1.6mm;font-size:7.4pt;font-weight:700;letter-spacing:.04em;color:#b5b2ac;text-transform:uppercase}
-.mock .c p{color:#cfccc6;margin-top:1.4mm}
-.mock .ancho{grid-column:1/-1}
-.barra-h{display:grid;grid-template-columns:27mm 1fr 8mm;gap:2mm;align-items:center;margin-top:1.1mm}
-.barra-h i{display:block;height:2.4mm;background:#d9d6d0;border-radius:1px}
-.barra-h i.poco{background:var(--coral)}
-.barra-h span:last-child{color:#b5b2ac;text-align:right}
-.vacio{display:grid;grid-template-columns:1fr auto;gap:3mm;align-items:center;padding:1.8mm 0;border-top:1px solid #262626}
-.vacio:first-of-type{border-top:0}
-.vacio q{color:#9d9a94;font-style:italic;quotes:none;display:block;margin-top:.4mm}
-.vacio .btn{background:var(--coral);color:#000;font-weight:700;padding:1mm 2.6mm;border-radius:3px;font-size:7pt;white-space:nowrap}
-.mock .chips{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6mm}
-.mock .chips div{background:#0e0e0e;border:1px solid #262626;border-radius:3px;padding:1.4mm 1.8mm}
-.mock .chips b{display:block;font-size:10pt;color:#fff}.mock .chips span{color:#9d9a94;font-size:6.6pt}
-.mock .c h4 em{font-style:normal;text-transform:none;letter-spacing:0;font-weight:500;color:#8d8a84}
-.mock .c.nuevo{border-color:#3a3a3a}
-table.cruce{width:100%;border-collapse:collapse;font-size:7.4pt}
-.cruce th{text-align:left;color:#8d8a84;font-weight:600;padding:0 2mm 1mm 0;border-bottom:1px solid #2a2a2a}
-.cruce td{padding:1.2mm 2mm 1.2mm 0;border-bottom:1px solid #222;color:#d8d5cf;vertical-align:middle}
-.cruce td:first-child{font-weight:600;white-space:nowrap}
-.cruce i{display:inline-block;height:2mm;background:#d9d6d0;border-radius:1px;vertical-align:middle;margin-right:1.4mm;max-width:22mm}
-.cruce td strong{color:#fff}
 .leyenda{font-size:7.6pt;color:var(--gris);margin-top:1.6mm}
 
 @media screen and (max-width:820px){
@@ -71,6 +41,65 @@ table.cruce{width:100%;border-collapse:collapse;font-size:7.4pt}
   .dos-col,.mock .grid{grid-template-columns:1fr}
   .t td:first-child{white-space:normal}
   .barra-h{grid-template-columns:24mm 1fr 8mm}
+}
+
+/* Paneles ilustrativos (lenguaje visual de la plataforma) */
+.pnl{background:#151412;color:#E2E3D0;border-radius:7px;overflow:hidden;font-size:7.4pt;line-height:1.4;margin-top:3mm;border:1px solid #2a2927}
+.pnl *{box-sizing:border-box}
+.pnl .top{display:flex;justify-content:space-between;align-items:center;gap:3mm;padding:2.2mm 3.4mm;background:#1b1a18;border-bottom:1px solid #34322E}
+.pnl .top b{font-size:8.6pt}.pnl .top .rol{color:#A59F92;margin-left:1.4mm}
+.pnl .tabs{display:flex;gap:1.4mm}.pnl .tabs span{white-space:nowrap;padding:.5mm 2.2mm;border-radius:20px;border:1px solid #34322E;color:#A59F92;font-size:6.6pt}
+.pnl .tabs span.on{background:#2B2A28;color:#E2E3D0;border-color:#5a564f}
+.pnl .marca{font-size:6.2pt;letter-spacing:.1em;text-transform:uppercase;border:1px solid #5a564f;padding:.5mm 1.8mm;border-radius:3px;color:#d8d5cf;white-space:nowrap}
+.pnl .cuerpo-p{padding:3mm;display:grid;gap:2.4mm}
+.pnl .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:2.4mm}
+.pnl .kpi{background:#1F1E1C;border:1px solid #34322E;border-radius:6px;padding:2mm 2.6mm;display:grid;grid-template-columns:1fr auto;align-items:end}
+.pnl .kpi small{grid-column:1/-1;color:#A59F92;font-size:6.4pt;letter-spacing:.06em;text-transform:uppercase}
+.pnl .kpi b{font-size:13pt;color:#fff;line-height:1.1}
+.pnl .kpi i{font-style:normal;font-size:6.6pt;color:#6FCF97;display:block}
+.pnl .fila2{display:grid;gap:2.4mm}
+.pnl .c{background:#1F1E1C;border:1px solid #34322E;border-radius:6px;padding:2.2mm 2.8mm;min-width:0}
+.pnl .c h4{margin:0 0 1.4mm;font-size:6.8pt;font-weight:700;letter-spacing:.07em;color:#A59F92;text-transform:uppercase}
+.pnl .c h4 em{font-style:normal;letter-spacing:0;text-transform:none;font-weight:500;color:#8d8a84}
+.pnl .c p{margin:1.2mm 0 0;color:#cfccc6}
+.pnl .chip{display:inline-block;padding:.3mm 1.9mm;border-radius:20px;border:1px solid #34322E;color:#d8d5cf;font-size:6.6pt;margin:0 .8mm .8mm 0}
+.pnl .chip.no{border-color:#7a3a33;color:#f19a90}
+.pnl .barv{display:grid;grid-template-columns:22mm 1fr 8mm;gap:2mm;align-items:center;margin-top:1mm;color:#cfccc6}
+.pnl .barv u{display:block;height:2.1mm;border-radius:9px;background:linear-gradient(90deg,#FA8A1A,#E4341F);text-decoration:none}
+.pnl .barv span:last-child{text-align:right;color:#A59F92}
+.nv{display:inline-block;border-radius:3px;padding:.2mm 1.8mm;font-size:6.2pt;font-weight:800;letter-spacing:.06em;white-space:nowrap;color:#151412}
+.nv.n0{background:#8d8a84}.nv.n1{background:#5FB3C9}.nv.n2{background:#EAAA28}.nv.n3{background:#FA8A1A}
+.pnl .decide{border-color:#FA8A1A;background:linear-gradient(135deg,rgba(250,138,26,.10),rgba(228,52,31,.06))}
+.pnl .decide .cab{display:flex;justify-content:space-between;align-items:center;gap:2mm;margin-bottom:1.4mm}
+.pnl .decide .cab strong{font-size:8.4pt;color:#fff}
+.pnl .ops{display:grid;grid-template-columns:repeat(3,1fr);gap:2mm;margin-top:1.6mm}
+.pnl .op{border:1px solid #34322E;border-radius:5px;padding:1.6mm 2.2mm;background:#151412}
+.pnl .op b{color:#fff}.pnl .op small{display:block;color:#A59F92;font-size:6.4pt}
+.pnl .op.rec{border-color:#6FCF97}
+.pnl .btns{display:flex;gap:1.6mm;margin-top:1.6mm;align-items:center;flex-wrap:wrap}
+.pnl .b{border-radius:3px;padding:.9mm 2.8mm;font-weight:700;font-size:6.8pt;border:1px solid #5a564f;color:#E2E3D0}
+.pnl .b.ok{background:linear-gradient(135deg,#FA8A1A,#E4341F);border-color:transparent;color:#151412}
+.pnl .quien{margin-left:auto;color:#A59F92;font-size:6.6pt}
+.pnl .quien b{color:#E2E3D0}
+.pnl .cita{border-left:2px solid #FA8A1A;padding:.6mm 0 .6mm 2.4mm;margin-top:1.6mm;color:#cfccc6}
+.pnl .cita q{quotes:none;display:block;font-style:italic}.pnl .cita small{color:#8d8a84;font-size:6.4pt}
+.pnl .dec{display:grid;grid-template-columns:1fr auto;gap:2mm;align-items:start;padding:2mm 0;border-top:1px solid #2b2a28}
+.pnl .dec:first-of-type{border-top:0}
+.pnl .dec strong{color:#fff}
+.pnl .reglas{margin-top:1.2mm;color:#A59F92;font-size:6.6pt}
+.pnl .reglas b{color:#6FCF97;font-weight:700}.pnl .reglas s{color:#f19a90;text-decoration:none;font-weight:700}
+.pie-p{margin-top:1.8mm;font-size:7.6pt;color:#5a5752}
+.lv{display:grid;grid-template-columns:20mm 38mm 1fr 44mm;gap:0 3mm;font-size:8.2pt;align-items:start;padding:2mm 0;border-top:1px solid var(--linea)}
+.lv:first-of-type{border-top:0}
+.lv .tit{font-weight:700}
+.lv .quien{color:var(--gris)}
+.callout{border:1px solid var(--coral);border-left-width:4px;background:#fff7f7;padding:3mm 3.6mm;margin-top:3.4mm;font-size:10pt;font-weight:600;line-height:1.4}
+.fig{margin-top:3mm}
+.fig svg{display:block;border-radius:9px}
+@media screen and (max-width:820px){
+  .pnl .kpis{grid-template-columns:1fr 1fr}.pnl .ops{grid-template-columns:1fr}
+  .pnl .fila2{grid-template-columns:1fr!important}
+  .lv{grid-template-columns:1fr;gap:.6mm}
 }
 </style>
 </head>
@@ -93,16 +122,16 @@ table.cruce{width:100%;border-collapse:collapse;font-size:7.4pt}
     <h2>La propuesta en una idea</h2>
     <p class="lead">Llegar a cada asesoría con el diagnóstico del canal ya armado, para que el tiempo de la estratega se use en decidir y no en revisar.</p>
     <p>Para eso traigo la plataforma que estoy construyendo para mis clientes actuales de asesoría. Aprende lo que un creador ha dicho en sus videos y lo cruza con las métricas de su canal. De ahí salen de qué habla, qué repite, qué ha cambiado, qué le falta decir y qué temas le rinden más. Todo queda ligado al video y al minuto exactos.</p>
+    <p class="callout">La plataforma entrega la evidencia. Las decisiones importantes las toman siempre las personas.</p>
 
     <h2>Cómo funcionaría</h2>
     <div class="pasos">
       <div class="paso"><b>1. Antes</b>El creador entrega el enlace de su canal y sus métricas 48 horas antes.<small>Con un video tutorial de 10 minutos.</small></div>
-      <div class="paso"><b>2. Wiki</b>La plataforma trae los videos, los transcribe y construye su base de conocimiento.<small>Con citas al minuto.</small></div>
-      <div class="paso"><b>3. Diagnóstico</b>Métricas del canal cruzadas con sus temas, posturas y vacíos de contenido.<small>La estratega lo revisa y lo afina.</small></div>
-      <div class="paso"><b>4. Sesión</b>1 a 1, o en una clínica de 5 creadores del mismo nivel.<small>Foco en la dirección estratégica.</small></div>
-      <div class="paso"><b>5. Seguimiento</b>Cada mes, temas propuestos con sus propias palabras y cifras.<small>Se mide y se ajusta.</small></div>
+      <div class="paso"><b>2. Base</b>La plataforma trae los videos, los transcribe y construye su base de conocimiento.<small>Con citas al minuto.</small></div>
+      <div class="paso"><b>3. Evidencia</b>Métricas del canal cruzadas con sus temas, posturas y vacíos.<small>Llega lista a la estratega.</small></div>
+      <div class="paso"><b>4. Decisión</b>La estratega y el creador deciden la estrategia, en sesión 1 a 1 o en clínica de 5.<small>El creador decide lo táctico.</small></div>
+      <div class="paso"><b>5. Seguimiento</b>Cada mes, propuestas con sus propias palabras y cifras. Se mide y se ajusta.<small>Lo medido vuelve a la base.</small></div>
     </div>
-    <p class="vuelta"><b>Lo medido en el mes vuelve al wiki</b> y el ciclo siguiente parte de lo aprendido.</p>
 
     <h2>Qué se le pide al creador antes de la sesión</h2>
     <ul class="pts">
@@ -117,50 +146,110 @@ table.cruce{width:100%;border-collapse:collapse;font-size:7.4pt}
 <!-- Página 2 -->
 <article class="hoja">
   <div class="cuerpo" style="padding-top:11mm">
-    <h2 class="primero">La plataforma</h2>
-    <p>Esta es la pantalla de diagnóstico que vería la estratega antes de cada sesión. Junta dos capas: las métricas de YouTube, que Eloísa ya sabe leer, y el conocimiento que hay dentro de los contenidos del creador: de qué habla, qué posturas tiene, dónde se contradice y qué le falta decir. La novedad es el cruce entre las dos.</p>
+    <h2 class="primero">Una base de conocimiento, dos paneles</h2>
+    <p>Cada creador tiene su propia base de conocimiento. Sobre ella se abren dos paneles, según quién decide y qué decide. En los dos se aplican las <strong>reglas y los conceptos de Eloísa</strong>, que se cargan una vez en la plataforma.</p>
+    <div class="fig"><svg viewBox="0 0 640 200" width="100%" role="img" aria-label="De las fuentes a la base de conocimiento, y de ahí a los dos paneles, donde las personas deciden"><defs><marker id="ar" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="#FA8A1A"/></marker><linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FA8A1A"/><stop offset="1" stop-color="#E4341F"/></linearGradient></defs><rect width="640" height="200" rx="9" fill="#151412"/><text x="14" y="18" fill="#A59F92" font-size="7.6" font-weight="700" letter-spacing="1.2">FUENTES</text><rect x="12" y="26" width="150" height="44" rx="7" fill="#1F1E1C" stroke="#34322E"/><text x="21" y="42" fill="#E2E3D0" font-size="9.4" font-weight="700">Videos del creador</text><text x="21" y="55" fill="#A59F92" font-size="7.6">Transcritos, con minuto</text><rect x="12" y="76" width="150" height="44" rx="7" fill="#1F1E1C" stroke="#34322E"/><text x="21" y="92" fill="#E2E3D0" font-size="9.4" font-weight="700">Métricas de YouTube</text><text x="21" y="105" fill="#A59F92" font-size="7.6">Públicas o de Studio</text><rect x="12" y="126" width="150" height="52" rx="7" fill="#1F1E1C" stroke="#FA8A1A"/><text x="21" y="142" fill="#FA8A1A" font-size="9.4" font-weight="700">Reglas y conceptos</text><text x="21" y="155" fill="#A59F92" font-size="7.6">de Eloísa (su marco</text><text x="21" y="166" fill="#A59F92" font-size="7.6">de trabajo)</text><text x="206" y="18" fill="#A59F92" font-size="7.6" font-weight="700" letter-spacing="1.2">BASE DE CONOCIMIENTO</text><rect x="196" y="26" width="132" height="152" rx="9" fill="url(#gg)"/><text x="262" y="62" fill="#fff" font-size="10.4" font-weight="800" text-anchor="middle">Una base por</text><text x="262" y="76" fill="#fff" font-size="10.4" font-weight="800" text-anchor="middle">creador</text><text x="262" y="100" fill="#fff" font-size="8" text-anchor="middle" opacity=".95">Citas al minuto</text><text x="262" y="114" fill="#fff" font-size="8" text-anchor="middle" opacity=".95">Temas y posturas</text><text x="262" y="128" fill="#fff" font-size="8" text-anchor="middle" opacity=".95">Voz y estilo</text><text x="262" y="142" fill="#fff" font-size="8" text-anchor="middle" opacity=".95">Cambios y vacíos</text><path d="M162,48 L194,80" stroke="#FA8A1A" stroke-width="1.3" fill="none" marker-end="url(#ar)"/><path d="M162,98 L194,80" stroke="#FA8A1A" stroke-width="1.3" fill="none" marker-end="url(#ar)"/><path d="M162,152 L194,122" stroke="#FA8A1A" stroke-width="1.3" fill="none" marker-end="url(#ar)"/><text x="372" y="18" fill="#A59F92" font-size="7.6" font-weight="700" letter-spacing="1.2">DOS PANELES</text><rect x="362" y="26" width="188" height="70" rx="7" fill="#1F1E1C" stroke="#5FB3C9"/><text x="371" y="42" fill="#5FB3C9" font-size="9.4" font-weight="700">Panel de la estratega</text><text x="371" y="55" fill="#A59F92" font-size="7.6">Todas las métricas, voces y estilos.</text><text x="371" y="66" fill="#A59F92" font-size="7.6">Evidencia para decidir la</text><text x="371" y="77" fill="#A59F92" font-size="7.6">estrategia con el creador.</text><rect x="362" y="108" width="188" height="70" rx="7" fill="#1F1E1C" stroke="#6FCF97"/><text x="371" y="124" fill="#6FCF97" font-size="9.4" font-weight="700">Panel del creador</text><text x="371" y="137" fill="#A59F92" font-size="7.6">Su propia base de conocimiento,</text><text x="371" y="148" fill="#A59F92" font-size="7.6">con las reglas de Eloísa.</text><text x="371" y="159" fill="#A59F92" font-size="7.6">Decisiones tácticas del contenido.</text><path d="M328,70 L360,60" stroke="#FA8A1A" stroke-width="1.3" fill="none" marker-end="url(#ar)"/><path d="M328,134 L360,142" stroke="#FA8A1A" stroke-width="1.3" fill="none" marker-end="url(#ar)"/><text x="580" y="18" fill="#A59F92" font-size="7.6" font-weight="700" letter-spacing="1.2">DECIDE</text><rect x="566" y="26" width="64" height="152" rx="9" fill="none" stroke="#FA8A1A" stroke-width="1.4" stroke-dasharray="4 3"/><circle cx="598" cy="64" r="9" fill="#E2E3D0"/><path d="M582,100 q16,-26 32,0 z" fill="#E2E3D0"/><text x="598" y="124" fill="#E2E3D0" font-size="8.4" font-weight="800" text-anchor="middle">Una</text><text x="598" y="135" fill="#E2E3D0" font-size="8.4" font-weight="800" text-anchor="middle">persona</text><text x="598" y="150" fill="#A59F92" font-size="7" text-anchor="middle">siempre</text><path d="M550,61 L564,61" stroke="#FA8A1A" stroke-width="1.3" marker-end="url(#ar)"/><path d="M550,143 L564,143" stroke="#FA8A1A" stroke-width="1.3" marker-end="url(#ar)"/></svg></div>
+    <ul class="pts" style="margin-top:3mm">
+      <li><strong>Panel de la estratega.</strong> Tiene cargadas todas las métricas del canal, las voces y los estilos del creador. Le sirve para ayudarle a tomar <strong>decisiones estratégicas</strong>: hacia dónde llevar el canal, qué temas y formatos priorizar.</li>
+      <li><strong>Panel del creador.</strong> Ve su propia base de conocimiento y decide sobre su contenido día a día, con base en lo que él mismo ha dicho y con las reglas de Eloísa aplicadas. Son las <strong>decisiones tácticas</strong>.</li>
+    </ul>
 
-    <div class="mock" role="img" aria-label="Pantalla ilustrativa: métricas de YouTube del canal, conocimiento de sus contenidos y el cruce entre ambos">
-      <div class="top"><div><b>Canal de ejemplo</b> <span>· 212 videos · 2019–2026</span></div><span class="marca">Datos ilustrativos</span></div>
-      <div class="grid">
-        <div class="c">
-          <h4>De YouTube <em>· lo que ya lees</em></h4>
-          <div class="chips">
-            <div><b>4,8 %</b><span>CTR</span></div>
-            <div><b>6:12</b><span>duración media</span></div>
-            <div><b>1,2 M</b><span>impresiones</span></div>
-            <div><b>41 %</b><span>tráfico sugerido</span></div>
+    <h2>Qué hace la plataforma y qué deciden las personas</h2>
+    <p>La plataforma trabaja con cuatro niveles de autonomía. Cuanto más pesa una decisión, más arriba sube de nivel, y las decisiones importantes nunca las toma sola.</p>
+    <div class="lv"><div><span class="nv n0">NIVEL 0</span></div><div class="tit">La plataforma lo hace sola</div><div>Traer los videos y métricas públicas, actualizar la base, registrar cada cambio.</div><div class="quien">Nadie decide: queda en el historial.</div></div>
+    <div class="lv"><div><span class="nv n1">NIVEL 1</span></div><div class="tit">Lo hace y avisa</div><div>Transcribir, clasificar temas, armar el diagnóstico previo, proponer ideas.</div><div class="quien">La persona recibe el aviso y puede corregir.</div></div>
+    <div class="lv"><div><span class="nv n2">NIVEL 2</span></div><div class="tit">Lo prepara y espera el OK</div><div>Guion, títulos y descripción con la voz del creador; plan del mes; serie propuesta.</div><div class="quien"><strong>El creador</strong> aprueba, edita o descarta. Decisión táctica.</div></div>
+    <div class="lv"><div><span class="nv n3">NIVEL 3</span></div><div class="tit">Nunca sola</div><div>Cambiar la dirección del canal, abrir o cerrar formatos, lanzar una serie, publicar, cualquier compromiso, precio o plazo.</div><div class="quien"><strong>La estratega, con el creador.</strong> Decisión estratégica.</div></div>
+    <p class="nota">Cada decisión queda registrada: quién la tomó, cuándo y con qué evidencia. Así se puede revisar después qué se decidió y qué resultado dio.</p>
+  </div>
+  <footer class="pie"><span>Diana Cardona / Propuesta operativa</span><span>2</span></footer>
+</article>
+
+<!-- Página 3 -->
+<article class="hoja">
+  <div class="cuerpo" style="padding-top:11mm">
+    <h2 class="primero">Panel de la estratega</h2>
+    <p>Aquí llega todo lo que la estratega necesita antes de la sesión. Mezcla las métricas de YouTube, que Eloísa ya sabe leer, con métricas del conocimiento implícito en los contenidos: qué temas domina, dónde cambió de postura, qué le falta decir. La novedad es el cruce de las dos.</p>
+
+    <div class="pnl" role="img" aria-label="Pantalla ilustrativa del panel de la estratega: indicadores, cruce de temas con retención, evolución mensual, cadencia, voz y una decisión estratégica pendiente">
+      <div class="top"><div><b>Canal de ejemplo</b><span class="rol">Panel de la estratega · 212 videos</span></div><div class="tabs"><span class="on">Diagnóstico</span><span>Voz y estilo</span><span>Decisiones</span></div><span class="marca">Datos ilustrativos</span></div>
+      <div class="cuerpo-p">
+        <div class="kpis">
+          <div class="kpi"><small>CTR</small><div><b>4,8 %</b><i>▲ 0,7 pts en 12 meses</i></div><svg viewBox="0 0 64 20" width="64" height="20" aria-hidden="true"><polygon points="2,19 2.0,15.6 7.5,17.0 12.9,12.8 18.4,14.2 23.8,10.0 29.3,11.4 34.7,8.6 40.2,10.0 45.6,4.4 51.1,3.0 56.5,5.8 62.0,5.8 62,19" fill="#FA8A1A" opacity=".18"/><polyline points="2.0,15.6 7.5,17.0 12.9,12.8 18.4,14.2 23.8,10.0 29.3,11.4 34.7,8.6 40.2,10.0 45.6,4.4 51.1,3.0 56.5,5.8 62.0,5.8" fill="none" stroke="#FA8A1A" stroke-width="1.6" stroke-linejoin="round"/><circle cx="62.0" cy="5.8" r="2" fill="#FA8A1A"/></svg></div>
+          <div class="kpi"><small>Retención media</small><div><b>49 %</b><i>▲ 5 pts</i></div><svg viewBox="0 0 64 20" width="64" height="20" aria-hidden="true"><polygon points="2,19 2.0,17.0 7.5,15.0 12.9,15.0 18.4,11.0 23.8,13.0 29.3,9.0 34.7,7.0 40.2,9.0 45.6,5.0 51.1,3.0 56.5,5.0 62.0,7.0 62,19" fill="#EAAA28" opacity=".18"/><polyline points="2.0,17.0 7.5,15.0 12.9,15.0 18.4,11.0 23.8,13.0 29.3,9.0 34.7,7.0 40.2,9.0 45.6,5.0 51.1,3.0 56.5,5.0 62.0,7.0" fill="none" stroke="#EAAA28" stroke-width="1.6" stroke-linejoin="round"/><circle cx="62.0" cy="7.0" r="2" fill="#EAAA28"/></svg></div>
+          <div class="kpi"><small>Impresiones / mes</small><div><b>1,2 M</b><i>▲ 33 %</i></div><svg viewBox="0 0 64 20" width="64" height="20" aria-hidden="true"><polygon points="2,19 2.0,17.0 7.5,13.0 12.9,15.0 18.4,11.0 23.8,9.0 29.3,13.0 34.7,7.0 40.2,9.0 45.6,5.0 51.1,3.0 56.5,5.0 62.0,5.0 62,19" fill="#5FB3C9" opacity=".18"/><polyline points="2.0,17.0 7.5,13.0 12.9,15.0 18.4,11.0 23.8,9.0 29.3,13.0 34.7,7.0 40.2,9.0 45.6,5.0 51.1,3.0 56.5,5.0 62.0,5.0" fill="none" stroke="#5FB3C9" stroke-width="1.6" stroke-linejoin="round"/><circle cx="62.0" cy="5.0" r="2" fill="#5FB3C9"/></svg></div>
+          <div class="kpi"><small>Suscriptores por video</small><div><b>+310</b><i>▲ vs. +120</i></div><svg viewBox="0 0 64 20" width="64" height="20" aria-hidden="true"><polygon points="2,19 2.0,15.1 7.5,17.0 12.9,13.8 18.4,11.3 23.8,12.5 29.3,9.4 34.7,10.6 40.2,7.5 45.6,4.9 51.1,6.2 56.5,3.6 62.0,3.0 62,19" fill="#6FCF97" opacity=".18"/><polyline points="2.0,15.1 7.5,17.0 12.9,13.8 18.4,11.3 23.8,12.5 29.3,9.4 34.7,10.6 40.2,7.5 45.6,4.9 51.1,6.2 56.5,3.6 62.0,3.0" fill="none" stroke="#6FCF97" stroke-width="1.6" stroke-linejoin="round"/><circle cx="62.0" cy="3.0" r="2" fill="#6FCF97"/></svg></div>
+        </div>
+        <div class="c"><h4>Conocimiento × rendimiento <em>· cada burbuja es un tema, su tamaño son sus videos</em></h4><svg viewBox="0 0 560 176" width="100%" aria-hidden="true"><rect x="46" y="16" width="223.1" height="84.1" fill="#6FCF97" opacity=".08"/><rect x="269.1" y="16" width="278.9" height="84.1" fill="#EAAA28" opacity=".06"/><line x1="269.1" x2="269.1" y1="16" y2="146" stroke="#34322E" stroke-dasharray="3 3"/><line x1="46" x2="548" y1="100.1" y2="100.1" stroke="#34322E" stroke-dasharray="3 3"/><line x1="46" x2="548" y1="146" y2="146" stroke="#34322E"/><line x1="46" x2="46" y1="16" y2="146" stroke="#34322E"/><text x="52" y="27" fill="#6FCF97" font-size="8.4" font-weight="700">OPORTUNIDAD · rinde y se publica poco</text><text x="542" y="27" fill="#EAAA28" font-size="8.4" font-weight="700" text-anchor="end">NÚCLEO · rinde y se publica mucho</text><text x="41" y="141.4" fill="#A59F92" font-size="7.6" text-anchor="end">40 %</text><text x="41" y="103.1" fill="#A59F92" font-size="7.6" text-anchor="end">50 %</text><text x="41" y="64.9" fill="#A59F92" font-size="7.6" text-anchor="end">60 %</text><text x="46.0" y="157" fill="#A59F92" font-size="7.6" text-anchor="middle">0 %</text><text x="157.6" y="157" fill="#A59F92" font-size="7.6" text-anchor="middle">4 %</text><text x="269.1" y="157" fill="#A59F92" font-size="7.6" text-anchor="middle">8 %</text><text x="380.7" y="157" fill="#A59F92" font-size="7.6" text-anchor="middle">12 %</text><text x="492.2" y="157" fill="#A59F92" font-size="7.6" text-anchor="middle">16 %</text><text x="297.0" y="174" fill="#A59F92" font-size="8" text-anchor="middle">% del catálogo que dedica al tema →</text><text transform="translate(9 81.0) rotate(-90)" fill="#A59F92" font-size="8" text-anchor="middle">retención media →</text><circle cx="453.2" cy="92.5" r="13.0" fill="#EAAA28" opacity=".88"/><text x="470.1" y="95.5" fill="#E2E3D0" font-size="8.2" text-anchor="start">Fe y trabajo <tspan fill="#A59F92">· 31</tspan></text><circle cx="400.2" cy="97.1" r="12.3" fill="#EAAA28" opacity=".88"/><text x="383.9" y="100.1" fill="#E2E3D0" font-size="8.2" text-anchor="end">Propósito <tspan fill="#A59F92">· 27</tspan></text><circle cx="361.1" cy="123.1" r="11.8" fill="#FA8A1A" opacity=".88"/><text x="377.0" y="126.1" fill="#E2E3D0" font-size="8.2" text-anchor="start">Familia <tspan fill="#A59F92">· 24</tspan></text><circle cx="205.0" cy="77.2" r="9.4" fill="#6FCF97" opacity=".88"/><text x="218.4" y="80.2" fill="#E2E3D0" font-size="8.2" text-anchor="start">Liderazgo <tspan fill="#A59F92">· 12</tspan></text><circle cx="163.1" cy="50.4" r="8.6" fill="#6FCF97" opacity=".88"/><text x="175.7" y="53.4" fill="#E2E3D0" font-size="8.2" text-anchor="start">Finanzas <tspan fill="#A59F92">· 9</tspan></text><circle cx="163.1" cy="50.4" r="13.6" fill="none" stroke="#6FCF97" stroke-width="1.3" stroke-dasharray="2.5 2"/><circle cx="230.1" cy="113.5" r="9.9" fill="#FA8A1A" opacity=".88"/><text x="243.9" y="116.5" fill="#E2E3D0" font-size="8.2" text-anchor="start">Testimonios <tspan fill="#A59F92">· 14</tspan></text><circle cx="308.2" cy="134.5" r="9.1" fill="#FA8A1A" opacity=".88"/><text x="321.3" y="137.5" fill="#E2E3D0" font-size="8.2" text-anchor="start">Comunidad <tspan fill="#A59F92">· 11</tspan></text><circle cx="71.1" cy="145" r="4.5" fill="#151412" stroke="#E4341F" stroke-width="1.4" stroke-dasharray="2 1.6"/><text x="80.1" y="139" fill="#E4341F" font-size="8.2">Salud emocional · 2 videos, sin datos suficientes</text></svg></div>
+        <div class="fila2" style="grid-template-columns:1.25fr 1fr">
+          <div class="c"><h4>CTR y retención por mes <em>· con hitos</em></h4><svg viewBox="0 0 300 124" width="100%" aria-hidden="true"><line x1="26" x2="292" y1="20.0" y2="20.0" stroke="#34322E" stroke-width=".6"/><line x1="26" x2="292" y1="46.7" y2="46.7" stroke="#34322E" stroke-width=".6"/><line x1="26" x2="292" y1="73.4" y2="73.4" stroke="#34322E" stroke-width=".6"/><line x1="26" x2="292" y1="100.1" y2="100.1" stroke="#34322E" stroke-width=".6"/><text x="30.0" y="118" fill="#A59F92" font-size="8" text-anchor="middle">nov</text><text x="76.5" y="118" fill="#A59F92" font-size="8" text-anchor="middle">ene</text><text x="123.1" y="118" fill="#A59F92" font-size="8" text-anchor="middle">mar</text><text x="169.6" y="118" fill="#A59F92" font-size="8" text-anchor="middle">may</text><text x="216.2" y="118" fill="#A59F92" font-size="8" text-anchor="middle">jul</text><text x="262.7" y="118" fill="#A59F92" font-size="8" text-anchor="middle">sep</text><polygon points="30.0,100 30.0,74.4 53.3,68.0 76.5,68.0 99.8,55.2 123.1,61.6 146.4,48.8 169.6,42.4 192.9,48.8 216.2,36.0 239.5,29.6 262.7,36.0 286.0,42.4 286.0,100" fill="#EAAA28" opacity=".12"/><polyline points="30.0,74.4 53.3,68.0 76.5,68.0 99.8,55.2 123.1,61.6 146.4,48.8 169.6,42.4 192.9,48.8 216.2,36.0 239.5,29.6 262.7,36.0 286.0,42.4" fill="none" stroke="#EAAA28" stroke-width="1.8" stroke-linejoin="round"/><polyline points="30.0,83.2 53.3,86.0 76.5,77.6 99.8,80.4 123.1,72.0 146.4,74.8 169.6,69.2 192.9,72.0 216.2,60.8 239.5,58.0 262.7,63.6 286.0,63.6" fill="none" stroke="#FA8A1A" stroke-width="1.8" stroke-linejoin="round"/><line x1="216.2" x2="216.2" y1="14" y2="102" stroke="#5FB3C9" stroke-width=".9" stroke-dasharray="2.5 2"/><rect x="168.2" y="4" width="96" height="11" rx="3" fill="#5FB3C9" opacity=".16"/><text x="216.2" y="13.5" fill="#5FB3C9" font-size="7.6" text-anchor="middle">Jul: serie nueva de 4 videos</text><circle cx="216.2" cy="36.0" r="2.6" fill="#151412" stroke="#EAAA28" stroke-width="1.4"/><circle cx="216.2" cy="60.8" r="2.6" fill="#151412" stroke="#FA8A1A" stroke-width="1.4"/><circle cx="286.0" cy="42.4" r="2.6" fill="#151412" stroke="#EAAA28" stroke-width="1.4"/><circle cx="286.0" cy="63.6" r="2.6" fill="#151412" stroke="#FA8A1A" stroke-width="1.4"/><text x="294" y="35.4" fill="#EAAA28" font-size="8.4" font-weight="700" text-anchor="end">49 %</text><text x="294" y="75.6" fill="#FA8A1A" font-size="8.4" font-weight="700" text-anchor="end">4,8 %</text></svg><p><span style="color:#FA8A1A">━</span> CTR &nbsp; <span style="color:#EAAA28">━</span> Retención media</p></div>
+          <div class="c"><h4>Cadencia <em>· videos por semana y mes</em></h4><svg viewBox="0 0 150 70" width="100%" aria-hidden="true"><text x="12.0" y="8" fill="#A59F92" font-size="5.6" text-anchor="middle">n</text><text x="23.8" y="8" fill="#A59F92" font-size="5.6" text-anchor="middle">d</text><text x="35.6" y="8" fill="#A59F92" font-size="5.6" text-anchor="middle">e</text><text x="47.4" y="8" fill="#A59F92" font-size="5.6" text-anchor="middle">f</text><text x="59.2" y="8" fill="#A59F92" font-size="5.6" text-anchor="middle">m</text><text x="71.0" y="8" fill="#A59F92" font-size="5.6" text-anchor="middle">a</text><text x="82.8" y="8" fill="#A59F92" font-size="5.6" text-anchor="middle">m</text><text x="94.6" y="8" fill="#A59F92" font-size="5.6" text-anchor="middle">j</text><text x="106.4" y="8" fill="#A59F92" font-size="5.6" text-anchor="middle">j</text><text x="118.2" y="8" fill="#A59F92" font-size="5.6" text-anchor="middle">a</text><text x="130.0" y="8" fill="#A59F92" font-size="5.6" text-anchor="middle">s</text><text x="141.8" y="8" fill="#A59F92" font-size="5.6" text-anchor="middle">o</text><rect x="8.0" y="12" width="9.6" height="10.6" rx="2" fill="#FA8A1A" opacity="0.95"/><rect x="19.8" y="12" width="9.6" height="10.6" rx="2" fill="#FA8A1A" opacity="0.35"/><rect x="31.6" y="12" width="9.6" height="10.6" rx="2" fill="#FA8A1A" opacity="0.95"/><rect x="43.4" y="12" width="9.6" height="10.6" rx="2" fill="none" stroke="#E4341F" stroke-width=".8" stroke-dasharray="1.6 1.2"/><rect x="55.2" y="12" width="9.6" height="10.6" rx="2" fill="#FA8A1A" opacity="0.35"/><rect x="67.0" y="12" width="9.6" height="10.6" rx="2" fill="#FA8A1A" opacity="0.95"/><rect x="78.8" y="12" width="9.6" height="10.6" rx="2" fill="none" stroke="#E4341F" stroke-width=".8" stroke-dasharray="1.6 1.2"/><rect x="90.6" y="12" width="9.6" height="10.6" rx="2" fill="#FA8A1A" opacity="0.95"/><rect x="102.4" y="12" width="9.6" height="10.6" rx="2" fill="#FA8A1A" opacity="0.95"/><rect x="114.2" y="12" width="9.6" height="10.6" rx="2" fill="#FA8A1A" opacity="0.35"/><rect x="126.0" y="12" width="9.6" height="10.6" rx="2" fill="#FA8A1A" opacity="0.35"/><rect x="137.8" y="12" width="9.6" height="10.6" rx="2" fill="#FA8A1A" opacity="0.95"/><rect x="8.0" y="25" width="9.6" height="10.6" rx="2" fill="#FA8A1A" opacity="0.35"/><rect x="19.8" y="25" width="9.6" height="10.6" rx="2" fill="none" stroke="#E4341F" stroke-width=".8" stroke-dasharray="1.6 1.2"/><rect x="31.6" y="25" width="9.6" height="10.6" rx="2" fill="#FA8A1A" opacity="0.95"/><rect x="43.4" y="25" width="9.6" height="10.6" rx="2" fill="#FA8A1A" opacity="0.35"/><rect x="55.2" y="25" width="9.6" height="10.6" rx="2" fill="none" stroke="#E4341F" stroke-width=".8" stroke-dasharray="1.6 1.2"/><rect x="67.0" y="25" width="9.6" height="10.6" rx="2" fill="#FA8A1A" opacity="0.35"/><rect x="78.8" y="25" width="9.6" height="10.6" rx="2" fill="none" stroke="#E4341F" stroke-width=".8" stroke-dasharray="1.6 1.2"/><rect x="90.6" y="25" width="9.6" height="10.6" rx="2" fill="#FA8A1A" opacity="0.35"/><rect x="102.4" y="25" width="9.6" height="10.6" rx="2" fill="#FA8A1A" opacity="0.95"/><rect x="114.2" y="25" width="9.6" height="10.6" rx="2" fill="#FA8A1A" opacity="0.95"/><rect x="126.0" y="25" width="9.6" height="10.6" rx="2" fill="#FA8A1A" opacity="0.35"/><rect x="137.8" y="25" width="9.6" height="10.6" rx="2" fill="#FA8A1A" opacity="0.35"/><rect x="8.0" y="38" width="9.6" height="10.6" rx="2" fill="#FA8A1A" opacity="0.95"/><rect x="19.8" y="38" width="9.6" height="10.6" rx="2" fill="#FA8A1A" opacity="0.35"/><rect x="31.6" y="38" width="9.6" height="10.6" rx="2" fill="#FA8A1A" opacity="0.35"/><rect x="43.4" y="38" width="9.6" height="10.6" rx="2" fill="none" stroke="#E4341F" stroke-width=".8" stroke-dasharray="1.6 1.2"/><rect x="55.2" y="38" width="9.6" height="10.6" rx="2" fill="#FA8A1A" opacity="0.35"/><rect x="67.0" y="38" width="9.6" height="10.6" rx="2" fill="#FA8A1A" opacity="0.95"/><rect x="78.8" y="38" width="9.6" height="10.6" rx="2" fill="none" stroke="#E4341F" stroke-width=".8" stroke-dasharray="1.6 1.2"/><rect x="90.6" y="38" width="9.6" height="10.6" rx="2" fill="#FA8A1A" opacity="0.35"/><rect x="102.4" y="38" width="9.6" height="10.6" rx="2" fill="#FA8A1A" opacity="0.35"/><rect x="114.2" y="38" width="9.6" height="10.6" rx="2" fill="#FA8A1A" opacity="0.95"/><rect x="126.0" y="38" width="9.6" height="10.6" rx="2" fill="#FA8A1A" opacity="0.95"/><rect x="137.8" y="38" width="9.6" height="10.6" rx="2" fill="#FA8A1A" opacity="0.35"/><rect x="8.0" y="51" width="9.6" height="10.6" rx="2" fill="#FA8A1A" opacity="0.35"/><rect x="19.8" y="51" width="9.6" height="10.6" rx="2" fill="#FA8A1A" opacity="0.95"/><rect x="31.6" y="51" width="9.6" height="10.6" rx="2" fill="none" stroke="#E4341F" stroke-width=".8" stroke-dasharray="1.6 1.2"/><rect x="43.4" y="51" width="9.6" height="10.6" rx="2" fill="none" stroke="#E4341F" stroke-width=".8" stroke-dasharray="1.6 1.2"/><rect x="55.2" y="51" width="9.6" height="10.6" rx="2" fill="#FA8A1A" opacity="0.95"/><rect x="67.0" y="51" width="9.6" height="10.6" rx="2" fill="#FA8A1A" opacity="0.35"/><rect x="78.8" y="51" width="9.6" height="10.6" rx="2" fill="none" stroke="#E4341F" stroke-width=".8" stroke-dasharray="1.6 1.2"/><rect x="90.6" y="51" width="9.6" height="10.6" rx="2" fill="#FA8A1A" opacity="0.95"/><rect x="102.4" y="51" width="9.6" height="10.6" rx="2" fill="#FA8A1A" opacity="0.95"/><rect x="114.2" y="51" width="9.6" height="10.6" rx="2" fill="#FA8A1A" opacity="0.35"/><rect x="126.0" y="51" width="9.6" height="10.6" rx="2" fill="none" stroke="#E4341F" stroke-width=".8" stroke-dasharray="1.6 1.2"/><rect x="137.8" y="51" width="9.6" height="10.6" rx="2" fill="none" stroke="#E4341F" stroke-width=".8" stroke-dasharray="1.6 1.2"/><text x="1" y="20" fill="#A59F92" font-size="5.2">S1</text><text x="1" y="33" fill="#A59F92" font-size="5.2">S2</text><text x="1" y="46" fill="#A59F92" font-size="5.2">S3</text><text x="1" y="59" fill="#A59F92" font-size="5.2">S4</text></svg><p>Tres meses sin publicar (recuadros punteados). Lleva 5 semanas sin subir.</p></div>
+        </div>
+        <div class="c"><h4>Voz y estilo <em>· lo que ya es suyo, para que lo nuevo suene a él</em></h4>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:5mm;align-items:center">
+            <div><div class="barv"><span>Cercano</span><u style="width:82%"></u><span>82</span></div>
+            <div class="barv"><span>Técnico</span><u style="width:24%"></u><span>24</span></div>
+            <div class="barv"><span>Con historias</span><u style="width:68%"></u><span>68</span></div></div>
+            <p style="margin:0"><span class="chip">«paso a paso»</span><span class="chip">«propósito»</span><span class="chip">«familia»</span><span class="chip no">evita: «garantizado»</span></p></div></div>
+        <div class="c decide">
+          <div class="cab"><strong>Decisión estratégica para la sesión: ¿dónde enfocar la producción de los próximos 3 meses?</strong><span class="nv n3">NIVEL 3 · DECIDEN LAS PERSONAS</span></div>
+          <p style="margin:0">Evidencia: <b>Finanzas</b> es el 4 % del catálogo y tiene la mejor retención (63 %) y el mejor CTR (6,2 %). Su postura cambió entre 2021 y 2024 y dos videos se contradicen (video 57, 8:10; video 164, 3:45).</p>
+          <div class="ops">
+            <div class="op rec"><b>A. Serie de 4 videos sobre Finanzas</b><small>Recomendada por la evidencia. Antes, resolver la contradicción.</small></div>
+            <div class="op"><b>B. Mantener el núcleo y sumar 1 video al mes</b><small>Menos riesgo, avance más lento.</small></div>
+            <div class="op"><b>C. Otra decisión de la estratega</b><small>La plataforma lo registra igual.</small></div>
           </div>
-          <p>Con la exportación de Studio. Sin ella, solo vistas, me gusta y comentarios públicos.</p>
-        </div>
-        <div class="c nuevo">
-          <h4>De sus contenidos <em>· lo que agrega la plataforma</em></h4>
-          <div class="barra-h"><span>Fe y trabajo</span><i style="width:100%"></i><span>31</span></div>
-          <div class="barra-h"><span>Familia</span><i style="width:77%"></i><span>24</span></div>
-          <div class="barra-h"><span>Finanzas</span><i style="width:29%"></i><span>9</span></div>
-          <div class="barra-h"><span>Salud emocional</span><i class="poco" style="width:7%"></i><span>2</span></div>
-          <p>Videos por tema, de lo que realmente dijo.</p>
-        </div>
-        <div class="c ancho nuevo">
-          <h4>El cruce <em>· conocimiento × rendimiento</em></h4>
-          <table class="cruce">
-            <tr><th>Tema</th><th>Retención media</th><th>CTR</th><th>Lectura</th></tr>
-            <tr><td>Fe y trabajo</td><td><i style="width:52%"></i> 52 %</td><td>4,6 %</td><td>Domina y rinde: es su núcleo.</td></tr>
-            <tr><td>Familia</td><td><i style="width:44%"></i> 44 %</td><td>4,1 %</td><td>Mucho material, rinde por debajo.</td></tr>
-            <tr><td>Finanzas</td><td><i style="width:63%"></i> 63 %</td><td>6,2 %</td><td><strong>Poco publicado y rinde más: oportunidad.</strong></td></tr>
-            <tr><td>Salud emocional</td><td>pocos datos</td><td>—</td><td>En su base, casi sin videos: vacío.</td></tr>
-          </table>
-        </div>
-        <div class="c ancho nuevo">
-          <h4>Postura y siguiente paso</h4>
-          <div class="vacio"><div><strong>Finanzas:</strong> su postura cambió entre 2021 y 2024, y dos videos se contradicen.<q>Video 57, min. 8:10, y video 164, min. 3:45.</q></div><span class="btn">Revisar con el creador</span></div>
-          <div class="vacio"><div><strong>Serie propuesta:</strong> tres videos sobre Finanzas, con sus propias palabras y el formato que ya le funcionó.<q>Fuentes: videos 57, 164 y 171.</q></div><span class="btn">Pasar al plan</span></div>
+          <div class="btns"><span class="b ok">Registrar decisión</span><span class="b">Pedir más evidencia</span><span class="quien">Decide: <b>Diana, con el creador</b></span></div>
         </div>
       </div>
     </div>
-    <p class="leyenda">Pantalla ilustrativa con datos ficticios. En la plataforma, cada afirmación abre el video en el minuto citado.</p>
+    <p class="leyenda">Pantalla ilustrativa con datos ficticios. Cada afirmación de la plataforma abre el video en el minuto citado.</p>
+  </div>
+  <footer class="pie"><span>Diana Cardona / Propuesta operativa</span><span>3</span></footer>
+</article>
 
-    <h2>Qué hay hoy y qué se construye</h2>
+<!-- Página 4 -->
+<article class="hoja">
+  <div class="cuerpo" style="padding-top:11mm">
+    <h2 class="primero">Panel del creador</h2>
+    <p>El creador ve su propia base de conocimiento, no la del resto, y decide sobre su contenido con base en lo que él mismo ha dicho. Las reglas y los conceptos de Eloísa se aplican a cada propuesta antes de que llegue a sus manos.</p>
+
+    <div class="pnl" role="img" aria-label="Pantalla ilustrativa del panel del creador: mapa de su conocimiento, lo que ha dicho y las decisiones tácticas del mes con su nivel de autonomía">
+      <div class="top"><div><b>Tu base de conocimiento</b><span class="rol">Panel del creador</span></div><div class="tabs"><span class="on">Mi conocimiento</span><span>Decisiones del mes</span><span>Mi voz</span></div><span class="marca">Datos ilustrativos</span></div>
+      <div class="cuerpo-p">
+        <div class="fila2" style="grid-template-columns:1.25fr 1fr">
+          <div class="c"><h4>Mapa de lo que has dicho <em>· tamaño = videos, color = rendimiento</em></h4><svg viewBox="0 0 330 214" width="100%" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FA8A1A"/><stop offset="1" stop-color="#E4341F"/></linearGradient></defs><line x1="165" y1="106" x2="84" y2="66" stroke="#34322E" stroke-width=".8"/><line x1="165" y1="106" x2="238" y2="58" stroke="#34322E" stroke-width=".8"/><line x1="165" y1="106" x2="52" y2="150" stroke="#34322E" stroke-width=".8"/><line x1="165" y1="106" x2="262" y2="136" stroke="#34322E" stroke-width=".8"/><line x1="165" y1="106" x2="150" y2="186" stroke="#34322E" stroke-width=".8"/><line x1="165" y1="106" x2="140" y2="22" stroke="#34322E" stroke-width=".8"/><line x1="165" y1="106" x2="298" y2="86" stroke="#34322E" stroke-width=".8"/><line x1="84" y1="66" x2="238" y2="58" stroke="#5a564f" stroke-width="1"/><line x1="84" y1="66" x2="52" y2="150" stroke="#5a564f" stroke-width="1"/><line x1="52" y1="150" x2="150" y2="186" stroke="#5a564f" stroke-width="1"/><line x1="262" y1="136" x2="238" y2="58" stroke="#5a564f" stroke-width="1"/><line x1="140" y1="22" x2="84" y2="66" stroke="#5a564f" stroke-width="1"/><line x1="298" y1="86" x2="238" y2="58" stroke="#5a564f" stroke-width="1"/><line x1="150" y1="186" x2="262" y2="136" stroke="#5a564f" stroke-width="1"/><line x1="150" y1="186" x2="268" y2="192" stroke="#E4341F" stroke-width="1" stroke-dasharray="3 3"/><circle cx="165" cy="106" r="17" fill="url(#g)" /><text x="165" y="108.5" fill="#fff" font-size="8.6" font-weight="700" text-anchor="middle">Tu voz</text><circle cx="84" cy="66" r="15" fill="#EAAA28" opacity=".9"/><text x="84" y="89" fill="#E2E3D0" font-size="8.2" text-anchor="middle">Fe y trabajo <tspan fill="#A59F92">· 31</tspan></text><circle cx="238" cy="58" r="13.5" fill="#EAAA28" opacity=".9"/><text x="238" y="79.5" fill="#E2E3D0" font-size="8.2" text-anchor="middle">Propósito <tspan fill="#A59F92">· 27</tspan></text><circle cx="52" cy="150" r="12.5" fill="#FA8A1A" opacity=".9"/><text x="52" y="170.5" fill="#E2E3D0" font-size="8.2" text-anchor="middle">Familia <tspan fill="#A59F92">· 24</tspan></text><circle cx="262" cy="136" r="10" fill="#6FCF97" opacity=".9"/><text x="262" y="154" fill="#E2E3D0" font-size="8.2" text-anchor="middle">Liderazgo <tspan fill="#A59F92">· 12</tspan></text><circle cx="150" cy="186" r="8.5" fill="#6FCF97" opacity=".9"/><text x="150" y="202.5" fill="#E2E3D0" font-size="8.2" text-anchor="middle">Finanzas <tspan fill="#A59F92">· 9</tspan></text><circle cx="140" cy="22" r="8" fill="#FA8A1A" opacity=".9"/><text x="140" y="38" fill="#E2E3D0" font-size="8.2" text-anchor="middle">Testimonios <tspan fill="#A59F92">· 14</tspan></text><circle cx="298" cy="86" r="7.5" fill="#FA8A1A" opacity=".9"/><text x="298" y="101.5" fill="#E2E3D0" font-size="8.2" text-anchor="middle">Comunidad <tspan fill="#A59F92">· 11</tspan></text><circle cx="268" cy="192" r="6" fill="none" stroke="#E4341F" stroke-width="1.3" stroke-dasharray="2 1.6"/><text x="268" y="207" fill="#E4341F" font-size="8.2" text-anchor="middle">Salud emocional · 2</text></svg>
+            <p><span style="color:#6FCF97">●</span> rinde más &nbsp; <span style="color:#EAAA28">●</span> en el promedio &nbsp; <span style="color:#FA8A1A">●</span> rinde menos &nbsp; <span style="color:#E4341F">◌</span> casi sin videos</p></div>
+          <div class="c"><h4>Lo que dijiste y no desarrollaste</h4>
+            <div class="cita"><q>«Lo que cargamos por dentro también se cuida, y casi nadie lo habla.»</q><small>Video 118 · min. 14:32 · Salud emocional</small></div>
+            <div class="cita"><q>«Cambié de opinión sobre el ahorro: antes decía una cosa y hoy otra.»</q><small>Video 164 · min. 3:45 · Finanzas</small></div>
+            <p style="margin-top:2mm">Las dos ideas están en tu base y no tienen un video propio. Son material para tu próxima decisión.</p></div>
+        </div>
+        <div class="c"><h4>Tus decisiones de este mes <em>· la plataforma prepara, tú decides</em></h4>
+          <div class="dec"><div><span class="nv n2">NIVEL 2</span> &nbsp;<strong>Video: «Finanzas para familias de fe»</strong>
+              <p style="margin:1mm 0 0">Preparado con tu voz: guion con citas de tus videos 57 y 164, 3 títulos y la descripción.</p>
+              <p class="reglas">Reglas de Eloísa: <b>✓</b> gancho en los primeros 30 s &nbsp; <b>✓</b> promesa clara en el título &nbsp; <s>✗</s> falta llamada a la acción</p></div>
+            <div class="btns" style="margin:0;flex-direction:column;align-items:stretch"><span class="b ok">Aprobar</span><span class="b">Editar</span><span class="b">Descartar</span></div></div>
+          <div class="dec"><div><span class="nv n1">NIVEL 1</span> &nbsp;<strong>Corto candidato: la historia del video 118</strong>
+              <p style="margin:1mm 0 0">Hecho y avisado: la plataforma extrajo 42 segundos con gancho. Puedes verlo y corregirlo.</p></div>
+            <div class="btns" style="margin:0;flex-direction:column;align-items:stretch"><span class="b">Ver clip</span></div></div>
+          <div class="dec"><div><span class="nv n3">NIVEL 3</span> &nbsp;<strong>Publicar el jueves a las 7 p. m.</strong>
+              <p style="margin:1mm 0 0">Nada sale sin tu aprobación. Esta decisión no la toma la plataforma.</p></div>
+            <div class="btns" style="margin:0;flex-direction:column;align-items:stretch"><span class="b ok">Publicar yo</span></div></div>
+        </div>
+        <div class="c"><h4>Historial <em>· quién, cuándo y con qué evidencia</em></h4>
+          <p style="margin:0">12 oct · Plataforma (nivel 0): base actualizada con 3 videos nuevos &nbsp;·&nbsp; 13 oct · Plataforma (nivel 1): temas reclasificados &nbsp;·&nbsp; 15 oct · <b>Tú</b>: aprobaste el plan del mes</p></div>
+      </div>
+    </div>
+    <p class="leyenda">Pantalla ilustrativa con datos y citas ficticios. En la plataforma, cada cita abre el video en el minuto indicado.</p>
+  </div>
+  <footer class="pie"><span>Diana Cardona / Propuesta operativa</span><span>4</span></footer>
+</article>
+
+<!-- Página 5 -->
+<article class="hoja">
+  <div class="cuerpo" style="padding-top:11mm">
+    <h2 class="primero">Qué hay hoy y qué se construye</h2>
     <table class="t">
       <tr><th>Funciona hoy</th><th>Se construye en el piloto</th></tr>
       <tr><td style="white-space:normal;font-weight:400">
@@ -171,19 +260,14 @@ table.cruce{width:100%;border-collapse:collapse;font-size:7.4pt}
         <li>Perfiles de equipo y recorrido de aprobación.</li></ul></td>
       <td style="white-space:normal;font-weight:400">
         <ul class="pts"><li>Conexión con YouTube Analytics, con autorización del creador, y con ella el cruce de temas con retención y CTR.</li>
+        <li>El panel de la estratega y el panel del creador, con las reglas y conceptos de Eloísa.</li>
         <li>Transcripción automática de todos los videos de un canal nuevo.</li>
         <li>Espacio separado por cliente, para atender varios a la vez.</li>
         <li>Tablero semanal de propuestas y calendario editorial.</li>
         <li>Radar de demanda: qué busca la gente sobre los temas del creador.</li></ul></td></tr>
     </table>
-  </div>
-  <footer class="pie"><span>Diana Cardona / Propuesta operativa</span><span>2</span></footer>
-</article>
 
-<!-- Página 3 -->
-<article class="hoja">
-  <div class="cuerpo" style="padding-top:11mm">
-    <h2 class="primero">Capacidad: lo que esperamos y cómo lo comprobamos</h2>
+    <h2>Capacidad: lo que esperamos y cómo lo comprobamos</h2>
     <p>Estas cifras son <strong>estimaciones de partida</strong>, hechas con mi experiencia y no con mediciones. El piloto existe para reemplazarlas por datos reales.</p>
     <table class="t">
       <tr><th>Modalidad</th><th>Horas de trabajo (estimadas)</th><th>Capacidad con 20 h a la semana</th></tr>
@@ -214,8 +298,14 @@ table.cruce{width:100%;border-collapse:collapse;font-size:7.4pt}
       </div>
     </div>
     <p class="nota" style="margin-top:2mm">Al cerrar, un informe corto con la decisión de seguir, ajustar o parar, con los números a la vista.</p>
+  </div>
+  <footer class="pie"><span>Diana Cardona / Propuesta operativa</span><span>5</span></footer>
+</article>
 
-    <h2>Límites que conviene decir de entrada</h2>
+<!-- Página 6 -->
+<article class="hoja">
+  <div class="cuerpo" style="padding-top:11mm">
+    <h2 class="primero">Límites que conviene decir de entrada</h2>
     <ul class="pts">
       <li>Sin la autorización del creador no hay retención ni impresiones, solo datos públicos.</li>
       <li>Con menos de 30 publicaciones, las cifras son indicativas y no concluyentes.</li>
@@ -223,17 +313,12 @@ table.cruce{width:100%;border-collapse:collapse;font-size:7.4pt}
       <li>La plataforma ordena la evidencia y reduce la intuición. No garantiza resultados ni predice qué video va a funcionar.</li>
       <li>Los videos se transcriben con lo que el creador entregue: archivos, enlaces o guiones propios.</li>
     </ul>
-  </div>
-  <footer class="pie"><span>Diana Cardona / Propuesta operativa</span><span>3</span></footer>
-</article>
 
-<!-- Página 4 -->
-<article class="hoja">
-  <div class="cuerpo" style="padding-top:11mm">
-    <h2 class="primero">Cómo trabajaríamos juntas</h2>
+    <h2>Cómo trabajaríamos juntas</h2>
     <ul class="pts">
       <li>Yo lideraría este frente dentro de Wolf Digital: el diagnóstico, las sesiones, las clínicas y el seguimiento.</li>
       <li>La plataforma la pongo yo, con mi equipo de inteligencia artificial, y sigue siendo mía. Wolf Digital conserva su relación y su marca con los alumnos.</li>
+      <li>Las reglas y los conceptos de Eloísa se cargan en la plataforma y siguen siendo de ella.</li>
       <li>Cómo se estructura la colaboración y sus condiciones económicas lo conversamos juntas en la segunda reunión, una vez que veamos los resultados esperados del piloto.</li>
     </ul>
 
@@ -258,7 +343,7 @@ table.cruce{width:100%;border-collapse:collapse;font-size:7.4pt}
       <p style="margin-top:2.4mm"><strong>Diana Cardona</strong> · @dicardona · dianac.figueroa@gmail.com</p>
     </div>
   </div>
-  <footer class="pie"><span>Diana Cardona / Propuesta operativa</span><span>4</span></footer>
+  <footer class="pie"><span>Diana Cardona / Propuesta operativa</span><span>6</span></footer>
 </article>
 </body>
 </html>
