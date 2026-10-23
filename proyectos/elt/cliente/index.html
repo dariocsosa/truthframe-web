@@ -9,7 +9,9 @@ body:before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradi
 .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
 header.top{border-bottom:1px solid var(--ln);position:sticky;top:0;background:rgba(0,0,0,.88);backdrop-filter:blur(8px);z-index:10}
 .top .wrap{display:flex;align-items:center;gap:16px;min-height:64px;flex-wrap:wrap}.top img.tfs{height:36px}.top img.elt{height:40px}.top .sp{flex:1}
-nav a{color:var(--mut);text-decoration:none;font-size:13px;font-weight:600;margin-left:16px}nav a:hover{color:#fff}
+nav{display:flex;gap:4px;overflow-x:auto;white-space:nowrap;scrollbar-width:none;max-width:100%}nav::-webkit-scrollbar{display:none}
+nav a{color:var(--mut);text-decoration:none;font-size:13px;font-weight:600;padding:8px 12px;border-radius:8px;border-bottom:2px solid transparent}nav a:hover{color:#fff}nav a.act{color:var(--gold);border-bottom-color:var(--gold);background:rgba(245,184,0,.1)}
+section,.wk h2{scroll-margin-top:120px}
 .hero{padding:56px 0 24px}.eyebrow{font-size:12px;font-weight:700;letter-spacing:.28em;color:var(--gold);margin-bottom:12px}
 h1{font-size:clamp(2.2rem,6vw,3.6rem);line-height:1.04;font-weight:800;letter-spacing:-.03em;color:#fff}h1 span{color:var(--gold)}
 .lead{color:var(--mut);font-size:1.15rem;margin-top:14px;max-width:720px}
@@ -43,10 +45,12 @@ form{background:var(--s2);border:1px solid var(--ln);border-radius:14px;padding:
 input,textarea{width:100%;background:#0b0b0b;color:#fff;border:1px solid var(--ln);border-radius:8px;padding:11px 12px;font:inherit}textarea{min-height:130px;resize:vertical}input:focus,textarea:focus,select:focus,.btn:focus{outline:2px solid var(--coral);outline-offset:2px}
 .fr{display:grid;grid-template-columns:1fr 1fr;gap:14px}#msg{font-weight:600;font-size:.92rem}
 footer{padding:36px 0 56px;border-top:1px solid var(--ln);color:#8d8a85;font-size:.82rem}footer .wrap{display:flex;align-items:center;gap:14px;flex-wrap:wrap}footer img{height:28px}
-@media(max-width:720px){.dr{grid-template-columns:1fr}.fr{grid-template-columns:1fr}nav{display:none}}
+@media(max-width:900px){.top .wrap{padding-top:8px;padding-bottom:6px}.top .sp{display:none}nav{order:3;width:100%;margin-left:-8px;flex-wrap:wrap;overflow:visible}}
+@media(max-width:600px){nav{gap:0;margin-left:-6px}nav a{font-size:12px;padding:6px 7px}}
+@media(max-width:720px){.dr{grid-template-columns:1fr}.fr{grid-template-columns:1fr}}
 </style></head><body>
 <header class="top"><div class="wrap"><img class="tfs" src="/assets/logos/Logo_TFS_white_simbolo.svg" alt="Truth Frame Studio"><img class="elt" src="img/logo-elt.png" alt="Entendiendo Los Tiempos"><span class="sp"></span>
-<nav><a href="#episodios">Episodios</a><a href="#analisis">Análisis</a><a href="#datos">Datos</a><a href="#temas">Temas</a><a href="#proyecciones">Proyecciones</a><a href="#comentarios">Comentarios</a></nav></div></header>
+<nav id="nav"><a href="#episodios">Episodios</a><a href="#analisis">Análisis</a><a href="#datos">Datos</a><a href="#temas">Temas</a><a href="#proyecciones">Proyecciones</a><a href="#comentarios">Comentarios</a></nav></div></header>
 <main class="wrap"><div class="hero"><div class="eyebrow">INFORME DE AVANCE</div><h1>Entendiendo<br>Los <span>Tiempos</span></h1>
 <p class="lead">Aquí encuentras, semana a semana, lo que se ha trabajado en el canal, los datos que respaldan cada decisión y lo que esperamos lograr.</p>
 <div class="bar"><a class="btn alt" href="Informe_1_ELT_Semana_1.pdf">Descargar informe en PDF</a><span class="sub" style="margin:0">Actualizado el 23/10/2026</span></div></div>
@@ -102,6 +106,12 @@ footer{padding:36px 0 56px;border-top:1px solid var(--ln);color:#8d8a85;font-siz
 <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap"><button class="btn" type="submit">Enviar a Diana</button><span id="msg" role="status"></span></div></form></section>
 </main><footer><div class="wrap"><img src="/assets/logos/Logo_TFS_white_2.svg" alt="Truth Frame Studio"><span>Informe preparado por Diana Cardona · Truth Frame Studio</span></div></footer><script>
 (function(){var sel=document.getElementById('week');if(sel){sel.addEventListener('change',function(){document.querySelectorAll('.wk').forEach(function(s){s.hidden=s.id!==sel.value});});}
+var links=[].slice.call(document.querySelectorAll('#nav a'));
+function mark(id){links.forEach(function(a){var on=a.getAttribute('href')==='#'+id;a.classList.toggle('act',on);if(on&&a.scrollIntoView){var n=document.getElementById('nav');n.scrollTo({left:a.offsetLeft-12,behavior:'smooth'});}});}
+var ids=['episodios','analisis','datos','temas','proyecciones','comentarios'];
+function spy(){var y=window.scrollY+160,cur=ids[0];ids.forEach(function(i){var e=document.getElementById(i);if(e&&e.getBoundingClientRect().top+window.scrollY<=y)cur=i;});
+if(window.innerHeight+window.scrollY>=document.body.scrollHeight-4)cur=ids[ids.length-1];mark(cur);}
+addEventListener('scroll',spy,{passive:true});addEventListener('resize',spy);links.forEach(function(a){a.addEventListener('click',function(){mark(a.getAttribute('href').slice(1))})});spy();
 var f=document.getElementById('fb');if(!f)return;var msg=document.getElementById('msg');
 var URL='https://script.google.com/macros/s/AKfycbwBpL72KSp-kJQ2RzB195u-CJj-PyX0X770gAQx58-zDRMmprck7TLBlNaJAY8jE8EyYA/exec';
 f.addEventListener('submit',function(e){e.preventDefault();
