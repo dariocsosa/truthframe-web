@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Informe para la Junta Directiva — Eternidad Plus (2026–2027) | Truth Frame Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #000000;
+      --surface: #101010;
+      --surface-2: #181818;
+      --text: #EAE8E4;
+      --white: #FFFFFF;
+      --muted: #A3A19D;
+      --coral: #F24E55;
+      --green: #2ECC71;
+      --amber: #F5B041;
+      --blue: #5DADE2;
+      --border: rgba(255, 255, 255, 0.14);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.52;
+      padding: 2rem 1.5rem 4rem;
+    }
+    .container { max-width: 1020px; margin: 0 auto; }
+
+    .no-print-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 0.9rem 1.25rem;
+      border-radius: 10px;
+      margin-bottom: 1.75rem;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.55rem 1rem;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: var(--surface-2);
+      color: var(--white);
+    }
+    .btn-coral { background: var(--coral); border-color: var(--coral); color: var(--white); }
+
+    /* PORTADA / CABECERA EJECUTIVA */
+    .cover-header {
+      background: linear-gradient(145deg, rgba(242, 78, 85, 0.1), rgba(16, 16, 16, 0.98));
+      border: 1px solid rgba(242, 78, 85, 0.4);
+      border-radius: 12px;
+      padding: 1.8rem 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .cover-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding-bottom: 1rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+    .eyebrow {
+      font-size: 0.73rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--coral);
+      font-weight: 800;
+    }
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 0.45rem;
+    }
+    .lead { font-size: 0.9rem; color: var(--text); }
+    .kpi-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-top: 1.15rem;
+    }
+    .kpi-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.75rem 0.9rem;
+    }
+    .kpi-box strong {
+      display: block;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--white);
+    }
+    .kpi-box span {
+      font-size: 0.73rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* SECCIONES SINCRONIZADAS CON LAS 8 DIAPOSITIVAS */
+    .doc-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.4rem 1.6rem;
+      margin-bottom: 1.25rem;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+    .sec-banner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.65rem;
+      margin-bottom: 0.95rem;
+    }
+    .sec-tag {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      color: var(--coral);
+    }
+    .slide-ref {
+      font-size: 0.72rem;
+      font-weight: 700;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: var(--white);
+      padding: 0.2rem 0.65rem;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .doc-section h2 {
+      font-size: 1.18rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-top: 0.15rem;
+    }
+    .doc-section p {
+      font-size: 0.86rem;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+    }
+
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.9rem; }
+
+    .subcard {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.95rem 1.05rem;
+    }
+    .subcard h3 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.35rem;
+    }
+    .subcard p {
+      font-size: 0.81rem;
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.79rem;
+      margin-top: 0.4rem;
+    }
+    th, td {
+      padding: 0.5rem 0.65rem;
+      text-align: left;
+      border: 1px solid var(--border);
+    }
+    th {
+      background: var(--surface-2);
+      color: var(--white);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 700;
+    }
+
+    ul.list { list-style: none; margin-top: 0.35rem; }
+    ul.list li {
+      position: relative;
+      padding-left: 1rem;
+      margin-bottom: 0.38rem;
+      font-size: 0.82rem;
+      color: var(--text);
+    }
+    ul.list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--coral);
+      font-weight: 800;
+    }
+    ul.list li strong { color: var(--white); }
+
+    .img-box {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.5rem;
+      background: #080808;
+      margin-top: 0.6rem;
+    }
+    .img-box img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 4px;
+    }
+
+    .notes-area {
+      margin-top: 0.8rem;
+      border: 1px dashed var(--border);
+      border-radius: 6px;
+      padding: 0.6rem 0.85rem;
+      font-size: 0.76rem;
+      color: var(--muted);
+    }
+
+    /* ESTILOS DE IMPRESIÓN / PDF EJECUTIVO PARA ENTREGAR A LA JUNTA */
+    @media print {
+      @page { size: letter; margin: 10mm 12mm; }
+      body {
+        background: #FFFFFF !important;
+        color: #151515 !important;
+        padding: 0 !important;
+        font-size: 9.2pt;
+      }
+      .no-print-bar { display: none !important; }
+      .cover-header {
+        background: #FAFAFA !important;
+        border: 1.5px solid #F24E55 !important;
+        padding: 14px 18px !important;
+        margin-bottom: 12px !important;
+      }
+      h1, .doc-section h2, .subcard h3, .kpi-box strong, ul.list li strong, th, td strong {
+        color: #000000 !important;
+      }
+      .lead, .doc-section p, .subcard p, ul.list li, td {
+        color: #222222 !important;
+      }
+      .kpi-box, .doc-section, .subcard, .img-box {
+        background: #FFFFFF !important;
+        border: 1px solid #CCCCCC !important;
+      }
+      .doc-section {
+        padding: 11px 14px !important;
+        margin-bottom: 10px !important;
+      }
+      th {
+        background: #F0F0F0 !important;
+        border: 1px solid #BBBBBB !important;
+      }
+      td { border: 1px solid #CCCCCC !important; }
+      .slide-ref {
+        background: #FDECEC !important;
+        color: #B02026 !important;
+        border: 1px solid #F24E55 !important;
+      }
+      .notes-area {
+        border: 1px dashed #AAAAAA !important;
+        color: #555555 !important;
+      }
+
+      .mbar{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+      .mnum,.mlab{color:#444 !important}
+      .mnum.rec{color:#B8730A !important}
+      .yrs div{color:#000 !important; border-top:1px solid #888 !important}
+      .part-banner{background:#FDECEC !important; border:1.5px solid #F24E55 !important; margin-top:6px !important}
+      .part-banner h2,.big{color:#000 !important}
+      .part-banner p{color:#222 !important}
+      .src{color:#666 !important}
+      .pagebreak{page-break-before:always; break-before:page;}
+      .qr-wrap svg{border:1px solid #999}
+    }
+
+    .mchart{display:flex; align-items:flex-end; gap:3px; height:160px; margin-top:0.5rem;}
+    .mcol{flex:1; display:flex; flex-direction:column; justify-content:flex-end; align-items:center; height:100%;}
+    .mbar{width:100%; background:var(--coral); border-radius:3px 3px 0 0; min-height:2px; -webkit-print-color-adjust:exact; print-color-adjust:exact;}
+    .mbar.rec{background:var(--amber);}
+    .mbar.partial{background:repeating-linear-gradient(45deg,var(--coral),var(--coral) 3px,#a83036 3px,#a83036 6px);}
+    .mnum{font-size:0.58rem; font-weight:700; color:var(--muted); margin-bottom:2px;}
+    .mnum.rec{color:var(--amber); font-size:0.72rem;}
+    .mlab{font-size:0.58rem; color:var(--muted); margin-top:2px; font-weight:600;}
+    .yrs{display:flex; gap:3px; margin-top:2px;}
+    .yrs div{font-size:0.66rem; font-weight:700; color:var(--white); text-align:center; border-top:1px solid #555; padding-top:2px;}
+    .part-banner{background:linear-gradient(145deg, rgba(242,78,85,0.16), rgba(16,16,16,0.98)); border:1px solid rgba(242,78,85,0.5); border-radius:10px; padding:1rem 1.5rem; margin:1.6rem 0 1.1rem;}
+    .part-banner .eyebrow{margin-bottom:0.2rem}
+    .part-banner h2{font-size:1.35rem; font-weight:800; color:var(--white); letter-spacing:-0.01em;}
+    .part-banner p{font-size:0.84rem; margin-top:0.3rem; color:var(--text);}
+    .big{font-size:1.5rem; font-weight:800; color:var(--white); line-height:1.1; display:block; margin-bottom:0.2rem;}
+    .doc-section p.src, p.src{font-size:0.7rem; color:var(--muted); margin-top:0.55rem; margin-bottom:0;}
+    .qr-wrap{display:flex; align-items:center; gap:1.5rem; margin-top:0.9rem;}
+    .qr-wrap svg{width:150px; height:150px; border-radius:6px; flex-shrink:0; background:#fff; padding:6px;}
+    .pagebreak{page-break-before:always; break-before:page;}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="no-print-bar">
+      <div style="display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap;">
+        <a href="index.html" class="btn">← Volver a la Presentación</a>
+        <span style="font-size:0.82rem; color:var(--muted);">Informe para entregar a los miembros de la Junta Directiva</span>
+      </div>
+      <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
+        <a href="assets/Informe_Junta_Directiva_Eternidad_Plus.pdf" download="Informe_Junta_Directiva_Eternidad_Plus.pdf" class="btn btn-coral">⬇ Descargar Informe (PDF)</a>
+        <button onclick="window.print()" class="btn">🖨️ Imprimir copias para la Junta</button>
+      </div>
+    </div>
+
+    <!-- PORTADA / ENCABEZADO EJECUTIVO -->
+    <header class="cover-header">
+      <div class="cover-top">
+        <div style="display:flex; align-items:center; gap:1rem;">
+          <img src="assets/logo-eplus-circle.jpeg" alt="Logo Eternidad Plus" style="width:56px; height:56px; border-radius:50%; object-fit:cover; flex-shrink:0;" />
+          <div>
+            <div class="eyebrow">Truth Frame Studio · Informe para Miembros de la Junta Directiva</div>
+            <h1>Informe Completo para la Junta Directiva: Crecimiento, Diagnóstico y Plan de Diversificación — Eternidad Plus</h1>
+          </div>
+        </div>
+        <div style="text-align:right; font-size:0.78rem; color:var(--muted);">
+          <strong style="color:var(--white); display:block;">Para: Junta Directiva · Eternidad Plus</strong>
+          Estrategia y Datos: Diana Cardona Sosa<br/>Informe de Crecimiento: Andrés Figueroa<br/>
+          Horizonte del plan: Octubre 2026 – Junio 2027
+        </div>
+      </div>
+      <p class="lead">Este informe se entrega junto con la presentación. La <strong>Parte I</strong> es el informe de crecimiento del canal desde el lanzamiento de Eternidad+ (septiembre de 2024). La <strong>Parte II</strong> acompaña las <strong>13 láminas</strong> de la presentación: el cambio en YouTube, la indexación por inteligencia artificial, el diagnóstico, la oportunidad de diversificar ahora y el plan de ejecución. Al final, un código QR lleva a la presentación en línea.</p>
+      <div class="kpi-grid-4">
+        <div class="kpi-box"><strong>4.45 M Vistas</strong><span>638,908 horas · 12 sep 2024 – 24 oct 2026</span></div>
+        <div class="kpi-box"><strong>+30,045 Suscriptores</strong><span>Netos desde el relanzamiento</span></div>
+        <div class="kpi-box"><strong>367 k · Récord</strong><span>Vistas en septiembre de 2026</span></div>
+        <div class="kpi-box"><strong>96.4% Watchtime</strong><span>Proviene de formato largo / TV</span></div>
+      </div>
+    </header>
+
+
+    <div class="part-banner">
+      <div class="eyebrow">Parte I · Informe de Crecimiento · Presenta: Andrés Figueroa (5 minutos)</div>
+      <h2>De Radio Eternidad a Eternidad+: dos años de camino (septiembre 2024 – octubre 2026)</h2>
+      <p>Una transmisión en vivo anunció el cambio: <em>“Radio Eternidad se transforma en Eternidad+”</em> (youtube.com/live/5oFj7oLnSzo). Este informe muestra la evolución del canal desde entonces hasta hoy.</p>
+    </div>
+
+    <section class="doc-section">
+      <div class="sec-banner"><div><div class="sec-tag">Informe 1 · Punto de partida y cifras acumuladas</div><h2>Lo que se ha construido desde el relanzamiento</h2></div><span class="slide-ref">Min 0:00 – 0:30</span></div>
+
+      <div class="grid-3">
+        <div class="subcard"><span class="big">120,091</span><h3>Suscriptores</h3><p>Total acumulado del canal.</p></div>
+        <div class="subcard"><span class="big">+30,045</span><h3>Suscriptores nuevos (netos)</h3><p>37,005 ganados y 6,960 perdidos entre el 12 sep 2024 y el 24 oct 2026.</p></div>
+        <div class="subcard"><span class="big">4.45 M</span><h3>Vistas · 638,908 horas</h3><p>En el mismo periodo.</p></div>
+      </div>
+      <p style="margin-top:0.8rem;"><strong>37%</strong> de todas las vistas del canal desde enero de 2014 (11.9 M) ocurrieron en estos dos años.</p>
+      <p class="src">Fuente: YouTube Studio · Eternidad+ · exportaciones del 24 de octubre de 2026.</p>
+    </section>
+
+    <section class="doc-section">
+      <div class="sec-banner"><div><div class="sec-tag">Informe 2 · Evolución mensual</div><h2>La curva real: vistas por mes</h2></div><span class="slide-ref">Min 0:30 – 1:30</span></div>
+
+      <div class="mchart"><div class="mcol"><div class="mnum">95</div><div class="mbar partial" style="height:31px"></div><div class="mlab">S</div></div><div class="mcol"><div class="mnum">162</div><div class="mbar" style="height:53px"></div><div class="mlab">O</div></div><div class="mcol"><div class="mnum">149</div><div class="mbar" style="height:49px"></div><div class="mlab">N</div></div><div class="mcol"><div class="mnum">111</div><div class="mbar" style="height:36px"></div><div class="mlab">D</div></div><div class="mcol"><div class="mnum">168</div><div class="mbar" style="height:55px"></div><div class="mlab">E</div></div><div class="mcol"><div class="mnum">169</div><div class="mbar" style="height:55px"></div><div class="mlab">F</div></div><div class="mcol"><div class="mnum">235</div><div class="mbar" style="height:77px"></div><div class="mlab">M</div></div><div class="mcol"><div class="mnum">244</div><div class="mbar" style="height:80px"></div><div class="mlab">A</div></div><div class="mcol"><div class="mnum">219</div><div class="mbar" style="height:72px"></div><div class="mlab">M</div></div><div class="mcol"><div class="mnum">195</div><div class="mbar" style="height:64px"></div><div class="mlab">J</div></div><div class="mcol"><div class="mnum">153</div><div class="mbar" style="height:50px"></div><div class="mlab">J</div></div><div class="mcol"><div class="mnum">134</div><div class="mbar" style="height:44px"></div><div class="mlab">A</div></div><div class="mcol"><div class="mnum">124</div><div class="mbar" style="height:40px"></div><div class="mlab">S</div></div><div class="mcol"><div class="mnum">167</div><div class="mbar" style="height:55px"></div><div class="mlab">O</div></div><div class="mcol"><div class="mnum">159</div><div class="mbar" style="height:52px"></div><div class="mlab">N</div></div><div class="mcol"><div class="mnum">94</div><div class="mbar" style="height:31px"></div><div class="mlab">D</div></div><div class="mcol"><div class="mnum">110</div><div class="mbar" style="height:36px"></div><div class="mlab">E</div></div><div class="mcol"><div class="mnum">118</div><div class="mbar" style="height:39px"></div><div class="mlab">F</div></div><div class="mcol"><div class="mnum">149</div><div class="mbar" style="height:49px"></div><div class="mlab">M</div></div><div class="mcol"><div class="mnum">132</div><div class="mbar" style="height:43px"></div><div class="mlab">A</div></div><div class="mcol"><div class="mnum">136</div><div class="mbar" style="height:44px"></div><div class="mlab">M</div></div><div class="mcol"><div class="mnum">122</div><div class="mbar" style="height:40px"></div><div class="mlab">J</div></div><div class="mcol"><div class="mnum">222</div><div class="mbar" style="height:73px"></div><div class="mlab">J</div></div><div class="mcol"><div class="mnum">251</div><div class="mbar" style="height:82px"></div><div class="mlab">A</div></div><div class="mcol"><div class="mnum rec">367</div><div class="mbar rec" style="height:120px"></div><div class="mlab">S</div></div><div class="mcol"><div class="mnum">260</div><div class="mbar partial" style="height:85px"></div><div class="mlab">O</div></div></div>
+      <div class="yrs"><div style="flex:4">2024</div><div style="flex:12">2025</div><div style="flex:10">2026</div></div>
+      <p class="src">Vistas por mes, en miles. Sep 2024 desde el día 12 y oct 2026 hasta el día 24 (parciales, rayados). Récord diario: 26,086 vistas el 23 de septiembre de 2026.</p>
+      <div class="grid-3" style="margin-top:0.7rem;">
+        <div class="subcard"><span class="big">367 k</span><h3>Récord de la era</h3><p>Septiembre de 2026, 50% más que el pico anterior (abril de 2025: 244 k).</p></div>
+        <div class="subcard"><span class="big">×2.0</span><h3>Trimestre vs. año anterior</h3><p>Jul–Sep 2026: 840,546 vistas frente a 410,928 en Jul–Sep 2025.</p></div>
+        <div class="subcard"><span class="big">≈ igual</span><h3>Lectura honesta</h3><p>Los 12 meses completos (oct–sep): 2.06 M frente a 2.03 M. El salto es reciente.</p></div>
+      </div>
+    </section>
+
+    <section class="doc-section">
+      <div class="sec-banner"><div><div class="sec-tag">Informe 3 · Calidad de la audiencia</div><h2>No solo más gente: gente que se queda</h2></div><span class="slide-ref">Min 1:30 – 2:30</span></div>
+
+      <table>
+        <thead><tr><th>Indicador</th><th>Dato</th><th>Qué significa</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Duración promedio por vista</strong></td><td>10 min 06 s</td><td>Videos largos: 11:12 · Shorts: 0:52</td></tr>
+          <tr><td><strong>Horas de visualización</strong></td><td>638,908 h</td><td>El 98% proviene de videos largos</td></tr>
+          <tr><td><strong>Vistas de suscriptores</strong></td><td>20% → 38%</td><td>De inicios de 2025 a hoy: la audiencia se vuelve comunidad (duración: suscritos 10:28 · no suscritos 9:57)</td></tr>
+          <tr><td><strong>Covisualización (TV)</strong></td><td>904,565 vistas (20%)</td><td>Familias frente al televisor</td></tr>
+          <tr><td><strong>Suscriptores ganados / perdidos</strong></td><td>37,005 / 6,960</td><td>77 de cada 100 ganados llegan desde la página del video</td></tr>
+          <tr><td><strong>Videos largos vs. Shorts</strong></td><td>82% / 17% de las vistas</td><td>Los Shorts aportan solo el 0.9% de las horas: amplían el alcance, no la profundidad</td></tr>
+          <tr><td><strong>Alcance pagado</strong></td><td>675 vistas (0.015%)</td><td>Todo el alcance ha sido orgánico</td></tr>
+        </tbody>
+      </table>
+      <p class="src">Fuente: YouTube Studio · 12 sep 2024 – 24 oct 2026 · estado de suscripción, tipo de contenido, origen de las suscripciones y tráfico orgánico/pagado.</p>
+    </section>
+
+    <section class="doc-section">
+      <div class="sec-banner"><div><div class="sec-tag">Informe 4 · Origen de la audiencia</div><h2>Quién nos ve y cómo nos encuentra</h2></div><span class="slide-ref">Min 2:30 – 3:20</span></div>
+
+      <div class="grid-2">
+        <div>
+          <table>
+            <thead><tr><th>País</th><th>% vistas</th><th>Vistas</th><th>Duración</th></tr></thead>
+            <tbody>
+              <tr><td><strong>México</strong></td><td>21%</td><td>930,808</td><td>10:17</td></tr>
+              <tr><td><strong>Estados Unidos</strong></td><td>14%</td><td>605,774</td><td>09:47</td></tr>
+              <tr><td>Colombia</td><td>9%</td><td>410,775</td><td>09:17</td></tr>
+              <tr><td>Argentina</td><td>7%</td><td>330,482</td><td><strong>11:48</strong></td></tr>
+              <tr><td>Perú</td><td>7%</td><td>306,048</td><td><strong>12:14</strong></td></tr>
+              <tr><td>R. Dominicana</td><td>6%</td><td>278,778</td><td>08:26</td></tr>
+              <tr><td>Chile</td><td>6%</td><td>252,647</td><td><strong>11:40</strong></td></tr>
+            </tbody>
+          </table>
+          <p class="src">Jul–Sep 2026 vs. 2025: EE. UU. ×2.4 · México ×2.3 · R. Dominicana ×2.8. Todos los mercados principales crecen.</p>
+        </div>
+        <div>
+          <table>
+            <thead><tr><th>Fuente de tráfico</th><th>% vistas</th><th>Duración</th><th>CTR</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Exploración (Inicio)</strong></td><td>28%</td><td>11:22</td><td>5.19%</td></tr>
+              <tr><td><strong>Videos sugeridos</strong></td><td>23%</td><td><strong>13:30</strong></td><td>4.19%</td></tr>
+              <tr><td>Búsqueda de YouTube</td><td>19%</td><td>07:41</td><td><strong>7.74%</strong></td></tr>
+              <tr><td>Feed de Shorts</td><td>9%</td><td>00:46</td><td>—</td></tr>
+              <tr><td>Externas</td><td>8%</td><td>06:36</td><td>—</td></tr>
+            </tbody>
+          </table>
+          <p class="src">Los sugeridos dan el 23% de las vistas y el 36% de las horas. El Feed de Shorts pasó de 6% a 13% de las vistas (sep 2024–sep 2025 vs. sep 2025–sep 2026); los sugeridos bajaron de 29% a 18%.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="doc-section">
+      <div class="sec-banner"><div><div class="sec-tag">Informe 5 · Ritmo de producción y videos que marcaron la etapa</div><h2>De publicar de vez en cuando a un ritmo constante</h2></div><span class="slide-ref">Min 3:20 – 4:30</span></div>
+
+      <div class="mchart" style="height:130px;"><div class="mcol"><div class="mnum">3</div><div class="mbar" style="height:2px"></div><div class="mlab">T3'24*</div></div><div class="mcol"><div class="mnum">3</div><div class="mbar" style="height:2px"></div><div class="mlab">T4'24</div></div><div class="mcol"><div class="mnum">15</div><div class="mbar" style="height:12px"></div><div class="mlab">T1'25</div></div><div class="mcol"><div class="mnum">75</div><div class="mbar" style="height:61px"></div><div class="mlab">T2'25</div></div><div class="mcol"><div class="mnum">54</div><div class="mbar" style="height:44px"></div><div class="mlab">T3'25</div></div><div class="mcol"><div class="mnum">38</div><div class="mbar" style="height:31px"></div><div class="mlab">T4'25</div></div><div class="mcol"><div class="mnum">52</div><div class="mbar" style="height:42px"></div><div class="mlab">T1'26</div></div><div class="mcol"><div class="mnum">58</div><div class="mbar" style="height:47px"></div><div class="mlab">T2'26</div></div><div class="mcol"><div class="mnum">99</div><div class="mbar" style="height:80px"></div><div class="mlab">T3'26</div></div><div class="mcol"><div class="mnum">29</div><div class="mbar" style="height:23px"></div><div class="mlab">T4'26**</div></div></div>
+      <p class="src">Videos publicados por trimestre (incluye Shorts) entre los 500 más vistos del periodo. * Desde el 2 de sep de 2024. ** Parcial, hasta el 24 de oct de 2026. La exportación solo muestra los 500 videos con más vistas: las cifras son un mínimo. Entre septiembre de 2024 y febrero de 2025 fueron 8 videos; <em>Contracultura</em> se estrenó en marzo de 2025.</p>
+      <table style="margin-top:0.6rem;">
+        <thead><tr><th>Video de la era Eternidad+</th><th>Vistas</th><th>Horas</th><th>Cuándo</th></tr></thead>
+        <tbody>
+          <tr><td>¿La IA nos está convirtiendo en dioses? Tecnología, fe y orgullo</td><td>113,862</td><td>7,982</td><td>Sep 2026 · en 5 semanas</td></tr>
+          <tr><td>El Impacto Teológico en América Latina</td><td>83,770</td><td>18,695</td><td>Oct 2025</td></tr>
+          <tr><td>El secreto íntimo que destruye matrimonios después de los 60</td><td>55,155</td><td>7,851</td><td>Jul 2026</td></tr>
+          <tr><td>¿Por qué Dios no te da pareja? La verdad detrás de la soltería</td><td>51,517</td><td>5,758</td><td>Ago 2026</td></tr>
+          <tr><td>¿Quién está moldeando tu forma de pensar? · con Sugel Michelén</td><td>50,829</td><td>10,220</td><td>May 2025</td></tr>
+          <tr><td>Diagnosticando la cultura actual · con Miguel Núñez · Contracultura</td><td>49,728</td><td>9,356</td><td>Mar 2025</td></tr>
+        </tbody>
+      </table>
+      <p class="src">Los videos publicados desde septiembre de 2024 aportan el 41% de las vistas del periodo (1.83 M).</p>
+    </section>
+
+    <section class="doc-section">
+      <div class="sec-banner"><div><div class="sec-tag">Informe 6 · Lo que sigue</div><h2>El motor está encendido: falta dirigirlo</h2></div><span class="slide-ref">Min 4:30 – 5:00</span></div>
+
+      <ul class="list">
+        <li><strong>Fortaleza:</strong> ritmo constante de producción, récord de vistas en septiembre y una audiencia que cada vez se suscribe más.</li>
+        <li><strong>Oportunidad 1 · Convertir visitas en comunidad:</strong> suscriptores por cada mil vistas: <strong>8.9</strong> (oct 2024 – sep 2025) frente a <strong>4.5</strong> (jul – sep 2026). Llegan más personas, pero se suscriben menos.</li>
+        <li><strong>Oportunidad 2 · Empaque y catálogo:</strong> los videos nuevos tienen un CTR de 4.4% frente a 5.9% del catálogo anterior, que aún aporta el 34% de las vistas.</li>
+      </ul>
+      <p style="margin-top:0.5rem;">Con este punto de partida, Diana presenta la propuesta: cómo convertir este esfuerzo en una red de canales que alcance más hogares.</p>
+    </section>
+
+    <div class="part-banner pagebreak">
+      <div class="eyebrow">Parte II · Propuesta y Plan de Ejecución · Presenta: Diana Cardona Sosa</div>
+      <h2>Por qué diversificar, por qué ahora y cómo hacerlo</h2>
+      <p>Las secciones siguientes acompañan las 13 láminas de la presentación.</p>
+    </div>
+
+    <!-- SECCIÓN 1 (LÁMINA 1) -->
+    <section class="doc-section">
+      <div class="sec-banner">
+        <div>
+          <div class="sec-tag">Sección 01 · El Cambio en YouTube: Televisión e Inteligencia Artificial</div>
+          <h2>1. El Nuevo Escenario: YouTube en la TV y como Fuente de la Inteligencia Artificial</h2>
+        </div>
+        <span class="slide-ref">Láminas 1 y 2 de 13</span>
+      </div>
+      <div class="grid-3" style="margin-bottom:0.8rem;">
+        <div class="subcard">
+          <h3>La Nueva Televisión del Hogar</h3>
+          <p>200 millones de usuarios ven YouTube en televisores mensualmente (<strong>60% del tiempo total</strong>). En Eternidad+, <strong>456,702 vistas</strong> ya son en covisionado familiar en TV con un <strong>57.98%</strong> de permanencia.</p>
+        </div>
+        <div class="subcard">
+          <h3>Autoridad en Inteligencia Artificial</h3>
+          <p>Las tecnológicas migran de los foros de opinión a expertos hablando a cámara. La indexación de YouTube por IA creció <strong>+107% en solo 4 meses</strong>. Lo que se ordena e indexa hoy es lo que la IA responderá durante la próxima década.</p>
+        </div>
+        <div class="subcard">
+          <h3>El Cuello de Botella Actual</h3>
+          <p>La convivencia de conciertos, debates teológicos y crianza en un único canal confunde al algoritmo de recomendación, estancando el CTR promedio en <strong>4.86% – 4.9%</strong>.</p>
+        </div>
+      </div>
+      <p style="margin-bottom:0.6rem;"><strong>Cómo indexa YouTube la IA, en 3 pasos:</strong> (1) un experto habla a cámara, con rigor bíblico y teológico; (2) la IA lo “ve” y lo “escucha”: los modelos son multimodales y aprenden de video; (3) cuando alguien pregunte por fe, familia o doctrina, la IA responde con esa fuente.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Segmento por Comportamiento (Últimos 365 Días)</th>
+            <th>Impresiones de Miniatura</th>
+            <th>Tasa de Clics (CTR)</th>
+            <th>Visualizaciones</th>
+            <th>Tiempo de Visualización (Horas)</th>
+            <th>Duración Media por Vista</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Total Anual Auditado (Oct 2025 – Oct 2026)</strong></td>
+            <td><strong>18,609,576</strong></td>
+            <td><strong>4.9%</strong></td>
+            <td><strong>2,141,300 (100%)</strong></td>
+            <td><strong>290,020.9 h (100%)</strong></td>
+            <td><strong>10:43 min</strong></td>
+          </tr>
+          <tr>
+            <td>Usuarios Nuevos (Descubrimiento)</td>
+            <td>9,091,455</td>
+            <td>4.8%</td>
+            <td>1,015,294 (47.4%)</td>
+            <td>116,483.8 h (40.2%)</td>
+            <td>08:49 min</td>
+          </tr>
+          <tr>
+            <td>Usuarios Ocasionales (Retención Media-Alta)</td>
+            <td>5,911,907</td>
+            <td>4.9%</td>
+            <td>643,724 (30.1%)</td>
+            <td>100,253.4 h (34.6%)</td>
+            <td><strong>12:31 min</strong></td>
+          </tr>
+          <tr>
+            <td>Usuarios Habituales (Comunidad Fiel)</td>
+            <td>3,551,829</td>
+            <td>5.0%</td>
+            <td>470,095 (22.0%)</td>
+            <td>72,227.2 h (24.9%)</td>
+            <td><strong>12:32 min</strong></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="src">Ventana: últimos 365 días en la consulta de Studio (octubre de 2026). Con las vistas diarias exportadas, los últimos 365 días al 24 de octubre suman 2.17 M de vistas.</p>
+    </section>
+
+
+    <section class="doc-section">
+      <div class="sec-banner"><div><div class="sec-tag">Sección 02 · Tendencia de Tres Años</div><h2>2. El Alcance Anual: de un Pico en 2023–24 a una Meseta</h2></div><span class="slide-ref">Lámina 3 de 13</span></div>
+
+      <table>
+        <thead><tr><th>Periodo (sep – sep)</th><th>Vistas</th><th>Horas de visualización</th><th>Suscriptores nuevos</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Sep 2023 – Sep 2024</strong></td><td>3.17 M</td><td>638.6 k</td><td>+30.4 k</td></tr>
+          <tr><td><strong>Sep 2024 – Sep 2025</strong></td><td>2.22 M</td><td>342.6 k</td><td>+19.5 k</td></tr>
+          <tr><td><strong>Sep 2025 – Sep 2026</strong></td><td>2.15 M</td><td>305.3 k</td><td>+11.1 k</td></tr>
+          <tr><td>Variación del primero al último</td><td><strong>−32%</strong></td><td><strong>−52%</strong></td><td><strong>−63%</strong></td></tr>
+        </tbody>
+      </table>
+      <ul class="list" style="margin-top:0.6rem;">
+        <li><strong>Más videos, pero el mismo alcance:</strong> los 420 videos de 2025–26 aportan el 40% de las vistas, igual que los 53 videos de 2022–23 (33%).</li>
+        <li><strong>El catálogo antiguo sigue sosteniendo el canal:</strong> el 34% de las vistas viene de videos de 2017 a 2023.</li>
+        <li><strong>La base de comparación es alta:</strong> el concierto J&amp;S Jerez (mayo de 2023) acumula 412,028 vistas y 182,119 horas.</li>
+        <li><strong>Señal reciente:</strong> septiembre de 2026 fue el mejor mes de la era (367 mil vistas) y el tercer trimestre duplicó al de 2025 (Parte I).</li>
+      </ul>
+      <p class="src">Fuente: YouTube Studio · vistas de los periodos del 1 al 30 de septiembre de cada año; vistas por año de publicación de la exportación de contenido (500 videos principales).</p>
+    </section>
+
+    <!-- SECCIÓN 2 (LÁMINA 2) -->
+    <section class="doc-section">
+      <div class="sec-banner">
+        <div>
+          <div class="sec-tag">Sección 03 · Demografía y Geografía</div>
+          <h2>3. Radiografía de la Audiencia: Género, Edad y Mercados Internacionales</h2>
+        </div>
+        <span class="slide-ref">Lámina 4 de 13</span>
+      </div>
+      <p>Los datos confirman que el público femenino representa el <strong>54.56% de la audiencia reciente (90 días)</strong> y el <strong>51.74% histórico</strong>, aportando el <strong>55.28% de todas las horas reproducidas</strong>. Asimismo, el <strong>67.46%</strong> de la audiencia tiene entre <strong>35 y 64 años</strong>, y México junto a EE. UU. superan por más de 5 veces el tráfico local en República Dominicana.</p>
+      <div class="grid-2">
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th>Rango de Edad / Género</th>
+                <th>Vistas (%)</th>
+                <th>Duración Media</th>
+                <th>% Reprod.</th>
+                <th>Horas (%)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Mujeres (54.56% en 90d)</strong></td><td>51.74%</td><td><strong>11:07 min</strong></td><td>33.88%</td><td><strong>55.28%</strong></td></tr>
+              <tr><td><strong>Hombres (45.44% en 90d)</strong></td><td>48.25%</td><td>09:32 min</td><td>31.56%</td><td>44.71%</td></tr>
+              <tr><td>Entre 18 y 24 años (Jóvenes)</td><td>3.01%</td><td>09:24 min</td><td>28.26%</td><td>2.49%</td></tr>
+              <tr><td>Entre 25 y 34 años</td><td>19.30%</td><td>11:21 min</td><td>30.75%</td><td>19.84%</td></tr>
+              <tr><td><strong>Entre 35 y 44 años (#1)</strong></td><td><strong>26.88%</strong></td><td><strong>11:52 min</strong></td><td>32.11%</td><td><strong>28.90%</strong></td></tr>
+              <tr><td><strong>Entre 45 y 54 años (#2)</strong></td><td><strong>23.75%</strong></td><td><strong>11:14 min</strong></td><td>32.66%</td><td><strong>25.25%</strong></td></tr>
+              <tr><td><strong>Entre 55 y 64 años</strong></td><td><strong>16.83%</strong></td><td>09:54 min</td><td>31.29%</td><td>15.43%</td></tr>
+              <tr><td>65 años y más</td><td>10.21%</td><td>08:30 min</td><td>30.21%</td><td>8.07%</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th>País (Top 8 Mercados)</th>
+                <th>Vistas Auditadas</th>
+                <th>Tiempo Reproducción</th>
+                <th>Duración Promedio</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>1. 🇲🇽 México</strong></td><td><strong>394,915</strong></td><td><strong>57,679.9 h</strong></td><td>10:38 min</td></tr>
+              <tr><td><strong>2. 🇺🇸 Estados Unidos</strong></td><td><strong>271,557</strong></td><td><strong>40,910.1 h</strong></td><td>10:43 min</td></tr>
+              <tr><td><strong>3. 🇨🇴 Colombia</strong></td><td><strong>164,283</strong></td><td>22,430.3 h</td><td>09:55 min</td></tr>
+              <tr><td><strong>4. 🇦🇷 Argentina</strong></td><td>138,122</td><td>23,065.7 h</td><td><strong>12:06 min</strong></td></tr>
+              <tr><td><strong>5. 🇩🇴 Rep. Dominicana</strong></td><td>125,767</td><td>14,565.9 h</td><td>08:55 min</td></tr>
+              <tr><td><strong>6. 🇵🇪 Perú</strong></td><td>122,343</td><td>21,609.5 h</td><td><strong>12:31 min</strong></td></tr>
+              <tr><td><strong>7. 🇨🇱 Chile</strong></td><td>103,112</td><td>17,639.3 h</td><td><strong>12:22 min</strong></td></tr>
+              <tr><td>8. 🇻🇪 Venezuela + 🇪🇸 España</td><td>117,235</td><td>13,528.2 h</td><td>08:15 min</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <p class="src" style="margin:-0.6rem 0 1.1rem 0.4rem;">Las tablas de audiencia de las secciones 3 y 4 provienen de las exportaciones de Studio del 22 de septiembre de 2026 (1.88 M de vistas, últimos 365 días a esa fecha).</p>
+
+    <!-- SECCIÓN 3 (LÁMINA 3) -->
+    <section class="doc-section">
+      <div class="sec-banner">
+        <div>
+          <div class="sec-tag">Sección 04 · Comportamiento Algorítmico</div>
+          <h2>4. Motor de Clics (CTR) frente a Motor de Retención (Watchtime)</h2>
+        </div>
+        <span class="slide-ref">Lámina 5 de 13</span>
+      </div>
+      <div class="grid-2">
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th>Fuente de Tráfico</th>
+                <th>Vistas</th>
+                <th>Horas Reprod.</th>
+                <th>Duración Media</th>
+                <th>CTR</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Videos Sugeridos</strong></td><td>373,609</td><td><strong>100,056.8 h</strong></td><td><strong>16:06 min</strong></td><td><strong>3.99%</strong></td></tr>
+              <tr><td><strong>Exploración (Home)</strong></td><td>499,536</td><td>83,628.5 h</td><td>12:18 min</td><td>5.28%</td></tr>
+              <tr><td><strong>Búsqueda YouTube</strong></td><td>366,877</td><td>36,286.7 h</td><td>07:10 min</td><td><strong>7.33%</strong></td></tr>
+              <tr><td><strong>Playlists (Listas)</strong></td><td>40,128</td><td>11,085.0 h</td><td><strong>16:38 min</strong></td><td>2.25%</td></tr>
+              <tr><td><strong>Feed de Shorts</strong></td><td>237,972</td><td>1,323.7 h</td><td>00:45 seg</td><td>—</td></tr>
+            </tbody>
+          </table>
+          <p style="margin-top:0.55rem; font-size:0.8rem;"><strong>Hallazgo clave:</strong> El <strong>96.4% del tiempo de visualización</strong> proviene de videos largos. En la pestaña Comunidad, las encuestas movilizan de <strong>300 a 600 votos</strong> (ej. 445 votos: <strong>40% Finanzas Bíblicas</strong>, <strong>24% Música y Adoración</strong>, 23% Cocina y fe).</p>
+        </div>
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th>Videos Insignia Comprobados</th>
+                <th>Vistas</th>
+                <th>Horas / TV</th>
+                <th>CTR</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Concierto J&amp;S Jerez: Grande es tu Fidelidad</strong></td><td>161,848</td><td><strong>73,562 h</strong> (37.9k TV)</td><td>5.19%</td></tr>
+              <tr><td><strong>El Impacto Teológico en América Latina</strong></td><td>77,654</td><td><strong>17,877 h</strong> (+624 susc)</td><td>3.51%</td></tr>
+              <tr><td><strong>Secreto íntimo después de los 60 (Ep 26)</strong></td><td>54,704</td><td>7,802 h (24.3k TV)</td><td>5.71%</td></tr>
+              <tr><td><strong>¿Qué son los dones espirituales?</strong></td><td>52,777</td><td>3,078 h (+344 susc)</td><td><strong>8.60%</strong></td></tr>
+              <tr><td><strong>¿Por qué Dios no te da pareja? Soltería</strong></td><td>49,611</td><td>5,512 h (<strong>50.6k TV #1</strong>)</td><td>4.95%</td></tr>
+              <tr><td><strong>¿Qué son las 5 solas? / Unión libre</strong></td><td>14,650</td><td>498 h</td><td><strong>10.49% / 10.23%</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="doc-section">
+      <div class="sec-banner"><div><div class="sec-tag">Sección 05 · Diagnóstico y Oportunidad</div><h2>5. El Problema: Tres Audiencias en un Solo Canal, y Por Qué Este Es el Momento</h2></div><span class="slide-ref">Láminas 6 y 7 de 13</span></div>
+
+      <div class="grid-3" style="margin-bottom:0.8rem;">
+        <div class="subcard"><h3>Audiencia A · Teología y hombres</h3><p>Cosmovisión, apologética y ética.</p></div>
+        <div class="subcard"><h3>Audiencia B · Música y conciertos</h3><p>Consumo inmersivo en TV. El video #1 del canal es un concierto.</p></div>
+        <div class="subcard"><h3>Audiencia C · Mujeres y familia</h3><p>El 54.56% de la audiencia reciente. Crianza y matrimonio.</p></div>
+      </div>
+      <p><strong>Efecto en el algoritmo:</strong> al mezclar señales de públicos distintos en un mismo canal, YouTube no sabe a quién recomendar cada video y se diluye el alcance orgánico. <strong>La prueba en los datos:</strong> el CTR del canal es 4.9%, pero en los temas femeninos y de pareja sube a 9.5% (8.2% a 9.5%): cuando el contenido encuentra a su público, el clic casi se duplica.</p>
+      <table>
+        <thead><tr><th>Por qué ahora</th><th>Dato</th><th>Lectura</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1 · Tráfico</strong></td><td>Q4</td><td>El último trimestre es el pico orgánico del año: hay que optimizar ahora.</td></tr>
+          <tr><td><strong>2 · Pantalla</strong></td><td>60%</td><td>La TV ya es el estándar; los conciertos y la formación profunda de E+ ya se ven en televisores.</td></tr>
+          <tr><td><strong>3 · Inteligencia artificial</strong></td><td>+107%</td><td>La IA está indexando ya: quien ordene su catálogo primero será la fuente de autoridad.</td></tr>
+          <tr><td><strong>4 · Activos listos</strong></td><td>2 eventos</td><td>Concierto (11 de diciembre de 2026) y conferencia (mayo de 2027): plataformas de lanzamiento listas.</td></tr>
+        </tbody>
+      </table>
+      <p style="margin-top:0.6rem; margin-bottom:0;"><strong>Audiencia fiel, contenido de calidad y cambios de plataforma a favor: esa combinación no estará abierta para siempre.</strong></p>
+    </section>
+
+    <!-- SECCIÓN 4 (LÁMINA 4) -->
+    <section class="doc-section">
+      <div class="sec-banner">
+        <div>
+          <div class="sec-tag">Sección 06 · Arquitectura de Expansión</div>
+          <h2>6. Evolución hacia una Red de 3 Canales Especializados (Network)</h2>
+        </div>
+        <span class="slide-ref">Lámina 8 de 13</span>
+      </div>
+      <div class="grid-3">
+        <div class="subcard">
+          <h3>1. Eternidad+ (Canal Matriz)</h3>
+          <ul class="list">
+            <li><strong>Enfoque:</strong> Cosmovisión, Apologética, Ética y liderazgo masculino.</li>
+            <li><strong>Anclas:</strong> <em>Hombres de Verdad</em> (1er y 3er jueves) y <em>Contracultura</em> (2do y 4to viernes).</li>
+            <li><strong>Vacíos a cubrir (Martes):</strong> Finanzas Bíblicas (40% en encuesta), Salud Mental en el creyente, Apologética y Tecnología/IA.</li>
+          </ul>
+        </div>
+        <div class="subcard">
+          <h3>2. E+ Música (Dic 2026)</h3>
+          <ul class="list">
+            <li><strong>Enfoque:</strong> Sesiones de adoración en TV y formación ministerial del músico.</li>
+            <li><strong>Hito Ancla (11 Dic 2026):</strong> Transmisión del Concierto en Vivo completo en el nuevo canal.</li>
+            <li><strong>Estrategia:</strong> Fragmentar conciertos históricos en canciones individuales + sesiones acústicas con letra.</li>
+          </ul>
+        </div>
+        <div class="subcard">
+          <h3>3. E+ Mujeres (Mayo 2027)</h3>
+          <ul class="list">
+            <li><strong>Enfoque:</strong> Vida cotidiana, matrimonio, crianza y discipulado para el <strong>54.56%</strong> de la audiencia.</li>
+            <li><strong>Hito Ancla (Mayo 2027):</strong> Conferencia Presencial de Mujeres + estreno en bloque ("Drop") + meta de 8,000 horas.</li>
+            <li><strong>Curaduría:</strong> Migración estratégica de series históricas como <em>La Mesa</em>.</li>
+          </ul>
+        </div>
+      </div>
+      <p style="margin-top:0.65rem; margin-bottom:0; font-size:0.81rem;"><strong>Proyección Fase Futura — Incubadora E+ Jóvenes (18–24 años · Hoy 3.01%):</strong> No se comprometerán recursos de estudio en formato largo a ciegas; se operará un embudo de descubrimiento basado en <strong>YouTube Shorts → Video Largo → Oferta</strong>.</p>
+    </section>
+
+    <!-- SECCIÓN 5 (LÁMINA 5) -->
+    <section class="doc-section">
+      <div class="sec-banner">
+        <div>
+          <div class="sec-tag">Sección 07 · Hoja de Ruta de 9 Meses</div>
+          <h2>7. Cronograma General y Entregables Mensuales (Octubre 2026 – Junio 2027)</h2>
+        </div>
+        <span class="slide-ref">Lámina 9 de 13</span>
+      </div>
+      <div class="img-box" style="margin-bottom:0.75rem;">
+        <img src="assets/cronograma_1.png" alt="Cronograma General de Implementación E+" />
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Mes</th>
+            <th>Prioridad</th>
+            <th>Acciones Principales Coordinadas</th>
+            <th>Entregable / Hito Verificable</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Oct 2026</strong></td><td>Auditoría y arquitectura</td><td>Música: apertura técnica y selección de fragmentos. Matriz: listas transversales y pruebas de miniaturas (9/sem).</td><td>Diagnóstico, estructura y catálogo priorizado.</td></tr>
+          <tr><td><strong>Nov 2026</strong></td><td>Preparación y conexiones</td><td>Música: carga de contenido, pantallas finales y diseño paquete VIP. Equipo: flujo de producción por lotes.</td><td>Canal Música listo y flujo acordado.</td></tr>
+          <tr><td><strong>Dic 2026</strong></td><td><strong>HITO 1 · El Concierto</strong></td><td><strong>11 de diciembre:</strong> transmisión del concierto, anuncio E+ Música, campaña Fundadores y piloto de paquete descargable.</td><td>Lanzamiento público E+ Música y piloto comercial.</td></tr>
+          <tr><td><strong>Ene 2027</strong></td><td>Ideación y producción</td><td>Mujeres: definición de formatos e inicio de grabaciones sin publicar (Dark Launch). Matriz: análisis de búsquedas.</td><td>Formatos definidos y primeras grabaciones.</td></tr>
+          <tr><td><strong>Feb 2027</strong></td><td>Contenido ancla</td><td>Matriz: rodaje nueva temporada (Cold Open optimizado) y colaboraciones con talentos para presentar E+ Mujeres.</td><td>Nueva temporada y piezas de conexión.</td></tr>
+          <tr><td><strong>Mar 2027</strong></td><td>Curaduría histórica</td><td>Mujeres: cierre de rodaje previsto. Evaluación de <em>La Mesa</em> y ruta de migración como contenido semilla.</td><td>Banco de episodios listo y decisión sobre <em>La Mesa</em>.</td></tr>
+          <tr><td><strong>Abr 2027</strong></td><td>Preparación 2do canal</td><td>Mujeres: apertura técnica, identidad visual, metadatos y carga privada de contenido semilla.</td><td>Canal E+ Mujeres configurado y listo.</td></tr>
+          <tr><td><strong>May 2027</strong></td><td><strong>HITO 2 · Conferencia</strong></td><td>Grabación de plenarias, revelación oficial de E+ Mujeres al cierre del evento y publicación gratuita de larga duración.</td><td>Lanzamiento E+ Mujeres y carrera a 8,000 horas.</td></tr>
+          <tr><td><strong>Jun 2027</strong></td><td>Evaluación y continuidad</td><td>Matriz: captación de correos. Junta Directiva: evaluación integral de audiencia, operación e ingresos.</td><td>Informe final de 9 meses y decisión siguiente ciclo.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- SECCIÓN 6 (LÁMINA 6) -->
+    <section class="doc-section">
+      <div class="sec-banner">
+        <div>
+          <div class="sec-tag">Sección 08 · Operación y Renovación</div>
+          <h2>8. Los 4 Pilares de Renovación, Trabajo por Lotes y Parrilla Mensual</h2>
+        </div>
+        <span class="slide-ref">Lámina 10 de 13</span>
+      </div>
+      <div class="grid-2" style="margin-bottom:0.75rem;">
+        <div class="subcard">
+          <h3>Los 4 Pilares en el Canal Matriz (Desde Q4 2026)</h3>
+          <ul class="list">
+            <li><strong>Pilar A · Empaque y CTR (9 miniaturas/semana):</strong> Renovación de 3 videos semanales (3 variaciones A/B/C por video), listas transversales y recorte de intros en el editor nativo de YouTube.</li>
+            <li><strong>Pilar B · Cold Open (Primeros 15s):</strong> Ganchos validados por datos para asegurar la retención en el primer minuto.</li>
+            <li><strong>Pilar C · Cross-Pollination:</strong> Shorts de alta conversión conectados al video largo y transferencia de autoridad hacia E+ Mujeres.</li>
+            <li><strong>Pilar D · Soberanía de Datos:</strong> Llamados a la acción para convertir vistas anónimas en base propia de correos electrónicos.</li>
+          </ul>
+        </div>
+        <div class="subcard">
+          <h3>Flujo Mensual en 4 Lotes + Parrilla (Horarios Pico)</h3>
+          <ul class="list">
+            <li><strong>Semana 1 (Preproducción):</strong> Temas por búsqueda, guiones y miniaturas definidas <em>antes</em> de grabar.</li>
+            <li><strong>Semana 2 (Rodaje):</strong> Grabación en bloques + fotografía dedicada en set para miniaturas.</li>
+            <li><strong>Semana 3 (Edición):</strong> Episodios largos, 3–5 Shorts por video y diseño A/B/C.</li>
+            <li><strong>Semana 4 (Programación):</strong> Carga SEO y estrenos sincronizados:
+              <br/>• <strong>Martes 10:30 AM:</strong> Eternidad+ Matriz (Ideación 1 y 2)
+              <br/>• <strong>Jueves 10:30 AM / 4:00 PM:</strong> E+ Mujeres (10:30 AM) y Hombres de Verdad (4:00 PM Sem 1 y 3)
+              <br/>• <strong>Viernes 10:30 AM:</strong> Contracultura (Sem 2 y 4) y E+ Música (Sem 1 y 2)
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 7 Y 8 (LÁMINAS 7 Y 8) -->
+    <section class="doc-section">
+      <div class="sec-banner">
+        <div>
+          <div class="sec-tag">Sección 09 · Autosostenibilidad y Estructura Operativa</div>
+          <h2>9. Modelo de Autosostenibilidad (3 Tiers) y Articulación Operativa</h2>
+        </div>
+        <span class="slide-ref">Lámina 11 de 13</span>
+      </div>
+      <div class="grid-3" style="margin-bottom:0.85rem;">
+        <div class="subcard">
+          <h3>Tier 1 ($9 – $17 USD)</h3>
+          <p><strong>Materiales de Baja Fricción:</strong> Workbooks en PDF, guías devocionales y manuales prácticos en la primera línea de descripción y comentario fijado. <strong>Piloto: 11 de Diciembre 2026</strong> en el Concierto + Campaña "Fundadores".</p>
+        </div>
+        <div class="subcard">
+          <h3>Tier 2 ($27 – $47 USD)</h3>
+          <p><strong>Formación Profunda:</strong> Masterclasses y cursos asincrónicos grabados en los dos estudios actuales sobre los temas de mayor demanda (Finanzas Bíblicas, Matrimonio y Crianza).</p>
+        </div>
+        <div class="subcard">
+          <h3>Tier 3 ($97 – $149 USD)</h3>
+          <p><strong>Experiencias Globales:</strong> "Tickets Virtuales" de acceso internacional para que la audiencia de EE. UU. (271k vistas) y México (394k vistas) asista digitalmente al Concierto y la Conferencia.</p>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="subcard">
+          <h3>Articulación Operativa (Sin sobrecargar al equipo interno)</h3>
+          <ul class="list">
+            <li><strong>Dirección General (E+):</strong> Toma decisiones estratégicas sobre reportes ejecutivos basados en datos.</li>
+            <li><strong>Coordinación e Inteligencia de Datos (Diana Cardona):</strong> Análisis de búsquedas, formatos, sistema de producción, tácticas de Growth y soberanía de datos.</li>
+            <li><strong>Especialista SEO Visual Externo (Incluido):</strong> Provisto y coordinado por Diana para producir las <strong>9 miniaturas semanales (pruebas A/B/C)</strong> basadas en datos, sin añadir carga al diseñador interno.</li>
+            <li><strong>Equipo Técnico Interno (E+):</strong> Grabación, iluminación, edición y línea gráfica.</li>
+          </ul>
+        </div>
+        <div class="subcard" style="border-color:rgba(242,78,85,0.5);">
+          <h3>Decisiones que se someten a la Junta</h3>
+          <ul class="list">
+            <li><strong>Aprobar</strong> la evolución a una red de 3 canales especializados.</li>
+            <li><strong>Confirmar</strong> el concierto del 11 de diciembre de 2026 como hito de lanzamiento de E+ Música.</li>
+            <li><strong>Fijar</strong> la evaluación integral de audiencia, operación e ingresos para junio de 2027.</li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="doc-section">
+      <div class="sec-banner"><div><div class="sec-tag">Sección 10 · Proyección a Futuro</div><h2>10. De Tres Canales a un Ecosistema que se Sostiene Solo</h2></div><span class="slide-ref">Lámina 12 de 13</span></div>
+
+      <div class="grid-3">
+        <div class="subcard"><h3>Oct 2026 – Jun 2027 · Construir la red</h3><p>E+ Música y E+ Mujeres en marcha, canal matriz renovado y primera prueba de autosostenibilidad.</p></div>
+        <div class="subcard"><h3>Junio 2027 · Medir y decidir</h3><p>Revisión de retención y crecimiento. Equipo técnico con autonomía total, o continuidad del acompañamiento.</p></div>
+        <div class="subcard"><h3>Más allá · Nuevas generaciones</h3><p>E+ Jóvenes y Niños con embudo Short → Video Largo → Oferta, a partir de los segmentos detectados en los datos.</p></div>
+      </div>
+      <p style="margin-top:0.7rem; margin-bottom:0;"><strong>Más canales → más horas de visualización → recursos propios → más alcance para la misión.</strong></p>
+    </section>
+
+    <section class="doc-section">
+      <div class="sec-banner"><div><div class="sec-tag">Sección 11 · Cierre</div><h2>11. Un Legado que Perdure</h2></div><span class="slide-ref">Lámina 13 de 13</span></div>
+
+      <p style="font-size:0.95rem;">La tecnología y las plataformas son solo los vehículos. <strong>La misión permanece inalterable.</strong></p>
+      <p>Estamos ante una oportunidad única: que el mensaje del evangelio llegue a los hogares de hoy y quede disponible para las próximas generaciones. Es una responsabilidad de mayordomía: construir la infraestructura que transforme vidas, edifique familias y alcance hogares por generaciones.</p>
+      <div class="qr-wrap">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 37" shape-rendering="crispEdges"><rect width="37" height="37" fill="#fff"/><g fill="#000"><rect x="2" y="2" width="1" height="1"/><rect x="3" y="2" width="1" height="1"/><rect x="4" y="2" width="1" height="1"/><rect x="5" y="2" width="1" height="1"/><rect x="6" y="2" width="1" height="1"/><rect x="7" y="2" width="1" height="1"/><rect x="8" y="2" width="1" height="1"/><rect x="12" y="2" width="1" height="1"/><rect x="14" y="2" width="1" height="1"/><rect x="15" y="2" width="1" height="1"/><rect x="16" y="2" width="1" height="1"/><rect x="18" y="2" width="1" height="1"/><rect x="20" y="2" width="1" height="1"/><rect x="21" y="2" width="1" height="1"/><rect x="22" y="2" width="1" height="1"/><rect x="25" y="2" width="1" height="1"/><rect x="28" y="2" width="1" height="1"/><rect x="29" y="2" width="1" height="1"/><rect x="30" y="2" width="1" height="1"/><rect x="31" y="2" width="1" height="1"/><rect x="32" y="2" width="1" height="1"/><rect x="33" y="2" width="1" height="1"/><rect x="34" y="2" width="1" height="1"/><rect x="2" y="3" width="1" height="1"/><rect x="8" y="3" width="1" height="1"/><rect x="11" y="3" width="1" height="1"/><rect x="13" y="3" width="1" height="1"/><rect x="15" y="3" width="1" height="1"/><rect x="16" y="3" width="1" height="1"/><rect x="17" y="3" width="1" height="1"/><rect x="18" y="3" width="1" height="1"/><rect x="19" y="3" width="1" height="1"/><rect x="20" y="3" width="1" height="1"/><rect x="22" y="3" width="1" height="1"/><rect x="23" y="3" width="1" height="1"/><rect x="26" y="3" width="1" height="1"/><rect x="28" y="3" width="1" height="1"/><rect x="34" y="3" width="1" height="1"/><rect x="2" y="4" width="1" height="1"/><rect x="4" y="4" width="1" height="1"/><rect x="5" y="4" width="1" height="1"/><rect x="6" y="4" width="1" height="1"/><rect x="8" y="4" width="1" height="1"/><rect x="10" y="4" width="1" height="1"/><rect x="11" y="4" width="1" height="1"/><rect x="12" y="4" width="1" height="1"/><rect x="14" y="4" width="1" height="1"/><rect x="15" y="4" width="1" height="1"/><rect x="18" y="4" width="1" height="1"/><rect x="22" y="4" width="1" height="1"/><rect x="23" y="4" width="1" height="1"/><rect x="24" y="4" width="1" height="1"/><rect x="26" y="4" width="1" height="1"/><rect x="28" y="4" width="1" height="1"/><rect x="30" y="4" width="1" height="1"/><rect x="31" y="4" width="1" height="1"/><rect x="32" y="4" width="1" height="1"/><rect x="34" y="4" width="1" height="1"/><rect x="2" y="5" width="1" height="1"/><rect x="4" y="5" width="1" height="1"/><rect x="5" y="5" width="1" height="1"/><rect x="6" y="5" width="1" height="1"/><rect x="8" y="5" width="1" height="1"/><rect x="10" y="5" width="1" height="1"/><rect x="11" y="5" width="1" height="1"/><rect x="14" y="5" width="1" height="1"/><rect x="16" y="5" width="1" height="1"/><rect x="18" y="5" width="1" height="1"/><rect x="19" y="5" width="1" height="1"/><rect x="20" y="5" width="1" height="1"/><rect x="22" y="5" width="1" height="1"/><rect x="24" y="5" width="1" height="1"/><rect x="25" y="5" width="1" height="1"/><rect x="26" y="5" width="1" height="1"/><rect x="28" y="5" width="1" height="1"/><rect x="30" y="5" width="1" height="1"/><rect x="31" y="5" width="1" height="1"/><rect x="32" y="5" width="1" height="1"/><rect x="34" y="5" width="1" height="1"/><rect x="2" y="6" width="1" height="1"/><rect x="4" y="6" width="1" height="1"/><rect x="5" y="6" width="1" height="1"/><rect x="6" y="6" width="1" height="1"/><rect x="8" y="6" width="1" height="1"/><rect x="10" y="6" width="1" height="1"/><rect x="12" y="6" width="1" height="1"/><rect x="13" y="6" width="1" height="1"/><rect x="14" y="6" width="1" height="1"/><rect x="17" y="6" width="1" height="1"/><rect x="20" y="6" width="1" height="1"/><rect x="21" y="6" width="1" height="1"/><rect x="22" y="6" width="1" height="1"/><rect x="23" y="6" width="1" height="1"/><rect x="25" y="6" width="1" height="1"/><rect x="28" y="6" width="1" height="1"/><rect x="30" y="6" width="1" height="1"/><rect x="31" y="6" width="1" height="1"/><rect x="32" y="6" width="1" height="1"/><rect x="34" y="6" width="1" height="1"/><rect x="2" y="7" width="1" height="1"/><rect x="8" y="7" width="1" height="1"/><rect x="10" y="7" width="1" height="1"/><rect x="11" y="7" width="1" height="1"/><rect x="12" y="7" width="1" height="1"/><rect x="13" y="7" width="1" height="1"/><rect x="17" y="7" width="1" height="1"/><rect x="18" y="7" width="1" height="1"/><rect x="22" y="7" width="1" height="1"/><rect x="24" y="7" width="1" height="1"/><rect x="26" y="7" width="1" height="1"/><rect x="28" y="7" width="1" height="1"/><rect x="34" y="7" width="1" height="1"/><rect x="2" y="8" width="1" height="1"/><rect x="3" y="8" width="1" height="1"/><rect x="4" y="8" width="1" height="1"/><rect x="5" y="8" width="1" height="1"/><rect x="6" y="8" width="1" height="1"/><rect x="7" y="8" width="1" height="1"/><rect x="8" y="8" width="1" height="1"/><rect x="10" y="8" width="1" height="1"/><rect x="12" y="8" width="1" height="1"/><rect x="14" y="8" width="1" height="1"/><rect x="16" y="8" width="1" height="1"/><rect x="18" y="8" width="1" height="1"/><rect x="20" y="8" width="1" height="1"/><rect x="22" y="8" width="1" height="1"/><rect x="24" y="8" width="1" height="1"/><rect x="26" y="8" width="1" height="1"/><rect x="28" y="8" width="1" height="1"/><rect x="29" y="8" width="1" height="1"/><rect x="30" y="8" width="1" height="1"/><rect x="31" y="8" width="1" height="1"/><rect x="32" y="8" width="1" height="1"/><rect x="33" y="8" width="1" height="1"/><rect x="34" y="8" width="1" height="1"/><rect x="10" y="9" width="1" height="1"/><rect x="11" y="9" width="1" height="1"/><rect x="12" y="9" width="1" height="1"/><rect x="13" y="9" width="1" height="1"/><rect x="17" y="9" width="1" height="1"/><rect x="20" y="9" width="1" height="1"/><rect x="22" y="9" width="1" height="1"/><rect x="23" y="9" width="1" height="1"/><rect x="25" y="9" width="1" height="1"/><rect x="2" y="10" width="1" height="1"/><rect x="4" y="10" width="1" height="1"/><rect x="5" y="10" width="1" height="1"/><rect x="6" y="10" width="1" height="1"/><rect x="7" y="10" width="1" height="1"/><rect x="8" y="10" width="1" height="1"/><rect x="15" y="10" width="1" height="1"/><rect x="16" y="10" width="1" height="1"/><rect x="17" y="10" width="1" height="1"/><rect x="19" y="10" width="1" height="1"/><rect x="22" y="10" width="1" height="1"/><rect x="24" y="10" width="1" height="1"/><rect x="25" y="10" width="1" height="1"/><rect x="26" y="10" width="1" height="1"/><rect x="28" y="10" width="1" height="1"/><rect x="29" y="10" width="1" height="1"/><rect x="30" y="10" width="1" height="1"/><rect x="31" y="10" width="1" height="1"/><rect x="32" y="10" width="1" height="1"/><rect x="2" y="11" width="1" height="1"/><rect x="3" y="11" width="1" height="1"/><rect x="4" y="11" width="1" height="1"/><rect x="7" y="11" width="1" height="1"/><rect x="9" y="11" width="1" height="1"/><rect x="10" y="11" width="1" height="1"/><rect x="11" y="11" width="1" height="1"/><rect x="12" y="11" width="1" height="1"/><rect x="13" y="11" width="1" height="1"/><rect x="16" y="11" width="1" height="1"/><rect x="19" y="11" width="1" height="1"/><rect x="20" y="11" width="1" height="1"/><rect x="21" y="11" width="1" height="1"/><rect x="22" y="11" width="1" height="1"/><rect x="23" y="11" width="1" height="1"/><rect x="24" y="11" width="1" height="1"/><rect x="25" y="11" width="1" height="1"/><rect x="28" y="11" width="1" height="1"/><rect x="29" y="11" width="1" height="1"/><rect x="31" y="11" width="1" height="1"/><rect x="32" y="11" width="1" height="1"/><rect x="34" y="11" width="1" height="1"/><rect x="3" y="12" width="1" height="1"/><rect x="4" y="12" width="1" height="1"/><rect x="6" y="12" width="1" height="1"/><rect x="8" y="12" width="1" height="1"/><rect x="9" y="12" width="1" height="1"/><rect x="10" y="12" width="1" height="1"/><rect x="13" y="12" width="1" height="1"/><rect x="14" y="12" width="1" height="1"/><rect x="17" y="12" width="1" height="1"/><rect x="18" y="12" width="1" height="1"/><rect x="19" y="12" width="1" height="1"/><rect x="23" y="12" width="1" height="1"/><rect x="24" y="12" width="1" height="1"/><rect x="26" y="12" width="1" height="1"/><rect x="27" y="12" width="1" height="1"/><rect x="28" y="12" width="1" height="1"/><rect x="30" y="12" width="1" height="1"/><rect x="32" y="12" width="1" height="1"/><rect x="33" y="12" width="1" height="1"/><rect x="3" y="13" width="1" height="1"/><rect x="4" y="13" width="1" height="1"/><rect x="7" y="13" width="1" height="1"/><rect x="9" y="13" width="1" height="1"/><rect x="12" y="13" width="1" height="1"/><rect x="14" y="13" width="1" height="1"/><rect x="16" y="13" width="1" height="1"/><rect x="17" y="13" width="1" height="1"/><rect x="18" y="13" width="1" height="1"/><rect x="22" y="13" width="1" height="1"/><rect x="23" y="13" width="1" height="1"/><rect x="27" y="13" width="1" height="1"/><rect x="28" y="13" width="1" height="1"/><rect x="30" y="13" width="1" height="1"/><rect x="31" y="13" width="1" height="1"/><rect x="32" y="13" width="1" height="1"/><rect x="33" y="13" width="1" height="1"/><rect x="3" y="14" width="1" height="1"/><rect x="4" y="14" width="1" height="1"/><rect x="6" y="14" width="1" height="1"/><rect x="7" y="14" width="1" height="1"/><rect x="8" y="14" width="1" height="1"/><rect x="10" y="14" width="1" height="1"/><rect x="11" y="14" width="1" height="1"/><rect x="12" y="14" width="1" height="1"/><rect x="14" y="14" width="1" height="1"/><rect x="20" y="14" width="1" height="1"/><rect x="22" y="14" width="1" height="1"/><rect x="24" y="14" width="1" height="1"/><rect x="26" y="14" width="1" height="1"/><rect x="27" y="14" width="1" height="1"/><rect x="29" y="14" width="1" height="1"/><rect x="30" y="14" width="1" height="1"/><rect x="31" y="14" width="1" height="1"/><rect x="34" y="14" width="1" height="1"/><rect x="4" y="15" width="1" height="1"/><rect x="5" y="15" width="1" height="1"/><rect x="6" y="15" width="1" height="1"/><rect x="12" y="15" width="1" height="1"/><rect x="14" y="15" width="1" height="1"/><rect x="16" y="15" width="1" height="1"/><rect x="17" y="15" width="1" height="1"/><rect x="18" y="15" width="1" height="1"/><rect x="19" y="15" width="1" height="1"/><rect x="20" y="15" width="1" height="1"/><rect x="21" y="15" width="1" height="1"/><rect x="22" y="15" width="1" height="1"/><rect x="23" y="15" width="1" height="1"/><rect x="25" y="15" width="1" height="1"/><rect x="28" y="15" width="1" height="1"/><rect x="29" y="15" width="1" height="1"/><rect x="31" y="15" width="1" height="1"/><rect x="32" y="15" width="1" height="1"/><rect x="33" y="15" width="1" height="1"/><rect x="34" y="15" width="1" height="1"/><rect x="2" y="16" width="1" height="1"/><rect x="3" y="16" width="1" height="1"/><rect x="4" y="16" width="1" height="1"/><rect x="6" y="16" width="1" height="1"/><rect x="8" y="16" width="1" height="1"/><rect x="10" y="16" width="1" height="1"/><rect x="11" y="16" width="1" height="1"/><rect x="14" y="16" width="1" height="1"/><rect x="16" y="16" width="1" height="1"/><rect x="20" y="16" width="1" height="1"/><rect x="26" y="16" width="1" height="1"/><rect x="27" y="16" width="1" height="1"/><rect x="28" y="16" width="1" height="1"/><rect x="30" y="16" width="1" height="1"/><rect x="31" y="16" width="1" height="1"/><rect x="32" y="16" width="1" height="1"/><rect x="33" y="16" width="1" height="1"/><rect x="2" y="17" width="1" height="1"/><rect x="3" y="17" width="1" height="1"/><rect x="7" y="17" width="1" height="1"/><rect x="10" y="17" width="1" height="1"/><rect x="15" y="17" width="1" height="1"/><rect x="16" y="17" width="1" height="1"/><rect x="18" y="17" width="1" height="1"/><rect x="22" y="17" width="1" height="1"/><rect x="23" y="17" width="1" height="1"/><rect x="25" y="17" width="1" height="1"/><rect x="26" y="17" width="1" height="1"/><rect x="27" y="17" width="1" height="1"/><rect x="28" y="17" width="1" height="1"/><rect x="29" y="17" width="1" height="1"/><rect x="31" y="17" width="1" height="1"/><rect x="32" y="17" width="1" height="1"/><rect x="4" y="18" width="1" height="1"/><rect x="6" y="18" width="1" height="1"/><rect x="7" y="18" width="1" height="1"/><rect x="8" y="18" width="1" height="1"/><rect x="13" y="18" width="1" height="1"/><rect x="14" y="18" width="1" height="1"/><rect x="19" y="18" width="1" height="1"/><rect x="21" y="18" width="1" height="1"/><rect x="22" y="18" width="1" height="1"/><rect x="24" y="18" width="1" height="1"/><rect x="27" y="18" width="1" height="1"/><rect x="29" y="18" width="1" height="1"/><rect x="30" y="18" width="1" height="1"/><rect x="34" y="18" width="1" height="1"/><rect x="2" y="19" width="1" height="1"/><rect x="7" y="19" width="1" height="1"/><rect x="10" y="19" width="1" height="1"/><rect x="11" y="19" width="1" height="1"/><rect x="12" y="19" width="1" height="1"/><rect x="16" y="19" width="1" height="1"/><rect x="18" y="19" width="1" height="1"/><rect x="19" y="19" width="1" height="1"/><rect x="20" y="19" width="1" height="1"/><rect x="21" y="19" width="1" height="1"/><rect x="22" y="19" width="1" height="1"/><rect x="23" y="19" width="1" height="1"/><rect x="25" y="19" width="1" height="1"/><rect x="27" y="19" width="1" height="1"/><rect x="28" y="19" width="1" height="1"/><rect x="29" y="19" width="1" height="1"/><rect x="31" y="19" width="1" height="1"/><rect x="32" y="19" width="1" height="1"/><rect x="33" y="19" width="1" height="1"/><rect x="34" y="19" width="1" height="1"/><rect x="2" y="20" width="1" height="1"/><rect x="4" y="20" width="1" height="1"/><rect x="7" y="20" width="1" height="1"/><rect x="8" y="20" width="1" height="1"/><rect x="9" y="20" width="1" height="1"/><rect x="10" y="20" width="1" height="1"/><rect x="12" y="20" width="1" height="1"/><rect x="13" y="20" width="1" height="1"/><rect x="14" y="20" width="1" height="1"/><rect x="15" y="20" width="1" height="1"/><rect x="16" y="20" width="1" height="1"/><rect x="17" y="20" width="1" height="1"/><rect x="18" y="20" width="1" height="1"/><rect x="19" y="20" width="1" height="1"/><rect x="22" y="20" width="1" height="1"/><rect x="23" y="20" width="1" height="1"/><rect x="27" y="20" width="1" height="1"/><rect x="29" y="20" width="1" height="1"/><rect x="30" y="20" width="1" height="1"/><rect x="32" y="20" width="1" height="1"/><rect x="33" y="20" width="1" height="1"/><rect x="3" y="21" width="1" height="1"/><rect x="6" y="21" width="1" height="1"/><rect x="9" y="21" width="1" height="1"/><rect x="12" y="21" width="1" height="1"/><rect x="13" y="21" width="1" height="1"/><rect x="14" y="21" width="1" height="1"/><rect x="16" y="21" width="1" height="1"/><rect x="18" y="21" width="1" height="1"/><rect x="19" y="21" width="1" height="1"/><rect x="20" y="21" width="1" height="1"/><rect x="21" y="21" width="1" height="1"/><rect x="23" y="21" width="1" height="1"/><rect x="24" y="21" width="1" height="1"/><rect x="27" y="21" width="1" height="1"/><rect x="29" y="21" width="1" height="1"/><rect x="30" y="21" width="1" height="1"/><rect x="31" y="21" width="1" height="1"/><rect x="32" y="21" width="1" height="1"/><rect x="33" y="21" width="1" height="1"/><rect x="34" y="21" width="1" height="1"/><rect x="3" y="22" width="1" height="1"/><rect x="8" y="22" width="1" height="1"/><rect x="9" y="22" width="1" height="1"/><rect x="10" y="22" width="1" height="1"/><rect x="11" y="22" width="1" height="1"/><rect x="12" y="22" width="1" height="1"/><rect x="14" y="22" width="1" height="1"/><rect x="18" y="22" width="1" height="1"/><rect x="24" y="22" width="1" height="1"/><rect x="27" y="22" width="1" height="1"/><rect x="30" y="22" width="1" height="1"/><rect x="31" y="22" width="1" height="1"/><rect x="33" y="22" width="1" height="1"/><rect x="34" y="22" width="1" height="1"/><rect x="2" y="23" width="1" height="1"/><rect x="3" y="23" width="1" height="1"/><rect x="4" y="23" width="1" height="1"/><rect x="16" y="23" width="1" height="1"/><rect x="17" y="23" width="1" height="1"/><rect x="19" y="23" width="1" height="1"/><rect x="20" y="23" width="1" height="1"/><rect x="21" y="23" width="1" height="1"/><rect x="22" y="23" width="1" height="1"/><rect x="23" y="23" width="1" height="1"/><rect x="25" y="23" width="1" height="1"/><rect x="27" y="23" width="1" height="1"/><rect x="28" y="23" width="1" height="1"/><rect x="32" y="23" width="1" height="1"/><rect x="34" y="23" width="1" height="1"/><rect x="2" y="24" width="1" height="1"/><rect x="4" y="24" width="1" height="1"/><rect x="6" y="24" width="1" height="1"/><rect x="7" y="24" width="1" height="1"/><rect x="8" y="24" width="1" height="1"/><rect x="10" y="24" width="1" height="1"/><rect x="11" y="24" width="1" height="1"/><rect x="13" y="24" width="1" height="1"/><rect x="16" y="24" width="1" height="1"/><rect x="17" y="24" width="1" height="1"/><rect x="18" y="24" width="1" height="1"/><rect x="19" y="24" width="1" height="1"/><rect x="23" y="24" width="1" height="1"/><rect x="27" y="24" width="1" height="1"/><rect x="30" y="24" width="1" height="1"/><rect x="31" y="24" width="1" height="1"/><rect x="33" y="24" width="1" height="1"/><rect x="2" y="25" width="1" height="1"/><rect x="4" y="25" width="1" height="1"/><rect x="5" y="25" width="1" height="1"/><rect x="6" y="25" width="1" height="1"/><rect x="13" y="25" width="1" height="1"/><rect x="16" y="25" width="1" height="1"/><rect x="17" y="25" width="1" height="1"/><rect x="23" y="25" width="1" height="1"/><rect x="24" y="25" width="1" height="1"/><rect x="30" y="25" width="1" height="1"/><rect x="31" y="25" width="1" height="1"/><rect x="32" y="25" width="1" height="1"/><rect x="34" y="25" width="1" height="1"/><rect x="2" y="26" width="1" height="1"/><rect x="4" y="26" width="1" height="1"/><rect x="5" y="26" width="1" height="1"/><rect x="6" y="26" width="1" height="1"/><rect x="8" y="26" width="1" height="1"/><rect x="9" y="26" width="1" height="1"/><rect x="11" y="26" width="1" height="1"/><rect x="12" y="26" width="1" height="1"/><rect x="14" y="26" width="1" height="1"/><rect x="15" y="26" width="1" height="1"/><rect x="16" y="26" width="1" height="1"/><rect x="17" y="26" width="1" height="1"/><rect x="19" y="26" width="1" height="1"/><rect x="20" y="26" width="1" height="1"/><rect x="22" y="26" width="1" height="1"/><rect x="24" y="26" width="1" height="1"/><rect x="26" y="26" width="1" height="1"/><rect x="27" y="26" width="1" height="1"/><rect x="28" y="26" width="1" height="1"/><rect x="29" y="26" width="1" height="1"/><rect x="30" y="26" width="1" height="1"/><rect x="31" y="26" width="1" height="1"/><rect x="33" y="26" width="1" height="1"/><rect x="10" y="27" width="1" height="1"/><rect x="11" y="27" width="1" height="1"/><rect x="12" y="27" width="1" height="1"/><rect x="13" y="27" width="1" height="1"/><rect x="14" y="27" width="1" height="1"/><rect x="15" y="27" width="1" height="1"/><rect x="16" y="27" width="1" height="1"/><rect x="18" y="27" width="1" height="1"/><rect x="20" y="27" width="1" height="1"/><rect x="21" y="27" width="1" height="1"/><rect x="22" y="27" width="1" height="1"/><rect x="23" y="27" width="1" height="1"/><rect x="25" y="27" width="1" height="1"/><rect x="26" y="27" width="1" height="1"/><rect x="30" y="27" width="1" height="1"/><rect x="32" y="27" width="1" height="1"/><rect x="34" y="27" width="1" height="1"/><rect x="2" y="28" width="1" height="1"/><rect x="3" y="28" width="1" height="1"/><rect x="4" y="28" width="1" height="1"/><rect x="5" y="28" width="1" height="1"/><rect x="6" y="28" width="1" height="1"/><rect x="7" y="28" width="1" height="1"/><rect x="8" y="28" width="1" height="1"/><rect x="11" y="28" width="1" height="1"/><rect x="12" y="28" width="1" height="1"/><rect x="13" y="28" width="1" height="1"/><rect x="15" y="28" width="1" height="1"/><rect x="17" y="28" width="1" height="1"/><rect x="18" y="28" width="1" height="1"/><rect x="20" y="28" width="1" height="1"/><rect x="22" y="28" width="1" height="1"/><rect x="23" y="28" width="1" height="1"/><rect x="24" y="28" width="1" height="1"/><rect x="25" y="28" width="1" height="1"/><rect x="26" y="28" width="1" height="1"/><rect x="28" y="28" width="1" height="1"/><rect x="30" y="28" width="1" height="1"/><rect x="32" y="28" width="1" height="1"/><rect x="33" y="28" width="1" height="1"/><rect x="2" y="29" width="1" height="1"/><rect x="8" y="29" width="1" height="1"/><rect x="10" y="29" width="1" height="1"/><rect x="15" y="29" width="1" height="1"/><rect x="22" y="29" width="1" height="1"/><rect x="23" y="29" width="1" height="1"/><rect x="25" y="29" width="1" height="1"/><rect x="26" y="29" width="1" height="1"/><rect x="30" y="29" width="1" height="1"/><rect x="31" y="29" width="1" height="1"/><rect x="32" y="29" width="1" height="1"/><rect x="34" y="29" width="1" height="1"/><rect x="2" y="30" width="1" height="1"/><rect x="4" y="30" width="1" height="1"/><rect x="5" y="30" width="1" height="1"/><rect x="6" y="30" width="1" height="1"/><rect x="8" y="30" width="1" height="1"/><rect x="10" y="30" width="1" height="1"/><rect x="12" y="30" width="1" height="1"/><rect x="14" y="30" width="1" height="1"/><rect x="15" y="30" width="1" height="1"/><rect x="16" y="30" width="1" height="1"/><rect x="17" y="30" width="1" height="1"/><rect x="20" y="30" width="1" height="1"/><rect x="22" y="30" width="1" height="1"/><rect x="26" y="30" width="1" height="1"/><rect x="27" y="30" width="1" height="1"/><rect x="28" y="30" width="1" height="1"/><rect x="29" y="30" width="1" height="1"/><rect x="30" y="30" width="1" height="1"/><rect x="31" y="30" width="1" height="1"/><rect x="2" y="31" width="1" height="1"/><rect x="4" y="31" width="1" height="1"/><rect x="5" y="31" width="1" height="1"/><rect x="6" y="31" width="1" height="1"/><rect x="8" y="31" width="1" height="1"/><rect x="10" y="31" width="1" height="1"/><rect x="11" y="31" width="1" height="1"/><rect x="13" y="31" width="1" height="1"/><rect x="15" y="31" width="1" height="1"/><rect x="17" y="31" width="1" height="1"/><rect x="18" y="31" width="1" height="1"/><rect x="19" y="31" width="1" height="1"/><rect x="21" y="31" width="1" height="1"/><rect x="22" y="31" width="1" height="1"/><rect x="27" y="31" width="1" height="1"/><rect x="30" y="31" width="1" height="1"/><rect x="31" y="31" width="1" height="1"/><rect x="32" y="31" width="1" height="1"/><rect x="33" y="31" width="1" height="1"/><rect x="34" y="31" width="1" height="1"/><rect x="2" y="32" width="1" height="1"/><rect x="4" y="32" width="1" height="1"/><rect x="5" y="32" width="1" height="1"/><rect x="6" y="32" width="1" height="1"/><rect x="8" y="32" width="1" height="1"/><rect x="10" y="32" width="1" height="1"/><rect x="13" y="32" width="1" height="1"/><rect x="14" y="32" width="1" height="1"/><rect x="15" y="32" width="1" height="1"/><rect x="19" y="32" width="1" height="1"/><rect x="22" y="32" width="1" height="1"/><rect x="23" y="32" width="1" height="1"/><rect x="24" y="32" width="1" height="1"/><rect x="26" y="32" width="1" height="1"/><rect x="27" y="32" width="1" height="1"/><rect x="28" y="32" width="1" height="1"/><rect x="29" y="32" width="1" height="1"/><rect x="32" y="32" width="1" height="1"/><rect x="2" y="33" width="1" height="1"/><rect x="8" y="33" width="1" height="1"/><rect x="12" y="33" width="1" height="1"/><rect x="13" y="33" width="1" height="1"/><rect x="15" y="33" width="1" height="1"/><rect x="16" y="33" width="1" height="1"/><rect x="18" y="33" width="1" height="1"/><rect x="20" y="33" width="1" height="1"/><rect x="22" y="33" width="1" height="1"/><rect x="23" y="33" width="1" height="1"/><rect x="24" y="33" width="1" height="1"/><rect x="27" y="33" width="1" height="1"/><rect x="30" y="33" width="1" height="1"/><rect x="31" y="33" width="1" height="1"/><rect x="32" y="33" width="1" height="1"/><rect x="2" y="34" width="1" height="1"/><rect x="3" y="34" width="1" height="1"/><rect x="4" y="34" width="1" height="1"/><rect x="5" y="34" width="1" height="1"/><rect x="6" y="34" width="1" height="1"/><rect x="7" y="34" width="1" height="1"/><rect x="8" y="34" width="1" height="1"/><rect x="10" y="34" width="1" height="1"/><rect x="11" y="34" width="1" height="1"/><rect x="12" y="34" width="1" height="1"/><rect x="13" y="34" width="1" height="1"/><rect x="19" y="34" width="1" height="1"/><rect x="21" y="34" width="1" height="1"/><rect x="24" y="34" width="1" height="1"/><rect x="25" y="34" width="1" height="1"/><rect x="26" y="34" width="1" height="1"/><rect x="29" y="34" width="1" height="1"/><rect x="33" y="34" width="1" height="1"/></g></svg>
+
+        <div>
+          <span class="big">Presentación e informe en línea</span>
+          <p style="margin:0;">Escanea el código para volver a la presentación completa.</p>
+          <p style="margin:0.3rem 0 0; font-weight:700; color:var(--white);">truthframestudio.com/proyectos/eternidad-plus</p>
+          <p style="margin:0.5rem 0 0; font-size:0.74rem; color:var(--muted);">Mayordomía · Legado · Permanencia</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="doc-section">
+      <div class="notes-area" style="margin-top:0;">
+        <strong>Espacio para Notas y Acuerdos de la Junta Directiva:</strong><br/><br/><br/>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

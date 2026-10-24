@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guión de Presentación (20 Minutos) — Junta Directiva Eternidad Plus | Diana Cardona</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #000000;
+      --surface: #111111;
+      --surface-2: #181818;
+      --text: #EAE8E4;
+      --white: #FFFFFF;
+      --muted: #A3A19D;
+      --coral: #F24E55;
+      --green: #2ECC71;
+      --amber: #F5B041;
+      --border: rgba(255, 255, 255, 0.14);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.55;
+      padding: 2rem 1.5rem 4rem;
+    }
+    .container { max-width: 960px; margin: 0 auto; }
+    .no-print-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 0.9rem 1.25rem;
+      border-radius: 10px;
+      margin-bottom: 1.75rem;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.55rem 1rem;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: var(--surface-2);
+      color: var(--white);
+    }
+    .btn-coral { background: var(--coral); border-color: var(--coral); color: var(--white); }
+    .doc-header {
+      border-bottom: 2px solid var(--coral);
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.75rem;
+    }
+    .eyebrow {
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--coral);
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+    h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.4rem;
+    }
+    .subtitle { font-size: 0.92rem; color: var(--muted); }
+    .meta-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    .meta-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.65rem 0.85rem;
+      font-size: 0.78rem;
+    }
+    .meta-box strong { display: block; color: var(--white); font-size: 0.92rem; }
+    .slide-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.35rem 1.5rem;
+      margin-bottom: 1.15rem;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+    .slide-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.65rem;
+      margin-bottom: 0.85rem;
+    }
+    .slide-badge {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--coral);
+    }
+    .time-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      background: rgba(242, 78, 85, 0.15);
+      color: var(--white);
+      border: 1px solid rgba(242, 78, 85, 0.4);
+      padding: 0.22rem 0.65rem;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .slide-block h2 {
+      font-size: 1.12rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-top: 0.2rem;
+    }
+    .screen-cue {
+      font-size: 0.78rem;
+      color: var(--muted);
+      background: var(--surface-2);
+      padding: 0.45rem 0.75rem;
+      border-radius: 6px;
+      margin-bottom: 0.85rem;
+      border-left: 3px solid var(--amber);
+    }
+    .screen-cue strong { color: var(--white); }
+    ul.bullets { list-style: none; }
+    ul.bullets li {
+      position: relative;
+      padding-left: 1.25rem;
+      margin-bottom: 0.55rem;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+    ul.bullets li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: var(--coral);
+      font-weight: 800;
+    }
+    ul.bullets li strong { color: var(--white); }
+    .transition-line {
+      margin-top: 0.75rem;
+      padding-top: 0.6rem;
+      border-top: 1px dashed var(--border);
+      font-size: 0.82rem;
+      color: var(--amber);
+      font-weight: 600;
+    }
+
+    /* ESTILO DE IMPRESIÓN / PDF LIMPIO Y ELEGANTE */
+    @media print {
+      @page { size: letter; margin: 12mm 14mm; }
+      body {
+        background: #FFFFFF !important;
+        color: #111111 !important;
+        padding: 0 !important;
+        font-size: 10pt;
+      }
+      .no-print-bar { display: none !important; }
+      .doc-header { border-bottom: 2px solid #F24E55 !important; margin-bottom: 12px !important; padding-bottom: 10px !important; }
+      h1, .slide-block h2, .meta-box strong, .screen-cue strong, ul.bullets li strong { color: #000000 !important; }
+      .subtitle, .meta-box { color: #444444 !important; }
+      .meta-box, .slide-block {
+        background: #FFFFFF !important;
+        border: 1px solid #CCCCCC !important;
+        margin-bottom: 10px !important;
+        padding: 10px 14px !important;
+      }
+      .screen-cue {
+        background: #F5F5F5 !important;
+        color: #333333 !important;
+        border-left: 3px solid #F24E55 !important;
+      }
+      .time-badge {
+        background: #FDECEC !important;
+        color: #B02026 !important;
+        border: 1px solid #F24E55 !important;
+      }
+      ul.bullets li { color: #222222 !important; font-size: 9.5pt !important; margin-bottom: 4px !important; }
+      .transition-line { color: #B02026 !important; border-top-color: #DDDDDD !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="no-print-bar">
+      <div style="display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap;">
+        <a href="index.html" class="btn">← Volver a la Presentación</a>
+        <span style="font-size:0.82rem; color:var(--muted);">Guión sincronizado lámina por lámina (5 min de Andrés + 20 min de Diana)</span>
+      </div>
+      <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
+        <a href="assets/Guion_Presentacion_Junta_Eternidad_Plus_20min.pdf" download="Guion_Presentacion_Junta_Eternidad_Plus_20min.pdf" class="btn btn-coral">⬇ Descargar PDF Directo</a>
+        <button onclick="window.print()" class="btn">🖨️ Imprimir</button>
+      </div>
+    </div>
+
+    <header class="doc-header">
+      <div style="display:flex; align-items:center; gap:1rem; margin-bottom:0.5rem;">
+        <img src="assets/logo-eplus-circle.jpeg" alt="Logo Eternidad Plus" style="width:52px; height:52px; border-radius:50%; object-fit:cover; flex-shrink:0;" />
+        <div>
+          <div class="eyebrow">Truth Frame Studio · Guía de Orador para Andrés Figueroa y Diana Cardona</div>
+          <h1 style="margin-bottom:0;">Guión de Presentación a la Junta Directiva — Eternidad Plus</h1>
+        </div>
+      </div>
+      <p class="subtitle">Sincronizado con las 13 láminas de la presentación. En pantalla se ven únicamente las cifras e ideas clave; quien presenta aporta el contexto con estos bullets. Andrés abre con el informe de crecimiento y Diana continúa con la propuesta.</p>
+      <div class="meta-strip">
+        <div class="meta-box"><strong>5 + 20 Minutos</strong>Informe de Andrés + propuesta de Diana</div>
+        <div class="meta-box"><strong>13 Láminas</strong>Visuales, limpias y sin saturación</div>
+        <div class="meta-box"><strong>4.45 M Vistas</strong>Desde el relanzamiento (sep 2024)</div>
+        <div class="meta-box"><strong>Oct 2026 – Jun 2027</strong>Horizonte del plan</div>
+      </div>
+    </header>
+
+    <section class="slide-block">
+      <div class="slide-top">
+        <div>
+          <div class="slide-badge">Antes de empezar · Informe de Crecimiento</div>
+          <h2>Apertura de Andrés Figueroa (5 minutos)</h2>
+        </div>
+        <span class="time-badge">⏱️ Minuto −5:00 – 0:00</span>
+      </div>
+      <div class="screen-cue">
+        <strong>En pantalla se muestra:</strong> El <strong>Informe de Crecimiento 2024–2026</strong> (7 láminas; es la Parte I del informe impreso que recibe cada miembro).
+      </div>
+      <ul class="bullets">
+        <li><strong>Quién habla:</strong> Andrés Figueroa abre la reunión y recorre el informe de crecimiento desde el lanzamiento de Eternidad+ en septiembre de 2024 (video en vivo <em>“Radio Eternidad se transforma en Eternidad+”</em>).</li>
+        <li><strong>Mensajes que deben quedar:</strong> 120,091 suscriptores y +30,045 netos; 4.45 M de vistas y 638,908 horas; el <strong>37%</strong> de todas las vistas del canal desde 2014 ocurrieron en estos dos años; <strong>septiembre de 2026 fue el récord</strong> (367 mil vistas) y el tercer trimestre duplicó al de 2025.</li>
+        <li><strong>Lectura honesta:</strong> los 12 meses completos son planos (2.06 M frente a 2.03 M); el salto es reciente. Audiencia de calidad: 10:06 de duración por vista, suscriptores de 20% a 38% de las vistas, 100% orgánica.</li>
+        <li><strong>Lo que deja abierto:</strong> llegan más personas pero se suscriben menos (8.9 → 4.5 suscriptores por mil vistas) y el empaque de los videos nuevos tiene menos CTR que el catálogo anterior.</li>
+      </ul>
+      <div class="transition-line">👉 Frase de transición: "Gracias, Andrés. Con este punto de partida, les presento cómo convertir este esfuerzo en una red de canales que alcance más hogares..."</div>
+    </section>
+
+    <section class="slide-block">
+      <div class="slide-top">
+        <div>
+          <div class="slide-badge">Lámina 1 de 13 · El Cambio en YouTube</div>
+          <h2>YouTube Ya No Está en el Celular: Está en la Sala de la Casa</h2>
+        </div>
+        <span class="time-badge">⏱️ Minuto 0:00 – 1:30</span>
+      </div>
+      <div class="screen-cue">
+        <strong>En pantalla se muestra:</strong> 3 cifras grandes: <strong>200 M</strong> de personas por mes ven YouTube en TV · <strong>60%</strong> del tiempo total en TV · <strong>456,702</strong> vistas de familias en Eternidad+ (57.98% de permanencia).
+      </div>
+      <ul class="bullets">
+        <li><strong>Saludo y propósito:</strong> Buenos días. Les presento la hoja de ruta de octubre de 2026 a junio de 2027, construida a partir de los datos reales de su canal.</li>
+        <li><strong>La televisión del hogar:</strong> 200 millones de personas ven YouTube desde su televisor cada mes y el <strong>60% del tiempo</strong> ocurre en esa pantalla: sesiones largas, en familia, con atención profunda.</li>
+        <li><strong>Ya pasa en Eternidad+:</strong> <strong>456,702 vistas</strong> son de familias frente al televisor, con casi <strong>58% de permanencia</strong>.</li>
+        <li><strong>Idea fuerza:</strong> el mensaje ya no compite por un scroll en el celular; compite por la atención de la familia reunida.</li>
+      </ul>
+      <div class="transition-line">👉 Frase de transición: "Pero hay otro cambio, todavía más profundo, que casi nadie está mirando: cómo YouTube alimenta a la inteligencia artificial..."</div>
+    </section>
+
+    <section class="slide-block">
+      <div class="slide-top">
+        <div>
+          <div class="slide-badge">Lámina 2 de 13 · El Cambio en YouTube · Inteligencia Artificial</div>
+          <h2>YouTube Es Hoy la Fuente que Alimenta a la Inteligencia Artificial</h2>
+        </div>
+        <span class="time-badge">⏱️ Minuto 1:30 – 3:00</span>
+      </div>
+      <div class="screen-cue">
+        <strong>En pantalla se muestra:</strong> <strong>+107%</strong> de indexación de YouTube por IA en 4 meses y un flujo de 3 pasos (experto a cámara → la IA lo “ve” y lo “escucha” → responde con esa fuente).
+      </div>
+      <ul class="bullets">
+        <li><strong>El dato:</strong> la indexación de YouTube por parte de la IA creció <strong>107% en solo 4 meses</strong>.</li>
+        <li><strong>Por qué:</strong> las tecnológicas migran de los foros de opinión a <strong>expertos hablando a cámara</strong> para entrenar sus modelos.</li>
+        <li><strong>Los 3 pasos:</strong> (1) un experto habla a cámara con rigor bíblico y teológico; (2) la IA lo “ve” y lo “escucha”, porque los modelos son multimodales y aprenden de video; (3) cuando alguien pregunte por fe, familia o doctrina, la IA responde con esa fuente.</li>
+        <li><strong>Frase para recordar:</strong> lo que se ordena e indexa hoy es lo que la IA responderá durante la próxima década.</li>
+      </ul>
+      <div class="transition-line">👉 Frase de transición: "Con este escenario, miremos dónde está hoy el canal..."</div>
+    </section>
+
+    <section class="slide-block">
+      <div class="slide-top">
+        <div>
+          <div class="slide-badge">Lámina 3 de 13 · Nuestro Punto de Partida</div>
+          <h2>Tres Años de Datos: el Crecimiento se Frenó</h2>
+        </div>
+        <span class="time-badge">⏱️ Minuto 3:00 – 4:00</span>
+      </div>
+      <div class="screen-cue">
+        <strong>En pantalla se muestra:</strong> Tres columnas de tres años (Sep 23–24 · 24–25 · 25–26): <strong>vistas −32%</strong> (3.17 M → 2.15 M) · <strong>horas −52%</strong> (638.6 k → 305.3 k) · <strong>suscriptores nuevos −63%</strong> (+30.4 k → +11.1 k).
+      </div>
+      <ul class="bullets">
+        <li><strong>El diagnóstico duro:</strong> el canal produce más que nunca y alcanza menos. Los 420 videos de 2025–2026 aportan el 40% de las vistas de los últimos dos años; solo 53 videos de 2022–2023 aportan el 33%.</li>
+        <li><strong>Contexto honesto:</strong> la base de comparación es alta; el concierto J&amp;S Jerez (mayo de 2023) acumula 412,028 vistas y 182,119 horas.</li>
+        <li><strong>La buena noticia:</strong> el 34% de las vistas viene de videos de 2017 a 2023: el catálogo sigue vivo. Falta ordenarlo y empacarlo.</li>
+        <li><strong>Señal reciente (informe de Andrés):</strong> septiembre de 2026 fue el mejor mes de la era y el tercer trimestre duplicó al de 2025. Hay un repunte que conviene aprovechar.</li>
+      </ul>
+      <div class="transition-line">👉 Frase de transición: "Veamos qué nos dice exactamente nuestra audiencia en los datos..."</div>
+    </section>
+
+    <section class="slide-block">
+      <div class="slide-top">
+        <div>
+          <div class="slide-badge">Lámina 4 de 13 · Radiografía de Audiencia</div>
+          <h2>¿Quién Nos Ve y Desde Dónde?</h2>
+        </div>
+        <span class="time-badge">⏱️ Minuto 4:00 – 6:00</span>
+      </div>
+      <div class="screen-cue">
+        <strong>En pantalla se muestra:</strong> 4 indicadores (<strong>64.35% Audiencia recurrente</strong> · <strong>54.56% Mujeres</strong> · <strong>67.46% Edad 35–64</strong> · <strong>666 K+ vistas en México y EE. UU.</strong>) y barras de edad y países.
+      </div>
+      <ul class="bullets">
+        <li><strong>Fidelidad:</strong> el <strong>64.35%</strong> de las vistas recientes (90 días) viene de personas que regresan; los usuarios habituales se quedan unos 12 minutos y medio, frente a 8:49 de un espectador nuevo.</li>
+        <li><strong>Las mujeres sostienen la retención:</strong> son el <strong>54.56%</strong> de la audiencia reciente (51.74% histórico) y aportan el <strong>55.28% de las horas</strong> (11:07 min frente a 9:32 de los hombres).</li>
+        <li><strong>Audiencia madura:</strong> el <strong>67.46%</strong> tiene entre 35 y 64 años y el 86.7% entre 25 y 64.</li>
+        <li><strong>Alcance global:</strong> México (394,915 vistas) y Estados Unidos (271,557) son los mercados #1 y #2, seguidos de Colombia y Argentina; superan por más de 5 veces el tráfico de República Dominicana.</li>
+        <li><strong>Dato de apoyo:</strong> la muestra de estas tablas es de 1.88 M de vistas y 278 mil horas (exportaciones de septiembre).</li>
+      </ul>
+      <div class="transition-line">👉 Frase de transición: "¿Qué hace que esta audiencia haga clic y qué hace que se quede?"</div>
+    </section>
+
+    <section class="slide-block">
+      <div class="slide-top">
+        <div>
+          <div class="slide-badge">Lámina 5 de 13 · Comportamiento Algorítmico</div>
+          <h2>Qué Genera el Clic vs. Qué Sostiene la Retención</h2>
+        </div>
+        <span class="time-badge">⏱️ Minuto 6:00 – 8:00</span>
+      </div>
+      <div class="screen-cue">
+        <strong>En pantalla se muestra:</strong> <strong>96.4%</strong> del tiempo viene de videos largos · <strong>7.3% – 10.5%</strong> de CTR en preguntas directas · <strong>3.99%</strong> de CTR en sugeridos con 16:06 de retención · encuestas de la comunidad (300 a 600 votos).
+      </div>
+      <ul class="bullets">
+        <li><strong>Motor de retención:</strong> el <strong>96.4%</strong> del tiempo de visualización viene de videos largos y conciertos (16 a 28 minutos), frente a 45 segundos en Shorts. Los Shorts son un puente, no un reemplazo.</li>
+        <li><strong>Motor de clics:</strong> las preguntas directas que la gente busca elevan el CTR a <strong>7.3%</strong> y hasta <strong>10.5%</strong> (por ejemplo, <em>“¿Qué son las 5 solas?”</em>).</li>
+        <li><strong>Oportunidad en sugeridos:</strong> la gente se queda <strong>16 minutos</strong>, pero el CTR es de solo <strong>3.99%</strong>: el contenido retiene y el empaque deja escapar clics.</li>
+        <li><strong>La comunidad habla:</strong> los enlaces sueltos reciben menos de 15 reacciones; las encuestas movilizan de 300 a 600 votos (en una de 445 votos, 40% pidió Finanzas Bíblicas y 24% Música y Adoración).</li>
+      </ul>
+      <div class="transition-line">👉 Frase de transición: "Si juntamos todo esto, aparece un problema de fondo..."</div>
+    </section>
+
+    <section class="slide-block">
+      <div class="slide-top">
+        <div>
+          <div class="slide-badge">Lámina 6 de 13 · Diagnóstico</div>
+          <h2>El Problema: Tres Audiencias Distintas en un Solo Canal</h2>
+        </div>
+        <span class="time-badge">⏱️ Minuto 8:00 – 9:30</span>
+      </div>
+      <div class="screen-cue">
+        <strong>En pantalla se muestra:</strong> Tres cajas (<strong>Teología y hombres · Música y conciertos · Mujeres y familia</strong>) que convergen en un solo canal, y la prueba: <strong>CTR 4.9% → 9.5%</strong>.
+      </div>
+      <ul class="bullets">
+        <li><strong>Tres audiencias:</strong> A, teología y hombres (cosmovisión, apologética, ética); B, música y conciertos (consumo inmersivo en TV; el video #1 es un concierto); C, mujeres y familia (54.56% de la audiencia).</li>
+        <li><strong>Efecto en el algoritmo:</strong> YouTube no sabe a quién recomendar cada video; mezcla señales de públicos distintos y diluye el alcance orgánico.</li>
+        <li><strong>La prueba en los datos:</strong> el CTR del canal es 4.9%, pero en temas femeninos y de pareja sube a 9.5% (8.2% a 9.5%). Cuando el contenido encuentra a su público, el clic casi se duplica.</li>
+        <li><strong>Conclusión a decir en voz alta:</strong> necesitamos diversificar el canal, no porque falte contenido, sino porque el contenido no está llegando a cada público.</li>
+      </ul>
+      <div class="transition-line">👉 Frase de transición: "Y esto no puede esperar. Por qué este es el momento..."</div>
+    </section>
+
+    <section class="slide-block">
+      <div class="slide-top">
+        <div>
+          <div class="slide-badge">Lámina 7 de 13 · La Oportunidad</div>
+          <h2>Por Qué Este Es el Momento</h2>
+        </div>
+        <span class="time-badge">⏱️ Minuto 9:30 – 11:00</span>
+      </div>
+      <div class="screen-cue">
+        <strong>En pantalla se muestra:</strong> 4 tarjetas: <strong>Q4</strong> pico orgánico · <strong>60%</strong> TV · <strong>+107%</strong> IA indexando · <strong>2</strong> eventos ya pautados.
+      </div>
+      <ul class="bullets">
+        <li><strong>1 · Tráfico:</strong> el último trimestre es la mayor ola de tráfico del año en YouTube; hay que optimizar ahora.</li>
+        <li><strong>2 · Pantalla:</strong> la TV ya es el estándar; los conciertos y la formación profunda de E+ ya se ven en televisores.</li>
+        <li><strong>3 · Inteligencia artificial:</strong> la IA está indexando ya; quien ordene su catálogo primero será la fuente de autoridad.</li>
+        <li><strong>4 · Activos listos:</strong> el concierto del 11 de diciembre y la conferencia de mayo son plataformas de lanzamiento ya pautadas.</li>
+        <li><strong>Frase de cierre de lámina:</strong> audiencia fiel, contenido de calidad y cambios de plataforma a favor. Esa combinación no estará abierta para siempre.</li>
+      </ul>
+      <div class="transition-line">👉 Frase de transición: "Esta es la solución que proponemos..."</div>
+    </section>
+
+    <section class="slide-block">
+      <div class="slide-top">
+        <div>
+          <div class="slide-badge">Lámina 8 de 13 · Arquitectura de Expansión</div>
+          <h2>La Solución: Evolución a una Red de 3 Canales</h2>
+        </div>
+        <span class="time-badge">⏱️ Minuto 11:00 – 13:00</span>
+      </div>
+      <div class="screen-cue">
+        <strong>En pantalla se muestra:</strong> 3 bloques (<strong>Eternidad+ Matriz</strong> · <strong>E+ Música (dic 2026)</strong> · <strong>E+ Mujeres (mayo 2027)</strong>) y la banda de <strong>Incubadora E+ Jóvenes</strong>.
+      </div>
+      <ul class="bullets">
+        <li><strong>Por qué 3 canales:</strong> para que el algoritmo identifique a qué espectador recomendar cada video sin mezclar audiencias.</li>
+        <li><strong>Eternidad+ (Matriz):</strong> cosmovisión, apologética y hombres. Anclas: <em>Hombres de Verdad</em> y <em>Contracultura</em>. Respaldo: <em>“El Impacto Teológico en América Latina”</em> (77,654 vistas, 17,877 horas).</li>
+        <li><strong>E+ Música (diciembre de 2026):</strong> el video #1 del canal es el concierto J&amp;S Jerez (161,848 vistas, 73,562 horas). Aquí vivirá el concierto del 11 de diciembre, las canciones de conciertos anteriores por separado y sesiones acústicas para televisores.</li>
+        <li><strong>E+ Mujeres (mayo de 2027):</strong> casa propia para el 54.56% de la audiencia, con CTR de 8.2% a 9.5% en sus temas.</li>
+        <li><strong>Jóvenes (18–24 años, hoy 3.01%):</strong> no se gasta estudio a ciegas; se incuba con un embudo Short → Video Largo → Oferta.</li>
+      </ul>
+      <div class="transition-line">👉 Frase de transición: "¿Cómo lo ejecutamos sin agotar al equipo?"</div>
+    </section>
+
+    <section class="slide-block">
+      <div class="slide-top">
+        <div>
+          <div class="slide-badge">Lámina 9 de 13 · Cronograma Escalonado</div>
+          <h2>Tres Fases, Dos Lanzamientos (Octubre 2026 – Junio 2027)</h2>
+        </div>
+        <span class="time-badge">⏱️ Minuto 13:00 – 14:30</span>
+      </div>
+      <div class="screen-cue">
+        <strong>En pantalla se muestra:</strong> Gráfica de la hoja de ruta de 9 meses (T4 2026 Cimientos · T1 2027 Producción · T2 2027 Consolidación) y los 2 hitos ancla.
+      </div>
+      <ul class="bullets">
+        <li><strong>Regla de oro:</strong> no hacemos todo al mismo tiempo; ordenamos las prioridades por trimestre para proteger la capacidad del equipo.</li>
+        <li><strong>Hito 1 · 11 de diciembre de 2026:</strong> concierto en vivo y lanzamiento de E+ Música, con la campaña “Fundadores” en los créditos y la prueba piloto de un recurso descargable.</li>
+        <li><strong>Enero a marzo de 2027:</strong> ideación y rodaje de E+ Mujeres sin publicar (“Dark Launch”) y evaluación de <em>La Mesa</em> como contenido semilla.</li>
+        <li><strong>Hito 2 · mayo de 2027:</strong> conferencia y lanzamiento de E+ Mujeres con estreno en bloque y conferencia gratuita para alcanzar las 8,000 horas.</li>
+        <li><strong>Junio de 2027:</strong> medimos resultados con la Junta.</li>
+      </ul>
+      <div class="transition-line">👉 Frase de transición: "Así funcionará cada semana el canal matriz..."</div>
+    </section>
+
+    <section class="slide-block">
+      <div class="slide-top">
+        <div>
+          <div class="slide-badge">Lámina 10 de 13 · Ingeniería Algorítmica y Operación</div>
+          <h2>4 Pilares en el Canal Matriz y Trabajo Mensual por Lotes</h2>
+        </div>
+        <span class="time-badge">⏱️ Minuto 14:30 – 16:00</span>
+      </div>
+      <div class="screen-cue">
+        <strong>En pantalla se muestra:</strong> 4 pilares (<strong>9 miniaturas/semana · Cold Open 15 s · Shorts de cross-pollination · correos propios</strong>) y los 4 lotes semanales.
+      </div>
+      <ul class="bullets">
+        <li><strong>Pilar 1 · Empaque:</strong> renovar 3 videos del archivo por semana con 3 variaciones de miniatura (A/B/C), listas transversales y recorte de intros con el editor nativo de YouTube.</li>
+        <li><strong>Pilar 2 · Retención:</strong> ganchos de los primeros 15 segundos validados con curvas reales; el equipo ya hace un gran trabajo con el Cold Open y yo aporto los datos.</li>
+        <li><strong>Pilares 3 y 4:</strong> Shorts conectados al video largo y llamados a la acción para captar correos propios, y así no depender solo de “terreno alquilado”.</li>
+        <li><strong>Orden mensual:</strong> semana 1 preproducción, semana 2 rodaje, semana 3 edición, semana 4 programación en horarios pico (10:30 AM y 4:00 PM).</li>
+        <li><strong>Sin sobrecargar al equipo:</strong> un especialista externo de miniaturas, coordinado por mí, produce las 9 miniaturas semanales; el equipo interno sigue con grabación, edición y línea gráfica.</li>
+      </ul>
+      <div class="transition-line">👉 Frase de transición: "Y todo este alcance internacional nos permite pensar en cómo sostener la misión..."</div>
+    </section>
+
+    <section class="slide-block">
+      <div class="slide-top">
+        <div>
+          <div class="slide-badge">Lámina 11 de 13 · Autosostenibilidad Digital</div>
+          <h2>Financiar la Misión: Escalera de Valor en 3 Niveles (USD)</h2>
+        </div>
+        <span class="time-badge">⏱️ Minuto 16:00 – 17:30</span>
+      </div>
+      <div class="screen-cue">
+        <strong>En pantalla se muestra:</strong> 3 tarjetas (<strong>Tier 1: $9–$17</strong> · <strong>Tier 2: $27–$47</strong> · <strong>Tier 3: $97–$149</strong>) y el piloto del 11 de diciembre.
+      </div>
+      <ul class="bullets">
+        <li><strong>Mayordomía para ampliar el alcance:</strong> con más de 666 mil vistas entre México y Estados Unidos se puede crear un motor de ingresos propios en dólares que complemente las donaciones.</li>
+        <li><strong>Tier 1 ($9 a $17):</strong> guías devocionales y workbooks en PDF en la primera línea de la descripción y el comentario fijado. Primera prueba piloto: el 11 de diciembre, con la campaña “Fundadores”.</li>
+        <li><strong>Tier 2 ($27 a $47):</strong> masterclasses y cursos grabados en los estudios actuales (Finanzas Bíblicas, Matrimonio y Crianza).</li>
+        <li><strong>Tier 3 ($97 a $149):</strong> tickets virtuales para que la audiencia de EE. UU. y Latinoamérica viva el concierto y la conferencia en directo.</li>
+      </ul>
+      <div class="transition-line">👉 Frase de transición: "¿Hacia dónde nos lleva todo esto?"</div>
+    </section>
+
+    <section class="slide-block">
+      <div class="slide-top">
+        <div>
+          <div class="slide-badge">Lámina 12 de 13 · Proyección a Futuro</div>
+          <h2>De Tres Canales a un Ecosistema que se Sostiene Solo</h2>
+        </div>
+        <span class="time-badge">⏱️ Minuto 17:30 – 18:30</span>
+      </div>
+      <div class="screen-cue">
+        <strong>En pantalla se muestra:</strong> Tres etapas: <strong>Oct 2026 – Jun 2027</strong> construir la red · <strong>Junio 2027</strong> medir y decidir · <strong>Más allá</strong> nuevas generaciones; y la cadena <strong>más canales → más horas → recursos propios → más alcance</strong>.
+      </div>
+      <ul class="bullets">
+        <li><strong>Octubre de 2026 a junio de 2027:</strong> E+ Música y E+ Mujeres en marcha, canal matriz renovado y primera prueba de autosostenibilidad.</li>
+        <li><strong>Junio de 2027:</strong> revisión de retención y crecimiento; el equipo técnico queda con autonomía total o se decide la continuidad del acompañamiento.</li>
+        <li><strong>Más allá:</strong> nuevas generaciones, con E+ Jóvenes y Niños y el embudo Short → Video Largo → Oferta, a partir de los segmentos que ya muestran los datos.</li>
+        <li><strong>El círculo virtuoso:</strong> más canales, más horas de visualización, recursos propios y más alcance para la misión.</li>
+      </ul>
+      <div class="transition-line">👉 Frase de transición: "Quiero cerrar con lo más importante..."</div>
+    </section>
+
+    <section class="slide-block">
+      <div class="slide-top">
+        <div>
+          <div class="slide-badge">Lámina 13 de 13 · Cierre</div>
+          <h2>Un Legado que Perdure</h2>
+        </div>
+        <span class="time-badge">⏱️ Minuto 18:30 – 20:00</span>
+      </div>
+      <div class="screen-cue">
+        <strong>En pantalla se muestra:</strong> Mensaje de cierre y el <strong>código QR</strong> a la presentación e informe en línea (truthframestudio.com/proyectos/eternidad-plus).
+      </div>
+      <ul class="bullets">
+        <li><strong>Idea central:</strong> la tecnología y las plataformas son solo los vehículos; la misión permanece inalterable.</li>
+        <li><strong>La oportunidad:</strong> que el mensaje del evangelio llegue a los hogares de hoy y quede disponible para las próximas generaciones.</li>
+        <li><strong>La responsabilidad:</strong> es un asunto de mayordomía; construir hoy la infraestructura que transforme vidas, edifique familias y alcance hogares por generaciones.</li>
+        <li><strong>Cierre práctico:</strong> en junio de 2027 nos sentaremos con las métricas en la mano para evaluar y decidir el siguiente paso. Pueden escanear el código QR del informe para volver a esta presentación. Muchas gracias; quedo atenta a sus preguntas.</li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>
