@@ -14,14 +14,18 @@
 body{background:radial-gradient(circle at 90% 0%,rgba(242,78,85,.09),transparent 45%),var(--bg);color:var(--text);font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:32px 16px}
 .wrap{width:100%;max-width:760px}
 .brand{display:flex;align-items:center;gap:16px;margin-bottom:36px}
-.brand img{width:64px;height:64px;border-radius:50%;object-fit:cover}
+.brand>div{min-width:0}
+.brand img{flex-shrink:0;width:64px;height:64px;border-radius:50%;object-fit:cover}
 .brand small{display:block;font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);margin-bottom:4px}
 h1{font-size:clamp(1.6rem,4.5vw,2.2rem);font-weight:800;letter-spacing:-.025em;line-height:1.15}
 .card{display:block;text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 26px;margin-bottom:14px;transition:border-color .15s,transform .15s}
-.card:hover,.card:focus-visible{border-color:var(--coral);transform:translateY(-1px);outline:none}
+a.card:hover,a.card:focus-visible{border-color:var(--coral);transform:translateY(-1px);outline:none}
 .card .n{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--coral)}
 .card h2{font-size:1.25rem;font-weight:800;margin:6px 0 4px;letter-spacing:-.01em}
 .card p{font-size:.92rem;color:var(--muted)}
+.dl{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.dl a{color:var(--text);text-decoration:none;font-size:.86rem;font-weight:700;border:1px solid var(--border);border-radius:8px;padding:8px 14px}
+.dl a:hover,.dl a:focus-visible{border-color:var(--coral);outline:none}
 .foot{margin-top:26px;font-size:.78rem;color:var(--muted)}
 </style>
 </head>
@@ -30,7 +34,8 @@ h1{font-size:clamp(1.6rem,4.5vw,2.2rem);font-weight:800;letter-spacing:-.025em;l
   <div class="brand"><img src="assets/logo-eplus-circle.jpeg" alt="Eternidad+"><div><small>Junta Directiva</small><h1>Eternidad+: del crecimiento a la red de canales</h1></div></div>
   <a class="card" href="crecimiento.html"><div class="n">1 · Informe de crecimiento · 5 min</div><h2>Dos años de camino</h2><p>Presenta Andrés Figueroa · 7 láminas</p></a>
   <a class="card" href="propuesta.html"><div class="n">2 · Propuesta y plan · 20 min</div><h2>Por qué diversificar ahora</h2><p>Presenta Diana Cardona · 13 láminas</p></a>
-  <a class="card" href="assets/Informe_Junta_Directiva_Eternidad_Plus.pdf"><div class="n">3 · Documento completo</div><h2>Informe para la Junta (PDF)</h2><p>Informe de Andrés y propuesta de Diana · listo para imprimir</p></a>
+  <div class="card"><div class="n">3 · Documento completo</div><h2>Informe para la Junta (PDF)</h2><p>Informe de Andrés y propuesta de Diana · 13 páginas</p>
+    <div class="dl"><a href="assets/Informe_Junta_Directiva_Eternidad_Plus_Color.pdf">Versión a color</a><a href="assets/Informe_Junta_Directiva_Eternidad_Plus_BN.pdf">Blanco y negro (para imprimir)</a></div></div>
   <div class="foot">Truth Frame Studio · Material confidencial para miembros de la Junta</div>
 </div>
 </body>
