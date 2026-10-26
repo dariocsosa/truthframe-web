@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Informe de Crecimiento — Eternidad+ 2024–2026 | Truth Frame Studio</title>
+<meta name="robots" content="noindex, nofollow"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+    :root {
+      --bg: #000000;
+      --surface: #0E0E0E;
+      --surface-2: #161616;
+      --surface-3: #1E1E1E;
+      --charcoal: #494949;
+      --text: #EAE8E4;
+      --white: #FFFFFF;
+      --muted: #A3A19D;
+      --coral: #F24E55;
+      --coral-dim: rgba(242, 78, 85, 0.14);
+      --green: #2ECC71;
+      --amber: #F5B041;
+      --blue: #5DADE2;
+      --border: rgba(255, 255, 255, 0.09);
+      --border-strong: rgba(255, 255, 255, 0.18);
+      --max: 1380px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; background: var(--bg); color: var(--text); font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
+    body { background: var(--bg); color: var(--text); line-height: 1.5; min-height: 100vh; overflow-x: hidden; }
+
+    /* TOPBAR */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(0, 0, 0, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.85rem 1.75rem;
+    }
+    .topbar-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      text-decoration: none;
+      color: var(--white);
+    }
+    .brand svg { height: 30px; width: auto; }
+    .brand-divider { width: 1px; height: 22px; background: var(--border-strong); }
+    .brand-sub {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .rec-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--white);
+      background: rgba(242, 78, 85, 0.14);
+      border: 1px solid rgba(242, 78, 85, 0.4);
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+    }
+    .rec-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--coral);
+      box-shadow: 0 0 8px var(--coral);
+      animation: pulse 1.8s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.45; transform: scale(0.88); }
+    }
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.52rem 0.95rem;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid var(--border-strong);
+      background: var(--surface-2);
+      color: var(--white);
+      transition: all 0.18s ease;
+    }
+    .btn:hover { border-color: var(--white); background: var(--surface-3); }
+    .btn-coral {
+      background: var(--coral);
+      border-color: var(--coral);
+      color: var(--white);
+    }
+    .btn-coral:hover { background: #d93d44; border-color: #d93d44; }
+
+    /* NAV TABS */
+    .tabs-bar {
+      position: sticky;
+      top: 57px;
+      z-index: 90;
+      background: rgba(14, 14, 14, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .tabs-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.75rem;
+      display: flex;
+      gap: 0.35rem;
+      overflow-x: auto;
+    }
+    .tab-btn {
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid transparent;
+      color: var(--muted);
+      padding: 0.95rem 1.1rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.18s ease;
+      font-family: inherit;
+    }
+    .tab-btn:hover { color: var(--white); }
+    .tab-btn.active {
+      color: var(--white);
+      border-bottom-color: var(--coral);
+      background: rgba(242, 78, 85, 0.06);
+    }
+
+    /* MAIN CONTAINER */
+    .main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 1.5rem 1.75rem 4rem;
+    }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* BOARD PRESENTATION DECK (ULTRA CLEAN VISUAL SLIDES) */
+    .deck-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.85rem;
+      background: var(--surface);
+      border: 1px solid var(--border-strong);
+      border-radius: 10px;
+      padding: 0.75rem 1.15rem;
+      margin-bottom: 1.1rem;
+      flex-wrap: wrap;
+    }
+    .slide-dots {
+      display: flex;
+      gap: 0.35rem;
+      flex-wrap: wrap;
+    }
+    .slide-dot {
+      padding: 0.38rem 0.68rem;
+      border-radius: 6px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.16s ease;
+    }
+    .slide-dot:hover { color: var(--white); border-color: var(--border-strong); }
+    .slide-dot.active {
+      background: var(--coral);
+      color: var(--white);
+      border-color: var(--coral);
+    }
+    .slide-card {
+      display: none;
+      background: radial-gradient(circle at 90% 10%, rgba(242, 78, 85, 0.07), transparent 40%), linear-gradient(180deg, #111111 0%, #080808 100%);
+      border: 1px solid var(--border-strong);
+      border-radius: 16px;
+      padding: 2.6rem 3rem;
+      min-height: 600px;
+      position: relative;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .slide-card.active { display: flex; }
+    body.show-all-slides .slide-card {
+      display: flex !important;
+      margin-bottom: 2rem;
+      min-height: auto;
+    }
+    .slide-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1.1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .slide-num {
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--coral);
+      margin-bottom: 0.35rem;
+    }
+    .slide-title {
+      font-size: clamp(1.65rem, 2.6vw, 2.35rem);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.025em;
+      line-height: 1.12;
+    }
+    .slide-tag {
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      background: var(--surface-3);
+      border: 1px solid var(--border-strong);
+      color: var(--white);
+      white-space: nowrap;
+    }
+
+    /* GRIDS & CLEAN VISUAL CARDS */
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.35rem; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.15rem; }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.45rem;
+    }
+    .card-highlight {
+      background: linear-gradient(145deg, rgba(242, 78, 85, 0.13), rgba(14, 14, 14, 0.96));
+      border: 1px solid rgba(242, 78, 85, 0.45);
+    }
+    .card h3 {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.35rem;
+    }
+    .card p { font-size: 0.88rem; color: var(--muted); }
+    .stat-huge {
+      font-size: clamp(2.2rem, 3.4vw, 3.1rem);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.035em;
+      line-height: 1.02;
+      margin: 0.35rem 0 0.45rem;
+    }
+    .stat-huge.coral { color: var(--coral); }
+    .stat-huge.green { color: var(--green); }
+    .stat-huge.amber { color: var(--amber); }
+    .stat-huge.blue { color: var(--blue); }
+
+    /* DATA BARS */
+    .bar-row { margin-bottom: 0.9rem; }
+    .bar-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.88rem;
+      margin-bottom: 0.32rem;
+      color: var(--text);
+      font-weight: 600;
+    }
+    .bar-track {
+      height: 10px;
+      background: var(--surface-3);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      background: var(--coral);
+      border-radius: 999px;
+    }
+    .bar-fill.green { background: var(--green); }
+    .bar-fill.amber { background: var(--amber); }
+    .bar-fill.blue { background: var(--blue); }
+
+    /* TABLES */
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--surface);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+    th, td {
+      padding: 0.8rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    th {
+      background: var(--surface-2);
+      color: var(--white);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      font-weight: 700;
+    }
+    tr:hover td { background: rgba(255, 255, 255, 0.02); }
+    .badge {
+      display: inline-block;
+      padding: 0.22rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .badge-coral { background: var(--coral-dim); color: var(--coral); border: 1px solid rgba(242,78,85,0.35); }
+    .badge-green { background: rgba(46, 204, 113, 0.14); color: var(--green); border: 1px solid rgba(46,204,113,0.35); }
+    .badge-amber { background: rgba(245, 176, 65, 0.14); color: var(--amber); border: 1px solid rgba(245,176,65,0.35); }
+    .badge-blue { background: rgba(93, 173, 226, 0.14); color: var(--blue); border: 1px solid rgba(93,173,226,0.35); }
+
+    .slide-footer-bar {
+      margin-top: 1.75rem;
+      padding-top: 0.9rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .sec-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 1rem;
+      margin: 1.75rem 0 1rem;
+      padding-bottom: 0.65rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .sec-head h2 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--white);
+    }
+    .sec-head span { font-size: 0.8rem; color: var(--muted); }
+
+    .img-frame {
+      background: var(--surface);
+      border: 1px solid var(--border-strong);
+      border-radius: 12px;
+      padding: 0.75rem;
+      overflow: hidden;
+    }
+    .img-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 6px;
+    }
+    .img-caption {
+      font-size: 0.76rem;
+      color: var(--muted);
+      margin-top: 0.5rem;
+      text-align: center;
+    }
+
+    .search-input {
+      background: var(--surface-2);
+      border: 1px solid var(--border-strong);
+      color: var(--white);
+      padding: 0.55rem 0.9rem;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      min-width: 260px;
+      font-family: inherit;
+    }
+
+    ul.clean-list { list-style: none; }
+    ul.clean-list li {
+      position: relative;
+      padding-left: 1.15rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+    ul.clean-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--coral);
+      font-weight: 800;
+    }
+
+    @media (max-width: 980px) {
+      .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+      .slide-card { padding: 1.5rem; }
+    }
+  
+    .slide-card{min-height:560px}
+    .qbars{display:flex; align-items:flex-end; gap:0.7rem; height:230px; padding:0.5rem 0.2rem 0;}
+    .qcol{flex:1; display:flex; flex-direction:column; justify-content:flex-end; align-items:center; height:100%;}
+    .qbar{width:100%; background:var(--coral); border-radius:6px 6px 0 0; min-height:3px;}
+    .qbar.partial{background:repeating-linear-gradient(45deg,var(--coral),var(--coral) 6px,#a83036 6px,#a83036 12px);}
+    .qnum{font-size:0.95rem; font-weight:800; color:var(--white); margin-bottom:0.25rem;}
+    .qlab{font-size:0.7rem; color:var(--muted); margin-top:0.4rem; text-align:center; font-weight:600;}
+    .mbars{display:flex; align-items:flex-end; gap:0.28rem; height:215px; padding-top:0.3rem;}
+    .mcol{flex:1; display:flex; flex-direction:column; justify-content:flex-end; align-items:center; height:100%;}
+    .mbar{width:100%; background:var(--coral); border-radius:4px 4px 0 0; opacity:.85; min-height:2px;}
+    .mbar.rec{background:var(--amber); opacity:1;}
+    .mbar.partial{background:repeating-linear-gradient(45deg,var(--coral),var(--coral) 4px,#a83036 4px,#a83036 8px);}
+    .mnum{font-size:0.62rem; font-weight:700; color:var(--muted); margin-bottom:0.15rem;}
+    .mnum.rec{color:var(--amber); font-size:0.78rem;}
+    .mlab{font-size:0.62rem; color:var(--muted); margin-top:0.25rem; font-weight:600;}
+    .yrs{display:flex; gap:0.28rem; margin-top:0.2rem;}
+    .yrs div{font-size:0.7rem; font-weight:700; color:var(--white); text-align:center; border-top:1px solid #444; padding-top:0.2rem;}
+    .src{font-size:0.72rem; color:var(--muted); margin-top:0.8rem;}
+    @media print{
+      @page{size:landscape; margin:10mm}
+      body{background:#000; -webkit-print-color-adjust:exact; print-color-adjust:exact}
+      .deck-controls,.no-print{display:none!important}
+      .main{padding:0}
+      .slide-card{display:flex!important; page-break-after:always; break-after:page; min-height:0; box-shadow:none; margin:0}
+    }
+</style><style id="nav-extra">.btn{text-decoration:none;display:inline-block}</style></head><body>
+<main class="main">
+  <div class="deck-controls">
+    <div style="display:flex; align-items:center; gap:0.55rem;"><button class="btn" onclick="go(-1)">← Anterior</button><button class="btn btn-coral" onclick="go(1)">Siguiente →</button><span id="ctr" style="font-size:0.8rem; font-weight:700; color:var(--white);">Lámina 1 / 7</span></div>
+    <div style="display:flex; gap:0.5rem;"><a href="./" class="btn">Inicio</a><button class="btn" onclick="document.body.classList.toggle('show-all-slides')">Ver todas</button><a href="propuesta.html" class="btn btn-coral">Propuesta (Diana) →</a></div>
+  </div>
+<article class="slide-card active" data-slide="0">
+  <div>
+    <div class="slide-header"><div><div class="slide-num">Informe de Crecimiento · Septiembre 2024 – Octubre 2026</div><h2 class="slide-title">De Radio Eternidad a Eternidad+: Dos Años de Camino</h2></div></div>
+
+    <div class="card card-highlight" style="padding:1.8rem; margin-bottom:1.4rem;">
+      <span class="badge badge-coral">Septiembre 2024 · Punto de partida</span>
+      <h3 style="font-size:1.45rem; margin-top:0.6rem; line-height:1.3;">Una transmisión en vivo anunció el cambio: “Radio Eternidad se transforma en Eternidad+”.</h3>
+      <p style="font-size:1rem; margin-top:0.4rem;">Desde entonces, el canal empezó a funcionar como una producción audiovisual continua.</p>
+      <p style="font-size:0.8rem; margin-top:0.5rem; opacity:.8;">Video de lanzamiento: youtube.com/live/5oFj7oLnSzo</p>
+    </div>
+    <div class="grid-3">
+      <div class="card"><span class="badge badge-amber">Hoy</span><div class="stat-huge amber">120,091</div><h3>Suscriptores</h3><p>Total acumulado del canal.</p></div>
+      <div class="card"><span class="badge badge-green">Desde el relanzamiento</span><div class="stat-huge green">+30,045</div><h3>Suscriptores nuevos</h3><p>12 sep 2024 – 24 oct 2026.</p></div>
+      <div class="card"><span class="badge badge-blue">Atención acumulada</span><div class="stat-huge blue">4.45 M</div><h3>Vistas · 638,908 horas</h3><p>En el mismo periodo.</p></div>
+    </div>
+    <div class="card" style="margin-top:1.1rem; padding:1.1rem 1.5rem; text-align:center;"><p style="font-size:1.05rem; margin:0;"><strong style="color:var(--amber);">37%</strong> de todas las vistas del canal desde enero de 2014 (11.9 M) ocurrieron en estos dos años.</p></div>
+    <p class="src">Presenta: Andrés Figueroa · Fuente: YouTube Studio · Eternidad+ · exportación del 24 de octubre de 2026.</p>
+  </div>
+  <div class="slide-footer-bar"><span>Informe de Crecimiento · Eternidad+ 2024–2026</span><span>Truth Frame Studio · 1 de 7</span></div>
+</article>
+<article class="slide-card" data-slide="1">
+  <div>
+    <div class="slide-header"><div><div class="slide-num">Dos Años en una Sola Gráfica</div><h2 class="slide-title">La Curva Real: Vistas por Mes</h2></div></div>
+
+    <div class="card" style="padding:1.3rem 1.6rem 1rem;">
+      <h3 style="margin-bottom:0.1rem;">Vistas por mes (miles)</h3>
+      <div class="mbars"><div class="mcol"><div class="mnum">95</div><div class="mbar partial" style="height:45px"></div><div class="mlab">S</div></div><div class="mcol"><div class="mnum">162</div><div class="mbar" style="height:77px"></div><div class="mlab">O</div></div><div class="mcol"><div class="mnum">149</div><div class="mbar" style="height:71px"></div><div class="mlab">N</div></div><div class="mcol"><div class="mnum">111</div><div class="mbar" style="height:53px"></div><div class="mlab">D</div></div><div class="mcol"><div class="mnum">168</div><div class="mbar" style="height:80px"></div><div class="mlab">E</div></div><div class="mcol"><div class="mnum">169</div><div class="mbar" style="height:81px"></div><div class="mlab">F</div></div><div class="mcol"><div class="mnum">235</div><div class="mbar" style="height:112px"></div><div class="mlab">M</div></div><div class="mcol"><div class="mnum">244</div><div class="mbar" style="height:116px"></div><div class="mlab">A</div></div><div class="mcol"><div class="mnum">219</div><div class="mbar" style="height:104px"></div><div class="mlab">M</div></div><div class="mcol"><div class="mnum">195</div><div class="mbar" style="height:93px"></div><div class="mlab">J</div></div><div class="mcol"><div class="mnum">153</div><div class="mbar" style="height:73px"></div><div class="mlab">J</div></div><div class="mcol"><div class="mnum">134</div><div class="mbar" style="height:64px"></div><div class="mlab">A</div></div><div class="mcol"><div class="mnum">124</div><div class="mbar" style="height:59px"></div><div class="mlab">S</div></div><div class="mcol"><div class="mnum">167</div><div class="mbar" style="height:80px"></div><div class="mlab">O</div></div><div class="mcol"><div class="mnum">159</div><div class="mbar" style="height:76px"></div><div class="mlab">N</div></div><div class="mcol"><div class="mnum">94</div><div class="mbar" style="height:45px"></div><div class="mlab">D</div></div><div class="mcol"><div class="mnum">110</div><div class="mbar" style="height:52px"></div><div class="mlab">E</div></div><div class="mcol"><div class="mnum">118</div><div class="mbar" style="height:56px"></div><div class="mlab">F</div></div><div class="mcol"><div class="mnum">149</div><div class="mbar" style="height:71px"></div><div class="mlab">M</div></div><div class="mcol"><div class="mnum">132</div><div class="mbar" style="height:63px"></div><div class="mlab">A</div></div><div class="mcol"><div class="mnum">136</div><div class="mbar" style="height:65px"></div><div class="mlab">M</div></div><div class="mcol"><div class="mnum">122</div><div class="mbar" style="height:58px"></div><div class="mlab">J</div></div><div class="mcol"><div class="mnum">222</div><div class="mbar" style="height:106px"></div><div class="mlab">J</div></div><div class="mcol"><div class="mnum">251</div><div class="mbar" style="height:120px"></div><div class="mlab">A</div></div><div class="mcol"><div class="mnum rec">367</div><div class="mbar rec" style="height:175px"></div><div class="mlab">S</div></div><div class="mcol"><div class="mnum">260</div><div class="mbar partial" style="height:124px"></div><div class="mlab">O</div></div></div>
+      <div class="yrs"><div style="flex:4">2024</div><div style="flex:12">2025</div><div style="flex:10">2026</div></div>
+    </div>
+    <div class="grid-3" style="margin-top:1.1rem;">
+      <div class="card card-highlight"><span class="badge badge-amber">Récord histórico de la era</span><div class="stat-huge amber" style="font-size:2.2rem;">367 k</div><p>vistas en septiembre de 2026, 50% más que el pico anterior (abril de 2025: 244 k).</p></div>
+      <div class="card"><span class="badge badge-green">Trimestre vs. año anterior</span><div class="stat-huge green" style="font-size:2.2rem;">×2.0</div><p>Jul–Sep 2026: <strong>840,546</strong> vistas vs. <strong>410,928</strong> en Jul–Sep 2025.</p></div>
+      <div class="card"><span class="badge badge-blue">Lectura honesta</span><div class="stat-huge blue" style="font-size:2.2rem;">≈ igual</div><p>Los 12 meses completos (oct–sep): <strong>2.06 M</strong> vs. <strong>2.03 M</strong>. El salto es reciente.</p></div>
+    </div>
+    <p class="src">Fuente: YouTube Studio · vistas diarias agregadas por mes. Sep 2024 desde el día 12 y oct 2026 hasta el día 24 (parciales, rayados). Récord diario: 26,086 vistas el 23 de septiembre de 2026.</p>
+  </div>
+  <div class="slide-footer-bar"><span>Informe de Crecimiento · Eternidad+ 2024–2026</span><span>Truth Frame Studio · 2 de 7</span></div>
+</article>
+<article class="slide-card" data-slide="2">
+  <div>
+    <div class="slide-header"><div><div class="slide-num">Calidad de la Audiencia</div><h2 class="slide-title">No Solo Más Gente: Gente que se Queda</h2></div></div>
+
+    <div class="grid-3" style="margin-bottom:1.1rem;">
+      <div class="card card-highlight"><span class="badge badge-coral">Profundidad</span><div class="stat-huge" style="font-size:2.3rem;">10 min 06 s</div><p>de duración promedio por vista, con <strong>638,908 horas</strong> vistas. El 98% de esas horas son de videos largos.</p></div>
+      <div class="card"><span class="badge badge-green">Comunidad</span><div class="stat-huge green" style="font-size:2.3rem;">20% → 38%</div><p>de las vistas vienen de suscriptores: de 20% (inicio de 2025) a 38% (hoy). La audiencia ya es comunidad.</p></div>
+      <div class="card"><span class="badge badge-amber">Televisión</span><div class="stat-huge amber" style="font-size:2.3rem;">20%</div><p>de las vistas son covisualización: 904,565 vistas con familias frente al televisor.</p></div>
+    </div>
+    <div class="grid-2">
+      <div class="card" style="padding:1.3rem 1.6rem;">
+        <span class="badge badge-blue">Qué atrae suscriptores</span>
+        <div class="bar-row" style="margin:0.8rem 0 0.5rem;"><div class="bar-label"><span>Suscriptores ganados</span><strong>37,005</strong></div><div class="bar-track"><div class="bar-fill green" style="width:100%"></div></div></div>
+        <div class="bar-row" style="margin-bottom:0.5rem;"><div class="bar-label"><span>Suscriptores perdidos</span><strong>6,960</strong></div><div class="bar-track"><div class="bar-fill amber" style="width:19%"></div></div></div>
+        <p style="font-size:0.9rem;">Neto <strong>+30,045</strong>. De cada 100 suscriptores ganados, <strong>77</strong> llegan desde la página del video: el contenido convence por sí mismo.</p>
+      </div>
+      <div class="card" style="padding:1.3rem 1.6rem;">
+        <span class="badge badge-coral">Videos vs. Shorts</span>
+        <div class="bar-row" style="margin:0.8rem 0 0.5rem;"><div class="bar-label"><span>Videos largos · 82% de las vistas</span><strong>98% de las horas</strong></div><div class="bar-track"><div class="bar-fill" style="width:98%"></div></div></div>
+        <div class="bar-row" style="margin-bottom:0.5rem;"><div class="bar-label"><span>Shorts · 17% de las vistas</span><strong>0.9% de las horas</strong></div><div class="bar-track"><div class="bar-fill amber" style="width:3%"></div></div></div>
+        <p style="font-size:0.9rem;">Los Shorts amplían el alcance (0:52 por vista); la <strong>profundidad</strong> la dan los videos largos (11:12 por vista).</p>
+      </div>
+    </div>
+    <p class="src">Fuente: YouTube Studio · 12 sep 2024 – 24 oct 2026 · estado de suscripción, tipo de contenido y origen de las suscripciones.</p>
+  </div>
+  <div class="slide-footer-bar"><span>Informe de Crecimiento · Eternidad+ 2024–2026</span><span>Truth Frame Studio · 3 de 7</span></div>
+</article>
+<article class="slide-card" data-slide="3">
+  <div>
+    <div class="slide-header"><div><div class="slide-num">Quién Nos Ve y Cómo Nos Encuentra</div><h2 class="slide-title">Una Audiencia Hispana Orgánica y en Expansión</h2></div></div>
+
+    <div class="grid-2">
+      <div class="card" style="padding:1.3rem 1.6rem;">
+        <span class="badge badge-blue">Países (% de las vistas)</span>
+        <div style="margin-top:0.7rem;">
+          <div class="bar-row"><div class="bar-label"><span>México</span><strong>21%</strong></div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></div>
+          <div class="bar-row"><div class="bar-label"><span>Estados Unidos</span><strong>14%</strong></div><div class="bar-track"><div class="bar-fill" style="width:65%"></div></div></div>
+          <div class="bar-row"><div class="bar-label"><span>Colombia</span><strong>9%</strong></div><div class="bar-track"><div class="bar-fill" style="width:44%"></div></div></div>
+          <div class="bar-row"><div class="bar-label"><span>Argentina</span><strong>7%</strong></div><div class="bar-track"><div class="bar-fill" style="width:36%"></div></div></div>
+          <div class="bar-row"><div class="bar-label"><span>Perú</span><strong>7%</strong></div><div class="bar-track"><div class="bar-fill" style="width:33%"></div></div></div>
+          <div class="bar-row" style="margin-bottom:0;"><div class="bar-label"><span>R. Dominicana</span><strong>6%</strong></div><div class="bar-track"><div class="bar-fill" style="width:30%"></div></div></div>
+        </div>
+        <p style="font-size:0.85rem; margin-top:0.7rem;">Todos crecen: en Jul–Sep 2026, EE. UU. ×2.4, México ×2.3 y R. Dominicana ×2.8 frente al año anterior.</p>
+      </div>
+      <div class="card" style="padding:1.3rem 1.6rem;">
+        <span class="badge badge-coral">Cómo llegan (% de las vistas)</span>
+        <div style="margin-top:0.7rem;">
+          <div class="bar-row"><div class="bar-label"><span>Exploración (Inicio)</span><strong>28% · 11:22</strong></div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></div>
+          <div class="bar-row"><div class="bar-label"><span>Videos sugeridos</span><strong>23% · 13:30</strong></div><div class="bar-track"><div class="bar-fill" style="width:82%"></div></div></div>
+          <div class="bar-row"><div class="bar-label"><span>Búsqueda de YouTube</span><strong>19% · 7:41</strong></div><div class="bar-track"><div class="bar-fill amber" style="width:70%"></div></div></div>
+          <div class="bar-row" style="margin-bottom:0;"><div class="bar-label"><span>Feed de Shorts</span><strong>9% · 0:46</strong></div><div class="bar-track"><div class="bar-fill amber" style="width:34%"></div></div></div>
+        </div>
+        <p style="font-size:0.85rem; margin-top:0.7rem;">Tras el porcentaje, la duración promedio por vista. Los <strong>sugeridos</strong> dan el 23% de las vistas y el <strong>36% de las horas</strong>.</p>
+      </div>
+    </div>
+    <div class="grid-3" style="margin-top:1.1rem;">
+      <div class="card"><span class="badge badge-green">100% orgánico</span><div class="stat-huge green" style="font-size:1.8rem;">675</div><p>vistas pagadas en dos años (0.015%). Todo el alcance fue ganado.</p></div>
+      <div class="card"><span class="badge badge-amber">Cambio de fuentes</span><div class="stat-huge amber" style="font-size:1.8rem;">6% → 13%</div><p>El Feed de Shorts pasó de 6% a 13% de las vistas; los sugeridos bajaron de 29% a 18%.</p></div>
+      <div class="card"><span class="badge badge-blue">Búsqueda</span><div class="stat-huge blue" style="font-size:1.8rem;">7.7%</div><p>de clics (CTR) en Búsqueda, frente a 4.97% del canal: quien nos busca, nos elige.</p></div>
+    </div>
+    <p class="src">Fuente: YouTube Studio · 12 sep 2024 – 24 oct 2026 · área geográfica y fuente de tráfico. Cambio de fuentes: Sep 2024–Sep 2025 vs. Sep 2025–Sep 2026.</p>
+  </div>
+  <div class="slide-footer-bar"><span>Informe de Crecimiento · Eternidad+ 2024–2026</span><span>Truth Frame Studio · 4 de 7</span></div>
+</article>
+<article class="slide-card" data-slide="4">
+  <div>
+    <div class="slide-header"><div><div class="slide-num">El Motor de Producción</div><h2 class="slide-title">De Publicar de Vez en Cuando a un Ritmo Constante</h2></div></div>
+
+    <div class="card" style="padding:1.5rem 1.8rem 1.1rem;">
+      <h3 style="margin-bottom:0.2rem;">Videos publicados por trimestre</h3>
+      <p style="font-size:0.82rem;">Videos de la era Eternidad+ que figuran entre los 500 más vistos del periodo (incluye Shorts).</p>
+      <div class="qbars"><div class="qcol"><div class="qnum">3</div><div class="qbar" style="height:6px"></div><div class="qlab">T3 2024*</div></div><div class="qcol"><div class="qnum">3</div><div class="qbar" style="height:6px"></div><div class="qlab">T4 2024</div></div><div class="qcol"><div class="qnum">15</div><div class="qbar" style="height:29px"></div><div class="qlab">T1 2025</div></div><div class="qcol"><div class="qnum">75</div><div class="qbar" style="height:144px"></div><div class="qlab">T2 2025</div></div><div class="qcol"><div class="qnum">54</div><div class="qbar" style="height:104px"></div><div class="qlab">T3 2025</div></div><div class="qcol"><div class="qnum">38</div><div class="qbar" style="height:73px"></div><div class="qlab">T4 2025</div></div><div class="qcol"><div class="qnum">52</div><div class="qbar" style="height:100px"></div><div class="qlab">T1 2026</div></div><div class="qcol"><div class="qnum">58</div><div class="qbar" style="height:111px"></div><div class="qlab">T2 2026</div></div><div class="qcol"><div class="qnum">99</div><div class="qbar" style="height:190px"></div><div class="qlab">T3 2026</div></div><div class="qcol"><div class="qnum">29</div><div class="qbar partial" style="height:56px"></div><div class="qlab">T4 2026**</div></div></div>
+    </div>
+    <div class="grid-3" style="margin-top:1.1rem;">
+      <div class="card"><div class="stat-huge coral" style="font-size:2rem;">8</div><p>videos en los primeros 6 meses (de septiembre de 2024 a febrero de 2025).</p></div>
+      <div class="card"><div class="stat-huge amber" style="font-size:2rem;">75</div><p>en el segundo trimestre de 2025, tras el estreno de <strong>Contracultura</strong> en marzo.</p></div>
+      <div class="card"><div class="stat-huge green" style="font-size:2rem;">99</div><p>en el tercer trimestre de 2026, el más productivo hasta hoy.</p></div>
+    </div>
+    <p class="src">* Desde el 2 de septiembre de 2024. ** Parcial, hasta el 24 de octubre de 2026. La exportación de Studio muestra solo los 500 videos con más vistas: las cifras son un mínimo.</p>
+  </div>
+  <div class="slide-footer-bar"><span>Informe de Crecimiento · Eternidad+ 2024–2026</span><span>Truth Frame Studio · 5 de 7</span></div>
+</article>
+<article class="slide-card" data-slide="5">
+  <div>
+    <div class="slide-header"><div><div class="slide-num">Lo Que Más Ha Funcionado</div><h2 class="slide-title">Los Videos que Marcaron la Nueva Etapa</h2></div></div>
+
+    <div class="table-wrap" style="margin-bottom:1.2rem;"><table>
+      <tr><th>Video de la era Eternidad+</th><th style="text-align:right;">Vistas</th><th style="text-align:right;">Horas</th><th>Cuándo</th></tr>
+      <tr><td>¿La IA nos está convirtiendo en dioses? Tecnología, fe y orgullo</td><td style="text-align:right;">113,862</td><td style="text-align:right;">7,982</td><td>Sep 2026 · en 5 semanas</td></tr>
+      <tr><td>El Impacto Teológico en América Latina</td><td style="text-align:right;">83,770</td><td style="text-align:right;">18,695</td><td>Oct 2025</td></tr>
+      <tr><td>El secreto íntimo que destruye matrimonios después de los 60</td><td style="text-align:right;">55,155</td><td style="text-align:right;">7,851</td><td>Jul 2026</td></tr>
+      <tr><td>¿Por qué Dios no te da pareja? La verdad detrás de la soltería</td><td style="text-align:right;">51,517</td><td style="text-align:right;">5,758</td><td>Ago 2026</td></tr>
+      <tr><td>¿Quién está moldeando tu forma de pensar? · con Sugel Michelén</td><td style="text-align:right;">50,829</td><td style="text-align:right;">10,220</td><td>May 2025</td></tr>
+      <tr><td>Diagnosticando la cultura actual · con Miguel Núñez · Contracultura</td><td style="text-align:right;">49,728</td><td style="text-align:right;">9,356</td><td>Mar 2025</td></tr>
+    </table></div>
+    <div class="grid-3">
+      <div class="card card-highlight"><span class="badge badge-coral">Aporte de la era</span><div class="stat-huge" style="font-size:2rem;">41%</div><p>de las vistas de los dos últimos años vienen de videos publicados desde sept 2024 (1.83 M).</p></div>
+      <div class="card"><span class="badge badge-amber">Televisión</span><div class="stat-huge amber" style="font-size:2rem;">20%</div><p>de las vistas son covisualización: familias frente a la pantalla de TV.</p></div>
+      <div class="card"><span class="badge badge-green">Tendencia</span><div class="stat-huge green" style="font-size:2rem;">Fe + vida real</div><p>Cultura, familia, pareja y tecnología lideran el alcance.</p></div>
+    </div>
+    <p class="src">Fuente: YouTube Studio · exportación de contenido del 12 de septiembre de 2024 al 24 de octubre de 2026 (500 videos principales).</p>
+  </div>
+  <div class="slide-footer-bar"><span>Informe de Crecimiento · Eternidad+ 2024–2026</span><span>Truth Frame Studio · 6 de 7</span></div>
+</article>
+<article class="slide-card" data-slide="6">
+  <div>
+    <div class="slide-header"><div><div class="slide-num">Lo Que Sigue</div><h2 class="slide-title">El Motor Está Encendido: Falta Dirigirlo</h2></div></div>
+
+    <div class="grid-3" style="margin-bottom:1.3rem;">
+      <div class="card"><span class="badge badge-green">Fortaleza</span><h3 style="margin-top:0.5rem;">Producción y comunidad</h3><p>Ritmo constante, récord de vistas en septiembre y una audiencia que cada vez se suscribe más.</p></div>
+      <div class="card"><span class="badge badge-amber">Oportunidad 1</span><h3 style="margin-top:0.5rem;">Convertir visitas en comunidad</h3><p>Suscriptores por cada mil vistas: <strong>8.9</strong> en oct 2024–sep 2025 vs. <strong>4.5</strong> en Jul–Sep 2026. Llegan más, se quedan menos.</p></div>
+      <div class="card"><span class="badge badge-blue">Oportunidad 2</span><h3 style="margin-top:0.5rem;">Empaque y catálogo</h3><p>Los videos nuevos tienen CTR de <strong>4.4%</strong> vs. <strong>5.9%</strong> del catálogo anterior, que aún aporta el <strong>34%</strong> de las vistas.</p></div>
+    </div>
+    <div class="card card-highlight" style="padding:1.9rem; text-align:center;">
+      <h3 style="font-size:1.45rem; line-height:1.35;">Con este punto de partida, Diana presenta la propuesta:<br>cómo convertir este esfuerzo en una red de canales que alcance más hogares.</h3>
+    </div>
+    <p class="src">Fuente: YouTube Studio · vistas y suscriptores diarios; CTR de la exportación de contenido (500 videos principales), calculado sobre impresiones de miniaturas.</p>
+  </div>
+  <div class="slide-footer-bar"><span>Informe de Crecimiento · Eternidad+ 2024–2026</span><span>Truth Frame Studio · 7 de 7</span></div>
+</article>
+</main>
+<script>
+var cur=0,sl=document.querySelectorAll('.slide-card');
+function go(d){cur=(cur+d+sl.length)%sl.length;sl.forEach(function(s,i){s.classList.toggle('active',i===cur)});document.getElementById('ctr').textContent='Lámina '+(cur+1)+' / '+sl.length;}
+document.addEventListener('keydown',function(e){if(e.key==='ArrowRight')go(1);if(e.key==='ArrowLeft')go(-1);});
+</script></body></html>
