@@ -458,7 +458,13 @@
       .main{padding:0}
       .slide-card{display:flex!important; page-break-after:always; break-after:page; min-height:0; box-shadow:none; margin:0}
     }
-</style><style id="nav-extra">.btn{text-decoration:none;display:inline-block}</style></head><body>
+</style><style id="nav-extra">.btn{text-decoration:none;display:inline-block}</style><link rel="icon" href="/assets/iconos/favicon.svg" type="image/svg+xml"><link rel="icon" href="/assets/iconos/favicon-32.png" type="image/png" sizes="32x32"><link rel="apple-touch-icon" href="/assets/iconos/apple-touch-icon.png"><style id="movil">@media (max-width:600px){
+ .mbars,.qbars{overflow-x:auto;overflow-y:hidden}
+ .mcol{min-width:15px;flex-shrink:0}.qcol{min-width:34px;flex-shrink:0}
+ .mbars .mnum{font-size:.5rem}.mbars .mlab{font-size:.55rem}
+ .slide-card table{display:block;overflow-x:auto;font-size:.72rem}
+ .slide-card th,.slide-card td{padding:.45rem .5rem}
+}</style></head><body>
 <main class="main">
   <div class="deck-controls">
     <div style="display:flex; align-items:center; gap:0.55rem;"><button class="btn" onclick="go(-1)">← Anterior</button><button class="btn btn-coral" onclick="go(1)">Siguiente →</button><span id="ctr" style="font-size:0.8rem; font-weight:700; color:var(--white);">Lámina 1 / 7</span></div>
@@ -627,4 +633,4 @@
 var cur=0,sl=document.querySelectorAll('.slide-card');
 function go(d){cur=(cur+d+sl.length)%sl.length;sl.forEach(function(s,i){s.classList.toggle('active',i===cur)});document.getElementById('ctr').textContent='Lámina '+(cur+1)+' / '+sl.length;}
 document.addEventListener('keydown',function(e){if(e.key==='ArrowRight')go(1);if(e.key==='ArrowLeft')go(-1);});
-</script></body></html>
+</script><script>document.querySelectorAll('.mbars,.qbars').forEach(function(e){e.scrollLeft=e.scrollWidth});</script></body></html>
