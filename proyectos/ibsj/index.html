@@ -166,6 +166,8 @@ th.num{text-align:right}
 .anav .wrap{display:flex;gap:6px;flex-wrap:wrap;padding-block:10px}
 .anav a{color:var(--texto-2);font-size:.84rem;font-weight:600;padding:7px 14px;border-radius:99px;border:1px solid var(--linea);background:var(--sup-2)}
 .anav a:hover{color:#fff;border-color:var(--linea-fuerte)}
+.anav a.on{background:var(--coral);border-color:var(--coral);color:#000}
+.anav .wrap{overflow-x:auto;flex-wrap:nowrap}.anav a{white-space:nowrap}
 section.blk{padding-block:clamp(36px,5vw,64px);border-bottom:1px solid var(--linea)}
 .kick{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--texto-3);font-weight:700;margin-bottom:6px}
 h2.big{font-size:clamp(1.6rem,2.8vw,2.3rem);font-weight:800;color:#fff;letter-spacing:-.025em;margin-bottom:8px;max-width:30ch}
@@ -335,4 +337,10 @@ h3.sb{margin:30px 0 8px;font-size:1.15rem}
 const fc=document.getElementById('fc'),fl=document.getElementById('fl'),fq=document.getElementById('fq'),rs=[...document.querySelectorAll('#tt tbody tr')],cn=document.getElementById('fcount');
 function flt(){let k=0;const q=fq.value.toLowerCase();rs.forEach(r=>{const ok=(!fc.value||r.dataset.c===fc.value)&&(!fl.value||r.dataset.l===fl.value)&&(!q||r.textContent.toLowerCase().includes(q));r.style.display=ok?'':'none';if(ok)k++});cn.textContent=k+' de '+rs.length}
 [fc,fl,fq].forEach(x=>x.oninput=flt);flt();
+const links=[...document.querySelectorAll('.anav a')],secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+function setOn(i){links.forEach((a,k)=>{a.classList.toggle('on',k===i);if(k===i)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')});const a=links[i],bar=a.parentElement;bar.scrollTo({left:a.offsetLeft-bar.clientWidth/2+a.clientWidth/2,behavior:'smooth'})}
+let cur=-1,lock=0;
+function spy(){if(Date.now()<lock)return;let i=0;secs.forEach((s,k)=>{if(s.getBoundingClientRect().top<=170)i=k});if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-4)i=secs.length-1;if(i!==cur){cur=i;setOn(i)}}
+links.forEach((a,k)=>a.addEventListener('click',()=>{cur=k;setOn(k);lock=Date.now()+900}));
+addEventListener('scroll',spy,{passive:true});addEventListener('resize',spy);spy();
 </script></body></html>
