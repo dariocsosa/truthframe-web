@@ -1,0 +1,558 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow"><title>Entendiendo Los Tiempos · Revisión del devocional de Adviento</title>
+<meta name="description" content="Revisión del devocional de Adviento «Esperar a Cristo».">
+<link rel="icon" href="/assets/iconos/favicon.svg"><style>
+
+@font-face{font-family:Inter;font-weight:400 800;src:url(/assets/fuentes/inter-latin.woff2) format("woff2")}
+:root{--bg:#000;--tx:#EAE8E4;--mut:#B5B2AC;--ln:rgba(255,255,255,.13);--gold:#F5B800;--coral:#F24E55;--ok:#8fe3a1;--s1:#0E0E0E;--s2:#161616;--ch:#494949;--barra:118px}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55;font-size:16px}
+body:before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(900px 420px at 100% 0,rgba(245,184,0,.14),transparent 60%),radial-gradient(700px 400px at 0 100%,rgba(73,73,73,.5),transparent 60%)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:2px solid var(--coral);outline-offset:2px}
+header.top{border-bottom:1px solid var(--ln);position:sticky;top:0;background:rgba(0,0,0,.92);backdrop-filter:blur(8px);z-index:10}
+.top .wrap:first-child{display:flex;align-items:center;gap:16px;min-height:64px;flex-wrap:wrap}.top img.tfs{height:36px}.top img.elt{height:40px}.top .sp{flex:1}
+.volver{color:var(--mut);font-size:13px;font-weight:600;text-decoration:none}.volver:hover{color:#fff}
+.prog{min-width:170px}.prog-t{font-size:12.5px;color:var(--mut);font-variant-numeric:tabular-nums}.prog-t b{color:#fff}.prog-b{height:5px;background:#2a2a2a;border-radius:3px;margin-top:4px;overflow:hidden}.prog-b i{display:block;height:100%;width:0;background:var(--gold);transition:width .3s}
+.chips{display:flex;gap:6px;overflow-x:auto;padding:4px 0 10px;scrollbar-width:thin}
+.chip{flex:0 0 auto;min-width:32px;height:30px;padding:0 9px;display:inline-flex;align-items:center;justify-content:center;border-radius:8px;border:1px solid var(--ln);text-decoration:none;color:var(--mut);font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;background:var(--s2)}
+.chip:hover{color:#fff;border-color:#fff}.chip-x{font-weight:500}
+.chip[data-estado="aprobado"],.chip[data-estado="aprobado-cambios"]{border-color:var(--ok);color:var(--ok);background:rgba(143,227,161,.1)}
+.chip[data-estado="cambios"]{border-color:var(--gold);color:var(--gold);background:rgba(245,184,0,.1)}
+.chip[data-estado="dudas"],.chip[data-estado="llamada"]{border-color:var(--coral);color:var(--coral);background:rgba(242,78,85,.1)}
+.hero{padding:56px 0 28px}.eyebrow{font-size:12px;font-weight:700;letter-spacing:.28em;color:var(--gold);margin-bottom:12px}
+h1{font-size:clamp(2.2rem,6vw,3.6rem);line-height:1.04;font-weight:800;letter-spacing:-.03em;color:#fff}h1 span{color:var(--gold)}
+.lead{color:var(--mut);font-size:1.15rem;margin-top:14px;max-width:720px}
+.guia{max-width:70ch;margin-top:26px}.intro{font-size:1.05rem;color:#fff;margin-bottom:16px}
+.pasos{margin:0 0 16px;padding-left:22px;display:grid;gap:6px;color:#d8d5cf}.pasos li::marker{color:var(--gold);font-weight:700}
+.plazo{background:var(--s2);border:1px solid var(--ln);border-left:4px solid var(--gold);border-radius:10px;padding:12px 16px;color:#d8d5cf}
+details.como{margin-top:18px;max-width:70ch;border:1px solid var(--ln);border-radius:10px;padding:12px 16px;background:#0d0d0d;font-size:.9rem;color:#cfccc6}
+.como summary{cursor:pointer;font-weight:700;color:#fff}.como p{margin-top:8px}
+.btn{display:inline-block;background:var(--coral);color:#000;font-weight:700;font-size:14px;padding:11px 18px;border-radius:8px;text-decoration:none;border:0;cursor:pointer;font-family:inherit;white-space:nowrap}.btn.alt{background:transparent;color:#fff;border:1px solid #fff}.btn[disabled]{opacity:.6;cursor:default}
+.semana{padding:44px 0 4px;border-top:1px solid var(--ln);margin-top:10px}.semana h2{font-size:clamp(1.6rem,4vw,2.3rem);color:#fff;font-weight:800;letter-spacing:-.02em}.semana p{color:var(--mut);margin-top:4px}
+section.dia{padding:30px 0;border-top:1px solid var(--ln);scroll-margin-top:var(--barra)}
+.dia-g{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:32px}
+.dia-h{display:flex;gap:14px;align-items:center;margin-bottom:18px}
+.dia-n{flex:0 0 auto;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--gold);color:#000;font-weight:800;font-size:1.2rem}.dia-n-x{font-size:11px;letter-spacing:.04em;text-transform:uppercase}
+.fecha{font-size:11.5px;letter-spacing:.2em;color:var(--gold);font-weight:700}
+.dia h2{font-size:clamp(1.35rem,3.4vw,1.8rem);line-height:1.18;color:#fff;font-weight:700;letter-spacing:-.02em;margin-top:2px}
+.lectura{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;background:var(--s2);border:1px solid var(--ln);border-left:4px solid var(--gold);border-radius:10px;padding:10px 16px;margin-bottom:18px}
+.et{font-size:10.5px;letter-spacing:.2em;color:var(--gold);font-weight:700;margin-right:6px}.lectura .ref{font-weight:700;color:#fff}
+.leer{margin-left:auto;font-size:12.5px;color:var(--mut)}.leer:hover{color:#fff}
+.cuerpo{font-size:1.06rem;line-height:1.7;max-width:64ch;color:#e6e3dd}.cuerpo p{margin-bottom:14px}
+.meditar{margin:6px 0 14px;padding:14px 18px;background:var(--s2);border:1px solid var(--ln);border-radius:12px;max-width:64ch;font-style:italic;color:#fff}.meditar .et{display:block;font-style:normal;margin-bottom:4px}
+.oracion{max-width:64ch;margin-bottom:12px;color:#d8d5cf}
+.seguir{font-size:.85rem;color:var(--mut);padding-top:10px;border-top:1px solid var(--ln);max-width:64ch}
+.notas{align-self:start;position:sticky;top:calc(var(--barra) + 14px)}
+.notas-in{background:var(--s2);border:1px solid var(--ln);border-radius:14px;padding:16px;box-shadow:inset 0 -4px 0 var(--gold)}
+.nt{font-size:11px;letter-spacing:.2em;font-weight:700;color:var(--mut);margin-bottom:10px}
+.crit{background:#0d0d0d;border:1px solid var(--ln);border-radius:10px;padding:9px 12px;font-size:.85rem;color:#d8d5cf;margin-bottom:12px}.crit span{display:block;font-size:10.5px;letter-spacing:.2em;color:var(--gold);font-weight:700;margin-bottom:3px}
+.estado,.decision{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.estado button,.decision button{flex:1 1 auto;border:1px solid var(--ln);background:#0d0d0d;padding:8px 10px;border-radius:8px;cursor:pointer;font:inherit;font-size:.8rem;font-weight:700;color:var(--mut)}
+.estado button:hover,.decision button:hover{border-color:#fff;color:#fff}
+.estado button[aria-pressed="true"][data-v="aprobado"],.decision button[aria-pressed="true"][data-v="aprobado"],.decision button[aria-pressed="true"][data-v="aprobado-cambios"]{border-color:var(--ok);color:var(--ok);background:rgba(143,227,161,.12)}
+.estado button[aria-pressed="true"][data-v="cambios"]{border-color:var(--gold);color:var(--gold);background:rgba(245,184,0,.12)}
+.estado button[aria-pressed="true"][data-v="dudas"],.decision button[aria-pressed="true"][data-v="llamada"]{border-color:var(--coral);color:var(--coral);background:rgba(242,78,85,.12)}
+textarea,input{width:100%;background:#0d0d0d;color:#fff;border:1px solid var(--ln);border-radius:10px;padding:10px 12px;font:inherit;line-height:1.5}textarea{resize:vertical;min-height:120px}textarea:focus,input:focus{border-color:var(--gold);outline:none}
+.guardado{min-height:18px;margin-top:6px;font-size:.78rem;color:var(--mut)}
+.final{padding:44px 0 30px;border-top:1px solid var(--ln)}.fin-w{max-width:780px}.final h2{font-size:clamp(1.6rem,4vw,2.2rem);color:#fff;font-weight:800;letter-spacing:-.02em;margin-bottom:10px}.sub{color:var(--mut);margin-bottom:18px}
+.fr{margin-bottom:14px}.fr label{display:block;font-size:11px;letter-spacing:.2em;color:var(--gold);font-weight:700;margin-bottom:6px}
+.decision{margin-block:6px 12px}.decision button{text-align:left;padding:12px 14px;font-size:.9rem}
+.envio{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:14px}#msg{font-size:.9rem}
+.resumen-envio{margin-top:12px;font-size:.85rem;color:var(--mut)}
+.respaldo{margin-top:20px;padding:16px;background:var(--s2);border:1px solid var(--coral);border-radius:12px}.respaldo p{margin-bottom:10px;color:#d8d5cf}
+footer{border-top:1px solid var(--ln);padding:26px 0;color:var(--mut);font-size:.85rem}footer .wrap{display:flex;gap:16px;align-items:center;flex-wrap:wrap}footer img{height:28px}
+@media(max-width:900px){.dia-g{grid-template-columns:minmax(0,1fr);gap:18px}.notas{position:static}:root{--barra:130px}}
+@media(max-width:600px){.top .wrap:first-child{gap:10px}.prog{min-width:0;flex:1 1 100%}.hero{padding-top:36px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.prog-b i{transition:none}}
+
+</style></head><body>
+<header class="top"><div class="wrap"><img class="tfs" src="/assets/logos/Logo_TFS_white_simbolo.svg" alt="Truth Frame Studio"><img class="elt" src="../img/logo-elt.png" alt="Entendiendo Los Tiempos">
+<a class="volver" href="../">← Portal del cliente</a><span class="sp"></span>
+<div class="prog" aria-live="polite"><div class="prog-t"><b id="prog-n">0</b> de 25 días con respuesta</div><div class="prog-b" aria-hidden="true"><i id="prog-i"></i></div></div></div>
+<div class="wrap"><nav class="chips" id="chips" aria-label="Días del devocional">
+<a class="chip chip-x" href="#intro" data-chip="intro">Inicio</a>
+<a class="chip" href="#dia-1" data-chip="d01" title="Día 1 · La primera promesa">1</a>
+<a class="chip" href="#dia-2" data-chip="d02" title="Día 2 · Una bendición para todas las familias">2</a>
+<a class="chip" href="#dia-3" data-chip="d03" title="Día 3 · Un trono que no termina">3</a>
+<a class="chip" href="#dia-4" data-chip="d04" title="Día 4 · La señal">4</a>
+<a class="chip" href="#dia-5" data-chip="d05" title="Día 5 · La luz en la oscuridad">5</a>
+<a class="chip" href="#dia-6" data-chip="d06" title="Día 6 · Un retoño del tronco cortado">6</a>
+<a class="chip" href="#dia-7" data-chip="d07" title="Día 7 · La pequeña Belén">7</a>
+<a class="chip" href="#dia-8" data-chip="d08" title="Día 8 · Consolad a mi pueblo">8</a>
+<a class="chip" href="#dia-9" data-chip="d09" title="Día 9 · El mensajero y el fuego">9</a>
+<a class="chip" href="#dia-10" data-chip="d10" title="Día 10 · El silencio de Zacarías">10</a>
+<a class="chip" href="#dia-11" data-chip="d11" title="Día 11 · «He aquí la sierva del Señor»">11</a>
+<a class="chip" href="#dia-12" data-chip="d12" title="Día 12 · Un canto en medio de la incertidumbre">12</a>
+<a class="chip" href="#dia-13" data-chip="d13" title="Día 13 · José, el hombre justo">13</a>
+<a class="chip" href="#dia-14" data-chip="d14" title="Día 14 · El sol que sale desde lo alto">14</a>
+<a class="chip" href="#dia-15" data-chip="d15" title="Día 15 · El Verbo se hizo carne">15</a>
+<a class="chip" href="#dia-16" data-chip="d16" title="Día 16 · Cuando se cumplió el tiempo">16</a>
+<a class="chip" href="#dia-17" data-chip="d17" title="Día 17 · Se humilló">17</a>
+<a class="chip" href="#dia-18" data-chip="d18" title="Día 18 · Uno de nosotros">18</a>
+<a class="chip" href="#dia-19" data-chip="d19" title="Día 19 · La imagen del Dios invisible">19</a>
+<a class="chip" href="#dia-20" data-chip="d20" title="Día 20 · En esto se mostró el amor">20</a>
+<a class="chip" href="#dia-21" data-chip="d21" title="Día 21 · Nacido para salvar">21</a>
+<a class="chip" href="#dia-22" data-chip="d22" title="Día 22 · Sin lugar en el mesón">22</a>
+<a class="chip" href="#dia-23" data-chip="d23" title="Día 23 · Los pastores">23</a>
+<a class="chip" href="#dia-24" data-chip="d24" title="Día 24 · Los magos">24</a>
+<a class="chip" href="#dia-25" data-chip="d25" title="Día 25 · Ya vino, y vendrá">25</a>
+<a class="chip chip-x" href="#cierre" data-chip="cierre">Cierre</a>
+<a class="chip chip-x" href="#respuesta" data-chip="final">Enviar</a>
+</nav></div></header>
+<main>
+<section class="hero" id="inicio"><div class="wrap">
+<div class="eyebrow">BORRADOR PARA REVISIÓN</div>
+<h1>Esperar a <span>Cristo</span></h1>
+<p class="lead">Devocional de Adviento · 25 días · Entendiendo Los Tiempos</p>
+<div class="guia">
+<p class="intro">Pastor Eduardo, aquí está el devocional completo. Junto a cada día hay un cuadro para que escriba lo que quiera: aprobar, corregir una frase, hacer una pregunta o añadir algo. Lo que escribe queda guardado en este navegador mientras trabaja, y al final lo envía a Diana con un solo botón.</p>
+<ol class="pasos"><li><b>Lea el día.</b> Lectura bíblica, reflexión, pregunta y oración.</li>
+<li><b>Marque su respuesta.</b> Aprobado, Con cambios o Tengo dudas.</li>
+<li><b>Escriba la corrección tal como la quiere ver.</b> No necesita redactar nada formal.</li>
+<li><b>Al final, pulse «Enviar mi revisión».</b> Puede volver y enviar de nuevo si cambia algo.</li></ol>
+<p class="plazo"><b>Fecha límite:</b> martes 24 de noviembre. Si prefiere conversarlo, también lo podemos revisar juntos en una llamada corta.</p>
+</div>
+<details class="como"><summary>Qué estamos pidiendo y cómo se elaboró</summary>
+<p>Revisar la fidelidad bíblica y teológica de cada reflexión, corregir lo que no sea exacto y aprobar o devolver con cambios. En esta versión solo aparecen las citas bíblicas; el texto completo se inserta después, en la traducción que use ELT. Los enlaces «Abrir en BibleGateway» son solo para su comodidad (Reina-Valera 1960).</p><p>las reflexiones son redacción propia sobre cada pasaje. Como material de consulta (enfoque, tono y apoyo bíblico) se revisaron dos devocionales publicados de Adviento, uno de Desiring God (John Piper) y otro de Aviva Nuestros Corazones. No se copió texto, estructura de días ni frases de ninguno. Con base en esa consulta se agregó: la aclaración de que el Adviento es una tradición y no un mandato; la sección «Para seguir leyendo» en cada día; el propósito de la encarnación en el Día 18 (Hebreos 2:14-15); y el vínculo cuna-cruz con respaldo bíblico en el Día 21.</p></details>
+</div></section>
+<section class="dia" id="intro" data-key="intro" data-title="Antes de empezar"><div class="wrap dia-g"><div class="lec">
+<header class="dia-h"><div class="dia-n dia-n-x">Inicio</div><div><div class="fecha">TEXTO DE APERTURA</div><h2>Antes de empezar</h2></div></header>
+<div class="cuerpo"><p>Adviento significa «venida». Durante veinticinco días vamos a mirar hacia atrás, a la promesa que Dios hizo y cumplió en Belén, y hacia adelante, al día en que Cristo volverá. Esperamos porque el Señor ya vino, y esperamos porque volverá.</p><p>La Biblia no manda celebrar el Adviento. Es una tradición que la iglesia desarrolló con los siglos para preparar el corazón antes de la Navidad. Por eso no es una carga: es una ayuda. Lo único que buscamos es que, en medio de la prisa de diciembre, Jesús siga siendo el centro y el mayor tesoro de estos días.</p><p><b>Cómo usar esta guía.</b> Dedica unos diez minutos al día. Lee el pasaje completo en tu Biblia. Después lee la reflexión, responde la pregunta con sinceridad y termina con la oración, o con la tuya propia. Al final de cada día encontrarás «Para seguir leyendo», por si quieres profundizar. Si un día no puedes, retoma al siguiente sin culpa: esta guía está para servirte, no para exigirte.</p></div></div><aside class="notas" aria-label="Notas: Antes de empezar"><div class="notas-in">
+<div class="nt">SU REVISIÓN · ANTES DE EMPEZAR</div><div class="crit"><span>SU CRITERIO AQUÍ</span>El texto no dice que Jesús nació el 25 de diciembre. Solo ubica ahí la celebración.</div>
+<div class="estado" role="group" aria-label="Su respuesta para Antes de empezar" data-estado-for="intro">
+<button type="button" data-v="aprobado">Aprobado</button><button type="button" data-v="cambios">Con cambios</button><button type="button" data-v="dudas">Tengo dudas</button></div>
+<label class="sr" for="nota-intro">Notas y correcciones para Antes de empezar</label>
+<textarea id="nota-intro" data-nota="intro" rows="6" placeholder="Escriba aquí lo que quiera: una corrección, una duda, una frase que cambiaría o una idea nueva."></textarea>
+<div class="guardado" data-status="intro" aria-live="polite"></div></div></aside></div></section>
+<div class="semana"><div class="wrap"><div class="eyebrow">SEMANA 1</div><h2>La promesa</h2><p>Del 1 al 7 de diciembre. Dios promete, y la espera comienza.</p></div></div>
+<section class="dia" id="dia-1" data-key="d01" data-title="Día 1 · La primera promesa"><div class="wrap dia-g"><div class="lec">
+<header class="dia-h"><div class="dia-n">1</div><div><div class="fecha">1 DE DICIEMBRE</div><h2>La primera promesa</h2></div></header>
+<div class="lectura"><span class="et">LECTURA</span><span class="ref">Génesis 3:8-15</span><a class="leer" href="https://www.biblegateway.com/passage/?search=G%C3%A9nesis%203%3A8-15&amp;version=RVR1960" target="_blank" rel="noopener">Abrir en BibleGateway</a></div>
+<div class="cuerpo"><p>Adán y Eva acababan de desobedecer y se escondían de Dios. Lo primero que Dios hizo fue buscarlos: «¿Dónde estás tú?». Y en medio del juicio pronunció una promesa: un descendiente de la mujer heriría la cabeza de la serpiente. Antes de que existiera una sola vela de Adviento, ya había esperanza.</p><p>Toda la Biblia que sigue es la historia de cómo Dios cumple esa palabra. La Navidad no es un plan de emergencia: es lo que Dios había anunciado desde el principio. Si hoy sientes que tus errores te hacen esconderte, recuerda que el Dios de este pasaje sale a buscar a quien se esconde.</p></div>
+<div class="meditar"><span class="et">PARA MEDITAR</span>¿De qué te escondes delante de Dios? ¿Qué cambia si lo ves como alguien que te busca?</div>
+<p class="oracion"><span class="et">ORACIÓN</span>Señor, gracias porque no esperaste a que yo te buscara. Ayúdame a creer que tu promesa es para mí. Amén.</p>
+<p class="seguir"><span class="et">PARA SEGUIR LEYENDO</span>Romanos 5:12-19; Gálatas 4:4.</p></div><aside class="notas" aria-label="Notas: Día 1"><div class="notas-in">
+<div class="nt">SU REVISIÓN · DÍA 1</div><div class="crit"><span>SU CRITERIO AQUÍ</span>Presento Génesis 3:15 como la primera promesa del Redentor. Lo escribí de forma sobria; confirmar el énfasis.</div>
+<div class="estado" role="group" aria-label="Su respuesta para Día 1" data-estado-for="d01">
+<button type="button" data-v="aprobado">Aprobado</button><button type="button" data-v="cambios">Con cambios</button><button type="button" data-v="dudas">Tengo dudas</button></div>
+<label class="sr" for="nota-d01">Notas y correcciones para Día 1</label>
+<textarea id="nota-d01" data-nota="d01" rows="6" placeholder="Escriba aquí lo que quiera: una corrección, una duda, una frase que cambiaría o una idea nueva."></textarea>
+<div class="guardado" data-status="d01" aria-live="polite"></div></div></aside></div></section>
+<section class="dia" id="dia-2" data-key="d02" data-title="Día 2 · Una bendición para todas las familias"><div class="wrap dia-g"><div class="lec">
+<header class="dia-h"><div class="dia-n">2</div><div><div class="fecha">2 DE DICIEMBRE</div><h2>Una bendición para todas las familias</h2></div></header>
+<div class="lectura"><span class="et">LECTURA</span><span class="ref">Génesis 12:1-3</span><a class="leer" href="https://www.biblegateway.com/passage/?search=G%C3%A9nesis%2012%3A1-3&amp;version=RVR1960" target="_blank" rel="noopener">Abrir en BibleGateway</a></div>
+<div class="cuerpo"><p>Dios llamó a Abram y le prometió algo enorme: por medio de él serían bendecidas todas las familias de la tierra. Abram no vio el cumplimiento. Hebreos 11 dice que murió sin haber recibido lo prometido, pero habiéndolo visto de lejos y saludándolo con fe.</p><p>Esa es una de las enseñanzas más difíciles de la fe: Dios cumple sus promesas, pero no siempre en nuestro calendario. Pablo explica que la «descendencia» de Abraham a la que apuntaba la promesa es Cristo, y que por medio de él la bendición llega a todos los pueblos. Una promesa sin cumplirse todavía no es una promesa fallida.</p></div>
+<div class="meditar"><span class="et">PARA MEDITAR</span>¿Qué promesa de Dios te cuesta seguir esperando? ¿Cómo te ayuda saber que Abram esperó mucho más?</div>
+<p class="oracion"><span class="et">ORACIÓN</span>Padre, dame la paciencia de quienes confiaron en ti sin ver el final. Amén.</p>
+<p class="seguir"><span class="et">PARA SEGUIR LEYENDO</span>Hebreos 11:8-16; Gálatas 3:8-9, 16.</p></div><aside class="notas" aria-label="Notas: Día 2"><div class="notas-in">
+<div class="nt">SU REVISIÓN · DÍA 2</div>
+<div class="estado" role="group" aria-label="Su respuesta para Día 2" data-estado-for="d02">
+<button type="button" data-v="aprobado">Aprobado</button><button type="button" data-v="cambios">Con cambios</button><button type="button" data-v="dudas">Tengo dudas</button></div>
+<label class="sr" for="nota-d02">Notas y correcciones para Día 2</label>
+<textarea id="nota-d02" data-nota="d02" rows="6" placeholder="Escriba aquí lo que quiera: una corrección, una duda, una frase que cambiaría o una idea nueva."></textarea>
+<div class="guardado" data-status="d02" aria-live="polite"></div></div></aside></div></section>
+<section class="dia" id="dia-3" data-key="d03" data-title="Día 3 · Un trono que no termina"><div class="wrap dia-g"><div class="lec">
+<header class="dia-h"><div class="dia-n">3</div><div><div class="fecha">3 DE DICIEMBRE</div><h2>Un trono que no termina</h2></div></header>
+<div class="lectura"><span class="et">LECTURA</span><span class="ref">2 Samuel 7:8-16</span><a class="leer" href="https://www.biblegateway.com/passage/?search=2%20Samuel%207%3A8-16&amp;version=RVR1960" target="_blank" rel="noopener">Abrir en BibleGateway</a></div>
+<div class="cuerpo"><p>David quiso construirle una casa a Dios. Dios respondió con algo mayor: le prometió a David una casa, una familia y un reino que no tendría fin. Los reyes que vinieron después fallaron, y el reino terminó en el destierro.</p><p>Por eso el pueblo siguió mirando hacia adelante. Faltaba un Rey cuyo reino no pasara. Cuando el ángel le hable a María, dirá que su Hijo recibirá el trono de David y que su reino no tendrá fin. Lo que Dios promete, lo hace más grande de lo que imaginamos.</p></div>
+<div class="meditar"><span class="et">PARA MEDITAR</span>¿En quién o en qué has puesto la esperanza que solo un Rey eterno puede sostener?</div>
+<p class="oracion"><span class="et">ORACIÓN</span>Señor Jesús, reina en mi corazón. Que ningún trono pequeño ocupe tu lugar. Amén.</p>
+<p class="seguir"><span class="et">PARA SEGUIR LEYENDO</span>Salmo 89:3-4, 35-37; Lucas 1:30-33.</p></div><aside class="notas" aria-label="Notas: Día 3"><div class="notas-in">
+<div class="nt">SU REVISIÓN · DÍA 3</div>
+<div class="estado" role="group" aria-label="Su respuesta para Día 3" data-estado-for="d03">
+<button type="button" data-v="aprobado">Aprobado</button><button type="button" data-v="cambios">Con cambios</button><button type="button" data-v="dudas">Tengo dudas</button></div>
+<label class="sr" for="nota-d03">Notas y correcciones para Día 3</label>
+<textarea id="nota-d03" data-nota="d03" rows="6" placeholder="Escriba aquí lo que quiera: una corrección, una duda, una frase que cambiaría o una idea nueva."></textarea>
+<div class="guardado" data-status="d03" aria-live="polite"></div></div></aside></div></section>
+<section class="dia" id="dia-4" data-key="d04" data-title="Día 4 · La señal"><div class="wrap dia-g"><div class="lec">
+<header class="dia-h"><div class="dia-n">4</div><div><div class="fecha">4 DE DICIEMBRE</div><h2>La señal</h2></div></header>
+<div class="lectura"><span class="et">LECTURA</span><span class="ref">Isaías 7:10-16</span><a class="leer" href="https://www.biblegateway.com/passage/?search=Isa%C3%ADas%207%3A10-16&amp;version=RVR1960" target="_blank" rel="noopener">Abrir en BibleGateway</a></div>
+<div class="cuerpo"><p>El rey Acaz estaba asustado por una amenaza militar. Dios le ofreció una señal, y Acaz, con aire de piedad, se negó a pedirla. Dios la dio de todos modos: una virgen concebiría y daría a luz un hijo, y su nombre sería Emanuel, que significa «Dios con nosotros».</p><p>Dios no depende de nuestra fe para cumplir lo que dice. Aun cuando nos negamos a confiar, él sigue adelante con su plan. Siglos después, Mateo dirá que esta señal se cumplió en el nacimiento de Jesús, y el mismo Evangelio termina con la promesa de Jesús: «Yo estoy con vosotros todos los días». Dios no se queda lejos de nuestros miedos: viene a estar con nosotros.</p></div>
+<div class="meditar"><span class="et">PARA MEDITAR</span>¿Qué miedo te hace pensar que Dios está lejos? ¿Qué significa para ti «Dios con nosotros»?</div>
+<p class="oracion"><span class="et">ORACIÓN</span>Emanuel, quédate conmigo en lo que me asusta hoy. Amén.</p>
+<p class="seguir"><span class="et">PARA SEGUIR LEYENDO</span>Mateo 1:22-23; Mateo 28:18-20.</p></div><aside class="notas" aria-label="Notas: Día 4"><div class="notas-in">
+<div class="nt">SU REVISIÓN · DÍA 4</div><div class="crit"><span>SU CRITERIO AQUÍ</span>Isaías 7:14 y Mateo 1:23. Confirmar la redacción sobre el cumplimiento.</div>
+<div class="estado" role="group" aria-label="Su respuesta para Día 4" data-estado-for="d04">
+<button type="button" data-v="aprobado">Aprobado</button><button type="button" data-v="cambios">Con cambios</button><button type="button" data-v="dudas">Tengo dudas</button></div>
+<label class="sr" for="nota-d04">Notas y correcciones para Día 4</label>
+<textarea id="nota-d04" data-nota="d04" rows="6" placeholder="Escriba aquí lo que quiera: una corrección, una duda, una frase que cambiaría o una idea nueva."></textarea>
+<div class="guardado" data-status="d04" aria-live="polite"></div></div></aside></div></section>
+<section class="dia" id="dia-5" data-key="d05" data-title="Día 5 · La luz en la oscuridad"><div class="wrap dia-g"><div class="lec">
+<header class="dia-h"><div class="dia-n">5</div><div><div class="fecha">5 DE DICIEMBRE</div><h2>La luz en la oscuridad</h2></div></header>
+<div class="lectura"><span class="et">LECTURA</span><span class="ref">Isaías 9:1-7</span><a class="leer" href="https://www.biblegateway.com/passage/?search=Isa%C3%ADas%209%3A1-7&amp;version=RVR1960" target="_blank" rel="noopener">Abrir en BibleGateway</a></div>
+<div class="cuerpo"><p>«El pueblo que andaba en tinieblas vio gran luz». Isaías habla a una tierra que sufría invasión y oscuridad, y le promete un niño: un hijo que nos es dado, sobre cuyo hombro estará el gobierno, y cuyo nombre es Admirable, Consejero, Dios fuerte, Padre eterno, Príncipe de paz.</p><p>La luz de Dios no llega a quienes ya están bien. Llega a quien camina en tinieblas. Mateo cuenta que Jesús comenzó su ministerio justo en esa Galilea, y que así se cumplió esta profecía. Si esta Navidad te encuentra con cansancio o a oscuras, no estás fuera del alcance de esta promesa: está dirigida justamente a ti.</p></div>
+<div class="meditar"><span class="et">PARA MEDITAR</span>¿Qué parte de tu vida está hoy en tinieblas? ¿Cuál de los nombres de este niño necesitas más?</div>
+<p class="oracion"><span class="et">ORACIÓN</span>Príncipe de paz, entra con tu luz donde yo no sé cómo entrar. Amén.</p>
+<p class="seguir"><span class="et">PARA SEGUIR LEYENDO</span>Mateo 4:12-17; Juan 8:12.</p></div><aside class="notas" aria-label="Notas: Día 5"><div class="notas-in">
+<div class="nt">SU REVISIÓN · DÍA 5</div>
+<div class="estado" role="group" aria-label="Su respuesta para Día 5" data-estado-for="d05">
+<button type="button" data-v="aprobado">Aprobado</button><button type="button" data-v="cambios">Con cambios</button><button type="button" data-v="dudas">Tengo dudas</button></div>
+<label class="sr" for="nota-d05">Notas y correcciones para Día 5</label>
+<textarea id="nota-d05" data-nota="d05" rows="6" placeholder="Escriba aquí lo que quiera: una corrección, una duda, una frase que cambiaría o una idea nueva."></textarea>
+<div class="guardado" data-status="d05" aria-live="polite"></div></div></aside></div></section>
+<section class="dia" id="dia-6" data-key="d06" data-title="Día 6 · Un retoño del tronco cortado"><div class="wrap dia-g"><div class="lec">
+<header class="dia-h"><div class="dia-n">6</div><div><div class="fecha">6 DE DICIEMBRE</div><h2>Un retoño del tronco cortado</h2></div></header>
+<div class="lectura"><span class="et">LECTURA</span><span class="ref">Isaías 11:1-5</span><a class="leer" href="https://www.biblegateway.com/passage/?search=Isa%C3%ADas%2011%3A1-5&amp;version=RVR1960" target="_blank" rel="noopener">Abrir en BibleGateway</a></div>
+<div class="cuerpo"><p>Isaías dice que de un tronco —lo que queda de un árbol cortado— saldría un retoño. La dinastía de David parecía acabada. Sin embargo, de lo que parece muerto, Dios hace brotar vida. Sobre ese retoño reposará el Espíritu del Señor, y juzgará con justicia.</p><p>Dios tiene el hábito de comenzar de nuevo donde nosotros vemos un final. Jesús nacerá de una familia sin poder y en un pueblo pequeño. Al final de la Biblia, él mismo se presenta como la raíz y el linaje de David. Si algo en tu vida o en tu familia parece un tronco seco, no lo des por terminado.</p></div>
+<div class="meditar"><span class="et">PARA MEDITAR</span>¿Qué «tronco cortado» hay en tu historia? ¿Podrías entregárselo a Dios hoy?</div>
+<p class="oracion"><span class="et">ORACIÓN</span>Señor, haz brotar vida donde yo solo veo final. Amén.</p>
+<p class="seguir"><span class="et">PARA SEGUIR LEYENDO</span>Romanos 15:12; Apocalipsis 22:16.</p></div><aside class="notas" aria-label="Notas: Día 6"><div class="notas-in">
+<div class="nt">SU REVISIÓN · DÍA 6</div>
+<div class="estado" role="group" aria-label="Su respuesta para Día 6" data-estado-for="d06">
+<button type="button" data-v="aprobado">Aprobado</button><button type="button" data-v="cambios">Con cambios</button><button type="button" data-v="dudas">Tengo dudas</button></div>
+<label class="sr" for="nota-d06">Notas y correcciones para Día 6</label>
+<textarea id="nota-d06" data-nota="d06" rows="6" placeholder="Escriba aquí lo que quiera: una corrección, una duda, una frase que cambiaría o una idea nueva."></textarea>
+<div class="guardado" data-status="d06" aria-live="polite"></div></div></aside></div></section>
+<section class="dia" id="dia-7" data-key="d07" data-title="Día 7 · La pequeña Belén"><div class="wrap dia-g"><div class="lec">
+<header class="dia-h"><div class="dia-n">7</div><div><div class="fecha">7 DE DICIEMBRE</div><h2>La pequeña Belén</h2></div></header>
+<div class="lectura"><span class="et">LECTURA</span><span class="ref">Miqueas 5:2-5</span><a class="leer" href="https://www.biblegateway.com/passage/?search=Miqueas%205%3A2-5&amp;version=RVR1960" target="_blank" rel="noopener">Abrir en BibleGateway</a></div>
+<div class="cuerpo"><p>Dios eligió Belén, un lugar pequeño entre las familias de Judá, para que de allí saliera el que gobernaría a su pueblo, aquel cuyos orígenes son desde la eternidad. Lo pequeño y lo eterno se juntan en una sola frase.</p><p>Dios no actúa como lo haría un rey de este mundo. Escoge lo pequeño y lo ordinario para mostrar lo grande que es él. Y lo hace con precisión: siete siglos después, un decreto del emperador llevó a una pareja de Nazaret exactamente a Belén. Quizá tu casa, tu trabajo o tu ciudad te parezcan demasiado pequeños para que Dios los use. Belén no era nada importante.</p></div>
+<div class="meditar"><span class="et">PARA MEDITAR</span>¿Qué lugar o tarea «pequeña» has despreciado? ¿Y si Dios estuviera trabajando ahí?</div>
+<p class="oracion"><span class="et">ORACIÓN</span>Señor, enséñame a ver tu obra en lo pequeño. Amén.</p>
+<p class="seguir"><span class="et">PARA SEGUIR LEYENDO</span>Mateo 2:1-6; Lucas 2:1-5.</p></div><aside class="notas" aria-label="Notas: Día 7"><div class="notas-in">
+<div class="nt">SU REVISIÓN · DÍA 7</div>
+<div class="estado" role="group" aria-label="Su respuesta para Día 7" data-estado-for="d07">
+<button type="button" data-v="aprobado">Aprobado</button><button type="button" data-v="cambios">Con cambios</button><button type="button" data-v="dudas">Tengo dudas</button></div>
+<label class="sr" for="nota-d07">Notas y correcciones para Día 7</label>
+<textarea id="nota-d07" data-nota="d07" rows="6" placeholder="Escriba aquí lo que quiera: una corrección, una duda, una frase que cambiaría o una idea nueva."></textarea>
+<div class="guardado" data-status="d07" aria-live="polite"></div></div></aside></div></section>
+<div class="semana"><div class="wrap"><div class="eyebrow">SEMANA 2</div><h2>Preparad el camino</h2><p>Del 8 al 14 de diciembre. Dios envía a sus mensajeros y prepara corazones.</p></div></div>
+<section class="dia" id="dia-8" data-key="d08" data-title="Día 8 · Consolad a mi pueblo"><div class="wrap dia-g"><div class="lec">
+<header class="dia-h"><div class="dia-n">8</div><div><div class="fecha">8 DE DICIEMBRE</div><h2>Consolad a mi pueblo</h2></div></header>
+<div class="lectura"><span class="et">LECTURA</span><span class="ref">Isaías 40:1-11</span><a class="leer" href="https://www.biblegateway.com/passage/?search=Isa%C3%ADas%2040%3A1-11&amp;version=RVR1960" target="_blank" rel="noopener">Abrir en BibleGateway</a></div>
+<div class="cuerpo"><p>Después de años de juicio, la primera palabra de Dios es de consuelo: «Consolad, consolad a mi pueblo». Una voz clama que se prepare el camino del Señor. La hierba se seca y la flor se marchita, pero la palabra de nuestro Dios permanece para siempre. Y él cuidará a su pueblo como un pastor que lleva a los corderos en su regazo.</p><p>Adviento no empieza con una tarea: empieza con consuelo. Antes de pedirte nada, Dios te habla con ternura. Los Evangelios aplican esta voz a Juan el Bautista, que preparó el camino para Jesús. Hoy puedes recibir esa palabra tal cual, sin intentar ganártela.</p></div>
+<div class="meditar"><span class="et">PARA MEDITAR</span>¿Cuándo fue la última vez que dejaste que Dios te consolara? ¿Qué te lo impide?</div>
+<p class="oracion"><span class="et">ORACIÓN</span>Pastor de mi alma, cárgame hoy como a un cordero cansado. Amén.</p>
+<p class="seguir"><span class="et">PARA SEGUIR LEYENDO</span>Marcos 1:1-4; Juan 10:11-18.</p></div><aside class="notas" aria-label="Notas: Día 8"><div class="notas-in">
+<div class="nt">SU REVISIÓN · DÍA 8</div>
+<div class="estado" role="group" aria-label="Su respuesta para Día 8" data-estado-for="d08">
+<button type="button" data-v="aprobado">Aprobado</button><button type="button" data-v="cambios">Con cambios</button><button type="button" data-v="dudas">Tengo dudas</button></div>
+<label class="sr" for="nota-d08">Notas y correcciones para Día 8</label>
+<textarea id="nota-d08" data-nota="d08" rows="6" placeholder="Escriba aquí lo que quiera: una corrección, una duda, una frase que cambiaría o una idea nueva."></textarea>
+<div class="guardado" data-status="d08" aria-live="polite"></div></div></aside></div></section>
+<section class="dia" id="dia-9" data-key="d09" data-title="Día 9 · El mensajero y el fuego"><div class="wrap dia-g"><div class="lec">
+<header class="dia-h"><div class="dia-n">9</div><div><div class="fecha">9 DE DICIEMBRE</div><h2>El mensajero y el fuego</h2></div></header>
+<div class="lectura"><span class="et">LECTURA</span><span class="ref">Malaquías 3:1-4</span><a class="leer" href="https://www.biblegateway.com/passage/?search=Malaqu%C3%ADas%203%3A1-4&amp;version=RVR1960" target="_blank" rel="noopener">Abrir en BibleGateway</a></div>
+<div class="cuerpo"><p>Dios anuncia que enviará un mensajero para preparar el camino, y que luego vendrá el Señor a su templo. Jesús mismo identificó a ese mensajero con Juan el Bautista. Pero Malaquías advierte que la llegada del Señor es como fuego de fundidor: purifica. No viene a halagar, viene a limpiar.</p><p>Pocos queremos esa parte. Preferimos una Navidad suave. Sin embargo, el mismo Señor que consuela es el que limpia, porque nos ama demasiado para dejarnos como estamos. Preparar el camino significa dejar que él toque lo que no está bien.</p></div>
+<div class="meditar"><span class="et">PARA MEDITAR</span>¿Qué área de tu vida necesita ser purificada? ¿La has estado protegiendo de Dios?</div>
+<p class="oracion"><span class="et">ORACIÓN</span>Señor, límpiame, aunque duela. Prefiero tu fuego a mi comodidad. Amén.</p>
+<p class="seguir"><span class="et">PARA SEGUIR LEYENDO</span>Mateo 11:7-10; Salmo 139:23-24.</p></div><aside class="notas" aria-label="Notas: Día 9"><div class="notas-in">
+<div class="nt">SU REVISIÓN · DÍA 9</div>
+<div class="estado" role="group" aria-label="Su respuesta para Día 9" data-estado-for="d09">
+<button type="button" data-v="aprobado">Aprobado</button><button type="button" data-v="cambios">Con cambios</button><button type="button" data-v="dudas">Tengo dudas</button></div>
+<label class="sr" for="nota-d09">Notas y correcciones para Día 9</label>
+<textarea id="nota-d09" data-nota="d09" rows="6" placeholder="Escriba aquí lo que quiera: una corrección, una duda, una frase que cambiaría o una idea nueva."></textarea>
+<div class="guardado" data-status="d09" aria-live="polite"></div></div></aside></div></section>
+<section class="dia" id="dia-10" data-key="d10" data-title="Día 10 · El silencio de Zacarías"><div class="wrap dia-g"><div class="lec">
+<header class="dia-h"><div class="dia-n">10</div><div><div class="fecha">10 DE DICIEMBRE</div><h2>El silencio de Zacarías</h2></div></header>
+<div class="lectura"><span class="et">LECTURA</span><span class="ref">Lucas 1:5-25</span><a class="leer" href="https://www.biblegateway.com/passage/?search=Lucas%201%3A5-25&amp;version=RVR1960" target="_blank" rel="noopener">Abrir en BibleGateway</a></div>
+<div class="cuerpo"><p>Zacarías y Elisabet eran justos y ancianos, y no tenían hijos. Cuando el ángel le anunció que tendrían un hijo, Zacarías dudó, y quedó mudo hasta que naciera el niño. Durante meses tuvo que callar y esperar.</p><p>Hubo siglos de silencio antes de Cristo, y hubo meses de silencio para este hombre. A veces Dios nos lleva a períodos donde no podemos explicar ni resolver nada. Ese silencio no significa abandono: Dios estaba trabajando, y lo que venía era más grande de lo que Zacarías se atrevía a esperar. En esos mismos años, Simeón y Ana también esperaban en el templo, y Dios les cumplió su espera.</p></div>
+<div class="meditar"><span class="et">PARA MEDITAR</span>¿En qué área sientes hoy que Dios guarda silencio? ¿Qué te ayuda a seguir confiando?</div>
+<p class="oracion"><span class="et">ORACIÓN</span>Señor, cuando no entienda tu silencio, enséñame a esperar sin amargura. Amén.</p>
+<p class="seguir"><span class="et">PARA SEGUIR LEYENDO</span>Lucas 2:25-38; Salmo 130:5-6.</p></div><aside class="notas" aria-label="Notas: Día 10"><div class="notas-in">
+<div class="nt">SU REVISIÓN · DÍA 10</div><div class="crit"><span>SU CRITERIO AQUÍ</span>Se menciona a Simeón y Ana como contemporáneos que también esperaban; confirmar que es adecuado en este punto del recorrido.</div>
+<div class="estado" role="group" aria-label="Su respuesta para Día 10" data-estado-for="d10">
+<button type="button" data-v="aprobado">Aprobado</button><button type="button" data-v="cambios">Con cambios</button><button type="button" data-v="dudas">Tengo dudas</button></div>
+<label class="sr" for="nota-d10">Notas y correcciones para Día 10</label>
+<textarea id="nota-d10" data-nota="d10" rows="6" placeholder="Escriba aquí lo que quiera: una corrección, una duda, una frase que cambiaría o una idea nueva."></textarea>
+<div class="guardado" data-status="d10" aria-live="polite"></div></div></aside></div></section>
+<section class="dia" id="dia-11" data-key="d11" data-title="Día 11 · «He aquí la sierva del Señor»"><div class="wrap dia-g"><div class="lec">
+<header class="dia-h"><div class="dia-n">11</div><div><div class="fecha">11 DE DICIEMBRE</div><h2>«He aquí la sierva del Señor»</h2></div></header>
+<div class="lectura"><span class="et">LECTURA</span><span class="ref">Lucas 1:26-38</span><a class="leer" href="https://www.biblegateway.com/passage/?search=Lucas%201%3A26-38&amp;version=RVR1960" target="_blank" rel="noopener">Abrir en BibleGateway</a></div>
+<div class="cuerpo"><p>Una joven de un pueblo sin fama recibe una noticia que cambiará su vida y trastocará sus planes. María pregunta cómo será posible, y el ángel le responde que nada hay imposible para Dios. Su respuesta es breve y firme: «He aquí la sierva del Señor; hágase conmigo conforme a tu palabra».</p><p>María no entendió todo, y no dijo que no tuviera miedo. Dijo que sí. La obediencia no consiste en entenderlo todo, sino en confiar en quien lo sabe. Hoy puedes decirle sí a Dios en una sola cosa concreta.</p></div>
+<div class="meditar"><span class="et">PARA MEDITAR</span>¿Qué te está pidiendo Dios que todavía no has aceptado?</div>
+<p class="oracion"><span class="et">ORACIÓN</span>Señor, aquí estoy. Hágase en mí tu voluntad. Amén.</p>
+<p class="seguir"><span class="et">PARA SEGUIR LEYENDO</span>Génesis 18:9-14; Lucas 1:45.</p></div><aside class="notas" aria-label="Notas: Día 11"><div class="notas-in">
+<div class="nt">SU REVISIÓN · DÍA 11</div><div class="crit"><span>SU CRITERIO AQUÍ</span>Sobre María hay una sola frase de interpretación (la obediencia y el sí). Confirmar que no se sobrecarga de nada que ELT no enseñe.</div>
+<div class="estado" role="group" aria-label="Su respuesta para Día 11" data-estado-for="d11">
+<button type="button" data-v="aprobado">Aprobado</button><button type="button" data-v="cambios">Con cambios</button><button type="button" data-v="dudas">Tengo dudas</button></div>
+<label class="sr" for="nota-d11">Notas y correcciones para Día 11</label>
+<textarea id="nota-d11" data-nota="d11" rows="6" placeholder="Escriba aquí lo que quiera: una corrección, una duda, una frase que cambiaría o una idea nueva."></textarea>
+<div class="guardado" data-status="d11" aria-live="polite"></div></div></aside></div></section>
+<section class="dia" id="dia-12" data-key="d12" data-title="Día 12 · Un canto en medio de la incertidumbre"><div class="wrap dia-g"><div class="lec">
+<header class="dia-h"><div class="dia-n">12</div><div><div class="fecha">12 DE DICIEMBRE</div><h2>Un canto en medio de la incertidumbre</h2></div></header>
+<div class="lectura"><span class="et">LECTURA</span><span class="ref">Lucas 1:39-56</span><a class="leer" href="https://www.biblegateway.com/passage/?search=Lucas%201%3A39-56&amp;version=RVR1960" target="_blank" rel="noopener">Abrir en BibleGateway</a></div>
+<div class="cuerpo"><p>María visitó a su pariente Elisabet y rompió a cantar. Alaba a Dios como su Salvador, y celebra que él mira a los humildes, derriba a los soberbios y se acuerda de su misericordia. Su canto recuerda a otro, el de Ana en 1 Samuel 2: una mujer humilde que también alabó a Dios por levantar a los pequeños.</p><p>Alabar no es esperar a que todo salga bien. María no tenía las circunstancias resueltas y aun así cantó, porque confiaba en el carácter de Dios. Una de las formas de esperar bien es recordar en voz alta quién es Dios y lo que ya ha hecho.</p></div>
+<div class="meditar"><span class="et">PARA MEDITAR</span>Escribe tres cosas que Dios ya hizo por ti. ¿Puedes agradecerlas en voz alta hoy?</div>
+<p class="oracion"><span class="et">ORACIÓN</span>Mi alma te engrandece, Señor, aun cuando no veo todo claro. Amén.</p>
+<p class="seguir"><span class="et">PARA SEGUIR LEYENDO</span>1 Samuel 2:1-10; Habacuc 3:17-19.</p></div><aside class="notas" aria-label="Notas: Día 12"><div class="notas-in">
+<div class="nt">SU REVISIÓN · DÍA 12</div>
+<div class="estado" role="group" aria-label="Su respuesta para Día 12" data-estado-for="d12">
+<button type="button" data-v="aprobado">Aprobado</button><button type="button" data-v="cambios">Con cambios</button><button type="button" data-v="dudas">Tengo dudas</button></div>
+<label class="sr" for="nota-d12">Notas y correcciones para Día 12</label>
+<textarea id="nota-d12" data-nota="d12" rows="6" placeholder="Escriba aquí lo que quiera: una corrección, una duda, una frase que cambiaría o una idea nueva."></textarea>
+<div class="guardado" data-status="d12" aria-live="polite"></div></div></aside></div></section>
+<section class="dia" id="dia-13" data-key="d13" data-title="Día 13 · José, el hombre justo"><div class="wrap dia-g"><div class="lec">
+<header class="dia-h"><div class="dia-n">13</div><div><div class="fecha">13 DE DICIEMBRE</div><h2>José, el hombre justo</h2></div></header>
+<div class="lectura"><span class="et">LECTURA</span><span class="ref">Mateo 1:18-25</span><a class="leer" href="https://www.biblegateway.com/passage/?search=Mateo%201%3A18-25&amp;version=RVR1960" target="_blank" rel="noopener">Abrir en BibleGateway</a></div>
+<div class="cuerpo"><p>José se enteró de que su prometida esperaba un hijo que no era suyo. Era un hombre justo y pensó en dejarla en secreto para no exponerla. Entonces Dios le habló en sueños: el niño sería de Dios, y debía ponerle por nombre Jesús, porque él salvaría a su pueblo de sus pecados. José obedeció.</p><p>José casi no aparece en la historia, y sin embargo su obediencia silenciosa fue necesaria, una y otra vez. Hay cosas que Dios hace por medio de personas que nadie aplaude. Obedecer a Dios cuando nadie lo ve es también una forma de esperar a Cristo.</p></div>
+<div class="meditar"><span class="et">PARA MEDITAR</span>¿Qué acto de obediencia callada te está pidiendo Dios?</div>
+<p class="oracion"><span class="et">ORACIÓN</span>Señor, hazme fiel en lo oculto, como José. Amén.</p>
+<p class="seguir"><span class="et">PARA SEGUIR LEYENDO</span>Mateo 2:13-15, 19-23; Santiago 1:22.</p></div><aside class="notas" aria-label="Notas: Día 13"><div class="notas-in">
+<div class="nt">SU REVISIÓN · DÍA 13</div>
+<div class="estado" role="group" aria-label="Su respuesta para Día 13" data-estado-for="d13">
+<button type="button" data-v="aprobado">Aprobado</button><button type="button" data-v="cambios">Con cambios</button><button type="button" data-v="dudas">Tengo dudas</button></div>
+<label class="sr" for="nota-d13">Notas y correcciones para Día 13</label>
+<textarea id="nota-d13" data-nota="d13" rows="6" placeholder="Escriba aquí lo que quiera: una corrección, una duda, una frase que cambiaría o una idea nueva."></textarea>
+<div class="guardado" data-status="d13" aria-live="polite"></div></div></aside></div></section>
+<section class="dia" id="dia-14" data-key="d14" data-title="Día 14 · El sol que sale desde lo alto"><div class="wrap dia-g"><div class="lec">
+<header class="dia-h"><div class="dia-n">14</div><div><div class="fecha">14 DE DICIEMBRE</div><h2>El sol que sale desde lo alto</h2></div></header>
+<div class="lectura"><span class="et">LECTURA</span><span class="ref">Lucas 1:67-79</span><a class="leer" href="https://www.biblegateway.com/passage/?search=Lucas%201%3A67-79&amp;version=RVR1960" target="_blank" rel="noopener">Abrir en BibleGateway</a></div>
+<div class="cuerpo"><p>Cuando nació Juan, Zacarías recuperó la voz y profetizó. Habló de la misericordia de Dios y dijo que de lo alto nos visitaría la aurora, para dar luz a los que habitan en tinieblas y en sombra de muerte, y guiar nuestros pies al camino de paz.</p><p>Lo primero que Zacarías dijo después de meses de silencio fue una alabanza. La espera de Dios nunca es en vano. Lo que parece un tiempo perdido puede ser preparación para un canto. Y la luz que viene es para guiar nuestros pasos, uno a uno, hacia la paz.</p></div>
+<div class="meditar"><span class="et">PARA MEDITAR</span>¿Qué paso concreto necesitas que Dios ilumine hoy?</div>
+<p class="oracion"><span class="et">ORACIÓN</span>Señor, guía mis pies al camino de paz. Amén.</p>
+<p class="seguir"><span class="et">PARA SEGUIR LEYENDO</span>Malaquías 4:2; 2 Pedro 1:19.</p></div><aside class="notas" aria-label="Notas: Día 14"><div class="notas-in">
+<div class="nt">SU REVISIÓN · DÍA 14</div>
+<div class="estado" role="group" aria-label="Su respuesta para Día 14" data-estado-for="d14">
+<button type="button" data-v="aprobado">Aprobado</button><button type="button" data-v="cambios">Con cambios</button><button type="button" data-v="dudas">Tengo dudas</button></div>
+<label class="sr" for="nota-d14">Notas y correcciones para Día 14</label>
+<textarea id="nota-d14" data-nota="d14" rows="6" placeholder="Escriba aquí lo que quiera: una corrección, una duda, una frase que cambiaría o una idea nueva."></textarea>
+<div class="guardado" data-status="d14" aria-live="polite"></div></div></aside></div></section>
+<div class="semana"><div class="wrap"><div class="eyebrow">SEMANA 3</div><h2>Dios con nosotros</h2><p>Del 15 al 21 de diciembre. El Verbo se hace carne.</p></div></div>
+<section class="dia" id="dia-15" data-key="d15" data-title="Día 15 · El Verbo se hizo carne"><div class="wrap dia-g"><div class="lec">
+<header class="dia-h"><div class="dia-n">15</div><div><div class="fecha">15 DE DICIEMBRE</div><h2>El Verbo se hizo carne</h2></div></header>
+<div class="lectura"><span class="et">LECTURA</span><span class="ref">Juan 1:1-14</span><a class="leer" href="https://www.biblegateway.com/passage/?search=Juan%201%3A1-14&amp;version=RVR1960" target="_blank" rel="noopener">Abrir en BibleGateway</a></div>
+<div class="cuerpo"><p>Juan no empieza con un pesebre sino con la eternidad: en el principio era el Verbo, y el Verbo era Dios. Y ese Verbo «se hizo carne y habitó entre nosotros». La palabra «habitó» recuerda al tabernáculo, la tienda donde Dios moraba con Israel en el desierto. El que hizo todas las cosas entró en su creación.</p><p>La Navidad es mucho más que un nacimiento tierno: es Dios mismo viniendo a vivir entre nosotros. No nos mandó un mensaje desde lejos. Vino. Ese es el centro de la fe cristiana, y es razón suficiente para detenernos a adorar.</p></div>
+<div class="meditar"><span class="et">PARA MEDITAR</span>¿Qué cambia en tu manera de orar si el Dios al que oras eligió acercarse tanto?</div>
+<p class="oracion"><span class="et">ORACIÓN</span>Verbo eterno, gracias por habitar entre nosotros. Amén.</p>
+<p class="seguir"><span class="et">PARA SEGUIR LEYENDO</span>Génesis 1:1-5; 1 Juan 1:1-4.</p></div><aside class="notas" aria-label="Notas: Día 15"><div class="notas-in">
+<div class="nt">SU REVISIÓN · DÍA 15</div>
+<div class="estado" role="group" aria-label="Su respuesta para Día 15" data-estado-for="d15">
+<button type="button" data-v="aprobado">Aprobado</button><button type="button" data-v="cambios">Con cambios</button><button type="button" data-v="dudas">Tengo dudas</button></div>
+<label class="sr" for="nota-d15">Notas y correcciones para Día 15</label>
+<textarea id="nota-d15" data-nota="d15" rows="6" placeholder="Escriba aquí lo que quiera: una corrección, una duda, una frase que cambiaría o una idea nueva."></textarea>
+<div class="guardado" data-status="d15" aria-live="polite"></div></div></aside></div></section>
+<section class="dia" id="dia-16" data-key="d16" data-title="Día 16 · Cuando se cumplió el tiempo"><div class="wrap dia-g"><div class="lec">
+<header class="dia-h"><div class="dia-n">16</div><div><div class="fecha">16 DE DICIEMBRE</div><h2>Cuando se cumplió el tiempo</h2></div></header>
+<div class="lectura"><span class="et">LECTURA</span><span class="ref">Gálatas 4:4-7</span><a class="leer" href="https://www.biblegateway.com/passage/?search=G%C3%A1latas%204%3A4-7&amp;version=RVR1960" target="_blank" rel="noopener">Abrir en BibleGateway</a></div>
+<div class="cuerpo"><p>«Cuando vino el cumplimiento del tiempo, Dios envió a su Hijo, nacido de mujer». Pablo explica por qué: para redimir a los que estaban bajo la ley y para que recibiéramos la adopción como hijos. Y por eso podemos decir «Abba, Padre».</p><p>Dios eligió el momento exacto, ni antes ni después. Su calendario no es el nuestro, pero no se equivoca. Y el propósito de Navidad es muy personal: que pases de ser un extraño a ser parte de la familia de Dios. Si has vivido sintiendo que no tienes un lugar, este día es para ti.</p></div>
+<div class="meditar"><span class="et">PARA MEDITAR</span>¿Te cuesta creer que eres hijo de Dios y no un empleado que tiene que ganarse su lugar?</div>
+<p class="oracion"><span class="et">ORACIÓN</span>Abba, Padre, hoy descanso en que soy tuyo. Amén.</p>
+<p class="seguir"><span class="et">PARA SEGUIR LEYENDO</span>Efesios 2:11-19; Romanos 8:14-17.</p></div><aside class="notas" aria-label="Notas: Día 16"><div class="notas-in">
+<div class="nt">SU REVISIÓN · DÍA 16</div><div class="crit"><span>SU CRITERIO AQUÍ</span>La adopción como hijos; confirmar la expresión «pasar de extraño a parte de la familia de Dios» (Efesios 2:19).</div>
+<div class="estado" role="group" aria-label="Su respuesta para Día 16" data-estado-for="d16">
+<button type="button" data-v="aprobado">Aprobado</button><button type="button" data-v="cambios">Con cambios</button><button type="button" data-v="dudas">Tengo dudas</button></div>
+<label class="sr" for="nota-d16">Notas y correcciones para Día 16</label>
+<textarea id="nota-d16" data-nota="d16" rows="6" placeholder="Escriba aquí lo que quiera: una corrección, una duda, una frase que cambiaría o una idea nueva."></textarea>
+<div class="guardado" data-status="d16" aria-live="polite"></div></div></aside></div></section>
+<section class="dia" id="dia-17" data-key="d17" data-title="Día 17 · Se humilló"><div class="wrap dia-g"><div class="lec">
+<header class="dia-h"><div class="dia-n">17</div><div><div class="fecha">17 DE DICIEMBRE</div><h2>Se humilló</h2></div></header>
+<div class="lectura"><span class="et">LECTURA</span><span class="ref">Filipenses 2:5-11</span><a class="leer" href="https://www.biblegateway.com/passage/?search=Filipenses%202%3A5-11&amp;version=RVR1960" target="_blank" rel="noopener">Abrir en BibleGateway</a></div>
+<div class="cuerpo"><p>Cristo, siendo en forma de Dios, no se aferró a su igualdad con Dios. Se despojó, tomó forma de siervo y se humilló hasta la muerte de cruz. Por eso Dios lo exaltó y todo ser doblará la rodilla ante él.</p><p>La Navidad empieza con un descenso. El Señor del universo se hizo pequeño. Pablo nos pide tener esta misma actitud. En una época donde se busca ser visto y reconocido, Cristo nos muestra otro camino: servir, bajar, entregar.</p></div>
+<div class="meditar"><span class="et">PARA MEDITAR</span>¿Dónde estás buscando reconocimiento? ¿Cómo sería servir allí sin que nadie lo note?</div>
+<p class="oracion"><span class="et">ORACIÓN</span>Señor Jesús, dame tu humildad. Amén.</p>
+<p class="seguir"><span class="et">PARA SEGUIR LEYENDO</span>2 Corintios 8:9; Marcos 10:42-45.</p></div><aside class="notas" aria-label="Notas: Día 17"><div class="notas-in">
+<div class="nt">SU REVISIÓN · DÍA 17</div>
+<div class="estado" role="group" aria-label="Su respuesta para Día 17" data-estado-for="d17">
+<button type="button" data-v="aprobado">Aprobado</button><button type="button" data-v="cambios">Con cambios</button><button type="button" data-v="dudas">Tengo dudas</button></div>
+<label class="sr" for="nota-d17">Notas y correcciones para Día 17</label>
+<textarea id="nota-d17" data-nota="d17" rows="6" placeholder="Escriba aquí lo que quiera: una corrección, una duda, una frase que cambiaría o una idea nueva."></textarea>
+<div class="guardado" data-status="d17" aria-live="polite"></div></div></aside></div></section>
+<section class="dia" id="dia-18" data-key="d18" data-title="Día 18 · Uno de nosotros"><div class="wrap dia-g"><div class="lec">
+<header class="dia-h"><div class="dia-n">18</div><div><div class="fecha">18 DE DICIEMBRE</div><h2>Uno de nosotros</h2></div></header>
+<div class="lectura"><span class="et">LECTURA</span><span class="ref">Hebreos 2:14-18</span><a class="leer" href="https://www.biblegateway.com/passage/?search=Hebreos%202%3A14-18&amp;version=RVR1960" target="_blank" rel="noopener">Abrir en BibleGateway</a></div>
+<div class="cuerpo"><p>Como nosotros somos de carne y sangre, Jesús también participó de lo mismo. ¿Para qué? Para que, mediante su muerte, destruyera al que tenía el imperio de la muerte, y liberara a los que por el temor a la muerte estaban sujetos a esclavitud toda la vida. Pasó por sufrimientos y tentaciones, y por eso puede ayudar a los que son tentados. Es un sumo sacerdote misericordioso y fiel.</p><p>Cuando sufres, el Señor no te mira desde lejos. Él entiende lo que es el dolor, el cansancio y la tentación porque lo vivió. Y vino con un propósito: romper lo que nos tenía atados, incluso el miedo a morir. Si esta Navidad duele —por una pérdida, una ausencia o una enfermedad—, recuerda que tu Salvador conoce ese terreno y ya venció lo que más temes.</p></div>
+<div class="meditar"><span class="et">PARA MEDITAR</span>¿Qué dolor o qué miedo llevas esta Navidad? ¿Se lo has contado a Jesús tal como es?</div>
+<p class="oracion"><span class="et">ORACIÓN</span>Señor, tú sabes lo que es sufrir. Ven a mi dolor y líbrame del miedo. Amén.</p>
+<p class="seguir"><span class="et">PARA SEGUIR LEYENDO</span>Hebreos 4:14-16; 1 Juan 3:8.</p></div><aside class="notas" aria-label="Notas: Día 18"><div class="notas-in">
+<div class="nt">SU REVISIÓN · DÍA 18</div><div class="crit"><span>SU CRITERIO AQUÍ</span>Se agrega la liberación del temor a la muerte (Hebreos 2:14-15). Confirmar el énfasis.</div>
+<div class="estado" role="group" aria-label="Su respuesta para Día 18" data-estado-for="d18">
+<button type="button" data-v="aprobado">Aprobado</button><button type="button" data-v="cambios">Con cambios</button><button type="button" data-v="dudas">Tengo dudas</button></div>
+<label class="sr" for="nota-d18">Notas y correcciones para Día 18</label>
+<textarea id="nota-d18" data-nota="d18" rows="6" placeholder="Escriba aquí lo que quiera: una corrección, una duda, una frase que cambiaría o una idea nueva."></textarea>
+<div class="guardado" data-status="d18" aria-live="polite"></div></div></aside></div></section>
+<section class="dia" id="dia-19" data-key="d19" data-title="Día 19 · La imagen del Dios invisible"><div class="wrap dia-g"><div class="lec">
+<header class="dia-h"><div class="dia-n">19</div><div><div class="fecha">19 DE DICIEMBRE</div><h2>La imagen del Dios invisible</h2></div></header>
+<div class="lectura"><span class="et">LECTURA</span><span class="ref">Colosenses 1:15-20</span><a class="leer" href="https://www.biblegateway.com/passage/?search=Colosenses%201%3A15-20&amp;version=RVR1960" target="_blank" rel="noopener">Abrir en BibleGateway</a></div>
+<div class="cuerpo"><p>Pablo describe a Cristo como la imagen del Dios invisible, el primogénito de toda creación. Todo fue creado por él y para él, y en él todas las cosas subsisten. Por medio de la sangre de su cruz reconcilió consigo todas las cosas.</p><p>El mismo que sostiene el universo se dejó sostener en brazos de una madre. Esa paradoja es el corazón de la Navidad. Si quieres saber cómo es Dios, mira a Jesús. Y si quieres saber qué quiere Dios con el mundo roto, la respuesta es: reconciliarlo.</p></div>
+<div class="meditar"><span class="et">PARA MEDITAR</span>¿Qué imagen de Dios llevas en la cabeza? ¿Se parece a Jesús?</div>
+<p class="oracion"><span class="et">ORACIÓN</span>Señor, muéstrame al Padre en el rostro de Jesús. Amén.</p>
+<p class="seguir"><span class="et">PARA SEGUIR LEYENDO</span>Juan 1:18; Hebreos 1:1-3.</p></div><aside class="notas" aria-label="Notas: Día 19"><div class="notas-in">
+<div class="nt">SU REVISIÓN · DÍA 19</div>
+<div class="estado" role="group" aria-label="Su respuesta para Día 19" data-estado-for="d19">
+<button type="button" data-v="aprobado">Aprobado</button><button type="button" data-v="cambios">Con cambios</button><button type="button" data-v="dudas">Tengo dudas</button></div>
+<label class="sr" for="nota-d19">Notas y correcciones para Día 19</label>
+<textarea id="nota-d19" data-nota="d19" rows="6" placeholder="Escriba aquí lo que quiera: una corrección, una duda, una frase que cambiaría o una idea nueva."></textarea>
+<div class="guardado" data-status="d19" aria-live="polite"></div></div></aside></div></section>
+<section class="dia" id="dia-20" data-key="d20" data-title="Día 20 · En esto se mostró el amor"><div class="wrap dia-g"><div class="lec">
+<header class="dia-h"><div class="dia-n">20</div><div><div class="fecha">20 DE DICIEMBRE</div><h2>En esto se mostró el amor</h2></div></header>
+<div class="lectura"><span class="et">LECTURA</span><span class="ref">1 Juan 4:9-10</span><a class="leer" href="https://www.biblegateway.com/passage/?search=1%20Juan%204%3A9-10&amp;version=RVR1960" target="_blank" rel="noopener">Abrir en BibleGateway</a></div>
+<div class="cuerpo"><p>«En esto se mostró el amor de Dios para con nosotros». Dios envió a su Hijo unigénito al mundo para que vivamos por él. Y Juan aclara algo importante: el amor no consiste en que nosotros hayamos amado a Dios, sino en que él nos amó primero y envió a su Hijo como propiciación por nuestros pecados.</p><p>Nadie puede merecer un regalo así. Pablo lo dice de otra manera: cuando éramos enemigos, fuimos reconciliados con Dios por la muerte de su Hijo. Si recibes un regalo que no puedes pagar, la respuesta correcta es gratitud, no deuda. En esta semana, deja que el amor de Dios te llegue primero, y luego decide cómo responder.</p></div>
+<div class="meditar"><span class="et">PARA MEDITAR</span>¿Vives como alguien que debe algo a Dios o como alguien que ha sido amado primero?</div>
+<p class="oracion"><span class="et">ORACIÓN</span>Gracias, Padre, por amarme antes de que yo pudiera responderte. Amén.</p>
+<p class="seguir"><span class="et">PARA SEGUIR LEYENDO</span>Romanos 5:6-11; Juan 3:16-17.</p></div><aside class="notas" aria-label="Notas: Día 20"><div class="notas-in">
+<div class="nt">SU REVISIÓN · DÍA 20</div>
+<div class="estado" role="group" aria-label="Su respuesta para Día 20" data-estado-for="d20">
+<button type="button" data-v="aprobado">Aprobado</button><button type="button" data-v="cambios">Con cambios</button><button type="button" data-v="dudas">Tengo dudas</button></div>
+<label class="sr" for="nota-d20">Notas y correcciones para Día 20</label>
+<textarea id="nota-d20" data-nota="d20" rows="6" placeholder="Escriba aquí lo que quiera: una corrección, una duda, una frase que cambiaría o una idea nueva."></textarea>
+<div class="guardado" data-status="d20" aria-live="polite"></div></div></aside></div></section>
+<section class="dia" id="dia-21" data-key="d21" data-title="Día 21 · Nacido para salvar"><div class="wrap dia-g"><div class="lec">
+<header class="dia-h"><div class="dia-n">21</div><div><div class="fecha">21 DE DICIEMBRE</div><h2>Nacido para salvar</h2></div></header>
+<div class="lectura"><span class="et">LECTURA</span><span class="ref">Mateo 1:21; Isaías 53:3-6</span><a class="leer" href="https://www.biblegateway.com/passage/?search=Mateo%201%3A21%3B%20Isa%C3%ADas%2053%3A3-6&amp;version=RVR1960" target="_blank" rel="noopener">Abrir en BibleGateway</a></div>
+<div class="cuerpo"><p>El ángel dijo a José que el niño se llamaría Jesús porque salvaría a su pueblo de sus pecados. Isaías, siglos antes, describió a un siervo despreciado, varón de dolores, que llevó nuestras enfermedades y fue herido por nuestras rebeliones.</p><p>La cuna y la cruz no están lejos una de la otra. Cuando Simeón tuvo al niño en brazos, anunció que una espada traspasaría el alma de María. Y Hebreos dice que al entrar en el mundo, Cristo recibió un cuerpo para ofrecerlo. El niño nació con una misión: no vino solo a darnos un ejemplo, vino a cargar lo que nosotros no podíamos cargar. Hoy puedes descansar en eso.</p></div>
+<div class="meditar"><span class="et">PARA MEDITAR</span>¿Qué carga intentas llevar por tu cuenta que Cristo ya llevó?</div>
+<p class="oracion"><span class="et">ORACIÓN</span>Señor Jesús, gracias por cargar mis pecados. Amén.</p>
+<p class="seguir"><span class="et">PARA SEGUIR LEYENDO</span>Lucas 2:34-35; Hebreos 10:5-10.</p></div><aside class="notas" aria-label="Notas: Día 21"><div class="notas-in">
+<div class="nt">SU REVISIÓN · DÍA 21</div><div class="crit"><span>SU CRITERIO AQUÍ</span>La frase «la cuna y la cruz no están lejos una de la otra», ahora apoyada en Lucas 2:34-35 y Hebreos 10:5-10. Confirmar que expresa bien la relación entre encarnación y expiación.</div>
+<div class="estado" role="group" aria-label="Su respuesta para Día 21" data-estado-for="d21">
+<button type="button" data-v="aprobado">Aprobado</button><button type="button" data-v="cambios">Con cambios</button><button type="button" data-v="dudas">Tengo dudas</button></div>
+<label class="sr" for="nota-d21">Notas y correcciones para Día 21</label>
+<textarea id="nota-d21" data-nota="d21" rows="6" placeholder="Escriba aquí lo que quiera: una corrección, una duda, una frase que cambiaría o una idea nueva."></textarea>
+<div class="guardado" data-status="d21" aria-live="polite"></div></div></aside></div></section>
+<div class="semana"><div class="wrap"><div class="eyebrow">SEMANA 4</div><h2>Ha nacido</h2><p>Del 22 al 25 de diciembre. La promesa se cumple, y la esperanza sigue.</p></div></div>
+<section class="dia" id="dia-22" data-key="d22" data-title="Día 22 · Sin lugar en el mesón"><div class="wrap dia-g"><div class="lec">
+<header class="dia-h"><div class="dia-n">22</div><div><div class="fecha">22 DE DICIEMBRE</div><h2>Sin lugar en el mesón</h2></div></header>
+<div class="lectura"><span class="et">LECTURA</span><span class="ref">Lucas 2:1-7</span><a class="leer" href="https://www.biblegateway.com/passage/?search=Lucas%202%3A1-7&amp;version=RVR1960" target="_blank" rel="noopener">Abrir en BibleGateway</a></div>
+<div class="cuerpo"><p>Un decreto del emperador mueve a una pareja hasta Belén. No hay lugar para ellos en el mesón, y el niño nace y es acostado en un pesebre. Todo ocurre dentro de los planes de un imperio, y todo cumple también el plan de Dios.</p><p>El Rey no nació en un palacio. Eligió un nacimiento sin comodidades. Juan lo resume así: vino a lo suyo, y los suyos no lo recibieron. Si esta Navidad no se parece a una postal —si hay tensiones, escasez o soledad—, recuerda que la primera Navidad tampoco lo era.</p></div>
+<div class="meditar"><span class="et">PARA MEDITAR</span>¿Qué expectativa de «Navidad perfecta» necesitas soltar?</div>
+<p class="oracion"><span class="et">ORACIÓN</span>Señor, que haya lugar para ti en mi casa y en mi corazón. Amén.</p>
+<p class="seguir"><span class="et">PARA SEGUIR LEYENDO</span>Juan 1:10-12; Lucas 9:58.</p></div><aside class="notas" aria-label="Notas: Día 22"><div class="notas-in">
+<div class="nt">SU REVISIÓN · DÍA 22</div>
+<div class="estado" role="group" aria-label="Su respuesta para Día 22" data-estado-for="d22">
+<button type="button" data-v="aprobado">Aprobado</button><button type="button" data-v="cambios">Con cambios</button><button type="button" data-v="dudas">Tengo dudas</button></div>
+<label class="sr" for="nota-d22">Notas y correcciones para Día 22</label>
+<textarea id="nota-d22" data-nota="d22" rows="6" placeholder="Escriba aquí lo que quiera: una corrección, una duda, una frase que cambiaría o una idea nueva."></textarea>
+<div class="guardado" data-status="d22" aria-live="polite"></div></div></aside></div></section>
+<section class="dia" id="dia-23" data-key="d23" data-title="Día 23 · Los pastores"><div class="wrap dia-g"><div class="lec">
+<header class="dia-h"><div class="dia-n">23</div><div><div class="fecha">23 DE DICIEMBRE</div><h2>Los pastores</h2></div></header>
+<div class="lectura"><span class="et">LECTURA</span><span class="ref">Lucas 2:8-20</span><a class="leer" href="https://www.biblegateway.com/passage/?search=Lucas%202%3A8-20&amp;version=RVR1960" target="_blank" rel="noopener">Abrir en BibleGateway</a></div>
+<div class="cuerpo"><p>El primer anuncio del nacimiento llegó a unos pastores que cuidaban su rebaño de noche. Un ángel les dijo que no temieran, porque traía buenas noticias de gran gozo para todo el pueblo: ha nacido un Salvador. Fueron, lo vieron, y volvieron glorificando y alabando a Dios.</p><p>Dios dio la noticia a gente sencilla, en turno de trabajo. No les pidió nada antes: les dio una buena noticia, y ellos respondieron con alabanza y con testimonio. Eso mismo puedes hacer esta semana: contarle a alguien lo que has recibido.</p></div>
+<div class="meditar"><span class="et">PARA MEDITAR</span>¿A quién puedes contarle esta semana la buena noticia de Cristo?</div>
+<p class="oracion"><span class="et">ORACIÓN</span>Señor, haz de mí un pastor que cuenta lo que ha visto. Amén.</p>
+<p class="seguir"><span class="et">PARA SEGUIR LEYENDO</span>Isaías 52:7; Romanos 10:14-15.</p></div><aside class="notas" aria-label="Notas: Día 23"><div class="notas-in">
+<div class="nt">SU REVISIÓN · DÍA 23</div>
+<div class="estado" role="group" aria-label="Su respuesta para Día 23" data-estado-for="d23">
+<button type="button" data-v="aprobado">Aprobado</button><button type="button" data-v="cambios">Con cambios</button><button type="button" data-v="dudas">Tengo dudas</button></div>
+<label class="sr" for="nota-d23">Notas y correcciones para Día 23</label>
+<textarea id="nota-d23" data-nota="d23" rows="6" placeholder="Escriba aquí lo que quiera: una corrección, una duda, una frase que cambiaría o una idea nueva."></textarea>
+<div class="guardado" data-status="d23" aria-live="polite"></div></div></aside></div></section>
+<section class="dia" id="dia-24" data-key="d24" data-title="Día 24 · Los magos"><div class="wrap dia-g"><div class="lec">
+<header class="dia-h"><div class="dia-n">24</div><div><div class="fecha">24 DE DICIEMBRE</div><h2>Los magos</h2></div></header>
+<div class="lectura"><span class="et">LECTURA</span><span class="ref">Mateo 2:1-12</span><a class="leer" href="https://www.biblegateway.com/passage/?search=Mateo%202%3A1-12&amp;version=RVR1960" target="_blank" rel="noopener">Abrir en BibleGateway</a></div>
+<div class="cuerpo"><p>Unos magos del oriente siguieron una estrella hasta encontrar al niño. Lo adoraron y le ofrecieron oro, incienso y mirra. Herodes, en cambio, se sintió amenazado. Y hay un detalle más: los sacerdotes y escribas de Jerusalén sabían exactamente dónde debía nacer el Mesías, porque conocían la Escritura, pero no fueron a buscarlo. Frente a Jesús nadie queda neutral: o se le adora o se le resiste, o se le ignora.</p><p>Desde antiguo se ha visto en los regalos un anuncio de quién es el niño: oro para un rey, incienso para Dios, mirra para quien moriría. La pregunta de esta noche es qué haremos con Jesús. Que tu mejor regalo sea tu adoración sincera.</p></div>
+<div class="meditar"><span class="et">PARA MEDITAR</span>¿Te pareces más a los magos, que lo buscaron, o a los que sabían todo y no se movieron? ¿Qué parte de ti sigue protegiendo su propio trono, como Herodes?</div>
+<p class="oracion"><span class="et">ORACIÓN</span>Señor, vengo a adorarte con lo que soy y con lo que tengo. Amén.</p>
+<p class="seguir"><span class="et">PARA SEGUIR LEYENDO</span>Salmo 72:10-11; Isaías 60:1-6.</p></div><aside class="notas" aria-label="Notas: Día 24"><div class="notas-in">
+<div class="nt">SU REVISIÓN · DÍA 24</div><div class="crit"><span>SU CRITERIO AQUÍ</span>Mateo 2 incluye a los magos. No se afirma cuántos eran ni cuándo llegaron. La lectura de los regalos (oro, incienso, mirra) es tradicional, no del texto; confirmar si se deja, se suaviza o se quita.</div>
+<div class="estado" role="group" aria-label="Su respuesta para Día 24" data-estado-for="d24">
+<button type="button" data-v="aprobado">Aprobado</button><button type="button" data-v="cambios">Con cambios</button><button type="button" data-v="dudas">Tengo dudas</button></div>
+<label class="sr" for="nota-d24">Notas y correcciones para Día 24</label>
+<textarea id="nota-d24" data-nota="d24" rows="6" placeholder="Escriba aquí lo que quiera: una corrección, una duda, una frase que cambiaría o una idea nueva."></textarea>
+<div class="guardado" data-status="d24" aria-live="polite"></div></div></aside></div></section>
+<section class="dia" id="dia-25" data-key="d25" data-title="Día 25 · Ya vino, y vendrá"><div class="wrap dia-g"><div class="lec">
+<header class="dia-h"><div class="dia-n">25</div><div><div class="fecha">25 DE DICIEMBRE</div><h2>Ya vino, y vendrá</h2></div></header>
+<div class="lectura"><span class="et">LECTURA</span><span class="ref">Tito 2:11-14; Apocalipsis 22:17-21</span><a class="leer" href="https://www.biblegateway.com/passage/?search=Tito%202%3A11-14%3B%20Apocalipsis%2022%3A17-21&amp;version=RVR1960" target="_blank" rel="noopener">Abrir en BibleGateway</a></div>
+<div class="cuerpo"><p>«La gracia de Dios se ha manifestado». Hoy celebramos que Cristo vino. Pablo, sin embargo, añade que aguardamos la esperanza bienaventurada, la gloriosa venida de nuestro gran Dios y Salvador Jesucristo. Y el último capítulo de la Biblia termina con una promesa y una súplica: «Ciertamente vengo en breve». «Amén; sí, ven, Señor Jesús».</p><p>Eso es Adviento: esperar con gratitud lo que ya recibimos, y con esperanza lo que todavía nos falta. El mismo Jesús que nació en Belén volverá. Mientras tanto vivimos sobriamente, con justicia y con piedad, esperando a quien nos ama.</p></div>
+<div class="meditar"><span class="et">PARA MEDITAR</span>¿Estás esperando su regreso con deseo, con indiferencia o con temor? ¿Qué te gustaría que cambiara?</div>
+<p class="oracion"><span class="et">ORACIÓN</span>Amén; sí, ven, Señor Jesús. Gracias por venir, y ayúdame a esperar bien. Amén.</p>
+<p class="seguir"><span class="et">PARA SEGUIR LEYENDO</span>Hechos 1:9-11; Hebreos 9:28.</p></div><aside class="notas" aria-label="Notas: Día 25"><div class="notas-in">
+<div class="nt">SU REVISIÓN · DÍA 25</div><div class="crit"><span>SU CRITERIO AQUÍ</span>Cierre con Tito 2 y Apocalipsis 22; confirmar que el equilibrio «ya vino, vendrá» refleja la enseñanza de ELT sobre el regreso de Cristo.</div>
+<div class="estado" role="group" aria-label="Su respuesta para Día 25" data-estado-for="d25">
+<button type="button" data-v="aprobado">Aprobado</button><button type="button" data-v="cambios">Con cambios</button><button type="button" data-v="dudas">Tengo dudas</button></div>
+<label class="sr" for="nota-d25">Notas y correcciones para Día 25</label>
+<textarea id="nota-d25" data-nota="d25" rows="6" placeholder="Escriba aquí lo que quiera: una corrección, una duda, una frase que cambiaría o una idea nueva."></textarea>
+<div class="guardado" data-status="d25" aria-live="polite"></div></div></aside></div></section>
+<section class="dia" id="cierre" data-key="cierre" data-title="Cierre"><div class="wrap dia-g"><div class="lec">
+<header class="dia-h"><div class="dia-n dia-n-x">Fin</div><div><div class="fecha">TEXTO DE CIERRE</div><h2>Cierre</h2></div></header>
+<div class="cuerpo"><p>Gracias por acompañarnos estos veinticinco días. Si esta guía te ayudó, comparte el recurso con alguien más y suscríbete al canal de Entendiendo Los Tiempos para seguir creciendo en el conocimiento de la Palabra.</p></div></div><aside class="notas" aria-label="Notas: Cierre"><div class="notas-in">
+<div class="nt">SU REVISIÓN · CIERRE</div>
+<div class="estado" role="group" aria-label="Su respuesta para Cierre" data-estado-for="cierre">
+<button type="button" data-v="aprobado">Aprobado</button><button type="button" data-v="cambios">Con cambios</button><button type="button" data-v="dudas">Tengo dudas</button></div>
+<label class="sr" for="nota-cierre">Notas y correcciones para Cierre</label>
+<textarea id="nota-cierre" data-nota="cierre" rows="6" placeholder="Escriba aquí lo que quiera: una corrección, una duda, una frase que cambiaría o una idea nueva."></textarea>
+<div class="guardado" data-status="cierre" aria-live="polite"></div></div></aside></div></section>
+<section class="final" id="respuesta" data-key="final" data-title="Respuesta general"><div class="wrap fin-w">
+<div class="eyebrow">ÚLTIMO PASO</div><h2>Su respuesta general y envío</h2>
+<p class="sub">Cuando termine de revisar, díganos cómo seguimos. Puede dejar aquí cualquier comentario que no corresponda a un día en particular. Al pulsar el botón se envía a Diana todo lo que escribió en los días y en este cuadro.</p>
+<div class="fr"><div><label for="autor">SU NOMBRE</label><input id="autor" name="autor" autocomplete="name" value="Pastor Eduardo"></div></div>
+<div class="decision" role="group" aria-label="Respuesta general" data-estado-for="final">
+<button type="button" data-v="aprobado">Aprobado tal como está</button>
+<button type="button" data-v="aprobado-cambios">Aprobado con los cambios que anoté</button>
+<button type="button" data-v="llamada">Prefiero conversarlo en una llamada</button></div>
+<label class="sr" for="nota-general">Comentario general</label>
+<textarea id="nota-general" data-nota="general" rows="5" placeholder="Comentario general (opcional): temas que faltan, el tono, algo que quiere que veamos juntos."></textarea>
+<div class="guardado" data-status="general" aria-live="polite"></div>
+<div class="envio"><button type="button" class="btn" id="enviar">Enviar mi revisión</button><span id="msg" role="status"></span></div>
+<div class="resumen-envio" id="resumen-envio"></div>
+<div class="respaldo" id="respaldo" hidden><p>No pudimos enviarlo desde aquí. Copie este texto y péguelo en un correo para <b>dicardona.studio@gmail.com</b>.</p>
+<textarea id="texto-respaldo" rows="10" readonly></textarea>
+<div class="envio"><button type="button" class="btn alt" id="copiar-respaldo">Copiar texto</button><a class="btn alt" id="mailto" href="#">Abrir mi correo</a></div></div>
+</div></section>
+</main>
+<footer><div class="wrap"><img src="/assets/logos/Logo_TFS_white_2.svg" alt="Truth Frame Studio"><span>Borrador sin aprobar · Preparado por Diana Cardona · Truth Frame Studio</span></div></footer>
+<script>
+
+(function(){
+'use strict';
+var URL_ENVIO='https://script.google.com/macros/s/AKfycbwBpL72KSp-kJQ2RzB195u-CJj-PyX0X770gAQx58-zDRMmprck7TLBlNaJAY8jE8EyYA/exec', CORREO='dicardona.studio@gmail.com', LS='elt-devocional-revision-v1';
+var state={}, timers={};
+function $(s,r){return (r||document).querySelector(s)}
+function all(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))}
+function load(){try{var j=localStorage.getItem(LS);if(j)state=JSON.parse(j)||{}}catch(e){state={}}}
+function save(){try{localStorage.setItem(LS,JSON.stringify(state))}catch(e){}}
+var ETIQ={aprobado:'Aprobado',cambios:'Con cambios',dudas:'Tengo dudas','aprobado-cambios':'Aprobado con los cambios anotados',llamada:'Prefiere conversarlo en una llamada'};
+function ensure(k){if(!state[k])state[k]={};return state[k]}
+function status(k,m){var s=$('[data-status="'+k+'"]');if(s)s.textContent=m||''}
+function progress(){var n=0;for(var i=1;i<=25;i++){var d=state['d'+(i<10?'0'+i:i)];if(d&&d.estado)n++}$('#prog-n').textContent=n;$('#prog-i').style.width=(n/25*100)+'%'}
+function paint(k){var d=state[k]||{};var ta=$('textarea[data-nota="'+k+'"]');
+ if(ta&&document.activeElement!==ta&&ta.value!==(d.texto||''))ta.value=d.texto||'';
+ all('[data-estado-for="'+k+'"] button').forEach(function(b){b.setAttribute('aria-pressed',String(b.getAttribute('data-v')===d.estado))});
+ var c=$('.chip[data-chip="'+k+'"]');if(c)c.setAttribute('data-estado',d.estado||'');progress()}
+function paintAll(){['intro','cierre','general','final'].forEach(paint);for(var i=1;i<=25;i++)paint('d'+(i<10?'0'+i:i));
+ var a=$('#autor');if(state.autor&&a)a.value=state.autor;
+ if(state.enviado)$('#resumen-envio').textContent='Última vez enviada: '+state.enviado+'. Si cambia algo, puede volver a enviar.'}
+function queue(k){save();status(k,'Guardado en este navegador')}
+document.addEventListener('input',function(ev){var t=ev.target;
+ if(t.matches&&t.matches('textarea[data-nota]')){var k=t.getAttribute('data-nota');ensure(k).texto=t.value;clearTimeout(timers[k]);status(k,'Guardando…');timers[k]=setTimeout(function(){queue(k)},500)}
+ if(t.id==='autor'){state.autor=t.value;save()}});
+document.addEventListener('click',function(ev){var b=ev.target.closest&&ev.target.closest('[data-estado-for] button');if(!b)return;
+ var k=b.parentNode.getAttribute('data-estado-for'),s=ensure(k);s.estado=(s.estado===b.getAttribute('data-v'))?'':b.getAttribute('data-v');paint(k);queue(k)});
+
+function bloques(){var out=[];
+ all('section[data-key]').forEach(function(sec){var k=sec.getAttribute('data-key');if(k==='final')return;var d=state[k]||{};
+  if(!d.estado&&!(d.texto||'').trim())return;
+  out.push({t:sec.getAttribute('data-title')+(d.estado?' · '+ETIQ[d.estado]:''),x:(d.texto||'').trim()})});
+ var g=state.general||{},f=state.final||{};
+ if(f.estado||(g.texto||'').trim())out.push({t:'RESPUESTA GENERAL'+(f.estado?' · '+ETIQ[f.estado]:''),x:(g.texto||'').trim()});
+ return out}
+function textoTodo(){var b=bloques();return b.map(function(x){return x.t+(x.x?'\n'+x.x:'')}).join('\n\n')}
+function trozos(max){ // agrupa bloques en mensajes de hasta `max` caracteres, partiendo bloques muy largos
+ var partes=[],act='';
+ function push(s){if(act&&(act.length+2+s.length)>max){partes.push(act);act=s}else act=act?act+'\n\n'+s:s}
+ bloques().forEach(function(b){var s=b.t+(b.x?'\n'+b.x:'');
+  while(s.length>max){var cut=s.lastIndexOf('. ',max);if(cut<max*0.5)cut=max;else cut+=1;push(s.slice(0,cut));s=s.slice(cut).trim()}
+  push(s)});
+ if(act)partes.push(act);return partes}
+
+function mailto(txt){return 'mailto:'+CORREO+'?subject='+encodeURIComponent('Revisión devocional de Adviento · ELT')+'&body='+encodeURIComponent(txt.slice(0,1500))}
+function respaldo(txt){var r=$('#respaldo');r.hidden=false;var ta=$('#texto-respaldo');ta.value=txt;
+ $('#mailto').href=mailto(txt);try{navigator.clipboard.writeText(txt)}catch(e){}r.scrollIntoView({block:'center'})}
+$('#copiar-respaldo').addEventListener('click',function(){var ta=$('#texto-respaldo');try{navigator.clipboard.writeText(ta.value).then(function(){$('#copiar-respaldo').textContent='Copiado'},function(){ta.select()})}catch(e){ta.select()}});
+
+function enviarUno(autor,ref,msg,cat){
+ var d={tipo_envio:'comentario_cliente',cliente:'ELT',nombre:autor,categoria:cat,referencia:ref,mensaje:msg,sitio_web:''};
+ return fetch(URL_ENVIO,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(d)}).then(function(r){return r.json()}).then(function(r){if(!r||r.ok!==true)throw new Error('no ok')})}
+
+$('#enviar').addEventListener('click',function(){
+ var btn=$('#enviar'),msg=$('#msg'),autor=($('#autor').value||'').trim()||'Pastor Eduardo';
+ var partes=trozos(2600);
+ if(!partes.length){msg.style.color='#FFB4AB';msg.textContent='Todavía no hay nada escrito para enviar.';return}
+ btn.disabled=true;msg.style.color='#B5B2AC';msg.textContent='Enviando…';
+ var i=0,n=partes.length,todo=textoTodo();
+ (function sig(){
+  if(i>=n){var f=new Date();state.enviado=f.toLocaleString('es-CO',{dateStyle:'long',timeStyle:'short'});save();
+   msg.style.color='#8fe3a1';msg.textContent='✓ Su revisión fue enviada a Diana'+(n>1?' ('+n+' mensajes)':'')+'. ¡Gracias!';
+   $('#resumen-envio').textContent='Última vez enviada: '+state.enviado+'. Si cambia algo, puede volver a enviar.';btn.disabled=false;return}
+  enviarUno(autor,'Devocional de Adviento · parte '+(i+1)+' de '+n,partes[i],'Devocional de Adviento').then(function(){i++;sig()}).catch(function(){
+   msg.style.color='#FFB4AB';msg.textContent='No pudimos enviarlo desde aquí. Abajo queda el texto para copiar y enviar por correo.';btn.disabled=false;respaldo(todo)})
+ })()});
+
+load();paintAll();
+function barra(){var h=document.querySelector('header.top');if(h)document.documentElement.style.setProperty('--barra',h.offsetHeight+'px')}
+barra();addEventListener('resize',barra);
+})();
+
+</script></body></html>
