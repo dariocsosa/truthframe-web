@@ -61,6 +61,7 @@ textarea,input{width:100%;background:#0d0d0d;color:#fff;border:1px solid var(--l
 .decision{margin-block:6px 12px}.decision button{text-align:left;padding:12px 14px;font-size:.9rem}
 .envio{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:14px}#msg{font-size:.9rem}
 .resumen-envio{margin-top:12px;font-size:.85rem;color:var(--mut)}
+.aviso{max-width:1120px;margin:14px auto 0;padding:10px 16px;background:var(--s2);border-left:4px solid var(--coral);border-radius:6px;font-size:.9rem;color:#d8d5cf}
 .respaldo{margin-top:20px;padding:16px;background:var(--s2);border:1px solid var(--coral);border-radius:12px}.respaldo p{margin-bottom:10px;color:#d8d5cf}
 footer{border-top:1px solid var(--ln);padding:26px 0;color:var(--mut);font-size:.85rem}footer .wrap{display:flex;gap:16px;align-items:center;flex-wrap:wrap}footer img{height:28px}
 @media(max-width:900px){.dia-g{grid-template-columns:minmax(0,1fr);gap:18px}.notas{position:static}:root{--barra:130px}}
@@ -107,7 +108,7 @@ footer{border-top:1px solid var(--ln);padding:26px 0;color:var(--mut);font-size:
 <h1>Esperar a <span>Cristo</span></h1>
 <p class="lead">Devocional de Adviento · 25 días · Entendiendo Los Tiempos</p>
 <div class="guia">
-<p class="intro">Pastor Eduardo, aquí está el devocional completo. Junto a cada día hay un cuadro para que escriba lo que quiera: aprobar, corregir una frase, hacer una pregunta o añadir algo. Lo que escribe queda guardado en este navegador mientras trabaja, y al final lo envía a Diana con un solo botón.</p>
+<p class="intro">Pastor Eduardo, aquí está el devocional completo. Junto a cada día hay un cuadro para que escriba lo que quiera: aprobar, corregir una frase, hacer una pregunta o añadir algo. Lo que escribe se guarda solo, al instante: puede cerrar la página y volver cuando quiera, y sus notas seguirán ahí (use el mismo navegador y el mismo equipo). Al final lo envía a Diana con un solo botón.</p>
 <ol class="pasos"><li><b>Lea el día.</b> Lectura bíblica, reflexión, pregunta y oración.</li>
 <li><b>Marque su respuesta.</b> Aprobado, Con cambios o Tengo dudas.</li>
 <li><b>Escriba la corrección tal como la quiere ver.</b> No necesita redactar nada formal.</li>
@@ -475,7 +476,7 @@ footer{border-top:1px solid var(--ln);padding:26px 0;color:var(--mut);font-size:
 <label class="sr" for="nota-general">Comentario general</label>
 <textarea id="nota-general" data-nota="general" rows="5" placeholder="Comentario general (opcional): temas que faltan, el tono, algo que quiere que veamos juntos."></textarea>
 <div class="guardado" data-status="general" aria-live="polite"></div>
-<div class="envio"><button type="button" class="btn" id="enviar">Enviar mi revisión</button><span id="msg" role="status"></span></div>
+<div class="envio"><button type="button" class="btn" id="enviar">Enviar mi revisión</button><button type="button" class="btn alt" id="copiar-todo">Copiar mis notas</button><span id="msg" role="status"></span></div>
 <div class="resumen-envio" id="resumen-envio"></div>
 <div class="respaldo" id="respaldo" hidden><p>No pudimos enviarlo desde aquí. Copie este texto y péguelo en un correo para <b>dicardona.studio@gmail.com</b>.</p>
 <textarea id="texto-respaldo" rows="10" readonly></textarea>
@@ -504,9 +505,10 @@ function paint(k){var d=state[k]||{};var ta=$('textarea[data-nota="'+k+'"]');
 function paintAll(){['intro','cierre','general','final'].forEach(paint);for(var i=1;i<=25;i++)paint('d'+(i<10?'0'+i:i));
  var a=$('#autor');if(state.autor&&a)a.value=state.autor;
  if(state.enviado)$('#resumen-envio').textContent='Última vez enviada: '+state.enviado+'. Si cambia algo, puede volver a enviar.'}
-function queue(k){save();status(k,'Guardado en este navegador')}
+function hora(){var d=new Date();return d.toLocaleTimeString('es-CO',{hour:'2-digit',minute:'2-digit'})}
+function queue(k){save();status(k,okStorage?'✓ Guardado a las '+hora()+' en este navegador':'No se pudo guardar en este navegador: use «Copiar mis notas»')}
 document.addEventListener('input',function(ev){var t=ev.target;
- if(t.matches&&t.matches('textarea[data-nota]')){var k=t.getAttribute('data-nota');ensure(k).texto=t.value;clearTimeout(timers[k]);status(k,'Guardando…');timers[k]=setTimeout(function(){queue(k)},500)}
+ if(t.matches&&t.matches('textarea[data-nota]')){var k=t.getAttribute('data-nota');ensure(k).texto=t.value;queue(k)}
  if(t.id==='autor'){state.autor=t.value;save()}});
 document.addEventListener('click',function(ev){var b=ev.target.closest&&ev.target.closest('[data-estado-for] button');if(!b)return;
  var k=b.parentNode.getAttribute('data-estado-for'),s=ensure(k);s.estado=(s.estado===b.getAttribute('data-v'))?'':b.getAttribute('data-v');paint(k);queue(k)});
@@ -530,6 +532,7 @@ function trozos(max){ // agrupa bloques en mensajes de hasta `max` caracteres, p
 function mailto(txt){return 'mailto:'+CORREO+'?subject='+encodeURIComponent('Revisión devocional de Adviento · ELT')+'&body='+encodeURIComponent(txt.slice(0,1500))}
 function respaldo(txt){var r=$('#respaldo');r.hidden=false;var ta=$('#texto-respaldo');ta.value=txt;
  $('#mailto').href=mailto(txt);try{navigator.clipboard.writeText(txt)}catch(e){}r.scrollIntoView({block:'center'})}
+$('#copiar-todo').addEventListener('click',function(){respaldo(textoTodo()||'Todavía no hay notas escritas.');var r=$('#respaldo p');if(r)r.innerHTML='Aquí está todo lo que ha escrito. Puede copiarlo y pegarlo en un correo para <b>'+CORREO+'</b>.'});
 $('#copiar-respaldo').addEventListener('click',function(){var ta=$('#texto-respaldo');try{navigator.clipboard.writeText(ta.value).then(function(){$('#copiar-respaldo').textContent='Copiado'},function(){ta.select()})}catch(e){ta.select()}});
 
 function enviarUno(autor,ref,msg,cat){
@@ -550,6 +553,9 @@ $('#enviar').addEventListener('click',function(){
    msg.style.color='#FFB4AB';msg.textContent='No pudimos enviarlo desde aquí. Abajo queda el texto para copiar y enviar por correo.';btn.disabled=false;respaldo(todo)})
  })()});
 
+var okStorage=true;try{localStorage.setItem(LS+'-t','1');localStorage.removeItem(LS+'-t')}catch(e){okStorage=false}
+if(!okStorage){var av=document.createElement('p');av.className='aviso';av.textContent='Este navegador no permite guardar sus notas automáticamente (puede ser una ventana privada). Escriba y, antes de cerrar, use «Copiar mis notas» o «Enviar mi revisión».';var hh=document.querySelector('main');hh.parentNode.insertBefore(av,hh)}
+addEventListener('pagehide',save);document.addEventListener('visibilitychange',function(){if(document.visibilityState==='hidden')save()});
 load();paintAll();
 function barra(){var h=document.querySelector('header.top');if(h)document.documentElement.style.setProperty('--barra',h.offsetHeight+'px')}
 barra();addEventListener('resize',barra);
