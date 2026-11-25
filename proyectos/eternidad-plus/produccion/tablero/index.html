@@ -177,7 +177,7 @@ const weekLabel=w=>{const a=parse(w),b=addDays(a,6);return a.getMonth()===b.getM
 function h(tag,attrs,...kids){const e=document.createElement(tag);for(const [k,v] of Object.entries(attrs||{})){if(v===false||v==null)continue;if(k==='class')e.className=v;else if(k.startsWith('on'))e.addEventListener(k.slice(2),v);else if(v===true)e.setAttribute(k,'');else e.setAttribute(k,v)}for(const c of kids.flat(Infinity)){if(c==null||c===false)continue;e.append(c.nodeType?c:document.createTextNode(String(c)))}return e}
 
 const todayIso=iso(new Date());
-const S={tasks:[],reports:{},week:iso(mondayOf(new Date())),tab:'semana',me:null,rol:null,sesion:null,codigo:null,error:'',loaded:false,netError:false,busy:0,refreshing:false,repPerson:null,modal:null,canWrite:true};
+const S={tasks:[],reports:{},week:iso(mondayOf(new Date())),tab:'semana',me:null,rol:null,sesion:null,token:null,pending:null,verificando:false,activando:false,error:'',loaded:false,netError:false,busy:0,refreshing:false,repPerson:null,modal:null,canWrite:true};
 const ROLE_LABEL={freiman:'Equipo de producción',ana:'Equipo de producción',sarah:'Equipo de producción',andres:'Director',diana:'Coordinadora',antonio:'Junta Directiva',humberto:'Junta Directiva'};
 try{const t=localStorage.getItem('eplus_tab');if(t&&['semana','reporte','resumen'].includes(t))S.tab=t}catch(e){}
 
@@ -192,7 +192,7 @@ function fail(e){
   console.error(e);const c=e&&e.error;
   if(c==='permiso')toast('No tienes permiso para hacer ese cambio.');
   else if(c==='datos')toast('Revisa los datos de la tarea.');
-  else if(c==='codigo'){salir()}
+  else if(c==='sesion'){cerrarSesion('Tu acceso ya no es válido. Pídele a Diana un código nuevo.')}
   else if(c==='red')toast('No hay conexión con el servidor. Intenta de nuevo.');
   else toast('No se pudo guardar. Intenta de nuevo.');
 }
@@ -244,8 +244,7 @@ function renderSession(){
   const box=document.getElementById('session');box.replaceChildren();
   if(!S.sesion)return;
   const nm=S.sesion.nombre,ini=nm.split(' ').map(x=>x[0]).join('').slice(0,2).toUpperCase();
-  box.append(h('div',{class:'av','aria-hidden':'true'},ini),h('div',null,h('b',null,nm),h('small',null,ROLE_LABEL[S.me]||'')),
-    h('button',{class:'btn',style:'padding:4px 10px;font-size:12px',onclick:salir},'Salir'));
+  box.append(h('div',{class:'av','aria-hidden':'true'},ini),h('div',null,h('b',null,nm),h('small',null,ROLE_LABEL[S.me]||'')),(coord()||isReader())?h('a',{class:'btn',href:'../../junta/',style:'padding:4px 10px;font-size:12px;text-decoration:none;color:inherit'},'Portal de la Junta'):null);
 }
 function weekBar(){
   const go=n=>{S.week=iso(addDays(parse(S.week),7*n));render()};
@@ -449,24 +448,24 @@ function renderModal(){
 document.getElementById('ov').addEventListener('mousedown',e=>{if(e.target.id==='ov')closeModal()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&S.modal)closeModal()});
 
-/* ---------- acceso, render y arranque ---------- */
+/* ---------- acceso (código de un solo uso), render y arranque ---------- */
 const API=window.TFS_TABLERO_API||"https://script.google.com/macros/s/AKfycbwBpL72KSp-kJQ2RzB195u-CJj-PyX0X770gAQx58-zDRMmprck7TLBlNaJAY8jE8EyYA/exec";
 async function api(accion,datos){
   const ctrl=new AbortController(),to=setTimeout(()=>ctrl.abort(),25000);
   try{
     const r=await fetch(API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},signal:ctrl.signal,
-      body:JSON.stringify(Object.assign({tipo_envio:'tablero',accion,codigo:S.codigo},datos||{}))});
+      body:JSON.stringify(Object.assign({tipo_envio:'tablero',accion,token:S.token},datos||{}))});
     return await r.json();
   }catch(e){return {ok:false,error:'red'}}
   finally{clearTimeout(to)}
 }
-function salir(){
-  S.codigo=null;S.sesion=null;S.me=null;S.rol=null;S.loaded=false;S.tasks=[];S.reports={};S.error='';
-  try{localStorage.removeItem('eplus_codigo')}catch(e){}
+function cerrarSesion(msg){
+  S.token=null;S.sesion=null;S.me=null;S.rol=null;S.loaded=false;S.tasks=[];S.reports={};S.error=msg||'';
+  try{localStorage.removeItem('eplus_token')}catch(e){}
   render();
 }
 async function refresh(){
-  if(!S.codigo||S.busy>0||S.refreshing)return;
+  if(!S.token||S.busy>0||S.refreshing)return;
   S.refreshing=true;
   const r=await api('leer');
   S.refreshing=false;
@@ -474,25 +473,45 @@ async function refresh(){
     S.sesion=r.sesion;S.me=r.sesion.id;S.rol=r.sesion.rol;S.canWrite=r.sesion.rol!=='lector';
     S.tasks=r.tareas;const m={};r.reportes.forEach(x=>m[x.week+'_'+x.person]=x);S.reports=m;
     S.loaded=true;S.netError=false;S.error='';
-    try{localStorage.setItem('eplus_codigo',S.codigo)}catch(e){}
-  }else if(r.error==='codigo'){
-    S.codigo=null;S.sesion=null;S.loaded=false;S.error='Ese código no es válido. Revísalo o pídeselo a Diana.';
-    try{localStorage.removeItem('eplus_codigo')}catch(e){}
-  }else if(r.error==='bloqueado'){
-    S.codigo=null;S.sesion=null;S.loaded=false;S.error='Hubo demasiados intentos fallidos. Espera unos minutos e inténtalo de nuevo.';
+  }else if(r.error==='sesion'){
+    cerrarSesion('Tu acceso ya no es válido. Pídele a Diana un código nuevo.');return;
+  }else if(r.error==='permiso'){
+    cerrarSesion('Este acceso es del portal de la Junta, no de este tablero.');return;
   }else S.netError=true;
   schedule();
 }
+async function verificar(codigo){
+  S.error='';S.verificando=true;render();
+  const r=await api('verificar',{codigo});
+  S.verificando=false;
+  if(r.ok)S.pending={codigo,nombre:r.nombre};
+  else if(r.error==='usado')S.error='Ese código ya se usó. Si eres tú, pídele a Diana uno nuevo.';
+  else if(r.error==='bloqueado')S.error='Hubo demasiados intentos fallidos. Espera unos minutos e inténtalo de nuevo.';
+  else if(r.error==='codigo')S.error='Ese código no es válido. Revísalo o pídeselo a Diana.';
+  else S.error='No se pudo conectar. Revisa tu conexión e inténtalo de nuevo.';
+  render();
+}
+async function activar(){
+  const p=S.pending;S.activando=true;render();
+  const r=await api('activar',{codigo:p.codigo});
+  S.activando=false;
+  if(r.ok){S.token=r.token;S.pending=null;try{localStorage.setItem('eplus_token',S.token)}catch(e){}await refresh();render()}
+  else{S.pending=null;S.error=r.error==='usado'?'Ese código ya se usó. Pídele a Diana uno nuevo.':'No se pudo entrar. Inténtalo de nuevo.';render()}
+}
 function viewLogin(){
+  const busy=S.verificando||S.activando;
+  if(S.pending){
+    const nm=S.pending.nombre;
+    return h('div',{class:'panel claim'},h('h2',null,'¿Eres '+nm+'?'),
+      h('p',{style:'margin:0'},'Al confirmar, este navegador queda registrado a tu nombre y el código se gasta: después ya no sirve para nadie. Si no eres esa persona, no confirmes.'),
+      h('div',{class:'acts'},h('button',{class:'btn',disabled:busy,onclick:()=>{S.pending=null;S.error='';render()}},'No soy yo'),
+        h('button',{class:'btn primary',disabled:busy,onclick:activar},busy?'Entrando…':'Sí, soy '+nm)));
+  }
   const input=h('input',{type:'text',id:'codigo',autocomplete:'off',autocapitalize:'characters',spellcheck:'false',placeholder:'XXXXX-XXXXX',style:'font-size:18px;letter-spacing:.12em;text-transform:uppercase'});
-  const go=h('button',{class:'btn primary',onclick:async()=>{
-    const v=input.value.trim();if(!v){input.focus();return}
-    go.disabled=true;S.codigo=v;S.error='';S.loaded=false;
-    await refresh();go.disabled=false;
-  }},'Entrar');
+  const go=h('button',{class:'btn primary',disabled:busy,onclick:()=>{const v=input.value.trim();if(!v){input.focus();return}verificar(v)}},busy?'Revisando…':'Continuar');
   input.addEventListener('keydown',e=>{if(e.key==='Enter')go.click()});
   return h('div',{class:'panel claim'},h('h2',null,'Entrar al tablero'),
-    h('p',{class:'sub',style:'margin:0'},'Escribe tu código personal. Te lo dio Diana. Es solo tuyo: no lo compartas.'),
+    h('p',{class:'sub',style:'margin:0'},'Escribe tu código personal. Te lo dio Diana. Sirve una sola vez y es solo tuyo.'),
     h('div',{class:'field'},h('label',{for:'codigo'},'Tu código'),input),
     S.error?h('div',{class:'tag warn'},S.error):null,
     h('div',{class:'acts'},go));
@@ -502,8 +521,8 @@ function render(){
   pending=false;
   renderSession();renderTabs();
   const st=document.getElementById('status'),v=document.getElementById('view');
-  if(!S.codigo||!S.sesion){
-    if(S.codigo&&!S.loaded){st.hidden=false;st.textContent=S.netError?'No se pudo conectar con el tablero. Revisa tu conexión.':'Entrando…';v.replaceChildren();return}
+  if(!S.token||!S.sesion){
+    if(S.token&&!S.loaded){st.hidden=false;st.textContent=S.netError?'No se pudo conectar con el tablero. Reintentando…':'Entrando…';v.replaceChildren();return}
     st.hidden=true;v.replaceChildren(viewLogin());return;
   }
   if(!S.loaded){st.hidden=false;st.textContent=S.netError?'No se pudo conectar con el tablero. Reintentando…':'Cargando el tablero…';v.replaceChildren();return}
@@ -515,15 +534,16 @@ function render(){
   v.replaceChildren({semana:viewWeek,reporte:viewReport,resumen:viewSummary}[S.tab]());
 }
 
-/* arranque: el código puede venir en el enlace (#c=XXXXX-XXXXX) o estar guardado en este navegador */
+/* arranque: si este navegador ya tiene su llave, entra; si no, el código puede venir en el enlace (#c=XXXXX-XXXXX) */
 (function(){
   let c=null;
   const m=location.hash.match(/^#(?:c=)?([A-Za-z0-9-]{8,16})$/);
   if(m){c=m[1];try{history.replaceState(null,'',location.pathname+location.search)}catch(e){}}
-  if(!c){try{c=localStorage.getItem('eplus_codigo')}catch(e){}}
-  if(c)S.codigo=c;
+  try{S.token=localStorage.getItem('eplus_token')}catch(e){}
+  try{localStorage.removeItem('eplus_codigo')}catch(e){}
   render();
-  if(S.codigo)refresh();
+  if(S.token)refresh();
+  else if(c)verificar(c);
   setInterval(()=>{if(!document.hidden)refresh()},30000);
   document.addEventListener('visibilitychange',()=>{if(!document.hidden)refresh()});
 })();
