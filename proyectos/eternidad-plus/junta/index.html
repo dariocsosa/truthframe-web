@@ -252,6 +252,7 @@ function viewLogin(){
   if(S.pending&&S.pending.compartido){const f=S.pending.vence?fechaLarga(S.pending.vence):'';
     return h('div',{class:'panel claim'},h('h2',null,'Acceso para la Junta Directiva'),
       h('p',{style:'margin:0'},'Este acceso es para los miembros de la Junta Directiva. Es solo para ver el avance del trabajo'+(f?' y funciona hasta el '+f+'.':'.')),
+      h('p',{style:'margin:0'},'Con el primer informe, cada miembro de la Junta recibirá su propio código personal para ingresar.'),
       h('div',{class:'acts'},h('button',{class:'btn primary',disabled:busy,onclick:activar},busy?'Entrando…':'Entrar al portal')));}
   if(S.pending){const nm=S.pending.nombre;
     return h('div',{class:'panel claim'},h('h2',null,'¿Eres '+nm+'?'),
