@@ -232,7 +232,8 @@ async function refresh(){
 async function verificar(codigo){
   S.error='';S.verificando=true;render();
   const r=await api('verificar',{codigo});S.verificando=false;
-  if(r.ok)S.pending={codigo,nombre:r.nombre};
+  if(r.ok)S.pending={codigo,nombre:r.nombre,compartido:!!r.compartido,vence:r.vence||''};
+  else if(r.error==='vencido')S.error='Este acceso ya venció. Pídele a Diana uno nuevo.';
   else if(r.error==='usado')S.error='Ese código ya se usó. Si eres tú, pídele a Diana uno nuevo.';
   else if(r.error==='bloqueado')S.error='Hubo demasiados intentos fallidos. Espera unos minutos e inténtalo de nuevo.';
   else if(r.error==='codigo')S.error='Ese código no es válido. Revísalo o pídeselo a Diana.';
@@ -243,10 +244,15 @@ async function activar(){
   const p=S.pending;S.activando=true;render();
   const r=await api('activar',{codigo:p.codigo});S.activando=false;
   if(r.ok){S.token=r.token;S.pending=null;try{localStorage.setItem('eplus_token',S.token)}catch(e){}await refresh();render()}
-  else{S.pending=null;S.error=r.error==='usado'?'Ese código ya se usó. Pídele a Diana uno nuevo.':'No se pudo entrar. Inténtalo de nuevo.';render()}
+  else{S.pending=null;S.error=r.error==='usado'?'Ese código ya se usó. Pídele a Diana uno nuevo.':r.error==='vencido'?'Este acceso ya venció. Pídele a Diana uno nuevo.':'No se pudo entrar. Inténtalo de nuevo.';render()}
 }
+function fechaLarga(iso){const m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);if(!m)return '';const M=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];return (+m[3])+' de '+M[+m[2]-1]+' de '+m[1]}
 function viewLogin(){
   const busy=S.verificando||S.activando;
+  if(S.pending&&S.pending.compartido){const f=S.pending.vence?fechaLarga(S.pending.vence):'';
+    return h('div',{class:'panel claim'},h('h2',null,'Acceso para la Junta Directiva'),
+      h('p',{style:'margin:0'},'Este acceso es para los miembros de la Junta Directiva. Es solo para ver el avance del trabajo'+(f?' y funciona hasta el '+f+'.':'.')),
+      h('div',{class:'acts'},h('button',{class:'btn primary',disabled:busy,onclick:activar},busy?'Entrando…':'Entrar al portal')));}
   if(S.pending){const nm=S.pending.nombre;
     return h('div',{class:'panel claim'},h('h2',null,'¿Eres '+nm+'?'),
       h('p',{style:'margin:0'},'Al confirmar, este navegador queda registrado a tu nombre y el código se gasta: después ya no sirve para nadie. Si no eres esa persona, no confirmes.'),
