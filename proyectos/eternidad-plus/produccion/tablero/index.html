@@ -179,7 +179,7 @@ function h(tag,attrs,...kids){const e=document.createElement(tag);for(const [k,v
 const todayIso=iso(new Date());
 const S={tasks:[],reports:{},week:iso(mondayOf(new Date())),tab:'semana',me:null,rol:null,sesion:null,token:null,pending:null,verificando:false,activando:false,error:'',loaded:false,netError:false,busy:0,refreshing:false,repPerson:null,modal:null,canWrite:true};
 const ROLE_LABEL={freiman:'Equipo de producción',ana:'Equipo de producción',sarah:'Equipo de producción',andres:'Director',diana:'Coordinadora',antonio:'Junta Directiva',humberto:'Junta Directiva'};
-try{const t=localStorage.getItem('eplus_tab');if(t&&['semana','reporte','resumen'].includes(t))S.tab=t}catch(e){}
+try{const t=localStorage.getItem('eplus_tab');if(t&&['semana','reporte','resumen','guia'].includes(t))S.tab=t}catch(e){}
 
 let pending=false;
 function inField(){const a=document.activeElement;return a&&['INPUT','TEXTAREA','SELECT'].includes(a.tagName)&&(document.getElementById('view').contains(a)||document.getElementById('dlg').contains(a))}
@@ -235,7 +235,7 @@ const coord=()=>S.rol==='director'||S.rol==='coordinadora';
 function renderTabs(){
   const box=document.getElementById('tabs');box.replaceChildren();
   if(!S.sesion||!S.loaded)return;
-  const tabs=isReader()?[['semana','Semana'],['resumen','Resumen para el informe']]:[['semana','Semana'],['reporte',coord()?'Reportes':'Mi reporte'],['resumen','Resumen para el informe']];
+  const tabs=isReader()?[['semana','Semana'],['resumen','Resumen para el informe'],['guia','Instrucciones']]:[['semana','Semana'],['reporte',coord()?'Reportes':'Mi reporte'],['resumen','Resumen para el informe'],['guia','Instrucciones']];
   tabs.forEach(([k,l])=>{
     box.append(h('button',{class:'tab',role:'tab','aria-selected':S.tab===k,onclick:()=>{S.tab=k;try{localStorage.setItem('eplus_tab',k)}catch(e){}render()}},l));
   });
@@ -244,7 +244,7 @@ function renderSession(){
   const box=document.getElementById('session');box.replaceChildren();
   if(!S.sesion)return;
   const nm=S.sesion.nombre,ini=nm.split(' ').map(x=>x[0]).join('').slice(0,2).toUpperCase();
-  box.append(h('div',{class:'av','aria-hidden':'true'},ini),h('div',null,h('b',null,nm),h('small',null,ROLE_LABEL[S.me]||'')),(coord()||isReader())?h('a',{class:'btn',href:'../../junta/',style:'padding:5px 12px;font-size:12px;font-weight:600;text-decoration:none;background:var(--g-bg);color:var(--g-fg);border-color:var(--g-bd)'},'Portal de la Junta'):null);
+  box.append(h('div',{class:'av','aria-hidden':'true'},ini),h('div',null,h('b',null,nm),h('small',null,ROLE_LABEL[S.me]||'')),...((coord()||isReader())?[h('a',{class:'btn',href:'../../junta/',style:'padding:5px 12px;font-size:12px;font-weight:600;text-decoration:none;background:var(--g-bg);color:var(--g-fg);border-color:var(--g-bd)'},'Portal de la Junta')]:[]));
 }
 function weekBar(){
   const go=n=>{S.week=iso(addDays(parse(S.week),7*n));render()};
@@ -348,6 +348,25 @@ function summaryText(){
     lines.push('');
   });
   return lines.join('\n');
+}
+function viewGuide(){
+  const step=(n,t,items)=>h('div',{class:'panel'},h('h2',null,n+'. '+t),h('ul',{style:'margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px'},...items.map(x=>h('li',null,x))));
+  const wrap=h('div',{style:'display:flex;flex-direction:column;gap:12px;max-width:820px'});
+  wrap.append(
+    h('div',{class:'note'},'Así se suben los videos de Eternidad+ al canal. Síguelo en orden cada vez que subas uno.'),
+    step(1,'Antes de subir',['Revisa en la pestaña Semana cuál es tu tarea y pásala a En proceso (el círculo de la barra).','Confirma con Diana o con Andrés cuál video toca y en qué orden.','Verifica que el archivo esté completo y se vea y oiga bien antes de subirlo.']),
+    step(2,'Subida a YouTube',['Entra a YouTube Studio del canal Eternidad Música y usa Crear > Subir videos.','Los conciertos se suben por tracks: cada canción es un video individual.','Usa el título y la descripción acordados para ese video. Si no los tienes, pídelos antes de publicar.','Déjalo en privado. Solo Diana o Andrés lo ponen público, en la fecha acordada.']),
+    h('div',{class:'panel',style:'border-color:var(--g-bd);border-width:2px'},h('h2',null,'3. Captura de pantalla para la miniatura (obligatoria)'),
+      h('p',{style:'margin:0'},'Por cada video que subas, debes subir también una captura de pantalla (screenshot) del video en buena resolución. Con ella se diseña la miniatura.'),
+      h('ul',{style:'margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px'},
+        h('li',null,'Elige un momento donde la imagen se vea nítida y bien iluminada, con la cara o la escena principal visible.'),
+        h('li',null,'Toma la captura con el video en pantalla completa y a la máxima calidad, como mínimo 1280 × 720 píxeles; mejor 1920 × 1080.'),
+        h('li',null,'Sin controles del reproductor, sin barras, sin texto encima y sin bordes.'),
+        h('li',null,'Guárdala en PNG o JPG, sin comprimir ni reenviar por WhatsApp, porque pierde calidad.'),
+        h('li',null,'Ponle el nombre del video para que se pueda identificar, y entrégala a Ana Alvarado, que diseña las miniaturas, junto con el enlace del video.'))),
+    step(4,'Al terminar',['Pasa tu tarea a Completada.','En Mi reporte > Comentarios escribe el enlace del video y cualquier detalle que debamos saber.','Recuerda que los reportes se envían a más tardar el viernes a las 2:00 pm.']),
+    h('div',{class:'tag'},'Si algo no sale como aquí se explica, no lo resuelvas por tu cuenta: escríbele a Diana Cardona.'));
+  return wrap;
 }
 function viewSummary(){
   const wrap=h('div',{style:'display:flex;flex-direction:column;gap:12px'});
@@ -530,8 +549,8 @@ function render(){
   else if(!S.canWrite){st.hidden=false;st.textContent='Estás viendo el tablero en modo lectura.'}
   else st.hidden=true;
   if(S.rol==='lector'&&S.tab==='reporte')S.tab='semana';
-  if(!['semana','reporte','resumen'].includes(S.tab))S.tab='semana';
-  v.replaceChildren({semana:viewWeek,reporte:viewReport,resumen:viewSummary}[S.tab]());
+  if(!['semana','reporte','resumen','guia'].includes(S.tab))S.tab='semana';
+  v.replaceChildren({semana:viewWeek,reporte:viewReport,resumen:viewSummary,guia:viewGuide}[S.tab]());
 }
 
 /* arranque: si este navegador ya tiene su llave, entra; si no, el código puede venir en el enlace (#c=XXXXX-XXXXX) */
