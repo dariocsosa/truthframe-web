@@ -267,7 +267,7 @@ function renderSession(){
   const box=document.getElementById('session');box.replaceChildren();
   if(!S.sesion)return;
   const nm=S.sesion.nombre,ini=nm.split(' ').map(x=>x[0]).join('').slice(0,2).toUpperCase();
-  box.append(h('div',{class:'av','aria-hidden':'true'},ini),h('div',null,h('b',null,nm),h('small',null,ROLE_LABEL[S.sesion.rol]||'')),...((S.data&&S.data.equipo)?[h('a',{class:'btn',href:'../produccion/tablero/',style:'padding:4px 10px;font-size:12px;text-decoration:none;color:inherit'},'Tablero del equipo')]:[]));
+  box.append(h('div',{class:'av','aria-hidden':'true'},ini),h('div',null,h('b',null,nm),h('small',null,ROLE_LABEL[S.sesion.rol]||'')),...((S.data&&S.data.equipo)?[h('a',{class:'btn',href:'../produccion/tablero/',style:'padding:5px 12px;font-size:12px;font-weight:600;text-decoration:none;background:var(--g-bg);color:var(--g-fg);border-color:var(--g-bd)'},'Tablero del equipo')]:[]));
 }
 function renderTabs(){
   const box=document.getElementById('tabs');box.replaceChildren();
